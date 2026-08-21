@@ -174,6 +174,7 @@ export async function upsertPredictionSelection(values: {
   expectedValue?: string | null;
   edge?: string | null;
   contextScore?: string | null;
+  consensusScore?: string | null;
   grade?: "A_PLUS" | "A" | "B" | "C" | "D" | "WATCH" | null;
   valueStatus: "positive" | "neutral" | "negative" | "unavailable";
   recommendationStatus: "recommended" | "watch" | "excluded";

@@ -29,6 +29,11 @@ export function calculateClv(entryOdds: number, latestOdds: number | null | unde
   return round(((entryOdds / latestOdds) - 1) * 100);
 }
 
+export function calculateConsensusScore(modelProbability: number, impliedProbability: number | null | undefined) {
+  if (!Number.isFinite(modelProbability) || modelProbability <= 0 || modelProbability >= 100 || !impliedProbability || !Number.isFinite(impliedProbability)) return null;
+  return round(Math.max(0, 100 - Math.abs(modelProbability - impliedProbability) * 2));
+}
+
 export function calculateSelectionMetrics(
   probabilityPercent: number,
   odds: number | null | undefined,

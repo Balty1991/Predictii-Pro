@@ -17,6 +17,7 @@ export type PredictionCardData = {
   valueStatus: "positive" | "neutral" | "negative" | "unavailable";
   recommendationStatus: "recommended" | "watch" | "excluded";
   contextScore: string | null;
+  consensusScore?: string | null;
   aiExplanation: string | null;
   reasonCodes: unknown;
   competition: string | null;
@@ -77,10 +78,11 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
         </div>
       </div>
 
-      <div className="relative mt-4 grid grid-cols-3 gap-2">
+      <div className="relative mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Metric label="Probabilitate" value={`${Number(prediction.probability).toFixed(1)}%`} />
         <Metric label="Cotă corectă" value={prediction.fairOdds ? Number(prediction.fairOdds).toFixed(2) : "—"} />
         <Metric label="Edge" value={prediction.edge ? `${Number(prediction.edge).toFixed(1)} pp` : "—"} accent={isPositive} />
+        <Metric label="Consens" value={prediction.consensusScore ? `${Number(prediction.consensusScore).toFixed(0)}%` : "—"} />
       </div>
 
       {ev !== null && (
@@ -90,6 +92,8 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
         </div>
       )}
       {prediction.valueStatus !== "positive" && <div className="relative mt-3 rounded-xl border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-xs leading-5 text-amber-100">Avantajul estimat nu este pozitiv la prețul actual; selecția rămâne informativă și nu intră în acumulatorul automat.</div>}
+
+      {prediction.contextScore && <div className="relative mt-3 flex items-center justify-between rounded-xl border border-border/60 bg-background/25 px-3 py-2.5"><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-primary">Context model</p><p className="mt-1 text-xs text-muted-foreground">Încredere, xG și semnalele disponibile din feed.</p></div><p className="font-mono text-lg font-semibold text-foreground">{Number(prediction.contextScore).toFixed(0)}<span className="text-xs text-muted-foreground">/100</span></p></div>}
 
       {odds !== null && openingOdds !== null && <div className={`relative mt-3 flex items-center gap-2 text-xs ${isShortening ? "text-amber-200" : "text-emerald-300"}`}>{isShortening ? <TrendingDown className="h-3.5 w-3.5" /> : <TrendingUp className="h-3.5 w-3.5" />}<span>Deschidere {openingOdds.toFixed(2)} → acum {odds.toFixed(2)} · {isShortening ? "scădere" : "creștere"} {Math.abs(movementPercent ?? 0).toFixed(1)}%{isShortening && odds < openingOdds * 0.95 ? " · avantajul s-a redus" : ""}</span></div>}
 

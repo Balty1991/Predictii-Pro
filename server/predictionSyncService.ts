@@ -106,6 +106,7 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 3, m
           expectedValue: toDecimal(selection.expectedValue),
           edge: toDecimal(selection.edge),
           contextScore: toDecimal(selection.contextScore),
+          consensusScore: toDecimal(selection.consensusScore),
           grade: selection.grade,
           valueStatus: selection.expectedValue === null ? "unavailable" : selection.expectedValue > 0 ? "positive" : selection.expectedValue === 0 ? "neutral" : "negative",
           recommendationStatus: selection.recommendationStatus,

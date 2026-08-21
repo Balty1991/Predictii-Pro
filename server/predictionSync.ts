@@ -1,4 +1,4 @@
-import { calculateFairOdds, calculateSelectionMetrics } from "./predictionMath";
+import { calculateConsensusScore, calculateFairOdds, calculateSelectionMetrics } from "./predictionMath";
 import type { ApiOdds, ApiPrediction } from "./sportsApi";
 
 export type NormalizedSelection = {
@@ -12,6 +12,7 @@ export type NormalizedSelection = {
   expectedValue: number | null;
   impliedProbability: number | null;
   fairOdds: number | null;
+  consensusScore: number | null;
   edge: number | null;
   grade: "A_PLUS" | "A" | "B" | "C" | "D" | "WATCH" | null;
   contextScore: number;
@@ -89,6 +90,9 @@ export function normalizePredictionSelections(prediction: ApiPrediction, odds: A
     const reasonCodes = [
       `Probabilitate model: ${definition.probability.toFixed(1)}%`,
       `Încredere model: ${Math.round((prediction.model?.confidence ?? 0) * 100)}%`,
+      prediction.markets.expected_goals?.home !== undefined && prediction.markets.expected_goals?.away !== undefined
+        ? `xG model: ${prediction.markets.expected_goals.home.toFixed(2)} – ${prediction.markets.expected_goals.away.toFixed(2)}`
+        : "xG contextual indisponibil în feed",
       price?.movement ? `Cota este în mișcare: ${price.movement}` : "Fără semnal recent de mișcare a cotei",
     ];
 
@@ -103,6 +107,7 @@ export function normalizePredictionSelections(prediction: ApiPrediction, odds: A
       expectedValue: metrics?.expectedValue ?? null,
       impliedProbability: metrics?.impliedProbability ?? null,
       fairOdds: metrics?.fairOdds ?? calculateFairOdds(definition.probability),
+      consensusScore: calculateConsensusScore(definition.probability, metrics?.impliedProbability),
       edge: metrics?.edge ?? null,
       grade: metrics?.grade ?? null,
       contextScore: buildContextScore(prediction, definition.recommended),
