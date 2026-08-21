@@ -66,3 +66,7 @@
 - [x] Afișarea stării indisponibilității cotelor live și a reîncercării programate direct în tabloul principal de Meciuri.
 - [x] Extinderea semnăturii de brand și a marcajelor de semnal în Meciuri, Acumulatoare, Piramide, Istoric și Profil.
 - [ ] Rafinarea ierarhiei tipografice și a spațierii în listele de evenimente și cardurile de strategie, verificată pe mobil și desktop.
+- [x] Contorizarea și documentarea cererilor externe pe fiecare sincronizare, pentru a avea un buget explicit de apeluri către furnizor.
+- [x] Aplicarea unui cooldown server-side pentru actualizarea manuală, astfel încât apăsările repetate să nu consume cota zilnică.
+- [ ] Limitarea sincronizării zilnice la predicțiile și piețele necesare fluxurilor de Acumulatoare și Piramide, cu validare a numărului de apeluri.
+- [ ] Restrângerea explicită a sincronizării la selecțiile eligibile pentru Acumulatoare și Piramide, cu test pentru relevanța evenimentelor și piețelor procesate.

@@ -63,6 +63,8 @@ export type ApiOdds = {
   [key: string]: unknown;
 };
 
+export const ODDS_SYNC_MARKETS = ["1x2", "over_under_15", "over_under_25", "btts"] as const;
+
 const apiEventSchema: z.ZodType<ApiEvent> = z.object({
   id: z.number().int(),
   event_date: z.string(),

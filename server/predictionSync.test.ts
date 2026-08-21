@@ -1,8 +1,25 @@
 import { describe, expect, it } from "vitest";
 import { normalizePredictionSelections } from "./predictionSync";
+import { getManualRefreshCooldownSeconds, hasStrategyEligibleOdds, MAX_EXTERNAL_CALLS_PER_SYNC } from "./predictionSyncService";
 import type { ApiPrediction } from "./sportsApi";
 
 describe("prediction mapping", () => {
+  it("limitează bugetul unei sincronizări complete la cinci cereri externe", () => {
+    expect(MAX_EXTERNAL_CALLS_PER_SYNC).toBe(5);
+  });
+
+  it("blochează actualizarea manuală în primele 20 de minute după o sincronizare", () => {
+    const completedAt = new Date("2026-08-22T00:00:00.000Z");
+    expect(getManualRefreshCooldownSeconds(completedAt, Date.parse("2026-08-22T00:05:00.000Z"))).toBe(900);
+    expect(getManualRefreshCooldownSeconds(completedAt, Date.parse("2026-08-22T00:20:00.000Z"))).toBe(0);
+  });
+
+  it("procesează numai evenimente cu cote reale utile pentru strategie", () => {
+    expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 1.35 }])).toBe(true);
+    expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 1.08 }])).toBe(false);
+    expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 2.8 }])).toBe(false);
+  });
+
   it("maps predicted markets and best available odds without creating unsupported selections", () => {
     const prediction: ApiPrediction = {
       id: 1,

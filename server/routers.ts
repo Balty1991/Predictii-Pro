@@ -6,7 +6,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { buildAccumulator, projectPyramidStep } from "./predictionMath";
 import { generatePredictionExplanation, generatePredictionExplanationsBatch } from "./predictionExplanation";
-import { synchronizePredictions } from "./predictionSyncService";
+import { getManualRefreshCooldownSeconds, synchronizePredictions } from "./predictionSyncService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -33,7 +33,14 @@ export const appRouter = router({
     statistics: protectedProcedure.query(() => db.getStatistics()),
     syncStatus: protectedProcedure.query(() => db.getLatestSportsSyncStatus()),
     oddsHistory: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).query(({ input }) => db.getSelectionOddsHistory(input.selectionId)),
-    refresh: adminProcedure.mutation(() => synchronizePredictions()),
+    refresh: adminProcedure.mutation(async () => {
+      const lastRun = await db.getLatestSportsSyncStatus();
+      const retryInSeconds = getManualRefreshCooldownSeconds(lastRun?.completedAt);
+      if (retryInSeconds > 0) {
+        return { status: "skipped" as const, savedPredictions: 0, savedSelections: 0, incompleteOdds: 0, generatedExplanations: 0, externalCalls: 0, retryInSeconds };
+      }
+      return synchronizePredictions();
+    }),
     explain: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).mutation(async ({ input }) => {
       const selection = await db.getSelectionExplanationInput(input.selectionId);
       if (!selection) throw new Error("Selecția nu a fost găsită.");

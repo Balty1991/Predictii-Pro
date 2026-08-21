@@ -37,10 +37,15 @@ export default function Dashboard() {
   const explainPrediction = trpc.predictions.explain.useMutation({ onSuccess: () => { utils.predictions.list.invalidate(); toast.success("Explicația AI a fost adăugată selecției."); }, onError: error => toast.error(error.message) });
   const refresh = trpc.predictions.refresh.useMutation({
     onSuccess: result => {
+      if (result.status === "skipped") {
+        const retryInSeconds = "retryInSeconds" in result ? result.retryInSeconds : 60;
+        toast.info(`Actualizarea este în pauză pentru a proteja cota furnizorului. Reîncearcă peste aproximativ ${Math.max(1, Math.ceil(retryInSeconds / 60))} minute.`);
+        return;
+      }
       if (result.incompleteOdds > 0) {
-        toast.warning(`Sincronizare parțială: ${result.savedSelections} selecții procesate, dar ${result.incompleteOdds} evenimente nu au primit cote. Reîncercarea este automată.`);
+        toast.warning(`Sincronizare parțială: ${result.savedSelections} selecții procesate prin ${result.externalCalls} cereri externe, dar ${result.incompleteOdds} evenimente nu au primit cote. Reîncercarea este automată.`);
       } else {
-        toast.success(`Sincronizare finalizată: ${result.savedSelections} selecții procesate cu cote disponibile.`);
+        toast.success(`Sincronizare finalizată: ${result.savedSelections} selecții procesate prin ${result.externalCalls} cereri externe.`);
       }
       utils.predictions.list.invalidate();
       utils.predictions.statistics.invalidate();

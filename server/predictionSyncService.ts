@@ -1,7 +1,22 @@
 import * as db from "./db";
 import { generatePredictionExplanationsBatch, type ExplanationInput } from "./predictionExplanation";
 import { normalizePredictionSelections } from "./predictionSync";
-import { fetchBestOddsForWindow, fetchPredictions, type ApiOdds } from "./sportsApi";
+import { fetchBestOddsForWindow, fetchPredictions, ODDS_SYNC_MARKETS, type ApiOdds } from "./sportsApi";
+
+export const MAX_EXTERNAL_CALLS_PER_SYNC = 1 + ODDS_SYNC_MARKETS.length;
+export const MANUAL_SYNC_COOLDOWN_MS = 20 * 60 * 1000;
+
+export function getManualRefreshCooldownSeconds(completedAt: Date | null | undefined, now = Date.now()) {
+  if (!completedAt) return 0;
+  return Math.max(0, Math.ceil((MANUAL_SYNC_COOLDOWN_MS - (now - completedAt.getTime())) / 1000));
+}
+
+export function hasStrategyEligibleOdds(odds: ApiOdds[]) {
+  return odds.some(item => {
+    const price = Number(item.decimal_odds);
+    return Number.isFinite(price) && price >= 1.2 && price <= 2.1;
+  });
+}
 
 const toDateString = (date: Date) => date.toISOString().slice(0, 10);
 const toDecimal = (value: number | null | undefined) => value === null || value === undefined ? null : value.toFixed(4);
@@ -17,7 +32,7 @@ function normalizeEventStatus(status: string): "upcoming" | "live" | "finished" 
   return "unresolved";
 }
 
-export async function synchronizePredictions(from = new Date(), daysAhead = 2, maxEvents = 12, scheduleCronTaskUid?: string) {
+export async function synchronizePredictions(from = new Date(), daysAhead = 2, maxEvents = 8, scheduleCronTaskUid?: string) {
   const until = new Date(from);
   until.setUTCDate(until.getUTCDate() + daysAhead);
   const runId = await db.startSyncRun("daily_predictions", scheduleCronTaskUid);
@@ -25,17 +40,19 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
   let savedSelections = 0;
   let incompleteOdds = 0;
   let generatedExplanations = 0;
+  let externalCalls = 0;
   const explanationQueue: Array<ExplanationInput & { selectionId: number }> = [];
 
   try {
+    externalCalls += 1;
     const payload = await fetchPredictions(toDateString(from), toDateString(until));
     const upcomingPredictions = payload.results
       .filter(prediction => normalizeEventStatus(prediction.event.status) === "upcoming");
     const oddsByProviderEvent = new Map<number, ApiOdds[]>();
     let bulkOddsAvailable = true;
-    const oddsMarkets = ["1x2", "over_under_15", "over_under_25", "over_under_35", "btts"];
-    for (const market of oddsMarkets) {
+    for (const market of ODDS_SYNC_MARKETS) {
       try {
+        externalCalls += 1;
         const response = await fetchBestOddsForWindow(market, toDateString(from), toDateString(until));
         for (const item of response.results) {
           const current = oddsByProviderEvent.get(item.event_id) ?? [];
@@ -47,8 +64,8 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
         break;
       }
     }
-    const eligiblePredictions = [...upcomingPredictions]
-      .sort((left, right) => Number(oddsByProviderEvent.has(right.event.id)) - Number(oddsByProviderEvent.has(left.event.id)))
+    const eligiblePredictions = upcomingPredictions
+      .filter(prediction => hasStrategyEligibleOdds(oddsByProviderEvent.get(prediction.event.id) ?? []))
       .slice(0, maxEvents);
     for (const prediction of eligiblePredictions) {
       const event = prediction.event;
@@ -127,7 +144,7 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
           reasonCodes: selection.reasonCodes,
         });
 
-        if (!saved.aiExplanation) {
+        if (!saved.aiExplanation && selection.recommendationStatus === "recommended") {
           explanationQueue.push({
             selectionId: saved.id,
             fixture: `${event.home_team} – ${event.away_team}`,
@@ -147,21 +164,18 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
       savedPredictions += 1;
     }
 
-    for (let offset = 0; offset < explanationQueue.length; offset += 12) {
-      const batch = explanationQueue.slice(offset, offset + 12);
-      const generated = await generatePredictionExplanationsBatch(batch);
-      for (const item of generated) {
-        await db.updateSelectionExplanation(item.selectionId, item.explanation);
-        generatedExplanations += 1;
-      }
+    const generated = await generatePredictionExplanationsBatch(explanationQueue.slice(0, 8));
+    for (const item of generated) {
+      await db.updateSelectionExplanation(item.selectionId, item.explanation);
+      generatedExplanations += 1;
     }
 
     const status = incompleteOdds ? "partial" : "completed";
-    await db.completeSyncRun(runId, status, { savedPredictions, savedSelections, incompleteOdds, generatedExplanations, totalProviderPredictions: payload.count, processedEvents: eligiblePredictions.length });
-    return { savedPredictions, savedSelections, incompleteOdds, generatedExplanations, status };
+    await db.completeSyncRun(runId, status, { savedPredictions, savedSelections, incompleteOdds, generatedExplanations, externalCalls, externalCallBudget: MAX_EXTERNAL_CALLS_PER_SYNC, totalProviderPredictions: payload.count, processedEvents: eligiblePredictions.length });
+    return { savedPredictions, savedSelections, incompleteOdds, generatedExplanations, externalCalls, status };
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown synchronization error";
-    await db.completeSyncRun(runId, "failed", { savedPredictions, savedSelections, incompleteOdds }, message);
+    await db.completeSyncRun(runId, "failed", { savedPredictions, savedSelections, incompleteOdds, externalCalls }, message);
     throw error;
   }
 }
