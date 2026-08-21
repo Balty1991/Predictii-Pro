@@ -6,7 +6,7 @@
 - [x] Implementarea clientului server-side pentru API, cu validare de răspuns, gestionare de erori și protecție față de date incomplete.
 - [x] Implementarea tabelelor, migrației și procedurilor pentru predicții, rezultate, favorite și statistici.
 - [x] Implementarea sincronizării automate zilnice a evenimentelor, cotelor, predicțiilor și rezultatelor confirmate.
-- [ ] Implementarea explicațiilor AI generate pentru fiecare predicție, afișate direct în cardul predicției.
+- [x] Implementarea explicațiilor AI generate pentru fiecare predicție, afișate direct în cardul predicției.
 - [x] Construirea tabloului de bord premium cu predicțiile zilei, grupare pe sport și competiție și filtre rapide.
 - [x] Construirea paginii de rezultate, a istoricului și a indicatorilor de performanță pe sport și tip de pariu.
 - [x] Implementarea profilului utilizatorului, autentificării Manus OAuth și salvării de predicții favorite.
