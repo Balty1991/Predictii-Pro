@@ -55,7 +55,7 @@
 - [ ] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
 - [ ] Validarea end-to-end pe telefon: sincronizare → selecție reală → acumulator/piramidă → asociere → urmărire rezultat.
 - [x] Reconstruirea meniului mobil ca navigare de produs orientată pe fluxul zilnic: Meciuri, Acumulatoare, Piramide și Istoric.
-- [ ] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.
+- [x] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.
 - [ ] Reorganizarea afișării evenimentelor în liste profesioniste cu oră, echipe, piață, cotă, încredere și acțiune clară, fără carduri decorative redundante.
 - [ ] Stabilirea unei identități vizuale mai puternice, cu ierarhie tipografică, spațiere și componente distinctive pentru a depăși estetica actuală de dashboard generic.
 - [ ] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
