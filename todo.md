@@ -32,5 +32,6 @@
 - [x] Verificarea accesului public la aplicația Predicții Pro prin domeniul de producție Manus.
 - [x] Audit comparativ VEYRA și BETPREDICT, cu standarde măsurabile de viteză, claritate, automatizare și analiză pentru Predicții Pro.
 - [ ] Rafinarea funcțiilor și interfeței Predicții Pro pentru a depăși aplicațiile de referință prin experiență și utilitate practică.
-- [ ] Crearea unui portal public GitHub Pages pentru Predicții Pro, cu acces clar către aplicația full-stack securizată.
-- [ ] Configurarea și verificarea publicării portalului prin GitHub Pages.
+- [x] Crearea unui portal public GitHub Pages pentru Predicții Pro, cu acces clar către aplicația full-stack securizată.
+- [x] Configurarea și verificarea publicării portalului prin GitHub Pages.
+- [x] Activarea manuală a sursei GitHub Actions pentru Pages și confirmarea rulării workflow-ului publicat.
