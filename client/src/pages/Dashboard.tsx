@@ -31,6 +31,7 @@ export default function Dashboard() {
   const [visibleCount, setVisibleCount] = useState(32);
   const predictionsQuery = trpc.predictions.list.useQuery();
   const statsQuery = trpc.predictions.statistics.useQuery();
+  const syncStatus = trpc.predictions.syncStatus.useQuery();
   const toggleFavorite = trpc.favorites.toggle.useMutation({ onSuccess: () => utils.predictions.list.invalidate() });
   const explainPrediction = trpc.predictions.explain.useMutation({ onSuccess: () => { utils.predictions.list.invalidate(); toast.success("Explicația AI a fost adăugată selecției."); }, onError: error => toast.error(error.message) });
   const refresh = trpc.predictions.refresh.useMutation({
@@ -91,6 +92,7 @@ export default function Dashboard() {
   const stats = statsQuery.data;
   const winRate = stats && stats.won + stats.lost > 0 ? Math.round((stats.won / (stats.won + stats.lost)) * 100) : null;
   const focusPick = filteredPredictions.find(item => item.recommendationStatus === "recommended" && item.valueStatus === "positive") ?? filteredPredictions[0];
+  const quotaUnavailable = syncStatus.data?.status === "failed" && syncStatus.data.errorMessage?.includes("limita zilnică");
 
   return <DashboardLayout>
     <div className="mx-auto max-w-[1500px] space-y-5 pb-6 sm:space-y-6">
@@ -112,6 +114,8 @@ export default function Dashboard() {
           {user?.role === "admin" && <div className="flex flex-col gap-2 sm:flex-row"><Button size="sm" variant="outline" onClick={() => generateMissingExplanations.mutate({ limit: 12 })} disabled={generateMissingExplanations.isPending} className="min-h-10 rounded-lg"><Sparkles className={`mr-2 h-3.5 w-3.5 ${generateMissingExplanations.isPending ? "animate-pulse" : ""}`} /> Analize AI</Button><Button size="sm" onClick={() => refresh.mutate()} disabled={refresh.isPending} className="min-h-10 rounded-lg"><RefreshCw className={`mr-2 h-3.5 w-3.5 ${refresh.isPending ? "animate-spin" : ""}`} /> Actualizează fluxul</Button></div>}
         </div>
       </header>
+
+      {quotaUnavailable && <section className="flex items-start gap-3 rounded-2xl border border-amber-300/20 bg-amber-300/5 p-4 text-sm leading-6 text-amber-50/85"><CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" /><p><strong className="font-semibold text-amber-200">Cote live în pauză.</strong> Limita zilnică a furnizorului a fost atinsă, astfel că prețurile lipsă nu sunt estimate. Aplicația va reîncerca automat după resetarea sursei.</p></section>}
 
       {focusPick && <section className="relative overflow-hidden rounded-3xl border border-primary/25 bg-[linear-gradient(120deg,rgba(70,202,142,0.13),rgba(12,18,28,0.78)_54%)] p-5 shadow-[0_20px_64px_rgba(0,0,0,0.18)] sm:rounded-[2rem] sm:p-6"><div className="absolute -right-8 -top-10 h-48 w-48 rounded-full bg-primary/15 blur-3xl" /><div className="relative grid gap-4 sm:gap-5 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary sm:text-xs">Semnal prioritar</p><div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 sm:mt-3"><h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">{focusPick.homeTeam} <span className="text-muted-foreground">—</span> {focusPick.awayTeam}</h2><span className="text-xs text-muted-foreground sm:text-sm">{focusPick.startsAt.toLocaleString("ro-RO", { dateStyle: "medium", timeStyle: "short" })}</span></div><p className="mt-2 text-sm text-muted-foreground">{focusPick.competition ?? "Competiție"} · {focusPick.label}</p></div><div className="grid grid-cols-3 gap-2 rounded-2xl border border-border/65 bg-background/35 p-3 text-center"><HeaderMetric label="Cotă" value={focusPick.currentOdds ? Number(focusPick.currentOdds).toFixed(2) : "—"} /><HeaderMetric label="Prob." value={`${Number(focusPick.probability).toFixed(0)}%`} /><HeaderMetric label="Edge" value={focusPick.edge ? `+${Number(focusPick.edge).toFixed(1)}` : "—"} accent /></div></div></section>}
 

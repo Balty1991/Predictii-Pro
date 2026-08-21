@@ -63,3 +63,4 @@
 - [ ] Confirmarea funcțională că Acumulatoare și Piramide livrează selecții reale, nu scenarii simulate, imediat ce feedul furnizorului poate furniza cote eligibile.
 - [x] Remedierea rutei mobile Istoric, astfel încât opțiunea din meniu să deschidă pagina de performanță și rezultate în loc de 404.
 - [x] Verificarea mobilă a rutei Istoric după remediere, pentru a confirma deschiderea paginii de performanță din meniul inferior.
+- [x] Afișarea stării indisponibilității cotelor live și a reîncercării programate direct în tabloul principal de Meciuri.
