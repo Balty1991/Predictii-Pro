@@ -86,12 +86,20 @@ export const appRouter = router({
           input.maxSelections,
         );
       }),
+    create: protectedProcedure.input(z.object({
+      title: z.string().min(2).max(160),
+      ticketType: z.enum(["daily", "long_run", "custom"]),
+      selectionIds: z.array(z.number().int().positive()).min(2).max(4),
+      stake: z.number().positive().max(100000),
+    })).mutation(({ ctx, input }) => db.createAccumulatorTicket({ userId: ctx.user.id, ...input })),
+    list: protectedProcedure.query(({ ctx }) => db.listAccumulatorTickets(ctx.user.id)),
   }),
   pyramids: router({
     list: protectedProcedure.query(async ({ ctx }) => {
       const plans = await db.listPyramidPlans(ctx.user.id);
-      return plans.map(plan => ({
+      return Promise.all(plans.map(async plan => ({
         ...plan,
+        steps: await db.listPyramidSteps(ctx.user.id, plan.id),
         projection: projectPyramidStep({
           baseStake: Number(plan.baseStake),
           currentBankroll: Number(plan.currentBankroll),
@@ -102,7 +110,7 @@ export const appRouter = router({
           maxSteps: plan.maxSteps,
           targetOdds: (Number(plan.targetOddsMin) + Number(plan.targetOddsMax)) / 2,
         }),
-      }));
+      })));
     }),
     create: protectedProcedure.input(z.object({
       title: z.string().min(2).max(120),
@@ -124,6 +132,11 @@ export const appRouter = router({
         profitLockRate: input.profitLockRate.toFixed(4),
         maxSteps: input.maxSteps,
       })),
+    settleStep: protectedProcedure.input(z.object({
+      pyramidPlanId: z.number().int().positive(),
+      outcome: z.enum(["won", "lost", "void"]),
+      resultNote: z.string().max(240).optional(),
+    })).mutation(({ ctx, input }) => db.settlePyramidStep({ userId: ctx.user.id, ...input })),
   }),
   profile: router({
     notificationPreferences: protectedProcedure.query(({ ctx }) => db.ensureNotificationPreferences(ctx.user.id)),

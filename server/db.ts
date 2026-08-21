@@ -1,4 +1,4 @@
-import { asc, desc, eq, sql } from "drizzle-orm";
+import { asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
@@ -7,6 +7,7 @@ import {
   predictionFavorites,
   predictionSelections,
   predictionTickets,
+  ticketSelections,
   providerPredictions,
   pyramidPlans,
   pyramidSteps,
@@ -16,6 +17,7 @@ import {
   users,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
+import { projectPyramidStep } from "./predictionMath";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -331,6 +333,72 @@ export async function listPyramidPlans(userId: number) {
   return db.select().from(pyramidPlans).where(eq(pyramidPlans.userId, userId)).orderBy(desc(pyramidPlans.updatedAt));
 }
 
+export async function listPyramidSteps(userId: number, pyramidPlanId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  const plan = (await db.select({ id: pyramidPlans.id }).from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${pyramidPlanId} AND ${pyramidPlans.userId} = ${userId}`).limit(1))[0];
+  if (!plan) return [];
+  return db.select().from(pyramidSteps).where(eq(pyramidSteps.pyramidPlanId, plan.id)).orderBy(asc(pyramidSteps.stepNumber));
+}
+
+export async function settlePyramidStep(input: {
+  userId: number;
+  pyramidPlanId: number;
+  outcome: "won" | "lost" | "void";
+  resultNote?: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const plan = (await db.select().from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${input.pyramidPlanId} AND ${pyramidPlans.userId} = ${input.userId}`).limit(1))[0];
+  if (!plan) throw new Error("Planul de piramidă nu a fost găsit.");
+  if (plan.status !== "active") throw new Error("Planul nu este activ.");
+  const step = (await db.select().from(pyramidSteps)
+    .where(sql`${pyramidSteps.pyramidPlanId} = ${plan.id} AND ${pyramidSteps.status} = 'active'`).limit(1))[0];
+  if (!step) throw new Error("Nu există un pas activ de decontat.");
+
+  const stake = Number(step.stake);
+  const targetOdds = (Number(plan.targetOddsMin) + Number(plan.targetOddsMax)) / 2;
+  const projectedReturn = stake * targetOdds;
+  const profitLoss = input.outcome === "won" ? projectedReturn - stake : input.outcome === "lost" ? -stake : 0;
+  const nextBankroll = Math.max(0, Number(plan.currentBankroll) + profitLoss);
+  await db.update(pyramidSteps).set({
+    status: input.outcome,
+    projectedReturn: projectedReturn.toFixed(2),
+    profitLoss: profitLoss.toFixed(2),
+    resultNote: input.resultNote ?? null,
+    settledAt: new Date(),
+  }).where(eq(pyramidSteps.id, step.id));
+
+  if (input.outcome === "won" && plan.currentStep < plan.maxSteps) {
+    const nextStepNumber = plan.currentStep + 1;
+    const projection = projectPyramidStep({
+      baseStake: Number(plan.baseStake),
+      currentBankroll: nextBankroll,
+      initialBankroll: Number(plan.baseStake),
+      reinvestRate: Number(plan.reinvestRate),
+      profitLockRate: Number(plan.profitLockRate),
+      currentStep: nextStepNumber,
+      maxSteps: plan.maxSteps,
+      targetOdds,
+    });
+    await db.insert(pyramidSteps).values({
+      pyramidPlanId: plan.id,
+      stepNumber: nextStepNumber,
+      stake: projection.stake.toFixed(2),
+      retainedProfit: projection.retainedProfit.toFixed(2),
+      projectedReturn: projection.projectedReturn.toFixed(2),
+      status: "active",
+    });
+    await db.update(pyramidPlans).set({ currentBankroll: nextBankroll.toFixed(2), currentStep: nextStepNumber }).where(eq(pyramidPlans.id, plan.id));
+  } else {
+    const status = input.outcome === "won" ? "completed" : input.outcome === "lost" ? "reset" : "paused";
+    await db.update(pyramidPlans).set({ currentBankroll: nextBankroll.toFixed(2), status }).where(eq(pyramidPlans.id, plan.id));
+  }
+  return { outcome: input.outcome, profitLoss, currentBankroll: nextBankroll };
+}
+
 export async function updateSelectionExplanation(selectionId: number, explanation: string) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
@@ -395,6 +463,7 @@ export async function settlePredictionSelection(selectionId: number, status: "wo
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
   await db.update(predictionSelections).set({ settlementStatus: status, settledAt: new Date() }).where(eq(predictionSelections.id, selectionId));
+  await settleTicketsForSelection(selectionId, status);
 }
 
 export async function notifyUsersAboutConfirmedResults(dateLabel: string, count: number) {
@@ -473,4 +542,77 @@ export async function getPerformanceBreakdown() {
     winRate: item.won + item.lost ? Number(((item.won / (item.won + item.lost)) * 100).toFixed(1)) : null,
     avgOdds: item.oddsCount ? Number((item.oddsTotal / item.oddsCount).toFixed(2)) : null,
   })).sort((a, b) => b.total - a.total);
+}
+
+export async function createAccumulatorTicket(input: {
+  userId: number;
+  title: string;
+  ticketType: "daily" | "long_run" | "custom";
+  selectionIds: number[];
+  stake: number;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const uniqueIds = Array.from(new Set(input.selectionIds));
+  if (uniqueIds.length < 2 || uniqueIds.length > 4) throw new Error("Un acumulator trebuie să conțină între 2 și 4 selecții.");
+  const selections = await db.select({
+    id: predictionSelections.id,
+    odds: predictionSelections.currentOdds,
+    probability: predictionSelections.predictedProbability,
+  }).from(predictionSelections).where(inArray(predictionSelections.id, uniqueIds));
+  if (selections.length !== uniqueIds.length || selections.some(item => !item.odds)) throw new Error("Una sau mai multe selecții nu mai au o cotă disponibilă.");
+  const totalOdds = selections.reduce((total, item) => total * Number(item.odds), 1);
+  const combinedProbability = selections.reduce((total, item) => total * (Number(item.probability) / 100), 1) * 100;
+  const expectedValue = ((combinedProbability / 100) * totalOdds - 1) * 100;
+  const result = await db.insert(predictionTickets).values({
+    createdByUserId: input.userId,
+    title: input.title,
+    ticketType: input.ticketType,
+    totalOdds: totalOdds.toFixed(3),
+    targetOdds: totalOdds.toFixed(3),
+    combinedProbability: combinedProbability.toFixed(2),
+    expectedValue: expectedValue.toFixed(4),
+    stake: input.stake.toFixed(2),
+    status: "published",
+  });
+  const ticketId = Number(result[0].insertId);
+  await db.insert(ticketSelections).values(selections.map((selection, index) => ({
+    ticketId,
+    predictionSelectionId: selection.id,
+    position: index + 1,
+    oddsAtSelection: Number(selection.odds).toFixed(3),
+  })));
+  return (await db.select().from(predictionTickets).where(eq(predictionTickets.id, ticketId)).limit(1))[0];
+}
+
+export async function listAccumulatorTickets(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  const tickets = await db.select().from(predictionTickets)
+    .where(eq(predictionTickets.createdByUserId, userId)).orderBy(desc(predictionTickets.createdAt));
+  return Promise.all(tickets.map(async ticket => ({
+    ...ticket,
+    selections: await db.select().from(ticketSelections).where(eq(ticketSelections.ticketId, ticket.id)).orderBy(asc(ticketSelections.position)),
+  })));
+}
+
+async function settleTicketsForSelection(selectionId: number, selectionStatus: "won" | "lost" | "void" | "cancelled") {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const links = await db.select().from(ticketSelections).where(eq(ticketSelections.predictionSelectionId, selectionId));
+  for (const link of links) {
+    await db.update(ticketSelections).set({ status: selectionStatus }).where(eq(ticketSelections.id, link.id));
+    const items = await db.select().from(ticketSelections).where(eq(ticketSelections.ticketId, link.ticketId));
+    const ticket = (await db.select().from(predictionTickets).where(eq(predictionTickets.id, link.ticketId)).limit(1))[0];
+    if (!ticket || !["published", "draft"].includes(ticket.status)) continue;
+    const statuses = items.map(item => item.status);
+    if (statuses.includes("lost")) {
+      await db.update(predictionTickets).set({ status: "lost", profitLoss: (-Number(ticket.stake)).toFixed(2), settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+    } else if (statuses.every(item => item === "won")) {
+      const profitLoss = Number(ticket.stake) * Number(ticket.totalOdds) - Number(ticket.stake);
+      await db.update(predictionTickets).set({ status: "won", profitLoss: profitLoss.toFixed(2), settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+    } else if (statuses.every(item => ["won", "void", "cancelled"].includes(item))) {
+      await db.update(predictionTickets).set({ status: "void", profitLoss: "0.00", settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+    }
+  }
 }

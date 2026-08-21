@@ -183,6 +183,8 @@ export const predictionTickets = mysqlTable(
     totalOdds: decimal("totalOdds", { precision: 8, scale: 3 }).notNull(),
     combinedProbability: decimal("combinedProbability", { precision: 6, scale: 2 }),
     expectedValue: decimal("expectedValue", { precision: 7, scale: 4 }),
+    stake: decimal("stake", { precision: 10, scale: 2 }).default("0.00").notNull(),
+    profitLoss: decimal("profitLoss", { precision: 10, scale: 2 }),
     riskLevel: mysqlEnum("riskLevel", ["conservative", "balanced", "growth", "aggressive"])
       .default("balanced")
       .notNull(),
@@ -262,6 +264,8 @@ export const pyramidSteps = mysqlTable(
     stake: decimal("stake", { precision: 10, scale: 2 }).notNull(),
     retainedProfit: decimal("retainedProfit", { precision: 10, scale: 2 }).default("0.00").notNull(),
     projectedReturn: decimal("projectedReturn", { precision: 10, scale: 2 }),
+    profitLoss: decimal("profitLoss", { precision: 10, scale: 2 }),
+    resultNote: text("resultNote"),
     status: mysqlEnum("status", ["planned", "active", "won", "lost", "void", "skipped"])
       .default("planned")
       .notNull(),
