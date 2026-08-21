@@ -5,19 +5,19 @@
 - [x] Configurarea variabilelor de mediu securizate necesare pentru integrarea API-ului de predicții.
 - [x] Implementarea clientului server-side pentru API, cu validare de răspuns, gestionare de erori și protecție față de date incomplete.
 - [x] Implementarea tabelelor, migrației și procedurilor pentru predicții, rezultate, favorite și statistici.
-- [ ] Implementarea sincronizării automate zilnice a evenimentelor, cotelor, predicțiilor și rezultatelor confirmate.
+- [x] Implementarea sincronizării automate zilnice a evenimentelor, cotelor, predicțiilor și rezultatelor confirmate.
 - [ ] Implementarea explicațiilor AI generate pentru fiecare predicție, afișate direct în cardul predicției.
 - [x] Construirea tabloului de bord premium cu predicțiile zilei, grupare pe sport și competiție și filtre rapide.
 - [x] Construirea paginii de rezultate, a istoricului și a indicatorilor de performanță pe sport și tip de pariu.
 - [x] Implementarea profilului utilizatorului, autentificării Manus OAuth și salvării de predicții favorite.
-- [ ] Implementarea notificărilor pentru owner și utilizatori la publicarea predicțiilor zilnice și confirmarea rezultatelor.
+- [x] Implementarea notificărilor pentru owner și utilizatori la publicarea predicțiilor zilnice și confirmarea rezultatelor.
 - [x] Adăugarea stărilor de încărcare, gol și eroare, precum și a comportamentului responsiv și accesibil.
 - [x] Scrierea și rularea testelor Vitest pentru logica de integrare, statisticile de performanță și fluxurile principale.
 - [ ] Verificarea vizuală desktop și mobil, corectarea problemelor și salvarea unui checkpoint final.
 - [x] Implementarea generatorului de bilete acumulator cu variante zilnice și pe perioade configurabile.
 - [x] Implementarea profilurilor de risc pentru cote țintă, inclusiv 1.20, 1.40, 2.00 și valori definite de utilizator.
 - [x] Implementarea constructorului de piramide cu număr configurabil de pași, miză inițială, reinvestire și simulare transparentă a evoluției capitalului.
-- [ ] Implementarea monitorizării pas-cu-pas pentru piramide și acumulatoare, cu statut câștigător/pierdut, profit sau pierdere și progres cumulativ.
+- [x] Implementarea monitorizării pas-cu-pas pentru piramide și acumulatoare, cu statut câștigător/pierdut, profit sau pierdere și progres cumulativ.
 - [ ] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
 - [x] Implementarea indicatorului de valoare: probabilitate implicită, cotă corectă, edge și avertizarea când avantajul dispare.
 - [ ] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.

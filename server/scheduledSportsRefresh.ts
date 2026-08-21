@@ -19,7 +19,7 @@ export async function scheduledSportsRefresh(req: Request, res: Response) {
       ? await db.notifyUsersAboutConfirmedResults(dateLabel, resultsSync.settled)
       : 0;
 
-    if (result.savedSelections > 0) {
+    if (result.savedSelections > 0 || resultsSync.settled > 0) {
       await notifyOwner({
         title: "Predicții sincronizate",
         content: `${result.savedSelections} selecții noi și ${resultsSync.settled} rezultate au fost procesate; notificări în aplicație: ${notifiedUsers} pentru predicții, ${resultRecipients} pentru rezultate.`,

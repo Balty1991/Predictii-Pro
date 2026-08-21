@@ -592,7 +592,19 @@ export async function listAccumulatorTickets(userId: number) {
     .where(eq(predictionTickets.createdByUserId, userId)).orderBy(desc(predictionTickets.createdAt));
   return Promise.all(tickets.map(async ticket => ({
     ...ticket,
-    selections: await db.select().from(ticketSelections).where(eq(ticketSelections.ticketId, ticket.id)).orderBy(asc(ticketSelections.position)),
+    selections: await db.select({
+      id: ticketSelections.id,
+      position: ticketSelections.position,
+      oddsAtSelection: ticketSelections.oddsAtSelection,
+      status: ticketSelections.status,
+      label: predictionSelections.label,
+      homeTeam: sportsEvents.homeTeamName,
+      awayTeam: sportsEvents.awayTeamName,
+      startsAt: sportsEvents.startsAt,
+    }).from(ticketSelections)
+      .innerJoin(predictionSelections, eq(ticketSelections.predictionSelectionId, predictionSelections.id))
+      .innerJoin(sportsEvents, eq(predictionSelections.eventId, sportsEvents.id))
+      .where(eq(ticketSelections.ticketId, ticket.id)).orderBy(asc(ticketSelections.position)),
   })));
 }
 
