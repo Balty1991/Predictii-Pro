@@ -13,7 +13,7 @@
 - [x] Implementarea notificărilor pentru owner și utilizatori la publicarea predicțiilor zilnice și confirmarea rezultatelor.
 - [x] Adăugarea stărilor de încărcare, gol și eroare, precum și a comportamentului responsiv și accesibil.
 - [x] Scrierea și rularea testelor Vitest pentru logica de integrare, statisticile de performanță și fluxurile principale.
-- [ ] Verificarea vizuală desktop și mobil, corectarea problemelor și salvarea unui checkpoint final.
+- [x] Verificarea vizuală desktop și mobil, corectarea problemelor și salvarea unui checkpoint final.
 - [x] Implementarea generatorului de bilete acumulator cu variante zilnice și pe perioade configurabile.
 - [x] Implementarea profilurilor de risc pentru cote țintă, inclusiv 1.20, 1.40, 2.00 și valori definite de utilizator.
 - [x] Implementarea constructorului de piramide cu număr configurabil de pași, miză inițială, reinvestire și simulare transparentă a evoluției capitalului.
