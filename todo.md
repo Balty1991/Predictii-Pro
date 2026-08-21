@@ -27,3 +27,10 @@
 - [ ] Implementarea consensului de semnale între modelul API, probabilitatea calculată din cote și, când există, piața de predicții.
 - [ ] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
 - [ ] Implementarea limitelor de risc pentru bilete: corelații, selecții din același meci, concentrarea pe ligă, volatilitate și cotă degradată.
+- [x] Verificarea existenței, vizibilității și accesului utilizatorului la repository-ul GitHub Balty1991/Predictii-Pro.
+- [x] Schimbarea repository-ului GitHub Balty1991/Predictii-Pro din privat în public și verificarea accesului fără autentificare.
+- [x] Verificarea accesului public la aplicația Predicții Pro prin domeniul de producție Manus.
+- [x] Audit comparativ VEYRA și BETPREDICT, cu standarde măsurabile de viteză, claritate, automatizare și analiză pentru Predicții Pro.
+- [ ] Rafinarea funcțiilor și interfeței Predicții Pro pentru a depăși aplicațiile de referință prin experiență și utilitate practică.
+- [ ] Crearea unui portal public GitHub Pages pentru Predicții Pro, cu acces clar către aplicația full-stack securizată.
+- [ ] Configurarea și verificarea publicării portalului prin GitHub Pages.

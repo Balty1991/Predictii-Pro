@@ -48,6 +48,7 @@ export default function Dashboard() {
   }, {}), [visiblePredictions]);
   const stats = statsQuery.data;
   const winRate = stats && stats.won + stats.lost > 0 ? Math.round((stats.won / (stats.won + stats.lost)) * 100) : null;
+  const focusPick = predictions.find(item => item.recommendationStatus === "recommended" && item.valueStatus === "positive") ?? predictions[0];
 
   return <DashboardLayout>
     <div className="mx-auto max-w-7xl space-y-7 pb-12">
@@ -59,6 +60,8 @@ export default function Dashboard() {
         </div>
         {user?.role === "admin" && <Button onClick={() => refresh.mutate()} disabled={refresh.isPending} className="rounded-xl bg-primary px-5 text-primary-foreground hover:bg-primary/90"><RefreshCw className={`mr-2 h-4 w-4 ${refresh.isPending ? "animate-spin" : ""}`} /> Actualizează datele</Button>}
       </header>
+
+      {focusPick && <section className="relative overflow-hidden rounded-[2rem] border border-primary/25 bg-[linear-gradient(120deg,rgba(70,202,142,0.12),rgba(12,18,28,0.76)_55%)] p-6 shadow-[0_20px_64px_rgba(0,0,0,0.2)]"><div className="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-primary/15 blur-3xl" /><div className="relative grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Selecția prioritară</p><h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">{focusPick.homeTeam} <span className="text-muted-foreground">—</span> {focusPick.awayTeam}</h2><p className="mt-2 text-sm text-muted-foreground">{focusPick.competition ?? "Competiție"} · {focusPick.startsAt.toLocaleString("ro-RO", { dateStyle: "medium", timeStyle: "short" })}</p><div className="mt-5 flex flex-wrap gap-2"><span className="rounded-full bg-background/50 px-3 py-1 text-sm font-semibold text-foreground">{focusPick.label}</span><span className="rounded-full bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">Prob. {Number(focusPick.probability).toFixed(1)}%</span>{focusPick.grade && <span className="rounded-full border border-primary/25 px-3 py-1 text-sm font-semibold text-foreground">Grad {focusPick.grade.replace("_", "+")}</span>}</div></div><div className="grid grid-cols-3 gap-2 rounded-2xl border border-border/65 bg-background/35 p-3 text-center"><div><p className="text-[10px] uppercase tracking-wide text-muted-foreground">Cotă</p><p className="mt-1 text-lg font-semibold text-foreground">{focusPick.currentOdds ? Number(focusPick.currentOdds).toFixed(2) : "—"}</p></div><div><p className="text-[10px] uppercase tracking-wide text-muted-foreground">Fair</p><p className="mt-1 text-lg font-semibold text-foreground">{focusPick.fairOdds ? Number(focusPick.fairOdds).toFixed(2) : "—"}</p></div><div><p className="text-[10px] uppercase tracking-wide text-muted-foreground">Edge</p><p className="mt-1 text-lg font-semibold text-primary">{focusPick.edge ? `+${Number(focusPick.edge).toFixed(1)}` : "—"}</p></div></div></div></section>}
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Insight label="Selecții în analiză" value={stats ? String(stats.total) : "—"} note="Toate piețele persistate" />

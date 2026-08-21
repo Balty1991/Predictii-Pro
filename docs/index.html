@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070b12" />
+    <meta name="description" content="Predicții Pro — intelligence sportiv, date verificate și strategii monitorizate." />
+    <title>Predicții Pro · Intelligence sportiv</title>
+    <style>
+      :root { --ink:#070b12; --panel:#0d1420; --panel-2:#111b29; --line:rgba(255,255,255,.1); --text:#eff7f2; --muted:#99aaa4; --signal:#50d592; --signal-soft:rgba(80,213,146,.14); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; min-width:320px; color:var(--text); background:radial-gradient(circle at 12% -12%, rgba(80,213,146,.18), transparent 35rem), radial-gradient(circle at 92% 20%, rgba(36,101,93,.18), transparent 27rem), var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      .shell { width:min(1120px,calc(100% - 40px)); margin:0 auto; }
+      nav { display:flex; align-items:center; justify-content:space-between; min-height:76px; border-bottom:1px solid var(--line); }
+      .brand { display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:.13em; font-size:.85rem; }
+      .mark { display:grid; place-items:center; width:32px; height:32px; border:1px solid rgba(80,213,146,.45); border-radius:9px; background:var(--signal-soft); color:var(--signal); box-shadow:0 0 32px rgba(80,213,146,.16); }
+      .nav-note { color:var(--muted); font-size:.8rem; }
+      .hero { padding:108px 0 74px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:64px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--signal); font-size:.74rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+      .pulse { width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 0 6px rgba(80,213,146,.13); }
+      h1 { margin:18px 0; max-width:720px; font-size:clamp(2.9rem,6vw,5.4rem); line-height:.99; letter-spacing:-.065em; }
+      .lead { max-width:600px; color:var(--muted); font-size:1.09rem; line-height:1.75; }
+      .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+      .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:13px; padding:0 18px; font-size:.91rem; font-weight:750; transition:transform .16s ease, background .16s ease; }
+      .button:hover { transform:translateY(-2px); }
+      .button.primary { background:var(--signal); color:#052115; box-shadow:0 12px 30px rgba(80,213,146,.18); }
+      .button.secondary { border:1px solid var(--line); color:#dce8e1; background:rgba(255,255,255,.025); }
+      .signal-card { position:relative; overflow:hidden; border:1px solid var(--line); border-radius:26px; padding:28px; background:linear-gradient(135deg,rgba(80,213,146,.12),rgba(13,20,32,.88) 55%); box-shadow:0 30px 80px rgba(0,0,0,.25); }
+      .signal-card:after { content:""; position:absolute; width:220px; height:220px; right:-90px; bottom:-120px; border-radius:50%; border:1px solid rgba(80,213,146,.25); box-shadow:0 0 0 28px rgba(80,213,146,.035),0 0 0 58px rgba(80,213,146,.025); }
+      .card-top { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; }
+      .live { color:var(--signal); font-weight:800; }
+      .case { margin:34px 0 26px; font-size:1.5rem; line-height:1.2; font-weight:740; letter-spacing:-.03em; }
+      .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+      .metric { padding:13px 10px; border:1px solid var(--line); border-radius:13px; background:rgba(3,8,14,.33); }
+      .metric b { display:block; color:var(--signal); font-size:1rem; }
+      .metric span { display:block; margin-top:5px; color:var(--muted); font-size:.68rem; line-height:1.25; }
+      .proof { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:22px 0 92px; }
+      .proof article { border-top:1px solid var(--line); padding-top:18px; }
+      .proof strong { display:block; margin-bottom:7px; font-size:.94rem; }
+      .proof p { margin:0; color:var(--muted); font-size:.84rem; line-height:1.55; }
+      .section { border-top:1px solid var(--line); padding:76px 0; }
+      .section h2 { margin:0; max-width:730px; font-size:clamp(1.9rem,4vw,3.1rem); line-height:1.05; letter-spacing:-.05em; }
+      .section > p { max-width:650px; color:var(--muted); line-height:1.7; }
+      .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:34px; }
+      .feature { border:1px solid var(--line); border-radius:18px; padding:22px; background:rgba(255,255,255,.025); }
+      .feature .number { color:var(--signal); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.74rem; font-weight:800; }
+      .feature h3 { margin:16px 0 9px; font-size:1.03rem; }
+      .feature p { margin:0; color:var(--muted); font-size:.86rem; line-height:1.58; }
+      .cta { margin:30px 0 74px; border:1px solid rgba(80,213,146,.28); border-radius:25px; padding:35px; background:linear-gradient(110deg,rgba(80,213,146,.16),rgba(255,255,255,.025)); display:flex; align-items:center; justify-content:space-between; gap:25px; }
+      .cta h2 { margin:0; font-size:clamp(1.55rem,3vw,2.3rem); letter-spacing:-.045em; }
+      .cta p { margin:8px 0 0; color:var(--muted); font-size:.9rem; }
+      footer { border-top:1px solid var(--line); padding:25px 0 35px; color:var(--muted); font-size:.75rem; display:flex; justify-content:space-between; gap:15px; }
+      @media (max-width:760px) { .shell{width:min(100% - 30px,1120px)} .nav-note{display:none} .hero{padding:72px 0 55px;grid-template-columns:1fr;gap:34px} .proof,.grid{grid-template-columns:1fr} .proof{padding-bottom:58px}.cta{align-items:flex-start;flex-direction:column}.metrics{gap:6px}.metric{padding:12px 8px} footer{flex-direction:column} }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <nav>
+        <a class="brand" href="#acasa"><span class="mark">⌁</span><span>PREDICȚII PRO</span></a>
+        <span class="nav-note">SPORTS · DATA · DECISION INTELLIGENCE</span>
+      </nav>
+
+      <main id="acasa">
+        <section class="hero">
+          <div>
+            <div class="eyebrow"><span class="pulse"></span> Platformă operațională</div>
+            <h1>Context pentru decizii, nu promisiuni.</h1>
+            <p class="lead">Predicții Pro conectează date sportive, probabilități, cote, analiză AI și rezultate confirmate într-un singur flux de lucru. Selecțiile, acumulatoarele și piramidele rămân explicabile de la recomandare până la decontare.</p>
+            <div class="actions">
+              <a class="button primary" href="https://predicpro-4qrhr9mz.manus.space">Deschide aplicația</a>
+              <a class="button secondary" href="https://github.com/Balty1991/Predictii-Pro">Vezi codul sursă</a>
+            </div>
+          </div>
+          <aside class="signal-card" aria-label="Flux de decizie">
+            <div class="card-top"><span>Decision flow</span><span class="live">● LIVE</span></div>
+            <div class="case">Date API → selecție → strategie → rezultat verificat.</div>
+            <div class="metrics"><div class="metric"><b>Edge</b><span>Valoare față de preț</span></div><div class="metric"><b>CLV</b><span>Preț de intrare vs. piață</span></div><div class="metric"><b>P/L</b><span>Rezultat urmărit</span></div></div>
+          </aside>
+        </section>
+
+        <section class="proof" aria-label="Principii">
+          <article><strong>Date sincronizate</strong><p>Meciurile, cotele, predicțiile și rezultatele sunt preluate server-side, fără introducere manuală.</p></article>
+          <article><strong>Risc vizibil</strong><p>O selecție fără valoare pozitivă rămâne informativă și nu este inclusă automat în strategii.</p></article>
+          <article><strong>Rezultate verificabile</strong><p>Performanța se calculează doar după confirmarea rezultatelor, nu din promisiuni sau date demonstrative.</p></article>
+        </section>
+
+        <section class="section" id="capabilitati">
+          <div class="eyebrow">Operațiuni inteligente</div>
+          <h2>Un sistem construit pentru analiză, execuție controlată și urmărirea deciziilor.</h2>
+          <p>Interfața completă este protejată prin autentificare, iar serviciile sensibile rămân pe server. Portalul GitHub Pages oferă acces public rapid fără a compromite datele sau cheile de integrare.</p>
+          <div class="grid">
+            <article class="feature"><span class="number">01 / SELECȚII</span><h3>Predicții explicabile</h3><p>Probabilitate, cotă curentă, cotă corectă, edge, mișcarea prețului și explicația AI sunt reunite în cardul aceleiași selecții.</p></article>
+            <article class="feature"><span class="number">02 / STRATEGII</span><h3>Acumulator și piramidă</h3><p>Profile de cote, pași configurabili, miză, progres și profit/pierdere pentru strategii care pot fi urmărite transparent.</p></article>
+            <article class="feature"><span class="number">03 / VALIDARE</span><h3>Istoric confirmat</h3><p>Rezultatele, performanța și notificările sunt actualizate pe baza decontării evenimentelor, nu prin estimări statice.</p></article>
+          </div>
+        </section>
+
+        <section class="cta"><div><h2>Deschide centrul operațional.</h2><p>Accesează aplicația completă pentru predicții, strategii personale și monitorizarea rezultatelor.</p></div><a class="button primary" href="https://predicpro-4qrhr9mz.manus.space">Intră în Predicții Pro</a></section>
+      </main>
+      <footer><span>© Predicții Pro · Sports intelligence</span><a href="https://github.com/Balty1991/Predictii-Pro">Balty1991/Predictii-Pro ↗</a></footer>
+    </div>
+  </body>
+</html>

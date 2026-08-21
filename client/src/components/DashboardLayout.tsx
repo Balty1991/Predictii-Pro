@@ -170,7 +170,8 @@ function DashboardLayoutContent({
               </button>
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-semibold tracking-tight truncate text-foreground">PREDICTII</span>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary"><ShieldCheck className="h-4 w-4" /></span>
+                  <span className="min-w-0"><span className="block truncate text-sm font-bold tracking-[0.1em] text-foreground">PREDICTII PRO</span><span className="block truncate text-[9px] font-semibold uppercase tracking-[0.15em] text-primary/85">Intelligence terminal</span></span>
                 </div>
               ) : null}
             </div>
