@@ -61,3 +61,5 @@
 - [ ] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
 - [ ] Blocarea procedurală a decontării manuale a piramidelor și validarea trecerii active → finalizat numai prin settlement-ul automat al rezultatelor API.
 - [ ] Confirmarea funcțională că Acumulatoare și Piramide livrează selecții reale, nu scenarii simulate, imediat ce feedul furnizorului poate furniza cote eligibile.
+- [x] Remedierea rutei mobile Istoric, astfel încât opțiunea din meniu să deschidă pagina de performanță și rezultate în loc de 404.
+- [x] Verificarea mobilă a rutei Istoric după remediere, pentru a confirma deschiderea paginii de performanță din meniul inferior.

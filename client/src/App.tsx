@@ -18,6 +18,7 @@ function Router() {
       <Route path={"/acumulatoare"}>{() => <Strategies workspace="tickets" />}</Route>
       <Route path={"/piramide"}>{() => <Strategies workspace="pyramids" />}</Route>
       <Route path={"/performanta"} component={Performance} />
+      <Route path={"/istoric"} component={Performance} />
       <Route path={"/profil"} component={Profile} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
