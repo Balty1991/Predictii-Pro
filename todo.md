@@ -64,3 +64,5 @@
 - [x] Remedierea rutei mobile Istoric, astfel încât opțiunea din meniu să deschidă pagina de performanță și rezultate în loc de 404.
 - [x] Verificarea mobilă a rutei Istoric după remediere, pentru a confirma deschiderea paginii de performanță din meniul inferior.
 - [x] Afișarea stării indisponibilității cotelor live și a reîncercării programate direct în tabloul principal de Meciuri.
+- [x] Extinderea semnăturii de brand și a marcajelor de semnal în Meciuri, Acumulatoare, Piramide, Istoric și Profil.
+- [ ] Rafinarea ierarhiei tipografice și a spațierii în listele de evenimente și cardurile de strategie, verificată pe mobil și desktop.

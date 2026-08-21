@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/sidebar";
 import { startLogin } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { ChartNoAxesCombined, LayoutDashboard, Layers3, LogOut, PanelLeft, ShieldCheck, Ticket, UserRound } from "lucide-react";
+import { ChartNoAxesCombined, LayoutDashboard, Layers3, LogOut, PanelLeft, ShieldCheck, Ticket } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
@@ -170,8 +170,8 @@ function DashboardLayoutContent({
               </button>
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary"><ShieldCheck className="h-4 w-4" /></span>
-                  <span className="min-w-0"><span className="block truncate text-sm font-bold tracking-[0.1em] text-foreground">PREDICTII PRO</span><span className="block truncate text-[9px] font-semibold uppercase tracking-[0.15em] text-primary/85">Intelligence terminal</span></span>
+                  <SignalMark size="desktop" />
+                  <span className="min-w-0"><span className="block truncate text-sm font-bold tracking-[0.1em] text-foreground">PREDICȚII PRO</span><span className="block truncate text-[9px] font-semibold uppercase tracking-[0.15em] text-primary/85">Sistem de semnale</span></span>
                 </div>
               ) : null}
             </div>
@@ -245,7 +245,7 @@ function DashboardLayoutContent({
         {isMobile && (
           <div className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/70 bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
             <div className="flex min-w-0 items-center gap-2.5">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary"><ShieldCheck className="h-4 w-4" /></span>
+              <SignalMark size="mobile" />
               <div className="min-w-0"><p className="truncate text-xs font-bold tracking-[0.12em] text-foreground">PREDICȚII PRO</p><p className="truncate text-[10px] font-semibold uppercase tracking-[0.13em] text-primary">{activeMenuItem?.label ?? "Terminal"}</p></div>
             </div>
             <SidebarTrigger className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-card/80" aria-label="Deschide meniul și contul" />
@@ -256,4 +256,10 @@ function DashboardLayoutContent({
       </SidebarInset>
     </>
   );
+}
+
+function SignalMark({ size }: { size: "desktop" | "mobile" }) {
+  const dimensions = size === "mobile" ? "h-8 w-8 rounded-xl" : "h-7 w-7 rounded-lg";
+  const icon = size === "mobile" ? "h-4 w-4" : "h-3.5 w-3.5";
+  return <span className={`relative flex shrink-0 items-center justify-center border border-primary/35 bg-primary/10 text-primary shadow-[0_0_24px_rgba(70,202,142,0.13)] ${dimensions}`}><ShieldCheck className={icon} /><span className="absolute -bottom-0.5 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-primary shadow-[0_0_9px_rgba(70,202,142,0.9)]" /></span>;
 }

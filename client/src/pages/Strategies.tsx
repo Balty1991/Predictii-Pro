@@ -86,7 +86,7 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
   return <DashboardLayout>
     <div className="mx-auto max-w-7xl space-y-5 pb-4 sm:space-y-7">
       <header className="rounded-3xl border border-border/70 bg-card/75 p-5 sm:rounded-[2rem] sm:p-7">
-        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary sm:text-xs">{ticketWorkspace ? "Acumulatoare" : pyramidWorkspace ? "Piramide" : "Strategii reale"}</p>
+        <div className="flex items-center gap-2"><span className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary shadow-[0_0_24px_rgba(70,202,142,0.13)]"><ShieldCheck className="h-3.5 w-3.5" /><span className="absolute -bottom-0.5 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-primary" /></span><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary sm:text-xs">{ticketWorkspace ? "Acumulatoare" : pyramidWorkspace ? "Piramide" : "Strategii reale"}</p></div>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:mt-3 sm:text-3xl">{pageTitle}</h1>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">{pageSubtitle}</p>
       </header>
