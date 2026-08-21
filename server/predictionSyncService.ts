@@ -1,5 +1,5 @@
 import * as db from "./db";
-import { generatePredictionExplanation } from "./predictionExplanation";
+import { generatePredictionExplanationsBatch, type ExplanationInput } from "./predictionExplanation";
 import { normalizePredictionSelections } from "./predictionSync";
 import { fetchOdds, fetchPredictions, type ApiOdds } from "./sportsApi";
 
@@ -17,7 +17,7 @@ function normalizeEventStatus(status: string): "upcoming" | "live" | "finished" 
   return "unresolved";
 }
 
-export async function synchronizePredictions(from = new Date(), daysAhead = 3, maxEvents = 30, maxExplanations = 3, scheduleCronTaskUid?: string) {
+export async function synchronizePredictions(from = new Date(), daysAhead = 3, maxEvents = 30, scheduleCronTaskUid?: string) {
   const until = new Date(from);
   until.setUTCDate(until.getUTCDate() + daysAhead);
   const runId = await db.startSyncRun("daily_predictions", scheduleCronTaskUid);
@@ -25,6 +25,7 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 3, m
   let savedSelections = 0;
   let incompleteOdds = 0;
   let generatedExplanations = 0;
+  const explanationQueue: Array<ExplanationInput & { selectionId: number }> = [];
 
   try {
     const payload = await fetchPredictions(toDateString(from), toDateString(until));
@@ -111,8 +112,9 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 3, m
           reasonCodes: selection.reasonCodes,
         });
 
-        if (selection.recommendationStatus === "recommended" && !saved.aiExplanation && generatedExplanations < maxExplanations) {
-          const explanation = await generatePredictionExplanation({
+        if (selection.recommendationStatus === "recommended" && !saved.aiExplanation) {
+          explanationQueue.push({
+            selectionId: saved.id,
             fixture: `${event.home_team} – ${event.away_team}`,
             competition: event.league_name ?? null,
             marketLabel: selection.label,
@@ -124,14 +126,19 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 3, m
             expectedValue: selection.expectedValue,
             reasons: selection.reasonCodes,
           });
-          if (explanation) {
-            await db.updateSelectionExplanation(saved.id, explanation);
-            generatedExplanations += 1;
-          }
         }
         savedSelections += 1;
       }
       savedPredictions += 1;
+    }
+
+    for (let offset = 0; offset < explanationQueue.length; offset += 12) {
+      const batch = explanationQueue.slice(offset, offset + 12);
+      const generated = await generatePredictionExplanationsBatch(batch);
+      for (const item of generated) {
+        await db.updateSelectionExplanation(item.selectionId, item.explanation);
+        generatedExplanations += 1;
+      }
     }
 
     const status = incompleteOdds ? "partial" : "completed";

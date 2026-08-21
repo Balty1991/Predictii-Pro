@@ -18,7 +18,7 @@
 - [x] Implementarea profilurilor de risc pentru cote țintă, inclusiv 1.20, 1.40, 2.00 și valori definite de utilizator.
 - [x] Implementarea constructorului de piramide cu număr configurabil de pași, miză inițială, reinvestire și simulare transparentă a evoluției capitalului.
 - [x] Implementarea monitorizării pas-cu-pas pentru piramide și acumulatoare, cu statut câștigător/pierdut, profit sau pierdere și progres cumulativ.
-- [ ] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
+- [x] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
 - [x] Implementarea indicatorului de valoare: probabilitate implicită, cotă corectă, edge și avertizarea când avantajul dispare.
 - [ ] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.
 - [ ] Implementarea monitorizării CLV pentru a compara cota de intrare cu ultima cotă disponibilă înainte de start.

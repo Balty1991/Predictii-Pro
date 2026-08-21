@@ -132,6 +132,10 @@ export const appRouter = router({
         profitLockRate: input.profitLockRate.toFixed(4),
         maxSteps: input.maxSteps,
       })),
+    attachTicket: protectedProcedure.input(z.object({
+      pyramidPlanId: z.number().int().positive(),
+      ticketId: z.number().int().positive(),
+    })).mutation(({ ctx, input }) => db.attachTicketToActivePyramidStep({ userId: ctx.user.id, ...input })),
     settleStep: protectedProcedure.input(z.object({
       pyramidPlanId: z.number().int().positive(),
       outcome: z.enum(["won", "lost", "void"]),

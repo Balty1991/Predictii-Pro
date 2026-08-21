@@ -10,7 +10,7 @@ export async function scheduledSportsRefresh(req: Request, res: Response) {
     const user = await sdk.authenticateRequest(req);
     if (!user.isCron || !user.taskUid) return res.status(403).json({ error: "cron-only" });
 
-    const [result, resultsSync] = await Promise.all([synchronizePredictions(new Date(), 3, 30, 3, user.taskUid), synchronizeResults()]);
+    const [result, resultsSync] = await Promise.all([synchronizePredictions(new Date(), 3, 30, user.taskUid), synchronizeResults()]);
     const dateLabel = new Intl.DateTimeFormat("ro-RO", { dateStyle: "medium", timeZone: "Europe/Bucharest" }).format(new Date());
     const notifiedUsers = result.savedSelections > 0
       ? await db.notifyUsersAboutDailyPredictions(dateLabel, result.savedSelections)

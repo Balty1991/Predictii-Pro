@@ -342,6 +342,27 @@ export async function listPyramidSteps(userId: number, pyramidPlanId: number) {
   return db.select().from(pyramidSteps).where(eq(pyramidSteps.pyramidPlanId, plan.id)).orderBy(asc(pyramidSteps.stepNumber));
 }
 
+export async function attachTicketToActivePyramidStep(input: { userId: number; pyramidPlanId: number; ticketId: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const plan = (await db.select().from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${input.pyramidPlanId} AND ${pyramidPlans.userId} = ${input.userId} AND ${pyramidPlans.status} = 'active'`).limit(1))[0];
+  if (!plan) throw new Error("Piramida activă nu a fost găsită.");
+  const ticket = (await db.select().from(predictionTickets)
+    .where(sql`${predictionTickets.id} = ${input.ticketId} AND ${predictionTickets.createdByUserId} = ${input.userId} AND ${predictionTickets.status} = 'published'`).limit(1))[0];
+  if (!ticket) throw new Error("Biletul eligibil nu a fost găsit sau este deja decontat.");
+  const ticketOdds = Number(ticket.totalOdds);
+  if (ticketOdds < Number(plan.targetOddsMin) || ticketOdds > Number(plan.targetOddsMax)) {
+    throw new Error("Cota biletului nu se încadrează în intervalul activ al piramidei.");
+  }
+  const activeStep = (await db.select().from(pyramidSteps)
+    .where(sql`${pyramidSteps.pyramidPlanId} = ${plan.id} AND ${pyramidSteps.status} = 'active'`).limit(1))[0];
+  if (!activeStep) throw new Error("Nu există un pas activ pentru această piramidă.");
+  if (activeStep.ticketId) throw new Error("Pasul activ are deja un bilet asociat.");
+  await db.update(pyramidSteps).set({ ticketId: ticket.id, resultNote: `Bilet acumulator #${ticket.id} asociat automat.` }).where(eq(pyramidSteps.id, activeStep.id));
+  return { pyramidPlanId: plan.id, stepId: activeStep.id, ticketId: ticket.id };
+}
+
 export async function settlePyramidStep(input: {
   userId: number;
   pyramidPlanId: number;
@@ -620,11 +641,31 @@ async function settleTicketsForSelection(selectionId: number, selectionStatus: "
     const statuses = items.map(item => item.status);
     if (statuses.includes("lost")) {
       await db.update(predictionTickets).set({ status: "lost", profitLoss: (-Number(ticket.stake)).toFixed(2), settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+      await settleLinkedPyramidStepsForTicket(ticket.id, "lost");
     } else if (statuses.every(item => item === "won")) {
       const profitLoss = Number(ticket.stake) * Number(ticket.totalOdds) - Number(ticket.stake);
       await db.update(predictionTickets).set({ status: "won", profitLoss: profitLoss.toFixed(2), settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+      await settleLinkedPyramidStepsForTicket(ticket.id, "won");
     } else if (statuses.every(item => ["won", "void", "cancelled"].includes(item))) {
       await db.update(predictionTickets).set({ status: "void", profitLoss: "0.00", settledAt: new Date() }).where(eq(predictionTickets.id, ticket.id));
+      await settleLinkedPyramidStepsForTicket(ticket.id, "void");
     }
+  }
+}
+
+async function settleLinkedPyramidStepsForTicket(ticketId: number, outcome: "won" | "lost" | "void") {
+  const db = await getDb();
+  if (!db) return;
+  const links = await db.select().from(pyramidSteps)
+    .where(sql`${pyramidSteps.ticketId} = ${ticketId} AND ${pyramidSteps.status} = 'active'`);
+  for (const step of links) {
+    const plan = (await db.select().from(pyramidPlans).where(eq(pyramidPlans.id, step.pyramidPlanId)).limit(1))[0];
+    if (!plan || plan.status !== "active") continue;
+    await settlePyramidStep({
+      userId: plan.userId,
+      pyramidPlanId: plan.id,
+      outcome,
+      resultNote: `Decontat automat din biletul acumulator #${ticketId}.`,
+    });
   }
 }
