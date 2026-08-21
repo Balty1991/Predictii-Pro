@@ -21,3 +21,4 @@ for (const item of generated) {
 }
 
 console.log(JSON.stringify({ requested: selections.length, generated: generated.length }));
+process.exit(0);

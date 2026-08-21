@@ -70,3 +70,7 @@
 - [x] Aplicarea unui cooldown server-side pentru actualizarea manuală, astfel încât apăsările repetate să nu consume cota zilnică.
 - [ ] Limitarea sincronizării zilnice la predicțiile și piețele necesare fluxurilor de Acumulatoare și Piramide, cu validare a numărului de apeluri.
 - [ ] Restrângerea explicită a sincronizării la selecțiile eligibile pentru Acumulatoare și Piramide, cu test pentru relevanța evenimentelor și piețelor procesate.
+- [ ] Reducerea sincronizărilor automate la maximum două execuții pe zi și restricționarea actualizării manuale în acord cu noua politică de consum.
+- [x] Suspendarea sincronizărilor și a integrărilor API pentru aplicațiile de predicții neexceptate de utilizator, păstrând active VEYRA, BETPREDICT și Predicții Pro.
+- [x] Configurarea VEYRA cu maximum două apeluri API automate pe zi, unul dimineața și unul seara, fără actualizări automate intermediare.
+- [x] Implementarea și verificarea unui plafon măsurabil pentru request-urile Sports API ale VEYRA, separat de limita de două execuții automate pe zi.
