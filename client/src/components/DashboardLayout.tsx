@@ -21,17 +21,17 @@ import {
 } from "@/components/ui/sidebar";
 import { startLogin } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { ChartNoAxesCombined, LayoutDashboard, LogOut, PanelLeft, ShieldCheck, Sparkles, UserRound } from "lucide-react";
+import { ChartNoAxesCombined, LayoutDashboard, Layers3, LogOut, PanelLeft, ShieldCheck, Ticket, UserRound } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Centrul de decizie", path: "/" },
-  { icon: Sparkles, label: "Strategii & piramide", path: "/strategii" },
-  { icon: ChartNoAxesCombined, label: "Performanță verificată", path: "/performanta" },
-  { icon: UserRound, label: "Profil & alerte", path: "/profil" },
+  { icon: LayoutDashboard, label: "Meciuri", path: "/" },
+  { icon: Ticket, label: "Acumulatoare", path: "/acumulatoare" },
+  { icon: Layers3, label: "Piramide", path: "/piramide" },
+  { icon: ChartNoAxesCombined, label: "Istoric", path: "/performanta" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";

@@ -138,7 +138,7 @@ function getApiKey() {
 }
 
 function isRetryableStatus(status: number) {
-  return status === 408 || status === 425 || status === 429 || status >= 500;
+  return status === 408 || status === 425 || status >= 500;
 }
 
 function waitBeforeRetry(attempt: number) {
@@ -177,7 +177,15 @@ async function request<T>(path: string, schema: z.ZodType<T>, query?: Record<str
 
     if (!response.ok) {
       const errorBody = await response.text();
-      const requestError = new SportsApiError(`Sports Data API request failed (${response.status}): ${errorBody.slice(0, 240)}`, response.status);
+      const dailyQuotaExhausted = response.status === 429 && errorBody.includes("taster_exhausted");
+      const requestError = new SportsApiError(
+        dailyQuotaExhausted
+          ? "Datele live nu pot fi actualizate momentan: limita zilnică a furnizorului a fost atinsă. Aplicația va reîncerca automat după resetarea sursei."
+          : response.status === 429
+            ? "Furnizorul procesează prea multe cereri acum. Aplicația va reîncerca în siguranță."
+            : `Furnizorul de date nu răspunde corect acum (cod ${response.status}).`,
+        response.status,
+      );
       if (isRetryableStatus(response.status) && attempt < MAX_TRANSIENT_ATTEMPTS) {
         lastError = requestError;
         await waitBeforeRetry(attempt);

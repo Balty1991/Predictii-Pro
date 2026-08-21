@@ -17,7 +17,7 @@ function normalizeEventStatus(status: string): "upcoming" | "live" | "finished" 
   return "unresolved";
 }
 
-export async function synchronizePredictions(from = new Date(), daysAhead = 3, maxEvents = 30, scheduleCronTaskUid?: string) {
+export async function synchronizePredictions(from = new Date(), daysAhead = 2, maxEvents = 12, scheduleCronTaskUid?: string) {
   const until = new Date(from);
   until.setUTCDate(until.getUTCDate() + daysAhead);
   const runId = await db.startSyncRun("daily_predictions", scheduleCronTaskUid);

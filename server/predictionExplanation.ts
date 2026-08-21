@@ -28,7 +28,7 @@ export async function generatePredictionExplanation(input: ExplanationInput) {
 
   const response = await invokeLLM({
     model,
-    maxTokens: 240,
+    maxCompletionTokens: 360,
     messages: [
       {
         role: "system",
@@ -51,7 +51,7 @@ export async function generatePredictionExplanationsBatch(inputs: Array<Explanat
 
   const response = await invokeLLM({
     model,
-    maxTokens: Math.min(3_000, Math.max(700, inputs.length * 150)),
+    maxCompletionTokens: Math.min(3_600, Math.max(1_200, inputs.length * 220)),
     response_format: {
       type: "json_schema",
       json_schema: {

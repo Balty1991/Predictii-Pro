@@ -130,9 +130,11 @@ export const appRouter = router({
         targetOddsMin: input.targetOddsMin.toFixed(3),
         targetOddsMax: input.targetOddsMax.toFixed(3),
         reinvestRate: input.reinvestRate.toFixed(4),
-        profitLockRate: input.profitLockRate.toFixed(4),
-        maxSteps: input.maxSteps,
-      })),
+      profitLockRate: input.profitLockRate.toFixed(4),
+      maxSteps: input.maxSteps,
+    })),
+    delete: protectedProcedure.input(z.object({ pyramidPlanId: z.number().int().positive() }))
+      .mutation(({ ctx, input }) => db.deletePyramidPlan({ userId: ctx.user.id, ...input })),
     attachTicket: protectedProcedure.input(z.object({
       pyramidPlanId: z.number().int().positive(),
       ticketId: z.number().int().positive(),
@@ -144,11 +146,6 @@ export const appRouter = router({
       pyramidPlanId: z.number().int().positive(),
       selectionId: z.number().int().positive(),
     })).mutation(({ ctx, input }) => db.assignPyramidRecommendation({ userId: ctx.user.id, ...input })),
-    settleStep: protectedProcedure.input(z.object({
-      pyramidPlanId: z.number().int().positive(),
-      outcome: z.enum(["won", "lost", "void"]),
-      resultNote: z.string().max(240).optional(),
-    })).mutation(({ ctx, input }) => db.settlePyramidStep({ userId: ctx.user.id, ...input })),
   }),
   profile: router({
     notificationPreferences: protectedProcedure.query(({ ctx }) => db.ensureNotificationPreferences(ctx.user.id)),

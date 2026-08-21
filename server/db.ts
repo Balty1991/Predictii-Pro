@@ -351,6 +351,20 @@ export async function listPyramidPlans(userId: number) {
   return db.select().from(pyramidPlans).where(eq(pyramidPlans.userId, userId)).orderBy(desc(pyramidPlans.updatedAt));
 }
 
+export async function deletePyramidPlan(input: { userId: number; pyramidPlanId: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const plan = (await db.select({ id: pyramidPlans.id }).from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${input.pyramidPlanId} AND ${pyramidPlans.userId} = ${input.userId}`).limit(1))[0];
+  if (!plan) throw new Error("Piramida nu a fost găsită.");
+  const linkedSteps = await db.select({ id: pyramidSteps.id }).from(pyramidSteps)
+    .where(sql`${pyramidSteps.pyramidPlanId} = ${plan.id} AND ${pyramidSteps.ticketId} IS NOT NULL`);
+  if (linkedSteps.length) throw new Error("Această piramidă are bilete reale asociate și nu poate fi ștearsă. O poți finaliza sau reseta după decontare.");
+  await db.delete(pyramidSteps).where(eq(pyramidSteps.pyramidPlanId, plan.id));
+  await db.delete(pyramidPlans).where(eq(pyramidPlans.id, plan.id));
+  return { deleted: true, pyramidPlanId: plan.id };
+}
+
 export async function listPyramidSteps(userId: number, pyramidPlanId: number) {
   const db = await getDb();
   if (!db) return [];

@@ -49,3 +49,15 @@
 - [x] Transformarea filtrelor mobile în benzi cu derulare orizontală și ridicarea tuturor țintelor tactile relevante la minimum 44 px.
 - [ ] Verificarea interactivă explicită la 390 px și 430 px pentru filtre, favorite, extinderea analizei și acțiunile de strategie.
 - [x] Implementarea unei reguli explicite de volatilitate din cote și aplicarea server-side a limitelor de risc la salvarea tuturor biletelor.
+- [ ] Eliminarea simulării ca element central și reorganizarea Strategiilor în jurul acumulatoarelor și pașilor de piramidă bazați exclusiv pe evenimente reale eligibile.
+- [ ] Adăugarea ștergerii sigure a unei piramide și a pasului activ, cu confirmare și protecție pentru bilete deja asociate.
+- [ ] Tratarea erorilor 429 ale furnizorului fără expunerea răspunsului tehnic brut și cu stare clară de reîncercare pentru utilizator.
+- [ ] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
+- [ ] Validarea end-to-end pe telefon: sincronizare → selecție reală → acumulator/piramidă → asociere → urmărire rezultat.
+- [x] Reconstruirea meniului mobil ca navigare de produs orientată pe fluxul zilnic: Meciuri, Acumulatoare, Piramide și Istoric.
+- [ ] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.
+- [ ] Reorganizarea afișării evenimentelor în liste profesioniste cu oră, echipe, piață, cotă, încredere și acțiune clară, fără carduri decorative redundante.
+- [ ] Stabilirea unei identități vizuale mai puternice, cu ierarhie tipografică, spațiere și componente distinctive pentru a depăși estetica actuală de dashboard generic.
+- [ ] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
+- [ ] Blocarea procedurală a decontării manuale a piramidelor și validarea trecerii active → finalizat numai prin settlement-ul automat al rezultatelor API.
+- [ ] Confirmarea funcțională că Acumulatoare și Piramide livrează selecții reale, nu scenarii simulate, imediat ce feedul furnizorului poate furniza cote eligibile.
