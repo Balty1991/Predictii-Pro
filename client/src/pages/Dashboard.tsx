@@ -47,6 +47,13 @@ export default function Dashboard() {
     },
     onError: error => toast.error(error.message),
   });
+  const generateMissingExplanations = trpc.predictions.generateMissingExplanations.useMutation({
+    onSuccess: result => {
+      toast.success(result.generated ? `${result.generated} analize AI au fost generate.` : "Nu există analize AI lipsă în acest lot.");
+      utils.predictions.list.invalidate();
+    },
+    onError: error => toast.error(error.message),
+  });
 
   const allPredictions = (predictionsQuery.data ?? []) as DashboardPrediction[];
   const sports = useMemo(() => Array.from(new Set(allPredictions.map(prediction => prediction.sport))).sort(), [allPredictions]);
@@ -101,7 +108,7 @@ export default function Dashboard() {
         </div>
         <div className="flex flex-col gap-3 border-t border-border/65 bg-background/20 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p className="flex items-center gap-2 text-xs text-muted-foreground"><Clock3 className="h-3.5 w-3.5 text-primary" /> Orele sunt afișate în fusul tău local. Rezultatele rămân verificabile după confirmare.</p>
-          {user?.role === "admin" && <Button size="sm" onClick={() => refresh.mutate()} disabled={refresh.isPending} className="rounded-lg"><RefreshCw className={`mr-2 h-3.5 w-3.5 ${refresh.isPending ? "animate-spin" : ""}`} /> Actualizează fluxul</Button>}
+          {user?.role === "admin" && <div className="flex flex-col gap-2 sm:flex-row"><Button size="sm" variant="outline" onClick={() => generateMissingExplanations.mutate({ limit: 12 })} disabled={generateMissingExplanations.isPending} className="min-h-10 rounded-lg"><Sparkles className={`mr-2 h-3.5 w-3.5 ${generateMissingExplanations.isPending ? "animate-pulse" : ""}`} /> Analize AI</Button><Button size="sm" onClick={() => refresh.mutate()} disabled={refresh.isPending} className="min-h-10 rounded-lg"><RefreshCw className={`mr-2 h-3.5 w-3.5 ${refresh.isPending ? "animate-spin" : ""}`} /> Actualizează fluxul</Button></div>}
         </div>
       </header>
 

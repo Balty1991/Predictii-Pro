@@ -5,7 +5,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { buildAccumulator, projectPyramidStep } from "./predictionMath";
-import { generatePredictionExplanation } from "./predictionExplanation";
+import { generatePredictionExplanation, generatePredictionExplanationsBatch } from "./predictionExplanation";
 import { synchronizePredictions } from "./predictionSyncService";
 
 export const appRouter = router({
@@ -51,6 +51,24 @@ export const appRouter = router({
       if (!explanation) throw new Error("Explicația AI nu este disponibilă momentan.");
       await db.updateSelectionExplanation(selection.id, explanation);
       return { explanation };
+    }),
+    generateMissingExplanations: adminProcedure.input(z.object({ limit: z.number().int().min(1).max(24).default(12) })).mutation(async ({ input }) => {
+      const selections = await db.listMissingSelectionExplanationInputs(input.limit);
+      const generated = await generatePredictionExplanationsBatch(selections.map(selection => ({
+        selectionId: selection.id,
+        fixture: `${selection.homeTeam} – ${selection.awayTeam}`,
+        competition: selection.competition,
+        marketLabel: selection.label,
+        probability: Number(selection.probability),
+        confidence: selection.confidence ? Number(selection.confidence) : null,
+        currentOdds: selection.currentOdds ? Number(selection.currentOdds) : null,
+        fairOdds: selection.fairOdds ? Number(selection.fairOdds) : null,
+        edge: selection.edge ? Number(selection.edge) : null,
+        expectedValue: selection.expectedValue ? Number(selection.expectedValue) : null,
+        reasons: Array.isArray(selection.reasonCodes) ? selection.reasonCodes.filter((item): item is string => typeof item === "string") : [],
+      })));
+      for (const item of generated) await db.updateSelectionExplanation(item.selectionId, item.explanation);
+      return { requested: selections.length, generated: generated.length };
     }),
   }),
   favorites: router({

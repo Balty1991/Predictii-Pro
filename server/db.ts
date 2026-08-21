@@ -1,4 +1,4 @@
-import { asc, desc, eq, inArray, sql } from "drizzle-orm";
+import { asc, desc, eq, inArray, isNull, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
@@ -543,6 +543,28 @@ export async function getSelectionExplanationInput(selectionId: number) {
     awayTeam: sportsEvents.awayTeamName,
   }).from(predictionSelections).innerJoin(sportsEvents, eq(predictionSelections.eventId, sportsEvents.id))
     .where(eq(predictionSelections.id, selectionId)).limit(1))[0];
+}
+
+export async function listMissingSelectionExplanationInputs(limit = 12) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select({
+    id: predictionSelections.id,
+    label: predictionSelections.label,
+    probability: predictionSelections.predictedProbability,
+    confidence: predictionSelections.modelConfidence,
+    currentOdds: predictionSelections.currentOdds,
+    fairOdds: predictionSelections.fairOdds,
+    edge: predictionSelections.edge,
+    expectedValue: predictionSelections.expectedValue,
+    reasonCodes: predictionSelections.reasonCodes,
+    competition: sportsEvents.competitionName,
+    homeTeam: sportsEvents.homeTeamName,
+    awayTeam: sportsEvents.awayTeamName,
+  }).from(predictionSelections).innerJoin(sportsEvents, eq(predictionSelections.eventId, sportsEvents.id))
+    .where(isNull(predictionSelections.aiExplanation))
+    .orderBy(asc(sportsEvents.startsAt))
+    .limit(limit);
 }
 
 export async function notifyUsersAboutDailyPredictions(dateLabel: string, count: number) {
