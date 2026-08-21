@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bot, Star, Target, TrendingDown, TrendingUp } from "lucide-react";
+import { Bot, CircleDot, Star, Target, TrendingDown, TrendingUp } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 export type PredictionCardData = {
   id: number;
@@ -44,6 +45,9 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
   const ev = asNumber(prediction.expectedValue);
   const reasons = Array.isArray(prediction.reasonCodes) ? prediction.reasonCodes.filter((reason): reason is string => typeof reason === "string") : [];
   const isPositive = prediction.valueStatus === "positive";
+  const oddsHistory = trpc.predictions.oddsHistory.useQuery({ selectionId: prediction.id }, { enabled: odds !== null });
+  const movementPercent = odds !== null && openingOdds !== null ? ((odds / openingOdds) - 1) * 100 : null;
+  const isShortening = movementPercent !== null && movementPercent < 0;
 
   return (
     <article className="relative overflow-hidden rounded-3xl border border-border/80 bg-card/85 p-5 shadow-[0_14px_50px_rgba(0,0,0,0.2)] backdrop-blur transition-transform duration-200 hover:-translate-y-0.5">
@@ -87,7 +91,9 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
       )}
       {prediction.valueStatus !== "positive" && <div className="relative mt-3 rounded-xl border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-xs leading-5 text-amber-100">Avantajul estimat nu este pozitiv la prețul actual; selecția rămâne informativă și nu intră în acumulatorul automat.</div>}
 
-      {odds !== null && openingOdds !== null && <div className={`relative mt-3 flex items-center gap-2 text-xs ${odds < openingOdds * 0.95 ? "text-amber-200" : "text-muted-foreground"}`}><TrendingDown className="h-3.5 w-3.5" /><span>Cotă la deschidere {openingOdds.toFixed(2)} → acum {odds.toFixed(2)}{odds < openingOdds * 0.95 ? " · avantajul s-a redus" : ""}</span></div>}
+      {odds !== null && openingOdds !== null && <div className={`relative mt-3 flex items-center gap-2 text-xs ${isShortening ? "text-amber-200" : "text-emerald-300"}`}>{isShortening ? <TrendingDown className="h-3.5 w-3.5" /> : <TrendingUp className="h-3.5 w-3.5" />}<span>Deschidere {openingOdds.toFixed(2)} → acum {odds.toFixed(2)} · {isShortening ? "scădere" : "creștere"} {Math.abs(movementPercent ?? 0).toFixed(1)}%{isShortening && odds < openingOdds * 0.95 ? " · avantajul s-a redus" : ""}</span></div>}
+
+      {oddsHistory.data?.length ? <div className="relative mt-4 rounded-2xl border border-border/70 bg-background/25 p-4"><div className="flex items-center justify-between gap-3"><div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.11em] text-primary"><CircleDot className="h-3.5 w-3.5" /> Monitor cotă</div><p className="text-[11px] text-muted-foreground">{oddsHistory.data.length} snapshoturi API</p></div><div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">{[...oddsHistory.data].reverse().slice(-4).map((snapshot, index) => <div key={`${snapshot.observedAt.getTime()}-${index}`} className="rounded-lg border border-border/55 bg-card/60 px-2.5 py-2"><p className="font-mono text-sm font-semibold text-foreground">{Number(snapshot.decimalOdds).toFixed(2)}</p><p className="mt-1 text-[10px] uppercase tracking-wide text-muted-foreground">{snapshot.observedAt.toLocaleTimeString("ro-RO", { hour: "2-digit", minute: "2-digit" })}</p></div>)}</div><p className="mt-3 text-[11px] text-muted-foreground">Istoricul este informativ și se actualizează doar când furnizorul publică o cotă nouă.</p></div> : odds !== null && <div className="relative mt-4 rounded-xl border border-dashed border-border/70 px-3 py-2 text-xs text-muted-foreground">Monitorul de cote va afișa evoluția imediat ce sunt disponibile minimum două snapshoturi de la furnizor.</div>}
 
       <div className="relative mt-4 rounded-2xl border border-border/70 bg-background/35 p-4">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.11em] text-primary"><Target className="h-3.5 w-3.5" /> Analiză AI</div>

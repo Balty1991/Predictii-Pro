@@ -31,6 +31,7 @@ export const appRouter = router({
       return predictions.map(prediction => ({ ...prediction, isFavorite: favorites.has(prediction.id) }));
     }),
     statistics: protectedProcedure.query(() => db.getStatistics()),
+    oddsHistory: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).query(({ input }) => db.getSelectionOddsHistory(input.selectionId)),
     refresh: adminProcedure.mutation(() => synchronizePredictions()),
     explain: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).mutation(async ({ input }) => {
       const selection = await db.getSelectionExplanationInput(input.selectionId);

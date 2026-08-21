@@ -112,7 +112,7 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 3, m
           reasonCodes: selection.reasonCodes,
         });
 
-        if (selection.recommendationStatus === "recommended" && !saved.aiExplanation) {
+        if (!saved.aiExplanation) {
           explanationQueue.push({
             selectionId: saved.id,
             fixture: `${event.home_team} – ${event.away_team}`,

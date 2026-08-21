@@ -243,20 +243,16 @@ function DashboardLayoutContent({
 
       <SidebarInset>
         {isMobile && (
-          <div className="flex border-b h-14 items-center justify-between bg-background/95 px-2 backdrop-blur supports-[backdrop-filter]:backdrop-blur sticky top-0 z-40">
-            <div className="flex items-center gap-2">
-              <SidebarTrigger className="h-9 w-9 rounded-lg bg-background" />
-              <div className="flex items-center gap-3">
-                <div className="flex flex-col gap-1">
-                  <span className="tracking-tight text-foreground">
-                    {activeMenuItem?.label ?? "Menu"}
-                  </span>
-                </div>
-              </div>
+          <div className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/70 bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
+            <div className="flex min-w-0 items-center gap-2.5">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary"><ShieldCheck className="h-4 w-4" /></span>
+              <div className="min-w-0"><p className="truncate text-xs font-bold tracking-[0.12em] text-foreground">PREDICȚII PRO</p><p className="truncate text-[10px] font-semibold uppercase tracking-[0.13em] text-primary">{activeMenuItem?.label ?? "Terminal"}</p></div>
             </div>
+            <SidebarTrigger className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-card/80" aria-label="Deschide meniul și contul" />
           </div>
         )}
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 p-4 pb-28 sm:p-6 sm:pb-8">{children}</main>
+        {isMobile && <nav aria-label="Navigare principală" className="fixed inset-x-0 bottom-0 z-50 border-t border-border/80 bg-[rgba(7,12,20,0.96)] px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl"><div className="mx-auto grid max-w-md grid-cols-4 gap-1">{menuItems.map(item => { const isActive = item.path === location; return <button key={item.path} onClick={() => setLocation(item.path)} aria-current={isActive ? "page" : undefined} className={`flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl px-1 text-[10px] font-semibold transition-colors ${isActive ? "bg-primary/15 text-primary" : "text-muted-foreground active:bg-card"}`}><item.icon className={`h-[18px] w-[18px] ${isActive ? "text-primary" : ""}`} /><span className="max-w-full truncate">{item.label.split(" ")[0]}</span></button>; })}</div></nav>}
       </SidebarInset>
     </>
   );

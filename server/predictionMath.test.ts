@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildAccumulator, calculateSelectionMetrics, projectPyramidStep } from "./predictionMath";
+import { buildAccumulator, calculateClv, calculateFairOdds, calculateSelectionMetrics, projectPyramidStep } from "./predictionMath";
 
 describe("prediction math", () => {
   it("calculates implied probability, fair odds and positive value", () => {
@@ -10,6 +10,16 @@ describe("prediction math", () => {
       expectedValue: 20,
       grade: "A_PLUS",
     });
+  });
+
+  it("calculates fair odds from the model probability even when a market price is unavailable", () => {
+    expect(calculateFairOdds(62)).toBe(1.613);
+    expect(calculateSelectionMetrics(62, null)).toBeNull();
+  });
+
+  it("measures positive CLV when the selected price is higher than the latest available price", () => {
+    expect(calculateClv(1.8, 1.65)).toBe(9.09);
+    expect(calculateClv(1.8, null)).toBeNull();
   });
 
   it("does not construct tickets from correlated selections or negative-value prices", () => {

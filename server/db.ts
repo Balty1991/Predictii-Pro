@@ -208,6 +208,23 @@ export async function recordOddsSnapshot(values: {
   await db.insert(oddsSnapshots).values(values);
 }
 
+export async function getSelectionOddsHistory(selectionId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select({
+    decimalOdds: oddsSnapshots.decimalOdds,
+    previousDecimalOdds: oddsSnapshots.previousDecimalOdds,
+    openingDecimalOdds: oddsSnapshots.openingDecimalOdds,
+    movement: oddsSnapshots.movement,
+    observedAt: oddsSnapshots.observedAt,
+    bookmakerName: oddsSnapshots.bookmakerName,
+  }).from(predictionSelections)
+    .innerJoin(oddsSnapshots, sql`${oddsSnapshots.eventId} = ${predictionSelections.eventId} AND ${oddsSnapshots.market} = ${predictionSelections.market} AND ${oddsSnapshots.outcome} = ${predictionSelections.outcome}`)
+    .where(eq(predictionSelections.id, selectionId))
+    .orderBy(desc(oddsSnapshots.observedAt))
+    .limit(8);
+}
+
 export async function startSyncRun(jobType: "daily_predictions" | "odds_delta" | "results_confirmation" | "explanations", scheduleCronTaskUid?: string) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
@@ -684,6 +701,7 @@ export async function listAccumulatorTickets(userId: number) {
       oddsAtSelection: ticketSelections.oddsAtSelection,
       status: ticketSelections.status,
       label: predictionSelections.label,
+      currentOdds: predictionSelections.currentOdds,
       homeTeam: sportsEvents.homeTeamName,
       awayTeam: sportsEvents.awayTeamName,
       startsAt: sportsEvents.startsAt,

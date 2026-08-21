@@ -1,4 +1,4 @@
-import { calculateSelectionMetrics } from "./predictionMath";
+import { calculateFairOdds, calculateSelectionMetrics } from "./predictionMath";
 import type { ApiOdds, ApiPrediction } from "./sportsApi";
 
 export type NormalizedSelection = {
@@ -102,7 +102,7 @@ export function normalizePredictionSelections(prediction: ApiPrediction, odds: A
       openingOdds: price?.opening_decimal_odds ? Number(price.opening_decimal_odds) : null,
       expectedValue: metrics?.expectedValue ?? null,
       impliedProbability: metrics?.impliedProbability ?? null,
-      fairOdds: metrics?.fairOdds ?? null,
+      fairOdds: metrics?.fairOdds ?? calculateFairOdds(definition.probability),
       edge: metrics?.edge ?? null,
       grade: metrics?.grade ?? null,
       contextScore: buildContextScore(prediction, definition.recommended),

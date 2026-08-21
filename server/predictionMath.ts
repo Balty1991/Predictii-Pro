@@ -19,6 +19,16 @@ export type SelectionMetrics = {
 
 const round = (value: number, decimals = 2) => Number(value.toFixed(decimals));
 
+export function calculateFairOdds(probabilityPercent: number) {
+  if (!Number.isFinite(probabilityPercent) || probabilityPercent <= 0 || probabilityPercent >= 100) return null;
+  return round(100 / probabilityPercent, 3);
+}
+
+export function calculateClv(entryOdds: number, latestOdds: number | null | undefined) {
+  if (!Number.isFinite(entryOdds) || entryOdds <= 1 || !latestOdds || !Number.isFinite(latestOdds) || latestOdds <= 1) return null;
+  return round(((entryOdds / latestOdds) - 1) * 100);
+}
+
 export function calculateSelectionMetrics(
   probabilityPercent: number,
   odds: number | null | undefined,

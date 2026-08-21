@@ -41,3 +41,10 @@
 - [ ] Permiterea asociării directe a recomandării propuse cu pasul activ al piramidei și decontarea automată din rezultatele API.
 - [ ] Remedierea populării cotelor curente/corecte și a stării de recomandare pentru selecțiile existente, astfel încât recomandările reale de piramidă să poată fi generate efectiv.
 - [ ] Adăugarea unei recuperări controlate la indisponibilitatea endpointului de cote și revalidarea end-to-end: recomandare reală → asociere la pas activ → decontare automată.
+- [ ] Alimentarea reală a snapshoturilor de cote și verificarea end-to-end: oddsSnapshots → istoric de cotă → indicator shortening/drifting în cardul de predicție.
+- [x] Reproiectarea navigației mobile cu bară inferioară persistentă, acțiuni accesibile cu o singură mână și stare activă clară.
+- [ ] Recompunerea dashboardului mobil în carduri de meci compacte, cu filtre glisabile, detalii la cerere și zone de atingere de minimum 44 px.
+- [x] Reorganizarea strategiilor pentru telefon: configurare progresivă, pași de piramidă ușor de urmărit și recomandări accesibile fără tabel orizontal.
+- [ ] Verificarea vizuală și funcțională a fluxurilor esențiale la 390 px și 430 px, inclusiv navigație, filtre, favorite, detalii și acțiuni de strategie.
+- [ ] Transformarea filtrelor mobile în benzi cu derulare orizontală și ridicarea tuturor țintelor tactile relevante la minimum 44 px.
+- [ ] Verificarea interactivă explicită la 390 px și 430 px pentru filtre, favorite, extinderea analizei și acțiunile de strategie.
