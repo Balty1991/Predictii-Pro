@@ -1,7 +1,7 @@
 import * as db from "./db";
 import { generatePredictionExplanationsBatch, type ExplanationInput } from "./predictionExplanation";
 import { normalizePredictionSelections } from "./predictionSync";
-import { fetchOdds, fetchPredictions, type ApiOdds } from "./sportsApi";
+import { fetchBestOddsForWindow, fetchPredictions, type ApiOdds } from "./sportsApi";
 
 const toDateString = (date: Date) => date.toISOString().slice(0, 10);
 const toDecimal = (value: number | null | undefined) => value === null || value === undefined ? null : value.toFixed(4);
@@ -32,6 +32,22 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
     const eligiblePredictions = payload.results
       .filter(prediction => normalizeEventStatus(prediction.event.status) === "upcoming")
       .slice(0, maxEvents);
+    const oddsByProviderEvent = new Map<number, ApiOdds[]>();
+    let bulkOddsAvailable = true;
+    const oddsMarkets = ["1x2", "over_under_15", "over_under_25", "over_under_35", "btts"];
+    for (const market of oddsMarkets) {
+      try {
+        const response = await fetchBestOddsForWindow(market, toDateString(from), toDateString(until));
+        for (const item of response.results) {
+          const current = oddsByProviderEvent.get(item.event_id) ?? [];
+          current.push(item);
+          oddsByProviderEvent.set(item.event_id, current);
+        }
+      } catch {
+        bulkOddsAvailable = false;
+        break;
+      }
+    }
     for (const prediction of eligiblePredictions) {
       const event = prediction.event;
       const storedEvent = await db.upsertSportsEvent({
@@ -67,12 +83,8 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
         sourceUpdatedAt: toDate(prediction.created_at),
       });
 
-      let odds: ApiOdds[] = [];
-      try {
-        odds = (await fetchOdds(event.id)).results;
-      } catch {
-        incompleteOdds += 1;
-      }
+      const odds = oddsByProviderEvent.get(event.id) ?? [];
+      if (!bulkOddsAvailable) incompleteOdds += 1;
 
       for (const item of odds) {
         await db.recordOddsSnapshot({

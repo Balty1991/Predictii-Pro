@@ -217,6 +217,15 @@ export async function fetchOdds(eventId: number) {
   return request<Paginated<ApiOdds>>("/odds/", paginatedSchema(apiOddsSchema), { event_id: eventId, limit: 200 });
 }
 
+export async function fetchBestOddsForWindow(market: string, dateFrom: string, dateTo: string) {
+  return request<Paginated<ApiOdds>>("/odds/best/", paginatedSchema(apiOddsSchema), {
+    market,
+    date_from: dateFrom,
+    date_to: dateTo,
+    limit: 200,
+  });
+}
+
 export async function fetchEvents(status: string, dateFrom: string, dateTo: string) {
   return request<Paginated<ApiEvent>>("/events/", paginatedSchema(apiEventSchema), {
     status,

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { fetchOdds } from "./sportsApi";
+import { fetchBestOddsForWindow, fetchOdds } from "./sportsApi";
 
 const SPORTS_API_BASE_URL = "https://sports.bzzoiro.com/api/v2";
 
@@ -21,6 +21,15 @@ describe("Sports Data API credentials", () => {
 
     await expect(resultPromise).resolves.toMatchObject({ count: 0, results: [] });
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("solicită cotele în lot pentru piața și intervalul configurat", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ count: 0, next: null, previous: null, results: [] }), { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+
+    await expect(fetchBestOddsForWindow("btts", "2026-08-22", "2026-08-24")).resolves.toMatchObject({ count: 0, results: [] });
+
+    expect(String(fetchMock.mock.calls[0]?.[0])).toContain("/odds/best/?market=btts&date_from=2026-08-22&date_to=2026-08-24&limit=200");
   });
 
   it("authorizes a lightweight upcoming-events request", async () => {
