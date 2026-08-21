@@ -239,6 +239,17 @@ export async function completeSyncRun(id: number, status: "completed" | "partial
   await db.update(syncRuns).set({ status, summary, errorMessage: errorMessage ?? null, completedAt: new Date() }).where(eq(syncRuns.id, id));
 }
 
+export async function getLatestSportsSyncStatus() {
+  const db = await getDb();
+  if (!db) return undefined;
+  return (await db.select({
+    status: syncRuns.status,
+    errorMessage: syncRuns.errorMessage,
+    completedAt: syncRuns.completedAt,
+  }).from(syncRuns).where(eq(syncRuns.jobType, "daily_predictions"))
+    .orderBy(desc(syncRuns.id)).limit(1))[0];
+}
+
 export async function listDashboardPredictions() {
   const db = await getDb();
   if (!db) return [];

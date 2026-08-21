@@ -51,7 +51,7 @@
 - [x] Implementarea unei reguli explicite de volatilitate din cote și aplicarea server-side a limitelor de risc la salvarea tuturor biletelor.
 - [ ] Eliminarea simulării ca element central și reorganizarea Strategiilor în jurul acumulatoarelor și pașilor de piramidă bazați exclusiv pe evenimente reale eligibile.
 - [ ] Adăugarea ștergerii sigure a unei piramide și a pasului activ, cu confirmare și protecție pentru bilete deja asociate.
-- [ ] Tratarea erorilor 429 ale furnizorului fără expunerea răspunsului tehnic brut și cu stare clară de reîncercare pentru utilizator.
+- [x] Tratarea erorilor 429 ale furnizorului fără expunerea răspunsului tehnic brut și cu stare clară de reîncercare pentru utilizator.
 - [ ] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
 - [ ] Validarea end-to-end pe telefon: sincronizare → selecție reală → acumulator/piramidă → asociere → urmărire rezultat.
 - [x] Reconstruirea meniului mobil ca navigare de produs orientată pe fluxul zilnic: Meciuri, Acumulatoare, Piramide și Istoric.
