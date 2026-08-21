@@ -58,6 +58,7 @@ export default function Dashboard() {
   const allPredictions = (predictionsQuery.data ?? []) as DashboardPrediction[];
   const sports = useMemo(() => Array.from(new Set(allPredictions.map(prediction => prediction.sport))).sort(), [allPredictions]);
   const filteredPredictions = useMemo(() => allPredictions.filter(prediction => {
+    if (prediction.eventStatus !== "upcoming" || prediction.startsAt.getTime() <= Date.now()) return false;
     const localDate = prediction.startsAt.toLocaleDateString("en-CA", { timeZone: "Europe/Bucharest" });
     const today = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Bucharest" });
     if (dateFilter === "today" && localDate !== today) return false;

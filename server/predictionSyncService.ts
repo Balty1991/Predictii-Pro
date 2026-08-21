@@ -29,9 +29,8 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
 
   try {
     const payload = await fetchPredictions(toDateString(from), toDateString(until));
-    const eligiblePredictions = payload.results
-      .filter(prediction => normalizeEventStatus(prediction.event.status) === "upcoming")
-      .slice(0, maxEvents);
+    const upcomingPredictions = payload.results
+      .filter(prediction => normalizeEventStatus(prediction.event.status) === "upcoming");
     const oddsByProviderEvent = new Map<number, ApiOdds[]>();
     let bulkOddsAvailable = true;
     const oddsMarkets = ["1x2", "over_under_15", "over_under_25", "over_under_35", "btts"];
@@ -48,6 +47,9 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
         break;
       }
     }
+    const eligiblePredictions = [...upcomingPredictions]
+      .sort((left, right) => Number(oddsByProviderEvent.has(right.event.id)) - Number(oddsByProviderEvent.has(left.event.id)))
+      .slice(0, maxEvents);
     for (const prediction of eligiblePredictions) {
       const event = prediction.event;
       const storedEvent = await db.upsertSportsEvent({
