@@ -45,6 +45,8 @@ export type ApiPrediction = {
   };
   recommendations?: Record<string, string | number | boolean | null | undefined>;
   model?: { confidence?: number; version?: string };
+  context?: Record<string, unknown>;
+  contextual_factors?: Record<string, unknown>;
   [key: string]: unknown;
 };
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizePredictionSelections } from "./predictionSync";
+import { buildContextScore, extractContextualSignals, normalizePredictionSelections } from "./predictionSync";
 import { getManualRefreshCooldownSeconds, hasStrategyEligibleOdds, MAX_EXTERNAL_CALLS_PER_SYNC } from "./predictionSyncService";
 import type { ApiPrediction } from "./sportsApi";
 
@@ -18,6 +18,23 @@ describe("prediction mapping", () => {
     expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 1.35 }])).toBe(true);
     expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 1.08 }])).toBe(false);
     expect(hasStrategyEligibleOdds([{ event_id: 1, market: "1x2", outcome: "HOME", decimal_odds: 2.8 }])).toBe(false);
+  });
+
+  it("include factorii contextuali disponibili în scor și explicațiile selecției", () => {
+    const prediction: ApiPrediction = {
+      id: 3,
+      event: { id: 12, event_date: "2026-08-22T18:00:00Z", status: "upcoming", home_team: "Alpha", away_team: "Beta" },
+      markets: { over_under: { prob_over_15: 74 }, expected_goals: { home: 1.8, away: 1.0 } },
+      model: { confidence: 0.7 },
+      recommendations: { over_15: true },
+      contextual_factors: { form_score: 0.8, h2h_score: 65, referee_score: 7.5 },
+    };
+    const signals = extractContextualSignals(prediction);
+    const selections = normalizePredictionSelections(prediction, [{ event_id: 12, market: "over_under_15", outcome: "over", decimal_odds: 1.5 }]);
+
+    expect(signals.map(signal => signal.label)).toEqual(["Formă echipe", "Confruntări directe", "Arbitru"]);
+    expect(buildContextScore(prediction, true)).toBeGreaterThan(80);
+    expect(selections[0]?.reasonCodes).toContain("Formă echipe: 80/100");
   });
 
   it("maps predicted markets and best available odds without creating unsupported selections", () => {
