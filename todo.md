@@ -20,7 +20,7 @@
 - [x] Implementarea monitorizării pas-cu-pas pentru piramide și acumulatoare, cu statut câștigător/pierdut, profit sau pierdere și progres cumulativ.
 - [x] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
 - [x] Implementarea indicatorului de valoare: probabilitate implicită, cotă corectă, edge și avertizarea când avantajul dispare.
-- [ ] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.
+- [x] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.
 - [ ] Implementarea monitorizării CLV pentru a compara cota de intrare cu ultima cotă disponibilă înainte de start.
 - [ ] Implementarea heatmap-ului de performanță pentru ROI, rată de reușită, volum, volatilitate și drawdown pe ligă, piață și interval de cote.
 - [ ] Implementarea scorului contextual cu factori transparenți din xG, forma echipelor, confruntări directe, lot, antrenori, arbitru, deplasare și condiții de meci atunci când API-ul îi oferă.
@@ -74,3 +74,6 @@
 - [x] Suspendarea sincronizărilor și a integrărilor API pentru aplicațiile de predicții neexceptate de utilizator, păstrând active VEYRA, BETPREDICT și Predicții Pro.
 - [x] Configurarea VEYRA cu maximum două apeluri API automate pe zi, unul dimineața și unul seara, fără actualizări automate intermediare.
 - [x] Implementarea și verificarea unui plafon măsurabil pentru request-urile Sports API ale VEYRA, separat de limita de două execuții automate pe zi.
+- [x] Extinderea istoricului de cote cu shortening/drifting, delta față de snapshotul anterior și bookmaker-ul care a furnizat prețul.
+- [x] Adăugarea stărilor de încărcare, eroare și date insuficiente pentru monitorul de cote din cardul predicției.
+- [ ] Validarea end-to-end a fluxului oddsSnapshots → istoric → indicator shortening/drifting după revenirea feedului de cote.
