@@ -35,3 +35,9 @@
 - [x] Crearea unui portal public GitHub Pages pentru Predicții Pro, cu acces clar către aplicația full-stack securizată.
 - [x] Configurarea și verificarea publicării portalului prin GitHub Pages.
 - [x] Activarea manuală a sursei GitHub Actions pentru Pages și confirmarea rulării workflow-ului publicat.
+- [x] Reconstruirea dashboardului într-o ierarhie editorială cu navigație clară, grupare pe sport și competiție, ferestre de start și selecții prioritare distincte.
+- [x] Reducerea densității vizuale și proiectarea cardurilor de predicție ca unități de decizie cu informații esențiale, risc și explicație expandabilă.
+- [ ] Generarea automată a recomandărilor de evenimente eligibile pentru fiecare pas activ de piramidă, în funcție de intervalul de cote configurat.
+- [ ] Permiterea asociării directe a recomandării propuse cu pasul activ al piramidei și decontarea automată din rezultatele API.
+- [ ] Remedierea populării cotelor curente/corecte și a stării de recomandare pentru selecțiile existente, astfel încât recomandările reale de piramidă să poată fi generate efectiv.
+- [ ] Adăugarea unei recuperări controlate la indisponibilitatea endpointului de cote și revalidarea end-to-end: recomandare reală → asociere la pas activ → decontare automată.

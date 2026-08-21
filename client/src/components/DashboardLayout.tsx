@@ -28,10 +28,10 @@ import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Predicții", path: "/" },
-  { icon: Sparkles, label: "Strategii", path: "/strategii" },
-  { icon: ChartNoAxesCombined, label: "Performanță", path: "/performanta" },
-  { icon: UserRound, label: "Profil", path: "/profil" },
+  { icon: LayoutDashboard, label: "Centrul de decizie", path: "/" },
+  { icon: Sparkles, label: "Strategii & piramide", path: "/strategii" },
+  { icon: ChartNoAxesCombined, label: "Performanță verificată", path: "/performanta" },
+  { icon: UserRound, label: "Profil & alerte", path: "/profil" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";

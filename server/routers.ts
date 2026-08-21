@@ -136,6 +136,13 @@ export const appRouter = router({
       pyramidPlanId: z.number().int().positive(),
       ticketId: z.number().int().positive(),
     })).mutation(({ ctx, input }) => db.attachTicketToActivePyramidStep({ userId: ctx.user.id, ...input })),
+    recommendations: protectedProcedure.input(z.object({
+      pyramidPlanId: z.number().int().positive(),
+    })).query(({ ctx, input }) => db.getPyramidRecommendations(ctx.user.id, input.pyramidPlanId)),
+    assignRecommendation: protectedProcedure.input(z.object({
+      pyramidPlanId: z.number().int().positive(),
+      selectionId: z.number().int().positive(),
+    })).mutation(({ ctx, input }) => db.assignPyramidRecommendation({ userId: ctx.user.id, ...input })),
     settleStep: protectedProcedure.input(z.object({
       pyramidPlanId: z.number().int().positive(),
       outcome: z.enum(["won", "lost", "void"]),

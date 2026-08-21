@@ -1,8 +1,28 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { fetchOdds } from "./sportsApi";
 
 const SPORTS_API_BASE_URL = "https://sports.bzzoiro.com/api/v2";
 
 describe("Sports Data API credentials", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.useRealTimers();
+  });
+
+  it("reîncearcă o cerere de cote după o eroare tranzitorie de rețea", async () => {
+    vi.useFakeTimers();
+    const fetchMock = vi.fn()
+      .mockRejectedValueOnce(new Error("TLS connection reset"))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ count: 0, next: null, previous: null, results: [] }), { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+
+    const resultPromise = fetchOdds(222618);
+    await vi.advanceTimersByTimeAsync(700);
+
+    await expect(resultPromise).resolves.toMatchObject({ count: 0, results: [] });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
   it("authorizes a lightweight upcoming-events request", async () => {
     const apiKey = process.env.SPORTS_DATA_API_KEY;
 

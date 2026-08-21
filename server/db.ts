@@ -363,6 +363,71 @@ export async function attachTicketToActivePyramidStep(input: { userId: number; p
   return { pyramidPlanId: plan.id, stepId: activeStep.id, ticketId: ticket.id };
 }
 
+export async function getPyramidRecommendations(userId: number, pyramidPlanId: number) {
+  const db = await getDb();
+  if (!db) return { plan: undefined, selections: [] };
+  const plan = (await db.select().from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${pyramidPlanId} AND ${pyramidPlans.userId} = ${userId} AND ${pyramidPlans.status} = 'active'`).limit(1))[0];
+  if (!plan) return { plan: undefined, selections: [] };
+  const activeStep = (await db.select().from(pyramidSteps)
+    .where(sql`${pyramidSteps.pyramidPlanId} = ${plan.id} AND ${pyramidSteps.status} = 'active'`).limit(1))[0];
+  if (!activeStep || activeStep.ticketId) return { plan, selections: [] };
+  const now = new Date();
+  const cutoff = new Date(now);
+  cutoff.setUTCDate(cutoff.getUTCDate() + 7);
+  const rows = await listDashboardPredictions();
+  const selections = rows.filter(selection => {
+    const odds = selection.currentOdds ? Number(selection.currentOdds) : null;
+    return selection.eventStatus === "upcoming"
+      && selection.recommendationStatus === "recommended"
+      && selection.valueStatus === "positive"
+      && odds !== null
+      && odds >= Number(plan.targetOddsMin)
+      && odds <= Number(plan.targetOddsMax)
+      && selection.startsAt >= now
+      && selection.startsAt <= cutoff;
+  }).sort((a, b) => {
+    const scoreA = Number(a.expectedValue ?? 0) + Number(a.probability ?? 0) / 10 + Number(a.contextScore ?? 0) / 20;
+    const scoreB = Number(b.expectedValue ?? 0) + Number(b.probability ?? 0) / 10 + Number(b.contextScore ?? 0) / 20;
+    return scoreB - scoreA;
+  }).slice(0, 8);
+  return { plan, activeStep, selections };
+}
+
+export async function assignPyramidRecommendation(input: { userId: number; pyramidPlanId: number; selectionId: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const recommendations = await getPyramidRecommendations(input.userId, input.pyramidPlanId);
+  const plan = recommendations.plan;
+  const activeStep = recommendations.activeStep;
+  const selection = recommendations.selections.find(item => item.id === input.selectionId);
+  if (!plan || !activeStep) throw new Error("Piramida nu are un pas eligibil pentru recomandări.");
+  if (!selection || !selection.currentOdds) throw new Error("Selecția nu mai este eligibilă pentru intervalul activ al piramidei.");
+  const result = await db.insert(predictionTickets).values({
+    createdByUserId: input.userId,
+    title: `${plan.title} · pas ${activeStep.stepNumber}`,
+    ticketType: "pyramid",
+    targetOdds: Number(selection.currentOdds).toFixed(3),
+    totalOdds: Number(selection.currentOdds).toFixed(3),
+    combinedProbability: Number(selection.probability).toFixed(2),
+    expectedValue: Number(selection.expectedValue ?? 0).toFixed(4),
+    stake: Number(activeStep.stake).toFixed(2),
+    status: "published",
+    startsAt: selection.startsAt,
+    strategyMetadata: { pyramidPlanId: plan.id, stepNumber: activeStep.stepNumber, source: "eligible-recommendation" },
+  });
+  const ticketId = Number(result[0].insertId);
+  await db.insert(ticketSelections).values({
+    ticketId,
+    predictionSelectionId: selection.id,
+    position: 1,
+    oddsAtSelection: Number(selection.currentOdds).toFixed(3),
+  });
+  await db.update(pyramidSteps).set({ ticketId, resultNote: `Recomandare API asociată: ${selection.homeTeam} – ${selection.awayTeam}, ${selection.label}.` })
+    .where(eq(pyramidSteps.id, activeStep.id));
+  return { ticketId, selectionId: selection.id, pyramidPlanId: plan.id, stepNumber: activeStep.stepNumber };
+}
+
 export async function settlePyramidStep(input: {
   userId: number;
   pyramidPlanId: number;

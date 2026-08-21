@@ -1,6 +1,8 @@
 import { z } from "zod";
 
 const SPORTS_API_BASE_URL = "https://sports.bzzoiro.com/api/v2";
+const MAX_TRANSIENT_ATTEMPTS = 2;
+const REQUEST_TIMEOUT_MS = 12_000;
 
 type Paginated<T> = {
   count: number;
@@ -135,30 +137,64 @@ function getApiKey() {
   return apiKey;
 }
 
+function isRetryableStatus(status: number) {
+  return status === 408 || status === 425 || status === 429 || status >= 500;
+}
+
+function waitBeforeRetry(attempt: number) {
+  return new Promise(resolve => setTimeout(resolve, 700 * attempt));
+}
+
 async function request<T>(path: string, schema: z.ZodType<T>, query?: Record<string, string | number | boolean | undefined>) {
   const url = new URL(`${SPORTS_API_BASE_URL}${path}`);
   for (const [key, value] of Object.entries(query ?? {})) {
     if (value !== undefined) url.searchParams.set(key, String(value));
   }
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Token ${getApiKey()}`,
-      Accept: "application/json",
-    },
-  });
+  let lastError: Error | undefined;
+  for (let attempt = 1; attempt <= MAX_TRANSIENT_ATTEMPTS; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        headers: {
+          Authorization: `Token ${getApiKey()}`,
+          Accept: "application/json",
+        },
+        signal: controller.signal,
+      });
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error("Unknown network error");
+      if (attempt < MAX_TRANSIENT_ATTEMPTS) {
+        await waitBeforeRetry(attempt);
+        continue;
+      }
+      break;
+    } finally {
+      clearTimeout(timeout);
+    }
 
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new SportsApiError(`Sports Data API request failed (${response.status}): ${errorBody.slice(0, 240)}`, response.status);
+    if (!response.ok) {
+      const errorBody = await response.text();
+      const requestError = new SportsApiError(`Sports Data API request failed (${response.status}): ${errorBody.slice(0, 240)}`, response.status);
+      if (isRetryableStatus(response.status) && attempt < MAX_TRANSIENT_ATTEMPTS) {
+        lastError = requestError;
+        await waitBeforeRetry(attempt);
+        continue;
+      }
+      throw requestError;
+    }
+
+    const body: unknown = await response.json();
+    const parsed = schema.safeParse(body);
+    if (!parsed.success) {
+      throw new SportsApiError(`Sports Data API returned an invalid payload: ${parsed.error.issues[0]?.message ?? "Unknown schema error"}`, 502);
+    }
+    return parsed.data;
   }
 
-  const body: unknown = await response.json();
-  const parsed = schema.safeParse(body);
-  if (!parsed.success) {
-    throw new SportsApiError(`Sports Data API returned an invalid payload: ${parsed.error.issues[0]?.message ?? "Unknown schema error"}`, 502);
-  }
-  return parsed.data;
+  throw new SportsApiError(`Sports Data API is temporarily unavailable after ${MAX_TRANSIENT_ATTEMPTS} attempts: ${lastError?.message ?? "Unknown network error"}`, 503);
 }
 
 export async function fetchPredictions(dateFrom: string, dateTo: string) {
