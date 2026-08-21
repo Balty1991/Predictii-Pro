@@ -179,6 +179,7 @@ export const appRouter = router({
   results: router({
     history: protectedProcedure.query(() => db.listRecentResults()),
     breakdown: protectedProcedure.query(() => db.getPerformanceBreakdown()),
+    analytics: protectedProcedure.query(() => db.getPerformanceAnalytics()),
   }),
   notifications: router({
     list: protectedProcedure.query(({ ctx }) => db.listUserNotifications(ctx.user.id)),

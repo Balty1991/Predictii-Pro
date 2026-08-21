@@ -21,8 +21,8 @@
 - [x] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
 - [x] Implementarea indicatorului de valoare: probabilitate implicită, cotă corectă, edge și avertizarea când avantajul dispare.
 - [x] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.
-- [ ] Implementarea monitorizării CLV pentru a compara cota de intrare cu ultima cotă disponibilă înainte de start.
-- [ ] Implementarea heatmap-ului de performanță pentru ROI, rată de reușită, volum, volatilitate și drawdown pe ligă, piață și interval de cote.
+- [x] Implementarea monitorizării CLV pentru a compara cota de intrare cu ultima cotă disponibilă înainte de start.
+- [x] Implementarea heatmap-ului de performanță pentru ROI, rată de reușită, volum, volatilitate și drawdown pe ligă, piață și interval de cote.
 - [ ] Implementarea scorului contextual cu factori transparenți din xG, forma echipelor, confruntări directe, lot, antrenori, arbitru, deplasare și condiții de meci atunci când API-ul îi oferă.
 - [ ] Implementarea consensului de semnale între modelul API, probabilitatea calculată din cote și, când există, piața de predicții.
 - [ ] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
@@ -77,3 +77,5 @@
 - [x] Extinderea istoricului de cote cu shortening/drifting, delta față de snapshotul anterior și bookmaker-ul care a furnizat prețul.
 - [x] Adăugarea stărilor de încărcare, eroare și date insuficiente pentru monitorul de cote din cardul predicției.
 - [ ] Validarea end-to-end a fluxului oddsSnapshots → istoric → indicator shortening/drifting după revenirea feedului de cote.
+- [x] Extinderea heatmap-ului de performanță cu agregări și filtre pe competiție și interval de cote, nu doar pe sport și piață.
+- [x] Adăugarea testelor și a stărilor de încărcare sau eroare pentru analitica multidimensională de performanță.

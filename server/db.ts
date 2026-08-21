@@ -18,6 +18,7 @@ import {
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 import { isTicketCandidateEligible, projectPyramidStep } from "./predictionMath";
+import { buildPerformanceAnalytics } from "./performanceAnalytics";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -693,6 +694,17 @@ export async function getPerformanceBreakdown() {
     winRate: item.won + item.lost ? Number(((item.won / (item.won + item.lost)) * 100).toFixed(1)) : null,
     avgOdds: item.oddsCount ? Number((item.oddsTotal / item.oddsCount).toFixed(2)) : null,
   })).sort((a, b) => b.total - a.total);
+}
+
+export async function getPerformanceAnalytics() {
+  const rows = await listRecentResults(1000);
+  return buildPerformanceAnalytics(rows.map(row => ({
+    sport: row.sport,
+    competition: row.competition,
+    market: row.market,
+    settlementStatus: row.settlementStatus,
+    odds: row.currentOdds ? Number(row.currentOdds) : null,
+  })));
 }
 
 export async function createAccumulatorTicket(input: {
