@@ -17,10 +17,10 @@ function normalizeEventStatus(status: string): "upcoming" | "live" | "finished" 
   return "unresolved";
 }
 
-export async function synchronizePredictions(from = new Date(), daysAhead = 3, maxEvents = 30, maxExplanations = 3) {
+export async function synchronizePredictions(from = new Date(), daysAhead = 3, maxEvents = 30, maxExplanations = 3, scheduleCronTaskUid?: string) {
   const until = new Date(from);
   until.setUTCDate(until.getUTCDate() + daysAhead);
-  const runId = await db.startSyncRun("daily_predictions");
+  const runId = await db.startSyncRun("daily_predictions", scheduleCronTaskUid);
   let savedPredictions = 0;
   let savedSelections = 0;
   let incompleteOdds = 0;

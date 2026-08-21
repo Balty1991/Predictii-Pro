@@ -208,10 +208,10 @@ export async function recordOddsSnapshot(values: {
   await db.insert(oddsSnapshots).values(values);
 }
 
-export async function startSyncRun(jobType: "daily_predictions" | "odds_delta" | "results_confirmation" | "explanations") {
+export async function startSyncRun(jobType: "daily_predictions" | "odds_delta" | "results_confirmation" | "explanations", scheduleCronTaskUid?: string) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  const result = await db.insert(syncRuns).values({ jobType, status: "started" });
+  const result = await db.insert(syncRuns).values({ jobType, status: "started", scheduleCronTaskUid: scheduleCronTaskUid ?? null });
   return Number(result[0].insertId);
 }
 
