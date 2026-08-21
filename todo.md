@@ -1,0 +1,29 @@
+# Project TODO
+
+- [x] Analiza documentației API Sports și a repository-urilor existente pentru endpointuri, autentificare, modele și strategii de sincronizare.
+- [x] Documentarea modelului de date pentru evenimente, competiții, cote, predicții, rezultate, favorite și agregări statistice.
+- [x] Configurarea variabilelor de mediu securizate necesare pentru integrarea API-ului de predicții.
+- [x] Implementarea clientului server-side pentru API, cu validare de răspuns, gestionare de erori și protecție față de date incomplete.
+- [x] Implementarea tabelelor, migrației și procedurilor pentru predicții, rezultate, favorite și statistici.
+- [ ] Implementarea sincronizării automate zilnice a evenimentelor, cotelor, predicțiilor și rezultatelor confirmate.
+- [ ] Implementarea explicațiilor AI generate pentru fiecare predicție, afișate direct în cardul predicției.
+- [x] Construirea tabloului de bord premium cu predicțiile zilei, grupare pe sport și competiție și filtre rapide.
+- [x] Construirea paginii de rezultate, a istoricului și a indicatorilor de performanță pe sport și tip de pariu.
+- [x] Implementarea profilului utilizatorului, autentificării Manus OAuth și salvării de predicții favorite.
+- [ ] Implementarea notificărilor pentru owner și utilizatori la publicarea predicțiilor zilnice și confirmarea rezultatelor.
+- [x] Adăugarea stărilor de încărcare, gol și eroare, precum și a comportamentului responsiv și accesibil.
+- [x] Scrierea și rularea testelor Vitest pentru logica de integrare, statisticile de performanță și fluxurile principale.
+- [ ] Verificarea vizuală desktop și mobil, corectarea problemelor și salvarea unui checkpoint final.
+- [x] Implementarea generatorului de bilete acumulator cu variante zilnice și pe perioade configurabile.
+- [x] Implementarea profilurilor de risc pentru cote țintă, inclusiv 1.20, 1.40, 2.00 și valori definite de utilizator.
+- [x] Implementarea constructorului de piramide cu număr configurabil de pași, miză inițială, reinvestire și simulare transparentă a evoluției capitalului.
+- [ ] Implementarea monitorizării pas-cu-pas pentru piramide și acumulatoare, cu statut câștigător/pierdut, profit sau pierdere și progres cumulativ.
+- [ ] Integrarea selecțiilor de piramidă și acumulator cu predicțiile eligibile, cotele curente și rezultatele confirmate de API.
+- [x] Implementarea indicatorului de valoare: probabilitate implicită, cotă corectă, edge și avertizarea când avantajul dispare.
+- [ ] Implementarea monitorizării mișcării cotei, inclusiv diferența față de cotă de deschidere, scurtarea sau creșterea cotei și istoricul momentelor-cheie.
+- [ ] Implementarea monitorizării CLV pentru a compara cota de intrare cu ultima cotă disponibilă înainte de start.
+- [ ] Implementarea heatmap-ului de performanță pentru ROI, rată de reușită, volum, volatilitate și drawdown pe ligă, piață și interval de cote.
+- [ ] Implementarea scorului contextual cu factori transparenți din xG, forma echipelor, confruntări directe, lot, antrenori, arbitru, deplasare și condiții de meci atunci când API-ul îi oferă.
+- [ ] Implementarea consensului de semnale între modelul API, probabilitatea calculată din cote și, când există, piața de predicții.
+- [ ] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
+- [ ] Implementarea limitelor de risc pentru bilete: corelații, selecții din același meci, concentrarea pe ligă, volatilitate și cotă degradată.
