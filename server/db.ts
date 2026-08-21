@@ -17,7 +17,7 @@ import {
   users,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
-import { projectPyramidStep } from "./predictionMath";
+import { isTicketCandidateEligible, projectPyramidStep } from "./predictionMath";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -663,8 +663,29 @@ export async function createAccumulatorTicket(input: {
     id: predictionSelections.id,
     odds: predictionSelections.currentOdds,
     probability: predictionSelections.predictedProbability,
-  }).from(predictionSelections).where(inArray(predictionSelections.id, uniqueIds));
+    openingOdds: predictionSelections.openingOdds,
+    contextScore: predictionSelections.contextScore,
+    confidence: predictionSelections.modelConfidence,
+    eventId: predictionSelections.eventId,
+    competitionId: sportsEvents.competitionId,
+  }).from(predictionSelections)
+    .innerJoin(sportsEvents, eq(predictionSelections.eventId, sportsEvents.id))
+    .where(inArray(predictionSelections.id, uniqueIds));
   if (selections.length !== uniqueIds.length || selections.some(item => !item.odds)) throw new Error("Una sau mai multe selecții nu mai au o cotă disponibilă.");
+  const hasRiskySelection = selections.some(item => !isTicketCandidateEligible({
+    id: item.id,
+    eventId: item.eventId,
+    competitionId: item.competitionId,
+    odds: Number(item.odds),
+    openingOdds: item.openingOdds ? Number(item.openingOdds) : null,
+    probability: Number(item.probability),
+    contextScore: item.contextScore ? Number(item.contextScore) : null,
+    confidence: item.confidence ? Number(item.confidence) : null,
+  }));
+  if (hasRiskySelection) throw new Error("Biletul conține o selecție care nu respectă limitele de valoare, context, încredere sau volatilitate.");
+  if (new Set(selections.map(item => item.eventId)).size !== selections.length) throw new Error("Nu poți combina mai multe selecții din același meci.");
+  const competitionIds = selections.map(item => item.competitionId).filter((id): id is number => id !== null);
+  if (new Set(competitionIds).size !== competitionIds.length) throw new Error("Nu poți concentra biletul pe aceeași competiție.");
   const totalOdds = selections.reduce((total, item) => total * Number(item.odds), 1);
   const combinedProbability = selections.reduce((total, item) => total * (Number(item.probability) / 100), 1) * 100;
   const expectedValue = ((combinedProbability / 100) * totalOdds - 1) * 100;

@@ -73,6 +73,24 @@ export type AccumulatorPlan = {
   expectedValue: number;
 };
 
+export const MIN_CONTEXT_SCORE_FOR_TICKET = 50;
+export const MIN_CONFIDENCE_FOR_TICKET = 0.45;
+export const MAX_ODDS_VOLATILITY_PERCENT = 12;
+
+export function hasExcessiveOddsVolatility(currentOdds: number, openingOdds: number | null | undefined) {
+  if (!openingOdds || !Number.isFinite(openingOdds) || openingOdds <= 1) return false;
+  return Math.abs((currentOdds / openingOdds - 1) * 100) > MAX_ODDS_VOLATILITY_PERCENT;
+}
+
+export function isTicketCandidateEligible(selection: CandidateSelection) {
+  const metrics = calculateSelectionMetrics(selection.probability, selection.odds, selection.contextScore, selection.confidence);
+  const materiallyDegraded = selection.openingOdds !== null && selection.openingOdds !== undefined && selection.odds < selection.openingOdds * 0.95;
+  const volatilePrice = hasExcessiveOddsVolatility(selection.odds, selection.openingOdds);
+  const weakContext = selection.contextScore !== null && selection.contextScore !== undefined && selection.contextScore < MIN_CONTEXT_SCORE_FOR_TICKET;
+  const weakConfidence = selection.confidence !== null && selection.confidence !== undefined && selection.confidence < MIN_CONFIDENCE_FOR_TICKET;
+  return Boolean(metrics && metrics.expectedValue > 0 && selection.odds > 1 && !materiallyDegraded && !volatilePrice && !weakContext && !weakConfidence);
+}
+
 export function buildAccumulator(
   candidates: CandidateSelection[],
   targetOddsMin: number,
@@ -80,11 +98,7 @@ export function buildAccumulator(
   maxSelections = 4,
 ): AccumulatorPlan | null {
   const eligible = candidates
-    .filter(selection => {
-      const metrics = calculateSelectionMetrics(selection.probability, selection.odds, selection.contextScore, selection.confidence);
-      const materiallyDegraded = selection.openingOdds !== null && selection.openingOdds !== undefined && selection.odds < selection.openingOdds * 0.95;
-      return Boolean(metrics && metrics.expectedValue > 0 && selection.odds > 1 && !materiallyDegraded);
-    })
+    .filter(isTicketCandidateEligible)
     .sort((a, b) => {
       const aMetrics = calculateSelectionMetrics(a.probability, a.odds, a.contextScore, a.confidence)!;
       const bMetrics = calculateSelectionMetrics(b.probability, b.odds, b.contextScore, b.confidence)!;
@@ -120,7 +134,7 @@ export function buildAccumulator(
     for (let index = startIndex; index < eligible.length; index += 1) {
       const candidate = eligible[index];
       const hasSameEvent = current.some(selection => selection.eventId === candidate.eventId);
-      const inSameCompetition = current.filter(selection => selection.competitionId && selection.competitionId === candidate.competitionId).length >= 2;
+      const inSameCompetition = current.some(selection => selection.competitionId && selection.competitionId === candidate.competitionId);
       if (hasSameEvent || inSameCompetition) continue;
       choose(index + 1, [...current, candidate]);
     }

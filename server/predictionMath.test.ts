@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildAccumulator, calculateClv, calculateConsensusScore, calculateFairOdds, calculateSelectionMetrics, projectPyramidStep } from "./predictionMath";
+import { buildAccumulator, calculateClv, calculateConsensusScore, calculateFairOdds, calculateSelectionMetrics, hasExcessiveOddsVolatility, isTicketCandidateEligible, projectPyramidStep } from "./predictionMath";
 
 describe("prediction math", () => {
   it("calculates implied probability, fair odds and positive value", () => {
@@ -70,5 +70,20 @@ describe("prediction math", () => {
     ], 1.8, 2.3);
 
     expect(plan?.selections.some(selection => selection.id === 10)).toBe(false);
+  });
+
+  it("rejects a low-context candidate and never concentrates an accumulator in one competition", () => {
+    expect(isTicketCandidateEligible({ id: 1, eventId: 1, odds: 1.6, probability: 70, contextScore: 42, confidence: 0.7 })).toBe(false);
+    const plan = buildAccumulator([
+      { id: 1, eventId: 1, competitionId: 5, odds: 1.6, probability: 70, contextScore: 70, confidence: 0.7 },
+      { id: 2, eventId: 2, competitionId: 5, odds: 1.5, probability: 72, contextScore: 72, confidence: 0.7 },
+      { id: 3, eventId: 3, competitionId: 6, odds: 1.4, probability: 76, contextScore: 74, confidence: 0.75 },
+    ], 2, 2.5);
+    expect(plan?.selections.filter(selection => selection.competitionId === 5)).toHaveLength(1);
+  });
+
+  it("rejects volatile prices even when they have not shortened by the separate degradation threshold", () => {
+    expect(hasExcessiveOddsVolatility(2.25, 2)).toBe(true);
+    expect(isTicketCandidateEligible({ id: 1, eventId: 1, odds: 2.25, openingOdds: 2, probability: 60, contextScore: 70, confidence: 0.7 })).toBe(false);
   });
 });

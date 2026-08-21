@@ -26,7 +26,7 @@
 - [ ] Implementarea scorului contextual cu factori transparenți din xG, forma echipelor, confruntări directe, lot, antrenori, arbitru, deplasare și condiții de meci atunci când API-ul îi oferă.
 - [ ] Implementarea consensului de semnale între modelul API, probabilitatea calculată din cote și, când există, piața de predicții.
 - [ ] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
-- [ ] Implementarea limitelor de risc pentru bilete: corelații, selecții din același meci, concentrarea pe ligă, volatilitate și cotă degradată.
+- [x] Implementarea limitelor de risc pentru bilete: corelații, selecții din același meci, concentrarea pe ligă, volatilitate și cotă degradată.
 - [x] Verificarea existenței, vizibilității și accesului utilizatorului la repository-ul GitHub Balty1991/Predictii-Pro.
 - [x] Schimbarea repository-ului GitHub Balty1991/Predictii-Pro din privat în public și verificarea accesului fără autentificare.
 - [x] Verificarea accesului public la aplicația Predicții Pro prin domeniul de producție Manus.
@@ -48,3 +48,4 @@
 - [ ] Verificarea vizuală și funcțională a fluxurilor esențiale la 390 px și 430 px, inclusiv navigație, filtre, favorite, detalii și acțiuni de strategie.
 - [ ] Transformarea filtrelor mobile în benzi cu derulare orizontală și ridicarea tuturor țintelor tactile relevante la minimum 44 px.
 - [ ] Verificarea interactivă explicită la 390 px și 430 px pentru filtre, favorite, extinderea analizei și acțiunile de strategie.
+- [x] Implementarea unei reguli explicite de volatilitate din cote și aplicarea server-side a limitelor de risc la salvarea tuturor biletelor.
