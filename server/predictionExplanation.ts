@@ -18,7 +18,7 @@ let narrativeModel: string | null | undefined;
 async function getNarrativeModel() {
   if (narrativeModel !== undefined) return narrativeModel;
   const catalog = await listLLMModels();
-  narrativeModel = catalog.data.find(model => model.id === "gpt-5-mini")?.id ?? null;
+  narrativeModel = catalog.data.find(model => model.id === "gpt-5")?.id ?? null;
   return narrativeModel;
 }
 

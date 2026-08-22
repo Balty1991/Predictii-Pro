@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import React from "react";
 import { Bot, CircleDot, Minus, Star, Target, TrendingDown, TrendingUp } from "lucide-react";
 import { ContextFactorGrid } from "@/components/ContextFactorGrid";
 import { SignalConsensusPanel } from "@/components/SignalConsensusPanel";
@@ -45,7 +46,7 @@ function asNumber(value: string | null) {
   return value ? Number(value) : null;
 }
 
-export default function PredictionCard({ prediction, onToggleFavorite, onGenerateExplanation, explanationPending }: { prediction: PredictionCardData; onToggleFavorite: (id: number) => void; onGenerateExplanation: (id: number) => void; explanationPending?: boolean }) {
+export default function PredictionCard({ prediction, onToggleFavorite, onGenerateExplanation, explanationPending, explanationError, onDismissExplanationError }: { prediction: PredictionCardData; onToggleFavorite: (id: number) => void; onGenerateExplanation: (id: number) => void; explanationPending?: boolean; explanationError?: string; onDismissExplanationError?: () => void }) {
   const odds = asNumber(prediction.currentOdds);
   const openingOdds = asNumber(prediction.openingOdds);
   const ev = asNumber(prediction.expectedValue);
@@ -110,7 +111,8 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
       <div className="relative mt-4 rounded-2xl border border-border/70 bg-background/35 p-4">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.11em] text-primary"><Target className="h-3.5 w-3.5" /> Analiză AI</div>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">{prediction.aiExplanation ?? "Poți genera analiza AI direct aici; aceasta va folosi probabilitatea, cota și semnalele contextual disponibile pentru selecție."}</p>
-        {!prediction.aiExplanation && <Button size="sm" variant="outline" onClick={() => onGenerateExplanation(prediction.id)} disabled={explanationPending} className="mt-3 rounded-lg"><Bot className="mr-2 h-3.5 w-3.5" />{explanationPending ? "Generez…" : "Generează explicația AI"}</Button>}
+        {explanationError && <AiExplanationFailure message={explanationError} onDismiss={onDismissExplanationError} />}
+        {!prediction.aiExplanation && <Button size="sm" variant="outline" onClick={() => onGenerateExplanation(prediction.id)} disabled={explanationPending} className="mt-3 rounded-lg"><Bot className="mr-2 h-3.5 w-3.5" />{explanationPending ? "Generez…" : explanationError ? "Reîncearcă generarea AI" : "Generează explicația AI"}</Button>}
         {reasons.length > 0 && <p className="mt-3 text-xs leading-5 text-muted-foreground/85">{reasons.join(" · ")}</p>}
       </div>
     </article>
@@ -119,6 +121,10 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
 
 function Metric({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return <div className="rounded-xl border border-border/55 bg-background/30 px-3 py-2.5"><p className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</p><p className={`mt-1 text-sm font-semibold ${accent ? "text-emerald-300" : "text-foreground"}`}>{value}</p></div>;
+}
+
+export function AiExplanationFailure({ message, onDismiss }: { message: string; onDismiss?: () => void }) {
+  return <div role="alert" className="mt-3 rounded-xl border border-amber-300/25 bg-amber-300/5 px-3 py-3 text-xs leading-5 text-amber-100"><p>{message}</p>{onDismiss && <Button size="sm" variant="ghost" onClick={onDismiss} className="mt-1 h-8 px-2 text-amber-100 hover:text-amber-50">Ascunde mesajul</Button>}</div>;
 }
 
 type OddsSnapshotTileData = {

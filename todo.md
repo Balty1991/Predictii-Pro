@@ -52,7 +52,7 @@
 - [x] Eliminarea simulării ca element central și reorganizarea Strategiilor în jurul acumulatoarelor și pașilor de piramidă bazați exclusiv pe evenimente reale eligibile.
 - [x] Adăugarea ștergerii sigure a unei piramide și a pasului activ, cu confirmare și protecție pentru bilete deja asociate.
 - [x] Tratarea erorilor 429 ale furnizorului fără expunerea răspunsului tehnic brut și cu stare clară de reîncercare pentru utilizator.
-- [ ] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
+- [x] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
 - [ ] Validarea end-to-end pe telefon: sincronizare → selecție reală → acumulator/piramidă → asociere → urmărire rezultat.
 - [x] Reconstruirea meniului mobil ca navigare de produs orientată pe fluxul zilnic: Meciuri, Acumulatoare, Piramide și Istoric.
 - [x] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.

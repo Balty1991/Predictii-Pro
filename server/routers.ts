@@ -7,6 +7,7 @@ import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_
 import { buildAccumulator, projectPyramidStep } from "./predictionMath";
 import { generatePredictionExplanation, generatePredictionExplanationsBatch } from "./predictionExplanation";
 import { getManualRefreshCooldownSeconds, synchronizePredictions } from "./predictionSyncService";
+import { getSafeAiExplanationError } from "../shared/aiExplanationError";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -44,22 +45,26 @@ export const appRouter = router({
     }),
     explain: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).mutation(async ({ input }) => {
       const selection = await db.getSelectionExplanationInput(input.selectionId);
-      if (!selection) throw new Error("Selecția nu a fost găsită.");
-      const explanation = await generatePredictionExplanation({
-        fixture: `${selection.homeTeam} – ${selection.awayTeam}`,
-        competition: selection.competition,
-        marketLabel: selection.label,
-        probability: Number(selection.probability),
-        confidence: selection.confidence ? Number(selection.confidence) : null,
-        currentOdds: selection.currentOdds ? Number(selection.currentOdds) : null,
-        fairOdds: selection.fairOdds ? Number(selection.fairOdds) : null,
-        edge: selection.edge ? Number(selection.edge) : null,
-        expectedValue: selection.expectedValue ? Number(selection.expectedValue) : null,
-        reasons: Array.isArray(selection.reasonCodes) ? selection.reasonCodes.filter((item): item is string => typeof item === "string") : [],
-      });
-      if (!explanation) throw new Error("Explicația AI nu este disponibilă momentan.");
-      await db.updateSelectionExplanation(selection.id, explanation);
-      return { explanation };
+      if (!selection) throw new Error(getSafeAiExplanationError("Selecția nu a fost găsită."));
+      try {
+        const explanation = await generatePredictionExplanation({
+          fixture: `${selection.homeTeam} – ${selection.awayTeam}`,
+          competition: selection.competition,
+          marketLabel: selection.label,
+          probability: Number(selection.probability),
+          confidence: selection.confidence ? Number(selection.confidence) : null,
+          currentOdds: selection.currentOdds ? Number(selection.currentOdds) : null,
+          fairOdds: selection.fairOdds ? Number(selection.fairOdds) : null,
+          edge: selection.edge ? Number(selection.edge) : null,
+          expectedValue: selection.expectedValue ? Number(selection.expectedValue) : null,
+          reasons: Array.isArray(selection.reasonCodes) ? selection.reasonCodes.filter((item): item is string => typeof item === "string") : [],
+        });
+        if (!explanation) throw new Error("empty_ai_response");
+        await db.updateSelectionExplanation(selection.id, explanation);
+        return { explanation };
+      } catch {
+        throw new Error(getSafeAiExplanationError());
+      }
     }),
     generateMissingExplanations: adminProcedure.input(z.object({ limit: z.number().int().min(1).max(24).default(12) })).mutation(async ({ input }) => {
       const selections = await db.listMissingSelectionExplanationInputs(input.limit);
