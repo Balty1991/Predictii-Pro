@@ -177,6 +177,8 @@ function DashboardLayoutContent({
             </div>
           </SidebarHeader>
 
+          <SignalProtocolRail compact={isCollapsed} />
+
           <SidebarContent className="gap-0">
             <SidebarMenu className="px-2 py-1">
               {menuItems.map(item => {
@@ -261,5 +263,10 @@ function DashboardLayoutContent({
 function SignalMark({ size }: { size: "desktop" | "mobile" }) {
   const dimensions = size === "mobile" ? "h-8 w-8 rounded-xl" : "h-7 w-7 rounded-lg";
   const icon = size === "mobile" ? "h-4 w-4" : "h-3.5 w-3.5";
-  return <span className={`relative flex shrink-0 items-center justify-center border border-primary/35 bg-primary/10 text-primary shadow-[0_0_24px_rgba(70,202,142,0.13)] ${dimensions}`}><ShieldCheck className={icon} /><span className="absolute -bottom-0.5 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-primary shadow-[0_0_9px_rgba(70,202,142,0.9)]" /></span>;
+  return <span className={`relative flex shrink-0 items-center justify-center overflow-hidden border border-primary/35 bg-primary/10 text-primary shadow-[0_0_24px_rgba(70,202,142,0.13)] ${dimensions}`}><span className="absolute inset-1 rounded-[inherit] border border-primary/20" /><span className="absolute inset-x-0 top-1/2 h-px bg-primary/20" /><ShieldCheck className={`relative ${icon}`} /><span className="absolute -bottom-0.5 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-primary shadow-[0_0_9px_rgba(70,202,142,0.9)]" /></span>;
+}
+
+function SignalProtocolRail({ compact }: { compact: boolean }) {
+  if (compact) return <div aria-hidden className="mx-auto mb-2 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_rgba(70,202,142,0.9)]" />;
+  return <div className="mx-3 mb-3 overflow-hidden rounded-xl border border-primary/20 bg-[linear-gradient(130deg,rgba(70,202,142,0.11),rgba(13,20,34,0.12)_58%,rgba(101,144,255,0.08))] px-3 py-2.5"><div className="flex items-center justify-between gap-3"><p className="text-[9px] font-bold uppercase tracking-[0.17em] text-primary">Protocol activ</p><span className="flex gap-1" aria-hidden><i className="h-1 w-1 rounded-full bg-primary" /><i className="h-1 w-1 rounded-full bg-primary/60" /><i className="h-1 w-1 rounded-full bg-primary/30" /></span></div><p className="mt-1 text-[11px] font-semibold tracking-[0.03em] text-foreground">Model · piață · risc</p><p className="mt-1 text-[10px] leading-4 text-muted-foreground">Date reale, decizii explicabile.</p></div>;
 }

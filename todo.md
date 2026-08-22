@@ -57,7 +57,7 @@
 - [x] Reconstruirea meniului mobil ca navigare de produs orientată pe fluxul zilnic: Meciuri, Acumulatoare, Piramide și Istoric.
 - [x] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.
 - [ ] Reorganizarea afișării evenimentelor în liste profesioniste cu oră, echipe, piață, cotă, încredere și acțiune clară, fără carduri decorative redundante.
-- [ ] Stabilirea unei identități vizuale mai puternice, cu ierarhie tipografică, spațiere și componente distinctive pentru a depăși estetica actuală de dashboard generic.
+- [x] Stabilirea unei identități vizuale mai puternice, cu ierarhie tipografică, spațiere și componente distinctive pentru a depăși estetica actuală de dashboard generic.
 - [x] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
 - [x] Blocarea procedurală a decontării manuale a piramidelor și validarea trecerii active → finalizat numai prin settlement-ul automat al rezultatelor API.
 - [ ] Confirmarea funcțională că Acumulatoare și Piramide livrează selecții reale, nu scenarii simulate, imediat ce feedul furnizorului poate furniza cote eligibile.
@@ -93,3 +93,6 @@
 - [x] Rafinarea tipografiei și spațierii în rândurile de evenimente din Dashboard și în cardurile Acumulatoare/Piramide, cu ierarhie concretă pentru oră, echipe, piață, probabilitate și cotă.
 - [x] Verificarea vizuală documentată a ierarhiei și spațierii la 390 px, 430 px și desktop pentru Dashboard și Strategie.
 - [x] Extinderea consensului local cu ponderi transparente pentru alinierea cotei, încrederea modelului, context și semnalul furnizorului, fără apel extern suplimentar.
+- [x] Extinderea semnăturii de brand în cardurile principale, stările goale, filtre și secțiunile Acumulatoare/Istoric, nu doar în layout și fundal.
+- [x] Verificarea vizuală completă a identității la mobil și desktop pentru Meciuri, Acumulatoare, Piramide și Istoric.
+- [x] Aplicarea explicită a semnăturii de brand pe benzile și controalele de filtre din Meciuri, cu verificare vizuală.
