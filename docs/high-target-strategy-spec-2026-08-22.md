@@ -37,6 +37,12 @@ La **390 px** și **430 px**, ecranul **Explorare** a încărcat feedul verifica
 
 Publicarea GitHub Pages a rulat cu succes la **22 august 2026**. Pe versiunea live au fost verificate selectorul pentru țintele 10, 20, 50 și 100, trecerea corectă la limita de 10 sau 20 de selecții și mesajul onest privind acoperirea curentă de o singură competiție eligibilă. Modul Piramidă combinată a fost verificat public la ținta 2,00: afișează două meciuri reale, cota 2,06 și avertizarea de concentrare, fără a pretinde diversificare maximă sau rezultat garantat.
 
+Verificarea interactivă live la **390 px** a confirmat selectarea unei piețe reale în Acumulator, schimbarea la ținta 10,00 și afișarea lizibilă a stării `1/10` în calculator. În Piramidă, câmpurile și selectorul de mod se păstrează în flux vertical fără depășire orizontală; cardul combinației urmează controalele în scroll-ul normal al paginii, fără a fi ascuns sau înlocuit cu date simulate.
+
+La **430 px**, cardurile pereche ale Acumulatorului păstrează vizibile cota totală 1,37, ținta 10,00, progresul și metricile matematice. Piramida păstrează în același viewport ținta 2,00, pașii, miza, reinvestirea, comutatorul de mod, acțiunea de creare și începutul cardului de combinație cu cota 2,06. Bara de navigare inferioară rămâne accesibilă, fără acoperirea controalelor esențiale.
+
+O verificare interactivă izolată, rulată pe versiunea publică la 390 px și 430 px, a confirmat simultan: selectarea unei piețe eligibile reale, ținta 10,00 în Acumulator, combinația de Piramidă la 2,00, crearea planului local, asocierea celor două selecții și ștergerea confirmată a planului local. Filtrul **Eligibile** din Explorare a fost aplicat cu rezultate disponibile. Toate verificările au folosit numai datele din feedul public; nu s-au inserat cote, evenimente sau rezultate.
+
 ## Explorare mobilă
 
 Cardurile de meci păstrează piața, probabilitatea și cota, dar introduc trei semnale vizuale consistente: **Eligibilă pentru strategie**, **Doar analiză** și **Cotă verificată fără semnal eligibil**. Ecranul nu deduce istoricul, rezultatele sau formele echipelor când aceste date nu sunt în feed.

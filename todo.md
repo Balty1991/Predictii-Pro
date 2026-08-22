@@ -102,12 +102,12 @@
 - [x] Definirea formatului static de feed și a persistenței locale pentru aplicația GitHub Pages, fără date simulate.
 - [x] Construirea aplicației operaționale direct în GitHub Pages, înlocuind portalul cu redirecționare către domeniul Manus.
 - [x] Implementarea sincronizării GitHub programate cu cheia furnizorului protejată ca secret, fără expunere în browser.
-- [ ] Verificarea pe telefon a aplicației publicate la balty1991.github.io/Predictii-Pro/ pentru evenimente, filtre, acumulator și piramidă locală.
+- [x] Verificarea în emulare mobilă la 390 px şi 430 px a aplicației publicate la balty1991.github.io/Predictii-Pro/ pentru evenimente, filtre, Acumulator și Piramidă locală.
 - [x] Auditarea acoperirii reale a endpointurilor furnizorului pentru mai multe evenimente viitoare, piețe și cote, cu raportarea exactă a limitărilor de date.
 - [x] Extinderea feedului GitHub Pages pentru a afișa mai multe evenimente reale disponibile, fără diluarea criteriilor de verificare.
 - [x] Afișarea transparentă a predicțiilor furnizorului chiar când o cotă nu este încă disponibilă, fără a le face eligibile pentru bilet.
 - [x] Adăugarea ștergerii unei piramide locale în GitHub Pages, cu confirmare și actualizarea stocării locale.
-- [ ] Verificarea interactivă pe telefon a ștergerii piramidei, a filtrelor și a stărilor Acumulator/Piramidă din GitHub Pages.
+- [x] Verificarea interactivă în emulare mobilă a ștergerii Piramidei, a filtrului Eligibile și a stărilor Acumulator/Piramidă din GitHub Pages.
 - [ ] Auditarea endpointurilor de cote pentru toate piețele și ferestrele de timp relevante, inclusiv formatul și permisiunile de acces reale.
 - [x] Separarea filtrelor de evenimente, semnale furnizor, recomandări, probabilitate și eligibilitate la cotă în GitHub Pages.
 - [x] Reorganizarea cardului de meci în structură compactă: echipe, oră, competiție, semnale, încredere, cotă și acțiune numai dacă este verificabilă.
@@ -139,7 +139,7 @@
 - [x] Implementarea unui rezumat mobil persistent al Acumulatorului cu cotă cumulată şi progres explicit către țintă.
 - [x] Implementarea recalculării automate pentru miză, retur potențial, profit potențial, probabilitate combinată şi valoare estimată din selecțiile reale curente.
 - [x] Adăugarea stărilor de țintă sub/în/peste interval şi a acțiunilor clare pentru ajustarea combinației fără a introduce selecții neeligibile.
-- [ ] Verificarea mobilă live a Acumulatorului extins la 390 px şi 430 px, cu o combinație construită exclusiv din cote verificate.
+- [x] Verificarea live în emulare la 390 px şi 430 px a Acumulatorului extins, cu o selecție construită exclusiv din cote verificate.
 - [x] Corectarea şi verificarea recalculării instant a țintei şi mizei în Acumulator la schimbarea controalelor.
 - [x] Corectarea introducerii mizei astfel încât valorile cu mai multe cifre să nu fie trunchiate în timpul recalculării.
 - [x] Extinderea afișării Acumulatoarelor salvate cu cota totală, ținta, miză, retur potențial, profit potențial şi probabilitate, fără a declara rezultate fabricate.
@@ -151,3 +151,4 @@
 - [x] Validarea mobilă şi publicarea upgrade-ului cu feed real, fără cote sau rezultate simulate.
 - [x] Recalcularea instantă a candidatei Piramidei combinate când utilizatorul schimbă ținta pe pas.
 - [x] Permiterea combinațiilor de Piramidă din evenimente distincte ale aceleiași competiții, cu avertizare vizibilă de concentrare în loc de blocare artificială.
+- [ ] Verificare manuală pe telefon real pentru GitHub Pages: Explorare, filtru Eligibile, Acumulator cu țintă mare, Piramidă combinată și ștergerea unui plan local.
