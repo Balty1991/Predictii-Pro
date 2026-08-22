@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T06:38:58.722Z",
+  "updatedAt": "2026-08-22T07:02:10.466Z",
   "status": "ready",
   "message": "6 selecții reale au trecut validarea pentru intervalul curent.",
   "calls": 5,
@@ -34,6 +34,8 @@
       "oddsStatus": "live",
       "oddsUpdatedAt": "2026-08-22T06:38:07Z",
       "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "oddsRefreshSeconds": 1800,
+      "oddsUpdateReason": "kick-off within 24 hours",
       "selections": [
         {
           "id": "1463-1x2-HOME",
@@ -77,7 +79,12 @@
           "oddsUpdatedAt": "2026-08-22T06:38:07Z",
           "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
         }
-      ]
+      ],
+      "expectedGoals": {
+        "home": 2.1,
+        "away": 1.17
+      },
+      "mostLikelyScore": "2-1"
     },
     {
       "id": 212207,
@@ -108,6 +115,8 @@
       "oddsStatus": "live",
       "oddsUpdatedAt": "2026-08-22T06:38:07Z",
       "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "oddsRefreshSeconds": 1800,
+      "oddsUpdateReason": "kick-off within 24 hours",
       "selections": [
         {
           "id": "1462-over_under_15-over",
@@ -130,7 +139,12 @@
           "oddsUpdatedAt": "2026-08-22T06:38:07Z",
           "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
         }
-      ]
+      ],
+      "expectedGoals": {
+        "home": 1.81,
+        "away": 1.23
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 212209,
@@ -161,6 +175,8 @@
       "oddsStatus": "live",
       "oddsUpdatedAt": "2026-08-22T06:38:07Z",
       "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "oddsRefreshSeconds": 1800,
+      "oddsUpdateReason": "kick-off within 24 hours",
       "selections": [
         {
           "id": "1460-1x2-HOME",
@@ -225,7 +241,12 @@
           "oddsUpdatedAt": "2026-08-22T06:38:07Z",
           "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
         }
-      ]
+      ],
+      "expectedGoals": {
+        "home": 2.26,
+        "away": 1.5
+      },
+      "mostLikelyScore": "2-1"
     },
     {
       "id": 220842,
@@ -255,8 +276,15 @@
       "providerRecommended": false,
       "oddsStatus": "live",
       "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": "2026-08-22T06:38:20Z",
-      "selections": []
+      "oddsNextUpdateAt": "2026-08-22T07:01:40Z",
+      "oddsRefreshSeconds": 1800,
+      "oddsUpdateReason": "kick-off within 24 hours",
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.48,
+        "away": 0.82
+      },
+      "mostLikelyScore": "1-0"
     },
     {
       "id": 374920,
@@ -287,7 +315,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.31,
+        "away": 1.41
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 212210,
@@ -318,7 +353,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.97,
+        "away": 2.01
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 212206,
@@ -349,7 +391,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.12,
+        "away": 1.55
+      },
+      "mostLikelyScore": "2-1"
     },
     {
       "id": 212211,
@@ -380,7 +429,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.39,
+        "away": 1.34
+      },
+      "mostLikelyScore": "2-1"
     },
     {
       "id": 205132,
@@ -411,7 +467,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.54,
+        "away": 1.17
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205130,
@@ -442,7 +505,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.23,
+        "away": 1.5
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 212212,
@@ -473,7 +543,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.56,
+        "away": 1.8
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588048,
@@ -504,7 +581,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.18,
+        "away": 1.19
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205131,
@@ -535,7 +619,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.25,
+        "away": 1.26
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205133,
@@ -566,7 +657,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.26,
+        "away": 1.11
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205869,
@@ -597,7 +695,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.53,
+        "away": 1.41
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 215509,
@@ -628,7 +733,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 0.96,
+        "away": 1.7
+      },
+      "mostLikelyScore": "0-1"
     },
     {
       "id": 215514,
@@ -659,7 +771,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 0.79,
+        "away": 1.97
+      },
+      "mostLikelyScore": "0-1"
     },
     {
       "id": 213988,
@@ -690,7 +809,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.46,
+        "away": 1.15
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 209536,
@@ -721,7 +847,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.47,
+        "away": 1.62
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588124,
@@ -752,7 +885,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.69,
+        "away": 1.18
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588130,
@@ -783,7 +923,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 1.32
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224559,
@@ -814,7 +961,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.27
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213987,
@@ -845,7 +999,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.82,
+        "away": 0.88
+      },
+      "mostLikelyScore": "1-0"
     },
     {
       "id": 588128,
@@ -876,7 +1037,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.59,
+        "away": 1.51
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588131,
@@ -907,7 +1075,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.19,
+        "away": 1.86
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213986,
@@ -938,7 +1113,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.54,
+        "away": 0.9
+      },
+      "mostLikelyScore": "1-0"
     },
     {
       "id": 588127,
@@ -969,7 +1151,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.65,
+        "away": 1.41
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224558,
@@ -1000,7 +1189,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.57,
+        "away": 1.19
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224056,
@@ -1031,7 +1227,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.76,
+        "away": 1.18
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588135,
@@ -1062,7 +1265,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 1.32
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588133,
@@ -1093,7 +1303,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.81,
+        "away": 1.12
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224057,
@@ -1124,7 +1341,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.41
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224560,
@@ -1155,7 +1379,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.43,
+        "away": 1.29
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588126,
@@ -1186,7 +1417,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.4,
+        "away": 1.65
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588129,
@@ -1217,7 +1455,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.58,
+        "away": 1.29
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 588132,
@@ -1248,7 +1493,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.47,
+        "away": 1.35
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205870,
@@ -1279,7 +1531,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.98,
+        "away": 1.14
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205871,
@@ -1310,7 +1569,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.59,
+        "away": 1.66
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 580494,
@@ -1341,7 +1607,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.09,
+        "away": 1.5
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 205872,
@@ -1372,7 +1645,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.45,
+        "away": 1.19
+      },
+      "mostLikelyScore": "2-1"
     },
     {
       "id": 205873,
@@ -1403,7 +1683,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.42,
+        "away": 1.55
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 580493,
@@ -1434,7 +1721,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.31,
+        "away": 1.19
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 211872,
@@ -1465,7 +1759,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.74,
+        "away": 1.13
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 374953,
@@ -1496,7 +1797,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.09,
+        "away": 1.22
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 46447,
@@ -1527,7 +1835,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.78,
+        "away": 1.22
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213994,
@@ -1558,7 +1873,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.35,
+        "away": 1.31
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213995,
@@ -1589,7 +1911,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.22
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213990,
@@ -1620,7 +1949,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.26
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213989,
@@ -1651,7 +1987,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.14,
+        "away": 1.33
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213993,
@@ -1682,7 +2025,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.69,
+        "away": 1
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213996,
@@ -1713,7 +2063,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.63,
+        "away": 1.01
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213991,
@@ -1744,7 +2101,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.41,
+        "away": 1.02
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224569,
@@ -1775,7 +2139,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.87,
+        "away": 1.14
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 211384,
@@ -1806,7 +2177,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.91,
+        "away": 1.63
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224065,
@@ -1837,7 +2215,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.75,
+        "away": 1.02
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 209537,
@@ -1868,7 +2253,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.23,
+        "away": 1.34
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 207302,
@@ -1899,7 +2291,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.46
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 207301,
@@ -1930,7 +2329,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.51,
+        "away": 1.52
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224565,
@@ -1961,7 +2367,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.38,
+        "away": 1.11
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 213992,
@@ -1992,7 +2405,14 @@
       "oddsStatus": "pending",
       "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
-      "selections": []
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.25,
+        "away": 1.44
+      },
+      "mostLikelyScore": "1-1"
     }
   ]
 }
