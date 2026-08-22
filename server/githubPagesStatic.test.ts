@@ -95,7 +95,9 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("max:20");
     expect(staticPage).toContain("allowLeagueReuse:true");
     expect(staticPage).toContain("Mod prudent: este disponibil doar");
-    expect(staticPage).toContain("Nu adăugăm cote ridicate pentru a completa artificial biletul.");
+    expect(staticPage).toContain("Nu propunem bilet parțial.");
+    expect(staticPage).toContain("const proposal=best||(target<5?fallback:null)");
+    expect(staticPage).toContain("coverage.required>policy.max");
     expect(staticPage).toContain("const prudentLegEstimate=target=>");
     expect(staticPage).toContain("Acoperire prudentă:");
     expect(staticPage).toContain("media reală curentă");
@@ -114,7 +116,7 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("Boolean(strategiesAvailable()&&(target>=5?prudentTargetEligible(item):item?.eligible))");
     expect(staticPage).toContain("nivel prudent pentru țintă mare");
     expect(staticPage).toContain("cote prudente 1,20–1,70");
-    expect(staticPage).toContain("candidates=allSelections().filter(item=>strategyEligible(item,target))");
+    expect(staticPage).toContain("rawCandidates=allSelections().filter(item=>strategyEligible(item,target))");
     expect(feedGenerator).toContain("function diversifiedOddsTargets(predictions, previous)");
     expect(feedGenerator).toContain("confidence(right) - confidence(left)");
     expect(feedGenerator).toContain("if (!competitions.has(prediction.event.league_name ?? \"\")) add(prediction)");

@@ -1,64 +1,41 @@
-# Specificație upgrade strategii — 22 august 2026
+# Specificație strategii cu ținte mari — 22 august 2026
 
 ## Principiu de integritate
 
-Aplicația poate calcula o cotă acumulată mare numai din prețurile deja confirmate de feed. O țintă 10, 50 sau 100 este o **țintă matematică**, nu o recomandare de profit și nu produce selecții dacă numărul real de piețe distincte disponibile nu poate ajunge în intervalul respectiv.
+O țintă acumulată de 5,00, 10,00, 20,00, 50,00 sau 100,00 este un **calcul matematic**, nu o recomandare de profit și nu justifică adăugarea de evenimente, cote sau rezultate care nu există în feed. Pentru țintele mari, strategia este disponibilă numai când feedul are status `ready`; un feed parțial, stale sau indisponibil poate fi analizat, dar nu poate fi folosit pentru propunere, selecție sau salvare.
 
-## Acumulator cu ținte mari
+## Acumulator prudent
 
-| Țintă | Număr maxim de selecții | Regula de compunere | Afișare obligatorie |
-| --- | ---: | --- | --- |
-| 1,20–3,00 | 4 | Interval strict existent, evenimente și competiții distincte | Cotă totală, progres, probabilitate combinată, risc |
-| 5,00–10,00 | 10 | Prețuri verificate, o piață per eveniment și competiție | Număr folosit / maxim, acoperire disponibilă, status țintă |
-| 20,00–100,00 | 20 | Aceleași protecții; fără completare artificială | Acoperire reală, motiv explicit dacă ținta nu poate fi construită |
+| Nivel | Cote admise | Criterii minime suplimentare | Construcție |
+| --- | --- | --- | --- |
+| 1,20–3,00 | Regula strictă a pieței eligibile | O piață per meci și competiții distincte | Cel mult 4 selecții |
+| 5,00–100,00 | Numai cote reale între 1,20 și 1,70 | Probabilitate ≥58%, încredere API ≥55%, context ≥55/100, edge ≥1 pp și valoare estimată pozitivă | Cel mult 20 de meciuri distincte |
 
-Combinația automată oprește căutarea la 20 de selecții, dar își declară limitarea când feedul curent are prea puține competiții distincte. O selecție manuală nu poate încălca aceleași reguli de eveniment sau competiție.
+Pentru fiecare țintă prudentă, aplicația calculează media cotelor eligibile pe meci distinct și estimează numărul necesar de selecții cu `ceil(log(țintă) / log(media cotelor))`. Mesajul **„Acoperire prudentă”** arată atât estimarea, cât și numărul de meciuri reale disponibile. Aceasta este o măsură de acoperire, nu o promisiune că ținta va fi atinsă.
+
+> Dacă nu există suficiente meciuri reale sau dacă nicio combinație de până la 20 de selecții nu intră în intervalul țintei, aplicația golește selecția curentă și nu propune un bilet parțial. Nu completează combinația cu cote de 2,03, 2,46, 3,53 sau cu orice altă cotă în afara regulii prudente.
+
+Pentru țintele controlate, competițiile distincte sunt preferate. Pentru țintele mari, pot apărea meciuri distincte din aceeași competiție numai dacă feedul real le oferă; concentrarea este afișată ca risc, nu prezentată drept diversificare.
 
 ## Piramidă combinată
 
 | Țintă pe pas | Componență permisă | Reguli |
 | --- | --- | --- |
-| 1,20–2,10 | O singură piață verificată | Modelul existent, cu interval de ±0,08 |
-| 2,00–3,00 | Două până la trei piețe verificate | Meciuri distincte, fără aceeași partidă; competițiile distincte sunt preferate, iar concentrarea pe aceeași competiție este afișată explicit; interval de ±0,12 |
+| 1,20–2,10 | O piață verificată | Interval de ±0,08 |
+| 2,00–3,00 | Două până la trei piețe verificate | Meciuri distincte; concentrarea pe aceeași competiție este afișată |
 
-O candidată de Piramidă combinată arată cota produsă, fiecare componentă, probabilitatea combinată, diferența față de țintă și o etichetă explicită „combinație, nu rezultat”. Dacă nu există o combinație verificată, aplicația nu sugerează una.
+O candidată de Piramidă combinată arată cota produsă, componentele, probabilitatea combinată, diferența față de țintă și avertizarea de concentrație atunci când este cazul. Dacă feedul nu poate verifica o combinație, aplicația nu sugerează una și nu inventează rezultate.
 
 ## Rezultat de validare cu feedul public curent
 
-La verificarea feedului din **22 august 2026, 07:24**, aplicația a găsit 60 de evenimente, dintre care 3 aveau 33 de prețuri reale în 11 piețe; existau 6 selecții eligibile. Toate selecțiile eligibile proveneau însă dintr-o singură competiție. Prin urmare, țintele de Acumulator **10, 20, 50 și 100** sunt disponibile ca instrument de calcul, dar nu pot fi propuse automat în mod responsabil până când feedul nu oferă acoperire diversificată suficientă.
+La ultima sincronizare publică disponibilă, furnizorul a răspuns cu **429** la prima cerere de predicții. Feedul public are prin urmare status `unavailable`, consemnează o singură cerere efectuată și păstrează eventualele prețuri mai vechi exclusiv pentru analiză. Controalele de propunere și salvare ale Acumulatorului sunt dezactivate vizibil până la o sincronizare verificată.
 
-Pentru Piramidă, ținta **2,00** a produs o combinație reală de două meciuri distincte, cu cota 2,06: *Kyoto Sanga FC — Mito Hollyhock, Peste 1,5 goluri (1,37)* și *Fagiano Okayama — Tokyo Verdy, Peste 1,5 goluri (1,50)*. Interfața marchează explicit că aceste meciuri aparțin aceleiași competiții și nu le prezintă drept diversificare maximă. La ținta 1,30, combinația 2–3 nu este propusă, deoarece nu există o candidată reală în interval.
+O validare de acoperire cu cote mici trebuie reluată numai după o fereastră de răcire rezonabilă și un workflow reușit. Criteriile de acceptare sunt: status `ready`, cel mult cinci apeluri externe, piețe batch mapate din răspunsul real și nicio selecție automată peste 1,70 pentru țintele de minimum 5,00. Rezultatul vechi de cotă 10,39 construit cu trei cote peste 2,00 este arhivat ca observație istorică și **nu** respectă politica curentă.
 
-## Verificare mobilă locală
+## Verificare mobilă
 
-La **390 px** și **430 px**, ecranul **Explorare** a încărcat feedul verificat și a păstrat lizibile căutarea, filtrele orizontale, semnalul de eligibilitate, cota și acțiunea contextuală. Captura inițială la 430 px a surprins starea tranzitorie de încărcare, apoi o rerandare după finalizarea feedului a confirmat cardurile, marcajul „Doar analiză” pentru piețele neeligibile și bara mobilă de navigare, fără trunchierea informațiilor esențiale.
+Verificarea publică anterioară la 390 px și 430 px a confirmat structura mobilă, selectorul de țintă, jurnalul local și Piramida combinată din date verificate atunci disponibile. Verificarea interactivă a modului prudent pentru 10,00, 20,00, 50,00 și 100,00 rămâne condiționată de un feed `ready`; nu este declarată ca realizată în timpul rate-limitării furnizorului.
 
-## Verificare publică GitHub Pages
+## Limitări explicite
 
-Publicarea GitHub Pages a rulat cu succes la **22 august 2026**. Pe versiunea live au fost verificate selectorul pentru țintele 10, 20, 50 și 100, trecerea corectă la limita de 10 sau 20 de selecții și mesajul onest privind acoperirea curentă de o singură competiție eligibilă. Modul Piramidă combinată a fost verificat public la ținta 2,00: afișează două meciuri reale, cota 2,06 și avertizarea de concentrare, fără a pretinde diversificare maximă sau rezultat garantat.
-
-## Ajustare locală în curs pentru acoperirea țintelor mari
-
-În feedul de verificare curent există trei meciuri distincte cu piețe eligibile, toate în J1 League. Pentru țintele de minimum 5,00, propunerea permite acum aceste meciuri distincte chiar dacă provin din aceeași competiție; riscul de concentrare rămâne afișat. La ținta 50,00, baza reală maximă a rezultat în cotă 5,43 din trei meciuri, astfel încât interfața o afișează ca acoperire reală sub țintă, fără a adăuga selecții inventate. La 390 px, noul filtru **Tip de predicție** rămâne lizibil împreună cu filtrele de calitate, competiție, primul card și navigarea inferioară.
-
-## Confirmare live după publicare
-
-Versiunea GitHub Pages publicată a fost verificată cu feedul sincronizat la 09:43. Pentru ținta 50,00, feedul live avea o singură selecție eligibilă; aplicația a propus-o ca bază reală de cotă 1,87 și a declarat explicit că ținta nu este atinsă, fără completare artificială. Filtrul **Peste goluri** a redus corect Explorare la cele trei meciuri cu cote reale pentru această piață și a păstrat separat acțiunile **Adaugă la strategie** și **Doar analiză**.
-
-## Remediere pentru acoperirea insuficientă
-
-Generatorul prioritizează acum mai întâi încrederea modelului API și selectează cote în competiții distincte; istoricul unei cote deja observate este doar criteriu secundar. Bugetul rămâne fix la **cinci cereri**: una pentru predicții și cel mult patru pentru cote per eveniment. În feedul real de validare au fost identificate trei meciuri cotate în J1 League, Chinese Super League și League Two. La ținta 10,00, motorul a propus trei selecții reale, câte una pe meci, cu cotă cumulată **10,39** în intervalul 9,00–11,00.
-
-Pentru țintele de minimum 5,00, există un nivel extins transparent: piața trebuie să aibă cotă reală între 1,20 și 4,00, valoare estimată pozitivă, edge de cel puțin 2 puncte procentuale, context de cel puțin 55/100 și încredere API de cel puțin 35%. Nivelul extins nu modifică eticheta de eligibilitate strictă pentru țintele mici și nu transformă o cotă într-un rezultat garantat.
-
-Verificarea GitHub Pages după publicare a confirmat același rezultat: ținta 10,00 propune Rochdale — Crawley Town (victorie gazde, 2,03), Sanfrecce Hiroshima — Kawasaki Frontale (Peste 3,5 goluri, 2,46) și Beijing Guoan — Yunnan Yukun (Sub 3,5 goluri, 2,08). Cota cumulată este 10,39, din trei competiții distincte. Returul, profitul și probabilitatea din ecran sunt calcule matematice, nu rezultate sau venituri garantate.
-
-Verificarea interactivă live la **390 px** a confirmat selectarea unei piețe reale în Acumulator, schimbarea la ținta 10,00 și afișarea lizibilă a stării `1/10` în calculator. În Piramidă, câmpurile și selectorul de mod se păstrează în flux vertical fără depășire orizontală; cardul combinației urmează controalele în scroll-ul normal al paginii, fără a fi ascuns sau înlocuit cu date simulate.
-
-La **430 px**, cardurile pereche ale Acumulatorului păstrează vizibile cota totală 1,37, ținta 10,00, progresul și metricile matematice. Piramida păstrează în același viewport ținta 2,00, pașii, miza, reinvestirea, comutatorul de mod, acțiunea de creare și începutul cardului de combinație cu cota 2,06. Bara de navigare inferioară rămâne accesibilă, fără acoperirea controalelor esențiale.
-
-O verificare interactivă izolată, rulată pe versiunea publică la 390 px și 430 px, a confirmat simultan: selectarea unei piețe eligibile reale, ținta 10,00 în Acumulator, combinația de Piramidă la 2,00, crearea planului local, asocierea celor două selecții și ștergerea confirmată a planului local. Filtrul **Eligibile** din Explorare a fost aplicat cu rezultate disponibile. Toate verificările au folosit numai datele din feedul public; nu s-au inserat cote, evenimente sau rezultate.
-
-## Explorare mobilă
-
-Cardurile de meci păstrează piața, probabilitatea și cota, dar introduc trei semnale vizuale consistente: **Eligibilă pentru strategie**, **Doar analiză** și **Cotă verificată fără semnal eligibil**. Ecranul nu deduce istoricul, rezultatele sau formele echipelor când aceste date nu sunt în feed.
+Returul potențial, profitul potențial, probabilitatea combinată și valoarea estimată sunt calcule bazate pe miză, cote și model. Nu reprezintă rezultate confirmate, venit sau profit garantat.
