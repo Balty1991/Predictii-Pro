@@ -21,7 +21,7 @@ const asPercent = (value) => {
   return numeric <= 1 ? round(numeric * 100) : round(numeric);
 };
 
-async function request(path, params = {}) {
+async function request(path, params = {}, { paginated = true } = {}) {
   if (calls >= 5) throw new Error("Bugetul de 5 cereri externe ar fi depășit.");
   const url = new URL(`${baseUrl}${path}`);
   for (const [key, value] of Object.entries(params)) {
@@ -34,17 +34,23 @@ async function request(path, params = {}) {
     const response = await fetch(url, { headers: { Authorization: `Token ${apiKey}`, Accept: "application/json" }, signal: controller.signal });
     if (!response.ok) throw new Error(`Furnizorul a răspuns cu ${response.status}.`);
     const body = await response.json();
-    if (!body || !Array.isArray(body.results)) throw new Error("Furnizorul a transmis un payload gol sau nevalid.");
-    return body.results;
+    if (!body || (paginated && !Array.isArray(body.results))) throw new Error("Furnizorul a transmis un payload gol sau nevalid.");
+    return paginated ? body.results : body;
   } finally {
     clearTimeout(timeout);
   }
 }
 
-function bestOdds(odds, eventId, market, outcome) {
-  const matching = odds.filter(item => item.event_id === eventId && item.market === market && String(item.outcome).toUpperCase() === outcome.toUpperCase());
-  if (!matching.length) return null;
-  return matching.reduce((best, item) => Number(item.decimal_odds) > Number(best.decimal_odds) ? item : best);
+function oddsFieldFor({ market, outcome }) {
+  const fields = {
+    "1x2:HOME": "home_win",
+    "1x2:DRAW": "draw",
+    "1x2:AWAY": "away_win",
+    "over_under_15:over": "over_15_goals",
+    "over_under_25:over": "over_25_goals",
+    "btts:yes": "btts_yes",
+  };
+  return fields[`${market}:${outcome}`] ?? null;
 }
 
 function selectionDefinitions(prediction) {
@@ -71,18 +77,20 @@ function providerSignals(prediction) {
     .map(signal => ({ label: signal.label, probability: signal.probability, recommended: signal.recommended }));
 }
 
-function normalizePrediction(prediction, odds) {
+function normalizePrediction(prediction, oddsSnapshot) {
   const event = prediction.event;
   const confidence = Number(prediction.model?.confidence ?? 0.5);
   const selections = selectionDefinitions(prediction).flatMap(definition => {
-    const price = bestOdds(odds, event.id, definition.market, definition.outcome);
-    const currentOdds = price ? Number(price.decimal_odds) : null;
+    const field = oddsFieldFor(definition);
+    const currentOdds = field ? Number(oddsSnapshot?.odds?.[field]) : null;
     if (!currentOdds || currentOdds < 1.2 || currentOdds > 2.1) return [];
     const impliedProbability = round(100 / currentOdds);
     const edge = round(definition.probability - impliedProbability);
     const expectedValue = round(((definition.probability / 100) * currentOdds - 1) * 100);
-    const openingOdds = price?.opening_decimal_odds ? Number(price.opening_decimal_odds) : null;
-    const eligible = expectedValue > 0 && confidence >= 0.45 && (!openingOdds || currentOdds >= openingOdds * 0.95);
+    const openingOdds = null;
+    const providerRecommended = definition.recommended;
+    const modelRecommended = definition.probability >= 62 && confidence >= 0.55 && edge >= 2 && expectedValue > 0;
+    const eligible = expectedValue > 0 && confidence >= 0.45 && edge >= 1;
     return [{
       id: `${prediction.id}-${definition.market}-${definition.outcome}`,
       eventId: event.id,
@@ -97,10 +105,12 @@ function normalizePrediction(prediction, odds) {
       edge,
       expectedValue,
       confidence: round(confidence * 100),
-      recommendation: definition.recommended ? "recommended" : "watch",
+      recommendation: providerRecommended ? "provider" : modelRecommended ? "model" : "watch",
       eligible,
-      movement: price?.movement ?? null,
-      bookmaker: price?.bookmaker_name ?? price?.bookmaker_slug ?? null,
+      movement: null,
+      bookmaker: "Consens BSD",
+      oddsUpdatedAt: oddsSnapshot?.last_update_at ?? null,
+      oddsNextUpdateAt: oddsSnapshot?.next_update_at ?? null,
     }];
   });
   return {
@@ -112,6 +122,10 @@ function normalizePrediction(prediction, odds) {
     awayTeam: event.away_team,
     providerConfidence: asPercent(confidence),
     providerSignals: providerSignals(prediction),
+    providerRecommended: Object.entries(prediction.recommendations ?? {}).some(([key, value]) => ["bet_favorite", "over_15", "over_25", "over_35", "btts", "winner"].includes(key) && value === true),
+    oddsStatus: oddsSnapshot?.odds ? "live" : "pending",
+    oddsUpdatedAt: oddsSnapshot?.last_update_at ?? null,
+    oddsNextUpdateAt: oddsSnapshot?.next_update_at ?? null,
     selections,
   };
 }
@@ -132,20 +146,18 @@ async function main() {
       return;
     }
     const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 60);
-    const oddsResponses = await Promise.allSettled(upcomingPredictions.slice(0, 4).map(prediction => request("/odds/", { event_id: prediction.event.id, limit: 200 })));
-    const allOdds = oddsResponses.flatMap(result => result.status === "fulfilled" ? result.value : []);
+    const oddsResponses = await Promise.allSettled(upcomingPredictions.slice(0, 4).map(prediction => request(`/events/${prediction.event.id}/odds/`, {}, { paginated: false })));
+    const oddsByEvent = new Map(oddsResponses.flatMap(result => result.status === "fulfilled" && result.value?.event_id ? [[result.value.event_id, result.value]] : []));
     const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
-    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, allOdds));
-    const events = allOdds.length
-      ? normalizedEvents
-      : normalizedEvents.map(event => ({ ...event, selections: [] }));
+    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, oddsByEvent.get(prediction.event.id)));
+    const events = normalizedEvents;
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
     const message = selectionCount
       ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
       : oddsUnavailable
         ? "Furnizorul a livrat evenimente și predicții, dar a refuzat temporar cotele. Sunt afișate numai evenimentele reale; biletele rămân blocate fără prețuri verificabile."
-        : allOdds.length === 0
-          ? `${events.length} evenimente și semnale reale sunt disponibile, dar furnizorul a transmis 0 cote pentru cele patru evenimente verificate. Biletele rămân blocate fără prețuri verificabile.`
+        : oddsByEvent.size === 0
+          ? `${events.length} evenimente și semnale reale sunt disponibile, dar cotele nu sunt disponibile momentan pentru evenimentele verificate. Biletele rămân blocate fără prețuri verificabile.`
         : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message, calls, events }, null, 2) + "\n");
   } catch (error) {
