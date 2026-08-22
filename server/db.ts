@@ -1,4 +1,4 @@
-import { asc, desc, eq, inArray, isNull, sql } from "drizzle-orm";
+import { asc, desc, eq, gt, inArray, isNull, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
@@ -47,6 +47,22 @@ export async function listMarketSettlementSummaries() {
     .where(inArray(predictionSelections.settlementStatus, ["won", "lost"]))
     .groupBy(predictionSelections.market);
   return rows.map(row => ({ market: row.market, total: Number(row.total), won: Number(row.won), averageProbability: Number(row.averageProbability) }));
+}
+
+export async function listUpcomingFallbackEvents(limit = 8) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select({
+    id: sportsEvents.id,
+    sport: sportsEvents.sport,
+    competition: sportsEvents.competitionName,
+    homeTeam: sportsEvents.homeTeamName,
+    awayTeam: sportsEvents.awayTeamName,
+    startsAt: sportsEvents.startsAt,
+  }).from(sportsEvents)
+    .where(gt(sportsEvents.startsAt, new Date()))
+    .orderBy(asc(sportsEvents.startsAt))
+    .limit(limit);
 }
 
 export async function upsertUser(user: InsertUser): Promise<void> {

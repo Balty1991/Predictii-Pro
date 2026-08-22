@@ -86,3 +86,4 @@
 - [ ] Extinderea formulei consensului pentru a pondera toate semnalele disponibile și expunerea explicită a unei piețe de predicții reale când sursa o furnizează.
 - [x] Afișarea și testarea limitei tehnice atunci când nu este disponibilă o piață de predicții externă verificabilă.
 - [x] Gestionarea defensivă a payloadului gol sau null primit de la Sports Data API, fără expunerea erorii tehnice în interfață, cu reîncercare controlată și mesaj clar pentru utilizator.
+- [x] Recuperarea feedului de meciuri când endpointul agregat de predicții întoarce null, folosind un fallback compatibil cu bugetul redus și afișând exclusiv date reale.

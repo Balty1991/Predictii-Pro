@@ -2,7 +2,8 @@ import * as db from "./db";
 import { generatePredictionExplanationsBatch, type ExplanationInput } from "./predictionExplanation";
 import { applyAdaptiveThreshold, buildAdaptiveThresholds } from "./adaptiveThresholds";
 import { normalizePredictionSelections } from "./predictionSync";
-import { fetchBestOddsForWindow, fetchPredictions, ODDS_SYNC_MARKETS, type ApiOdds } from "./sportsApi";
+import { fetchBestOddsForWindow, fetchEvents, fetchPredictions, ODDS_SYNC_MARKETS, type ApiOdds } from "./sportsApi";
+import { shouldUseUpcomingEventsFallback } from "./predictionFallback";
 
 export const MAX_EXTERNAL_CALLS_PER_SYNC = 1 + ODDS_SYNC_MARKETS.length;
 export const MANUAL_SYNC_COOLDOWN_MS = 20 * 60 * 1000;
@@ -47,7 +48,39 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
   try {
     const adaptiveThresholds = buildAdaptiveThresholds(await db.listMarketSettlementSummaries());
     externalCalls += 1;
-    const payload = await fetchPredictions(toDateString(from), toDateString(until));
+    let payload;
+    try {
+      payload = await fetchPredictions(toDateString(from), toDateString(until));
+    } catch (error) {
+      if (!shouldUseUpcomingEventsFallback(error)) throw error;
+      externalCalls += 1;
+      const fallbackPayload = await fetchEvents("upcoming", toDateString(from), toDateString(until));
+      const fallbackEvents = fallbackPayload.results.slice(0, maxEvents);
+      for (const event of fallbackEvents) {
+        await db.upsertSportsEvent({
+          providerEventId: event.id,
+          sport: "football",
+          competitionId: event.league_id ?? null,
+          competitionName: event.league_name ?? null,
+          seasonId: event.season_id ?? null,
+          homeTeamId: event.home_team_id ?? null,
+          homeTeamName: event.home_team,
+          awayTeamId: event.away_team_id ?? null,
+          awayTeamName: event.away_team,
+          startsAt: new Date(event.event_date),
+          status: normalizeEventStatus(event.status),
+          homeScore: event.home_score ?? null,
+          awayScore: event.away_score ?? null,
+          halftimeHomeScore: event.home_score_ht ?? null,
+          halftimeAwayScore: event.away_score_ht ?? null,
+          hasXg: event.has_xg ?? false,
+          rawPayload: event,
+          sourceUpdatedAt: new Date(),
+        });
+      }
+      await db.completeSyncRun(runId, "partial", { savedPredictions: 0, savedSelections: 0, incompleteOdds: 0, generatedExplanations: 0, externalCalls, externalCallBudget: MAX_EXTERNAL_CALLS_PER_SYNC, fallbackEvents: fallbackEvents.length }, "Feedul de predicții a fost indisponibil; au fost salvate meciuri reale în așteptarea analizei.");
+      return { savedPredictions: 0, savedSelections: 0, incompleteOdds: 0, generatedExplanations: 0, externalCalls, status: "partial" as const, fallbackEvents: fallbackEvents.length };
+    }
     const upcomingPredictions = payload.results
       .filter(prediction => normalizeEventStatus(prediction.event.status) === "upcoming");
     const oddsByProviderEvent = new Map<number, ApiOdds[]>();

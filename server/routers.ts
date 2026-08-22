@@ -32,6 +32,7 @@ export const appRouter = router({
     }),
     statistics: protectedProcedure.query(() => db.getStatistics()),
     syncStatus: protectedProcedure.query(() => db.getLatestSportsSyncStatus()),
+    fallbackEvents: protectedProcedure.query(() => db.listUpcomingFallbackEvents()),
     oddsHistory: protectedProcedure.input(z.object({ selectionId: z.number().int().positive() })).query(({ input }) => db.getSelectionOddsHistory(input.selectionId)),
     refresh: adminProcedure.mutation(async () => {
       const lastRun = await db.getLatestSportsSyncStatus();
