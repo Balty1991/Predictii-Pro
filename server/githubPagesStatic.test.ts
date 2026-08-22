@@ -108,7 +108,7 @@ describe("aplicația statică GitHub Pages", () => {
 
   it("folosește numai nivelul prudent la ținte mari și caută cote din competiții diferite în bugetul existent", () => {
     expect(staticPage).toContain("prudentTargetEligible=item=>Boolean(item&&item.odds>=1.2&&item.odds<=1.7");
-    expect(staticPage).toContain("Boolean(target>=5?prudentTargetEligible(item):item?.eligible)");
+    expect(staticPage).toContain("Boolean(strategiesAvailable()&&(target>=5?prudentTargetEligible(item):item?.eligible))");
     expect(staticPage).toContain("nivel prudent pentru țintă mare");
     expect(staticPage).toContain("cote prudente 1,20–1,70");
     expect(staticPage).toContain("candidates=allSelections().filter(item=>strategyEligible(item,target))");
@@ -118,6 +118,15 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).toContain('const prudentMarkets = ["over_under_15", "double_chance", "1x2", "btts"]');
     expect(feedGenerator).toContain('request("/odds/", { market, min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })');
     expect(feedGenerator).toContain("function snapshotFromBatchRows(rows, eventId)");
+  });
+
+  it("blochează strategiile când feedul nu are o sincronizare validă", () => {
+    expect(staticPage).toContain("strategiesAvailable=()=>feed.status==='ready'");
+    expect(staticPage).toContain("Strategii blocate temporar.");
+    expect(staticPage).toContain("Feedul nu este valid acum; cotele stale pot fi analizate, dar nu intră în strategie.");
+    expect(staticPage).toContain("Feedul nu este valid acum; nu propunem combinații din cote stale.");
+    expect(staticPage).toContain("Feedul nu este valid acum; nu salvăm acumulatoare din cote stale.");
+    expect(staticPage).toContain("Feed indisponibil</button>");
   });
 
   it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {

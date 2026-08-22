@@ -170,3 +170,5 @@
 - [ ] Folosirea cotelor în lot pe piețe prudente distincte pentru a crește numărul de meciuri verificabile în aceleași cinci apeluri.
 - [x] Blocarea propunerii parțiale în modul prudent când feedul nu are cel puțin două meciuri distincte eligibile.
 - [x] Corectarea mesajelor modului prudent pentru singular/plural în numărul de meciuri disponibile.
+- [x] Blocarea adăugării, propunerii și salvării Acumulatorului când feedul are starea indisponibilă sau parțială fără cote verificate.
+- [x] Afișarea unei stări explicite de feed indisponibil, fără reutilizarea ca strategie a cotelor vechi afișate doar pentru analiză.
