@@ -96,3 +96,10 @@
 - [x] Extinderea semnăturii de brand în cardurile principale, stările goale, filtre și secțiunile Acumulatoare/Istoric, nu doar în layout și fundal.
 - [x] Verificarea vizuală completă a identității la mobil și desktop pentru Meciuri, Acumulatoare, Piramide și Istoric.
 - [x] Aplicarea explicită a semnăturii de brand pe benzile și controalele de filtre din Meciuri, cu verificare vizuală.
+- [ ] Auditarea diferenței dintre portalul GitHub Pages și aplicația full-stack, inclusiv compararea căii de acces cu aplicațiile de referință ale utilizatorului.
+- [ ] Implementarea unei căi de acces clare care să nu inducă în eroare utilizatorul cu privire la domeniul pe care rulează aplicația completă.
+- [ ] Diagnosticarea răspunsului de sincronizare „0 selecții procesate prin 2 cereri externe” și confirmarea condițiilor reale necesare pentru evenimente și bilete.
+- [ ] Definirea formatului static de feed și a persistenței locale pentru aplicația GitHub Pages, fără date simulate.
+- [ ] Construirea aplicației operaționale direct în GitHub Pages, înlocuind portalul cu redirecționare către domeniul Manus.
+- [ ] Implementarea sincronizării GitHub programate cu cheia furnizorului protejată ca secret, fără expunere în browser.
+- [ ] Verificarea pe telefon a aplicației publicate la balty1991.github.io/Predictii-Pro/ pentru evenimente, filtre, acumulator și piramidă locală.
