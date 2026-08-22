@@ -134,3 +134,4 @@
 - [x] Adăugarea şi verificarea deep-link-ului strategy=pyramids pentru acces mobil direct la Piramidă.
 - [ ] Extinderea feedului static cu toate piețele gratuite de consens care pot fi mapate transparent din predicțiile API, fără depășirea plafonului de cinci cereri.
 - [ ] Verificarea selecțiilor rezultate din piețele extinse şi menținerea blocării de corelație pentru eveniment şi competiție.
+- [ ] Blocarea afișării și adăugării în strategie pentru cotele reale care nu îndeplinesc criteriile de eligibilitate.

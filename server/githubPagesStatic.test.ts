@@ -65,6 +65,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("if(chosen.length>=4||ticketSummary(chosen).odds>=upper)return");
     expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
     expect(staticPage).toContain("Acumulatorul păstrează competițiile distincte pentru a limita corelația.");
+    expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile curente pentru strategie.");
+    expect(staticPage).toContain("Doar analiză");
     expect(staticPage).toContain("data-delete-pyramid");
     expect(staticPage).toContain("Ștergi această piramidă locală?");
   });
