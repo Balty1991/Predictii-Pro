@@ -65,7 +65,7 @@
 - [x] Verificarea mobilă a rutei Istoric după remediere, pentru a confirma deschiderea paginii de performanță din meniul inferior.
 - [x] Afișarea stării indisponibilității cotelor live și a reîncercării programate direct în tabloul principal de Meciuri.
 - [x] Extinderea semnăturii de brand și a marcajelor de semnal în Meciuri, Acumulatoare, Piramide, Istoric și Profil.
-- [ ] Rafinarea ierarhiei tipografice și a spațierii în listele de evenimente și cardurile de strategie, verificată pe mobil și desktop.
+- [x] Rafinarea ierarhiei tipografice și a spațierii în listele de evenimente și cardurile de strategie, verificată pe mobil și desktop.
 - [x] Contorizarea și documentarea cererilor externe pe fiecare sincronizare, pentru a avea un buget explicit de apeluri către furnizor.
 - [x] Aplicarea unui cooldown server-side pentru actualizarea manuală, astfel încât apăsările repetate să nu consume cota zilnică.
 - [x] Limitarea sincronizării zilnice la predicțiile și piețele necesare fluxurilor de Acumulatoare și Piramide, cu validare a numărului de apeluri.
@@ -89,3 +89,6 @@
 - [x] Recuperarea feedului de meciuri când endpointul agregat de predicții întoarce null, folosind un fallback compatibil cu bugetul redus și afișând exclusiv date reale.
 - [x] Adăugarea acțiunii UI și a procedurii server-side pentru resetarea separată a pasului activ neasociat, cu confirmare explicită.
 - [x] Testarea resetării pasului activ: succes când este neasociat și blocare când are bilet real asociat.
+- [x] Reorganizarea acțiunilor Resetare pas și Ștergere din cardul Piramide pentru a evita aglomerarea pe 390 px și 430 px.
+- [x] Rafinarea tipografiei și spațierii în rândurile de evenimente din Dashboard și în cardurile Acumulatoare/Piramide, cu ierarhie concretă pentru oră, echipe, piață, probabilitate și cotă.
+- [x] Verificarea vizuală documentată a ierarhiei și spațierii la 390 px, 430 px și desktop pentru Dashboard și Strategie.
