@@ -33,6 +33,10 @@ Pentru Piramidă, ținta **2,00** a produs o combinație reală de două meciuri
 
 La **390 px** și **430 px**, ecranul **Explorare** a încărcat feedul verificat și a păstrat lizibile căutarea, filtrele orizontale, semnalul de eligibilitate, cota și acțiunea contextuală. Captura inițială la 430 px a surprins starea tranzitorie de încărcare, apoi o rerandare după finalizarea feedului a confirmat cardurile, marcajul „Doar analiză” pentru piețele neeligibile și bara mobilă de navigare, fără trunchierea informațiilor esențiale.
 
+## Verificare publică GitHub Pages
+
+Publicarea GitHub Pages a rulat cu succes la **22 august 2026**. Pe versiunea live au fost verificate selectorul pentru țintele 10, 20, 50 și 100, trecerea corectă la limita de 10 sau 20 de selecții și mesajul onest privind acoperirea curentă de o singură competiție eligibilă. Modul Piramidă combinată a fost verificat public la ținta 2,00: afișează două meciuri reale, cota 2,06 și avertizarea de concentrare, fără a pretinde diversificare maximă sau rezultat garantat.
+
 ## Explorare mobilă
 
 Cardurile de meci păstrează piața, probabilitatea și cota, dar introduc trei semnale vizuale consistente: **Eligibilă pentru strategie**, **Doar analiză** și **Cotă verificată fără semnal eligibil**. Ecranul nu deduce istoricul, rezultatele sau formele echipelor când aceste date nu sunt în feed.
