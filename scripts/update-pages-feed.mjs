@@ -80,6 +80,8 @@ function providerSignals(prediction) {
 function normalizePrediction(prediction, oddsSnapshot) {
   const event = prediction.event;
   const confidence = Number(prediction.model?.confidence ?? 0.5);
+  const expectedGoals = prediction.markets?.expected_goals ?? {};
+  const score = prediction.markets?.score ?? {};
   const selections = selectionDefinitions(prediction).flatMap(definition => {
     const field = oddsFieldFor(definition);
     const currentOdds = field ? Number(oddsSnapshot?.odds?.[field]) : null;
@@ -126,7 +128,14 @@ function normalizePrediction(prediction, oddsSnapshot) {
     oddsStatus: oddsSnapshot?.odds ? "live" : "pending",
     oddsUpdatedAt: oddsSnapshot?.last_update_at ?? null,
     oddsNextUpdateAt: oddsSnapshot?.next_update_at ?? null,
+    oddsRefreshSeconds: Number(oddsSnapshot?.update_interval_seconds) || null,
+    oddsUpdateReason: oddsSnapshot?.update_reason ?? null,
     selections,
+    expectedGoals: {
+      home: Number.isFinite(Number(expectedGoals.home)) ? round(expectedGoals.home) : null,
+      away: Number.isFinite(Number(expectedGoals.away)) ? round(expectedGoals.away) : null,
+    },
+    mostLikelyScore: typeof score.most_likely === "string" ? score.most_likely : null,
   };
 }
 

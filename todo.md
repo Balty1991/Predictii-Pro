@@ -115,3 +115,12 @@
 - [ ] Validarea vizuală mobilă a noului meniu, filtrelor, cardurilor și strategiilor pe GitHub Pages.
 - [x] Adăugarea unui filtru distinct pentru evenimente cu semnale API și validarea sa separată de filtrele de cote, eligibilitate, recomandări și rată mare.
 - [x] Documentarea mapării de filtre pentru evenimente, competiții, semnale API, recomandări, probabilitate mare și eligibilitate la cotă.
+- [x] Auditarea comparativă a aplicațiilor mobile relevante de predicții și analiză sportivă, cu surse publice și principii UX transferabile.
+- [x] Auditarea documentației Sports Data API pentru toate funcțiile reutilizabile în fluxuri de analiză, cotații, rezultate și performanță, în limita bugetului stabilit.
+- [x] Definirea unei arhitecturi mobile de produs cu taburi de decizie rapidă, analiză de meci, strategie și performanță locală verificabilă.
+- [x] Reproiectarea majoră a ecranului Meciuri ca experiență mobilă de decizie, cu prioritizare, densitate controlată și acțiuni contextuale.
+- [x] Construirea unui ecran de analiză de meci bazat exclusiv pe semnale, cote, probabilități și contexte disponibile în feed.
+- [x] Extinderea Acumulatorului și Piramidei cu indicatori de risc, progres clar și selectare contextuală exclusiv din cote verificate.
+- [x] Implementarea performanței locale cu jurnal de decizie și metrici de risc, fără rezultate fabricate sau promisiuni de profit.
+- [ ] Validarea comparativă mobilă, a performanței de încărcare și a fluxurilor cu feed real, urmată de publicarea GitHub Pages.
+- [x] Blocarea corelației manuale în Acumulator printr-o singură piață pe eveniment și competiție, inclusiv curățarea selecțiilor locale vechi.
