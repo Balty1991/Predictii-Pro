@@ -8,7 +8,6 @@ const apiKey = process.env.SPORTS_DATA_API_KEY;
 const today = new Date();
 const dateFrom = today.toISOString().slice(0, 10);
 const dateTo = new Date(today.getTime() + 7 * 86_400_000).toISOString().slice(0, 10);
-const markets = ["1x2", "over_under_15", "over_under_25", "btts"];
 
 if (!apiKey) {
   throw new Error("SPORTS_DATA_API_KEY lipsă. Configurează secretul repository-ului înainte de actualizarea feedului.");
@@ -42,8 +41,8 @@ async function request(path, params = {}) {
   }
 }
 
-function bestOdds(odds, market, outcome) {
-  const matching = odds.filter(item => item.market === market && String(item.outcome).toUpperCase() === outcome.toUpperCase());
+function bestOdds(odds, eventId, market, outcome) {
+  const matching = odds.filter(item => item.event_id === eventId && item.market === market && String(item.outcome).toUpperCase() === outcome.toUpperCase());
   if (!matching.length) return null;
   return matching.reduce((best, item) => Number(item.decimal_odds) > Number(best.decimal_odds) ? item : best);
 }
@@ -69,7 +68,7 @@ function normalizePrediction(prediction, odds) {
   const event = prediction.event;
   const confidence = Number(prediction.model?.confidence ?? 0.5);
   const selections = selectionDefinitions(prediction).flatMap(definition => {
-    const price = bestOdds(odds, definition.market, definition.outcome);
+    const price = bestOdds(odds, event.id, definition.market, definition.outcome);
     const currentOdds = price ? Number(price.decimal_odds) : null;
     if (!currentOdds || currentOdds < 1.2 || currentOdds > 2.1) return [];
     const impliedProbability = round(100 / currentOdds);
@@ -115,13 +114,14 @@ async function main() {
       await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: "partial", message: "Furnizorul nu a livrat predicții pentru fereastra curentă. Sunt afișate doar evenimente reale, fără cote sau bilete inventate.", calls, events }, null, 2) + "\n");
       return;
     }
-    const oddsResponses = await Promise.allSettled(markets.map(market => request("/odds/best/", { market, date_from: dateFrom, date_to: dateTo, limit: 200 })));
+    const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 4);
+    const oddsResponses = await Promise.allSettled(upcomingPredictions.map(prediction => request("/odds/", { event_id: prediction.event.id, limit: 200 })));
     const allOdds = oddsResponses.flatMap(result => result.status === "fulfilled" ? result.value : []);
     const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
-    const normalizedEvents = predictions.map(prediction => normalizePrediction(prediction, allOdds));
+    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, allOdds));
     const events = allOdds.length
       ? normalizedEvents.filter(event => event.selections.length > 0).slice(0, 8)
-      : predictions.slice(0, 8).map(prediction => ({ id: prediction.event.id, startsAt: prediction.event.event_date, sport: "Fotbal", competition: prediction.event.league_name ?? "Competiție neprecizată", homeTeam: prediction.event.home_team, awayTeam: prediction.event.away_team, selections: [] }));
+      : upcomingPredictions.slice(0, 8).map(prediction => ({ id: prediction.event.id, startsAt: prediction.event.event_date, sport: "Fotbal", competition: prediction.event.league_name ?? "Competiție neprecizată", homeTeam: prediction.event.home_team, awayTeam: prediction.event.away_team, selections: [] }));
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
     const message = selectionCount
       ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
