@@ -94,7 +94,7 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("[5,10,20,50,100]");
     expect(staticPage).toContain("max:20");
     expect(staticPage).toContain("allowLeagueReuse:true");
-    expect(staticPage).toContain("Mod prudent: sunt disponibile doar");
+    expect(staticPage).toContain("Mod prudent: este disponibil doar");
     expect(staticPage).toContain("Nu adăugăm cote ridicate pentru a completa artificial biletul.");
     expect(staticPage).toContain("function pyramidComboCandidate(target)");
     expect(staticPage).toContain("Combinație 2–3");

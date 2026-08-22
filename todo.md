@@ -169,3 +169,4 @@
 - [ ] Integrarea feedului de cote în lot pentru piețele 1,20–1,70, astfel încât sincronizarea să poată verifica mai multe evenimente reale în plafonul de cinci apeluri.
 - [ ] Folosirea cotelor în lot pe piețe prudente distincte pentru a crește numărul de meciuri verificabile în aceleași cinci apeluri.
 - [x] Blocarea propunerii parțiale în modul prudent când feedul nu are cel puțin două meciuri distincte eligibile.
+- [x] Corectarea mesajelor modului prudent pentru singular/plural în numărul de meciuri disponibile.
