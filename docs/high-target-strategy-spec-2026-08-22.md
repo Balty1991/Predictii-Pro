@@ -51,6 +51,8 @@ Generatorul prioritizează acum mai întâi încrederea modelului API și select
 
 Pentru țintele de minimum 5,00, există un nivel extins transparent: piața trebuie să aibă cotă reală între 1,20 și 4,00, valoare estimată pozitivă, edge de cel puțin 2 puncte procentuale, context de cel puțin 55/100 și încredere API de cel puțin 35%. Nivelul extins nu modifică eticheta de eligibilitate strictă pentru țintele mici și nu transformă o cotă într-un rezultat garantat.
 
+Verificarea GitHub Pages după publicare a confirmat același rezultat: ținta 10,00 propune Rochdale — Crawley Town (victorie gazde, 2,03), Sanfrecce Hiroshima — Kawasaki Frontale (Peste 3,5 goluri, 2,46) și Beijing Guoan — Yunnan Yukun (Sub 3,5 goluri, 2,08). Cota cumulată este 10,39, din trei competiții distincte. Returul, profitul și probabilitatea din ecran sunt calcule matematice, nu rezultate sau venituri garantate.
+
 Verificarea interactivă live la **390 px** a confirmat selectarea unei piețe reale în Acumulator, schimbarea la ținta 10,00 și afișarea lizibilă a stării `1/10` în calculator. În Piramidă, câmpurile și selectorul de mod se păstrează în flux vertical fără depășire orizontală; cardul combinației urmează controalele în scroll-ul normal al paginii, fără a fi ascuns sau înlocuit cu date simulate.
 
 La **430 px**, cardurile pereche ale Acumulatorului păstrează vizibile cota totală 1,37, ținta 10,00, progresul și metricile matematice. Piramida păstrează în același viewport ținta 2,00, pașii, miza, reinvestirea, comutatorul de mod, acțiunea de creare și începutul cardului de combinație cu cota 2,06. Bara de navigare inferioară rămâne accesibilă, fără acoperirea controalelor esențiale.
