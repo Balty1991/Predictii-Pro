@@ -22,12 +22,12 @@ describe("aplicația statică GitHub Pages", () => {
     }
   });
 
-  it("folosește cote per-eveniment fără parametrul limit și păstrează plafonul de cinci apeluri", () => {
+  it("folosește patru piețe prudente în lot și păstrează plafonul de cinci apeluri", () => {
     expect(feedGenerator).toContain("if (calls >= 5)");
     expect(feedGenerator).toContain("slice(0, 60)");
-    expect(feedGenerator).toContain("/events/${prediction.event.id}/odds/");
-    expect(feedGenerator).toContain("paginated: false");
-    expect(feedGenerator).not.toContain('request(`/events/${prediction.event.id}/odds/`, { limit');
+    expect(feedGenerator).toContain('const prudentMarkets = ["over_under_15", "double_chance", "1x2", "btts"]');
+    expect(feedGenerator).toContain('request("/odds/", { market, min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })');
+    expect(feedGenerator).toContain("Promise.allSettled(prudentMarkets.map");
   });
 
   it("mapează toate piețele gratuite de consens disponibile fără apeluri suplimentare", () => {
@@ -114,8 +114,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).toContain("function diversifiedOddsTargets(predictions, previous)");
     expect(feedGenerator).toContain("confidence(right) - confidence(left)");
     expect(feedGenerator).toContain("if (!competitions.has(prediction.event.league_name ?? \"\")) add(prediction)");
-    expect(feedGenerator).toContain("const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous)");
-    expect(feedGenerator).toContain('request("/odds/", { min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })');
+    expect(feedGenerator).toContain('const prudentMarkets = ["over_under_15", "double_chance", "1x2", "btts"]');
+    expect(feedGenerator).toContain('request("/odds/", { market, min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })');
     expect(feedGenerator).toContain("function snapshotFromBatchRows(rows, eventId)");
   });
 

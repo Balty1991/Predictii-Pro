@@ -102,6 +102,9 @@ function oddsFieldFor({ market, outcome }) {
     "over_under_35:under": "under_35_goals",
     "btts:yes": "btts_yes",
     "btts:no": "btts_no",
+    "double_chance:1X": "home_or_draw",
+    "double_chance:12": "home_or_away",
+    "double_chance:X2": "draw_or_away",
   };
   return fields[`${market}:${outcome}`] ?? null;
 }
@@ -134,6 +137,9 @@ function selectionDefinitions(prediction) {
     { market: "over_under_35", outcome: "under", label: "Sub 3.5 goluri", probability: directOrComplement(overUnder.prob_under_35, overUnder.prob_over_35), recommended: recommendations.under_35 === true },
     { market: "btts", outcome: "yes", label: "Ambele echipe marchează", probability: btts.prob_yes, recommended: recommendations.btts === true },
     { market: "btts", outcome: "no", label: "Nu marchează ambele", probability: directOrComplement(btts.prob_no, btts.prob_yes), recommended: recommendations.btts_no === true },
+    { market: "double_chance", outcome: "1X", label: "1X", probability: Number(match.prob_home) + Number(match.prob_draw), recommended: false },
+    { market: "double_chance", outcome: "12", label: "12", probability: Number(match.prob_home) + Number(match.prob_away), recommended: false },
+    { market: "double_chance", outcome: "X2", label: "X2", probability: Number(match.prob_draw) + Number(match.prob_away), recommended: false },
   );
   return definitions.map(item => ({ ...item, probability: asPercent(item.probability) })).filter(item => item.probability && item.probability < 100);
 }
@@ -270,21 +276,17 @@ async function main() {
       return;
     }
     const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 60);
-    let safeOddsRows = [];
-    try { safeOddsRows = await request("/odds/", { min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 }); } catch { safeOddsRows = []; }
-    const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous).slice(0, 3);
-    const oddsResponses = await Promise.allSettled(oddsTargets.map(prediction => request(`/events/${prediction.event.id}/odds/`, {}, { paginated: false })));
-    const oddsByEvent = new Map(oddsResponses.flatMap(result => result.status === "fulfilled" && result.value?.event_id ? [[result.value.event_id, result.value]] : []));
-    const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
-    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, mergeOddsSnapshots(snapshotFromBatchRows(safeOddsRows, prediction.event.id), oddsByEvent.get(prediction.event.id))));
+    const prudentMarkets = ["over_under_15", "double_chance", "1x2", "btts"];
+    const prudentResponses = await Promise.allSettled(prudentMarkets.map(market => request("/odds/", { market, min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })));
+    const prudentOddsRows = prudentResponses.flatMap(result => result.status === "fulfilled" && Array.isArray(result.value) ? result.value : []);
+    const oddsUnavailable = prudentOddsRows.length === 0;
+    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, snapshotFromBatchRows(prudentOddsRows, prediction.event.id)));
     const events = normalizedEvents;
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
     const message = selectionCount
       ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
       : oddsUnavailable
         ? "Furnizorul a livrat evenimente și predicții, dar a refuzat temporar cotele. Sunt afișate numai evenimentele reale; biletele rămân blocate fără prețuri verificabile."
-        : oddsByEvent.size === 0
-          ? `${events.length} evenimente și semnale reale sunt disponibile, dar cotele nu sunt disponibile momentan pentru evenimentele verificate. Biletele rămân blocate fără prețuri verificabile.`
         : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message, calls, events }, null, 2) + "\n");
   } catch (error) {
