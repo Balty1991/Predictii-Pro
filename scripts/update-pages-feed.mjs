@@ -123,7 +123,7 @@ async function main() {
   } catch (error) {
     const message = error instanceof Error ? error.message : "Eroare necunoscută la sincronizare.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: previous.updatedAt ?? null, status: "unavailable", message: `Feedul nu a putut fi actualizat: ${message}`, calls, events: previous.events ?? [] }, null, 2) + "\n");
-    throw error;
+    console.warn(`Feed static indisponibil: ${message}`);
   }
 }
 
