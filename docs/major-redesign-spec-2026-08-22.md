@@ -95,3 +95,7 @@ Deep-link-ul `?tab=journal` a fost verificat la 390 px şi 430 px. Jurnalul a p�
 | `?tab=journal` | Jurnal | A afișat metricile locale şi jurnalul de decizie. |
 
 Fluxul live **Azi → Explorare → Analiză → Strategii/Acumulator → Piramidă → Jurnal** a fost parcurs cu feedul public. Piața reală a fost analizată, adăugată în strategie, propunerea 1,40 a rămas în intervalul permis, iar Piramida a fost creată, asociată cu o selecție verificată şi apoi ștearsă prin confirmare. Nu a fost executat niciun pariu şi nu sunt declarate rezultate sau venituri.
+
+## Extindere piețe de consens fără apeluri suplimentare
+
+Generatorul folosește acum toate cele **11 piețe de consens** ale shortcutului per-eveniment: 1X2, Peste/Sub 1.5, 2.5 și 3.5 goluri, plus Ambele marchează Da/Nu. Sincronizarea live a rămas la **5/5 cereri**, cu 60 de evenimente, 33 de cote reale pe trei evenimente şi şase piețe eligibile pentru strategie. Cotele în afara condițiilor de risc rămân consultabile, dar sunt marcate **„Doar analiză”** şi sunt blocate atât vizual, cât şi prin validarea funcției de selecție. La 390 px şi 430 px, cardul extins păstrează butonul eligibil şi starea dezactivată fără depășire orizontală.
