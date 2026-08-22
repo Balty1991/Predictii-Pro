@@ -222,6 +222,17 @@ async function readPrevious() {
   try { return JSON.parse(await readFile(outputPath, "utf8")); } catch { return { events: [] }; }
 }
 
+function diversifiedOddsTargets(predictions, previous) {
+  const previouslyPriced = new Set((previous.events ?? []).filter(event => (event.selections ?? []).length > 0).map(event => event.id));
+  const confidence = prediction => asPercent(prediction.model?.confidence) ?? 0;
+  const ordered = [...predictions].sort((left, right) => confidence(right) - confidence(left) || Number(previouslyPriced.has(right.event.id)) - Number(previouslyPriced.has(left.event.id)) || String(left.event.event_date).localeCompare(String(right.event.event_date)));
+  const picked = [], pickedIds = new Set(), competitions = new Set();
+  const add = prediction => { if (!prediction || pickedIds.has(prediction.event.id) || picked.length >= 4) return; picked.push(prediction); pickedIds.add(prediction.event.id); competitions.add(prediction.event.league_name ?? ""); };
+  for (const prediction of ordered) if (!competitions.has(prediction.event.league_name ?? "")) add(prediction);
+  for (const prediction of ordered) add(prediction);
+  return picked;
+}
+
 async function main() {
   const previous = await readPrevious();
   const now = new Date().toISOString();
@@ -234,7 +245,8 @@ async function main() {
       return;
     }
     const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 60);
-    const oddsResponses = await Promise.allSettled(upcomingPredictions.slice(0, 4).map(prediction => request(`/events/${prediction.event.id}/odds/`, {}, { paginated: false })));
+    const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous);
+    const oddsResponses = await Promise.allSettled(oddsTargets.map(prediction => request(`/events/${prediction.event.id}/odds/`, {}, { paginated: false })));
     const oddsByEvent = new Map(oddsResponses.flatMap(result => result.status === "fulfilled" && result.value?.event_id ? [[result.value.event_id, result.value]] : []));
     const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
     const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, oddsByEvent.get(prediction.event.id)));

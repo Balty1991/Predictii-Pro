@@ -83,7 +83,7 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("if(chosen.length>=policy.max||ticketSummary(chosen).odds>=upper)return");
     expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
     expect(staticPage).toContain("Pentru țintele sub 5,00 păstrăm competițiile distincte pentru a limita corelația.");
-    expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile curente pentru strategie.");
+    expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile stricte sau extinse de strategie.");
     expect(staticPage).toContain("Doar analiză");
     expect(staticPage).toContain("data-delete-pyramid");
     expect(staticPage).toContain("Ștergi această piramidă locală?");
@@ -103,6 +103,17 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("Risc de concentrare:");
     expect(highTargetSpec).toContain("competițiile distincte sunt preferate");
     expect(highTargetSpec).toContain("Rezultat de validare cu feedul public curent");
+  });
+
+  it("folosește nivelul extins doar la ținte mari și caută cote din competiții diferite în bugetul existent", () => {
+    expect(staticPage).toContain("highTargetEligible=item=>Boolean(item&&item.odds>=1.2&&item.odds<=4");
+    expect(staticPage).toContain("Boolean(item?.eligible||(target>=5&&highTargetEligible(item)))");
+    expect(staticPage).toContain("nivel extins pentru țintă mare");
+    expect(staticPage).toContain("candidates=allSelections().filter(item=>strategyEligible(item,target))");
+    expect(feedGenerator).toContain("function diversifiedOddsTargets(predictions, previous)");
+    expect(feedGenerator).toContain("confidence(right) - confidence(left)");
+    expect(feedGenerator).toContain("if (!competitions.has(prediction.event.league_name ?? \"\")) add(prediction)");
+    expect(feedGenerator).toContain("const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous)");
   });
 
   it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {

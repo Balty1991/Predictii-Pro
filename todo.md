@@ -159,3 +159,6 @@
 - [x] Inventarierea statisticilor verificabile expuse de Sports Data API și a acoperirii lor în feedul static.
 - [x] Extinderea scorului de predicție cu toate statisticile disponibile din API, ponderate transparent și fără completarea datelor lipsă.
 - [x] Afișarea clară în analiză a factorilor API utilizați și a factorilor indisponibili pentru fiecare predicție.
+- [x] Diversificarea selecției de evenimente cotate în generator, păstrând exact cinci apeluri externe pe sincronizare.
+- [x] Verificarea feedului real pentru mai multe meciuri eligibile și pentru propuneri Acumulator utile la ținte mari.
+- [x] Adăugarea nivelului extins pentru ținte mari: cote reale cu valoare pozitivă, prag de context și avertizare, chiar când nu trec filtrul strict de cotă mică.
