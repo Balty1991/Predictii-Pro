@@ -83,7 +83,7 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("if(chosen.length>=policy.max||ticketSummary(chosen).odds>=upper)return");
     expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
     expect(staticPage).toContain("Pentru țintele sub 5,00 păstrăm competițiile distincte pentru a limita corelația.");
-    expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile stricte sau extinse de strategie.");
+    expect(staticPage).toContain("Pentru ținte mari sunt admise numai cote prudente 1,20–1,70");
     expect(staticPage).toContain("Doar analiză");
     expect(staticPage).toContain("data-delete-pyramid");
     expect(staticPage).toContain("Ștergi această piramidă locală?");
@@ -105,15 +105,18 @@ describe("aplicația statică GitHub Pages", () => {
     expect(highTargetSpec).toContain("Rezultat de validare cu feedul public curent");
   });
 
-  it("folosește nivelul extins doar la ținte mari și caută cote din competiții diferite în bugetul existent", () => {
-    expect(staticPage).toContain("highTargetEligible=item=>Boolean(item&&item.odds>=1.2&&item.odds<=4");
-    expect(staticPage).toContain("Boolean(item?.eligible||(target>=5&&highTargetEligible(item)))");
-    expect(staticPage).toContain("nivel extins pentru țintă mare");
+  it("folosește numai nivelul prudent la ținte mari și caută cote din competiții diferite în bugetul existent", () => {
+    expect(staticPage).toContain("prudentTargetEligible=item=>Boolean(item&&item.odds>=1.2&&item.odds<=1.7");
+    expect(staticPage).toContain("Boolean(target>=5?prudentTargetEligible(item):item?.eligible)");
+    expect(staticPage).toContain("nivel prudent pentru țintă mare");
+    expect(staticPage).toContain("cote prudente 1,20–1,70");
     expect(staticPage).toContain("candidates=allSelections().filter(item=>strategyEligible(item,target))");
     expect(feedGenerator).toContain("function diversifiedOddsTargets(predictions, previous)");
     expect(feedGenerator).toContain("confidence(right) - confidence(left)");
     expect(feedGenerator).toContain("if (!competitions.has(prediction.event.league_name ?? \"\")) add(prediction)");
     expect(feedGenerator).toContain("const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous)");
+    expect(feedGenerator).toContain('request("/odds/", { min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 })');
+    expect(feedGenerator).toContain("function snapshotFromBatchRows(rows, eventId)");
   });
 
   it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {

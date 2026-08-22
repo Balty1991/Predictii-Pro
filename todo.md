@@ -162,3 +162,8 @@
 - [x] Diversificarea selecției de evenimente cotate în generator, păstrând exact cinci apeluri externe pe sincronizare.
 - [x] Verificarea feedului real pentru mai multe meciuri eligibile și pentru propuneri Acumulator utile la ținte mari.
 - [x] Adăugarea nivelului extins pentru ținte mari: cote reale cu valoare pozitivă, prag de context și avertizare, chiar când nu trec filtrul strict de cotă mică.
+- [x] Auditarea acoperirii reale pentru Acumulator prudent: selecții 1,20–1,70, evenimente distincte și criterii de calitate API.
+- [x] Adăugarea modului „Prudent” pentru ținte mari, care prioritizează cote mici și nu include automat cote ridicate precum 2,46 sau 3,53.
+- [ ] Propunerea graduală din 10–20 selecții numai când feedul are suficiente meciuri reale eligibile; altfel, afișarea onestă a numărului disponibil.
+- [ ] Validarea live pe mobil a modului prudent pentru ținta 10,00 și a mesajului de acoperire pentru țintele 20/50/100.
+- [ ] Integrarea feedului de cote în lot pentru piețele 1,20–1,70, astfel încât sincronizarea să poată verifica mai multe evenimente reale în plafonul de cinci apeluri.

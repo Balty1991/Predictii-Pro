@@ -233,6 +233,31 @@ function diversifiedOddsTargets(predictions, previous) {
   return picked;
 }
 
+function snapshotFromBatchRows(rows, eventId) {
+  const odds = {};
+  let updatedAt = null;
+  for (const row of rows) {
+    if (Number(row?.event_id) !== Number(eventId)) continue;
+    const field = oddsFieldFor({ market: row.market, outcome: row.outcome });
+    const price = Number(row.decimal_odds ?? row.odds);
+    if (!field || !Number.isFinite(price) || price < 1.01 || price > 25) continue;
+    odds[field] = price;
+    if (!updatedAt || String(row.updated_at ?? "") > String(updatedAt)) updatedAt = row.updated_at ?? null;
+  }
+  return Object.keys(odds).length ? { odds, last_update_at: updatedAt, next_update_at: null, update_interval_seconds: null } : null;
+}
+
+function mergeOddsSnapshots(batchSnapshot, eventSnapshot) {
+  if (!batchSnapshot) return eventSnapshot ?? null;
+  if (!eventSnapshot) return batchSnapshot;
+  return {
+    ...batchSnapshot,
+    ...eventSnapshot,
+    odds: { ...batchSnapshot.odds, ...eventSnapshot.odds },
+    last_update_at: eventSnapshot.last_update_at ?? batchSnapshot.last_update_at ?? null,
+  };
+}
+
 async function main() {
   const previous = await readPrevious();
   const now = new Date().toISOString();
@@ -245,11 +270,13 @@ async function main() {
       return;
     }
     const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 60);
-    const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous);
+    let safeOddsRows = [];
+    try { safeOddsRows = await request("/odds/", { min_decimal_odds: 1.2, max_decimal_odds: 1.7, limit: 200 }); } catch { safeOddsRows = []; }
+    const oddsTargets = diversifiedOddsTargets(upcomingPredictions, previous).slice(0, 3);
     const oddsResponses = await Promise.allSettled(oddsTargets.map(prediction => request(`/events/${prediction.event.id}/odds/`, {}, { paginated: false })));
     const oddsByEvent = new Map(oddsResponses.flatMap(result => result.status === "fulfilled" && result.value?.event_id ? [[result.value.event_id, result.value]] : []));
     const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
-    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, oddsByEvent.get(prediction.event.id)));
+    const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, mergeOddsSnapshots(snapshotFromBatchRows(safeOddsRows, prediction.event.id), oddsByEvent.get(prediction.event.id))));
     const events = normalizedEvents;
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
     const message = selectionCount
