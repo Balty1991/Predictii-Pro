@@ -132,3 +132,5 @@
 - [x] Testarea live a deep-link-urilor tab=today, tab=explore, tab=strategies și tab=journal, cu confirmarea zonei deschise pentru fiecare URL.
 - [x] Finalizarea checklistului mobil live: Azi → Explorare cu filtre → Analiză → Strategii/Acumulator → Piramidă → Jurnal.
 - [x] Adăugarea şi verificarea deep-link-ului strategy=pyramids pentru acces mobil direct la Piramidă.
+- [ ] Extinderea feedului static cu toate piețele gratuite de consens care pot fi mapate transparent din predicțiile API, fără depășirea plafonului de cinci cereri.
+- [ ] Verificarea selecțiilor rezultate din piețele extinse şi menținerea blocării de corelație pentru eveniment şi competiție.

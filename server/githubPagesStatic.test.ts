@@ -27,6 +27,15 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).not.toContain('request(`/events/${prediction.event.id}/odds/`, { limit');
   });
 
+  it("mapează toate piețele gratuite de consens disponibile fără apeluri suplimentare", () => {
+    expect(feedGenerator).toContain('"over_under_15:under": "under_15_goals"');
+    expect(feedGenerator).toContain('"over_under_25:under": "under_25_goals"');
+    expect(feedGenerator).toContain('"over_under_35:over": "over_35_goals"');
+    expect(feedGenerator).toContain('"over_under_35:under": "under_35_goals"');
+    expect(feedGenerator).toContain('"btts:no": "btts_no"');
+    expect(feedGenerator).toContain('const complement = (value) =>');
+  });
+
   it("păstrează semnalele separate de piețele eligibile și nu permite selecții fără cotă", () => {
     expect(staticPage).toContain("Semnalele sunt disponibile, dar piața nu intră într-o strategie");
     expect(staticPage).toContain("data-filter=\"signals\"");
