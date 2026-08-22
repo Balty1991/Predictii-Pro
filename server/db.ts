@@ -19,6 +19,7 @@ import {
 import { ENV } from './_core/env';
 import { isTicketCandidateEligible, projectPyramidStep } from "./predictionMath";
 import { buildPerformanceAnalytics } from "./performanceAnalytics";
+import { canResetActivePyramidStep } from "./pyramidStepReset";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -436,6 +437,30 @@ export async function attachTicketToActivePyramidStep(input: { userId: number; p
   if (activeStep.ticketId) throw new Error("Pasul activ are deja un bilet asociat.");
   await db.update(pyramidSteps).set({ ticketId: ticket.id, resultNote: `Bilet acumulator #${ticket.id} asociat automat.` }).where(eq(pyramidSteps.id, activeStep.id));
   return { pyramidPlanId: plan.id, stepId: activeStep.id, ticketId: ticket.id };
+}
+
+export async function resetActivePyramidStep(input: { userId: number; pyramidPlanId: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const plan = (await db.select().from(pyramidPlans)
+    .where(sql`${pyramidPlans.id} = ${input.pyramidPlanId} AND ${pyramidPlans.userId} = ${input.userId} AND ${pyramidPlans.status} = 'active'`).limit(1))[0];
+  if (!plan) throw new Error("Piramida activă nu a fost găsită.");
+  const activeStep = (await db.select().from(pyramidSteps)
+    .where(sql`${pyramidSteps.pyramidPlanId} = ${plan.id} AND ${pyramidSteps.status} = 'active'`).limit(1))[0];
+  if (!canResetActivePyramidStep(activeStep)) {
+    throw new Error("Pasul activ are un bilet real asociat sau nu mai poate fi resetat.");
+  }
+  await db.delete(pyramidSteps).where(eq(pyramidSteps.id, activeStep.id));
+  const created = await db.insert(pyramidSteps).values({
+    pyramidPlanId: plan.id,
+    stepNumber: activeStep.stepNumber,
+    stake: activeStep.stake,
+    retainedProfit: activeStep.retainedProfit,
+    projectedReturn: activeStep.projectedReturn,
+    status: "active",
+    resultNote: "Pas activ resetat înainte de asocierea unui bilet.",
+  });
+  return { pyramidPlanId: plan.id, previousStepId: activeStep.id, stepId: Number(created[0].insertId) };
 }
 
 export async function getPyramidRecommendations(userId: number, pyramidPlanId: number) {

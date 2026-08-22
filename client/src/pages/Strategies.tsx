@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
-import { Calculator, ChevronRight, CircleCheck, Layers3, LockKeyhole, ShieldCheck, Trash2, TrendingDown, TrendingUp } from "lucide-react";
+import { Calculator, ChevronRight, CircleCheck, Layers3, LockKeyhole, RotateCcw, ShieldCheck, Trash2, TrendingDown, TrendingUp } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -17,6 +17,7 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
   const [profitLockRate, setProfitLockRate] = useState(30);
   const [ticketStake, setTicketStake] = useState(10);
   const [deletingPlanId, setDeletingPlanId] = useState<number | null>(null);
+  const [resettingPlanId, setResettingPlanId] = useState<number | null>(null);
 
   const ticketInput = useMemo(() => ({
     targetOddsMin: Math.max(1.05, target - 0.08),
@@ -38,6 +39,10 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
     onSuccess: () => { toast.success("Piramida a fost ștearsă."); setDeletingPlanId(null); utils.pyramids.list.invalidate(); utils.pyramids.recommendations.invalidate(); },
     onError: error => { toast.error(error.message); setDeletingPlanId(null); },
   });
+  const resetActiveStep = trpc.pyramids.resetActiveStep.useMutation({
+    onSuccess: () => { toast.success("Pasul activ a fost resetat în siguranță."); setResettingPlanId(null); utils.pyramids.list.invalidate(); utils.pyramids.recommendations.invalidate(); },
+    onError: error => { toast.error(error.message); setResettingPlanId(null); },
+  });
   const createTicket = trpc.tickets.create.useMutation({
     onSuccess: () => { toast.success("Acumulatorul a fost salvat pentru monitorizare."); utils.tickets.list.invalidate(); },
     onError: error => toast.error(error.message),
@@ -49,6 +54,7 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
 
   const activePyramid = plans.data?.find(plan => plan.status === "active" && plan.steps.some(step => step.status === "active" && !step.ticketId));
   const deletablePlan = plans.data?.find(plan => !plan.steps.some(step => step.ticketId));
+  const resettablePlan = plans.data?.find(plan => plan.status === "active" && plan.steps.some(step => step.status === "active" && !step.ticketId));
   const pyramidRecommendations = trpc.pyramids.recommendations.useQuery({ pyramidPlanId: activePyramid?.id ?? 0 }, { enabled: Boolean(activePyramid) });
   const assignRecommendation = trpc.pyramids.assignRecommendation.useMutation({
     onSuccess: () => {
@@ -73,7 +79,7 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
   }, [baseStake, maxSteps, profitLockRate, reinvestRate, target]);
 
   const plan = suggestion.data;
-  const busy = createPlan.isPending || deletePlan.isPending || assignRecommendation.isPending;
+  const busy = createPlan.isPending || deletePlan.isPending || resetActiveStep.isPending || assignRecommendation.isPending;
   const ticketWorkspace = workspace === "tickets";
   const pyramidWorkspace = workspace === "pyramids";
   const pageTitle = ticketWorkspace ? "Acumulatoare reale." : pyramidWorkspace ? "Piramide cu evenimente reale." : "Acumulatoare și pași reali.";
@@ -111,8 +117,9 @@ export default function Strategies({ workspace = "all" }: { workspace?: "all" | 
           <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4"><Field label="Miză inițială" id="stake" value={baseStake} min={1} onChange={setBaseStake} /><Field label="Pași maxim" id="steps" value={maxSteps} min={1} max={31} onChange={setMaxSteps} /><Field label="Reinvestire (%)" id="reinvest" value={reinvestRate} min={5} max={100} onChange={setReinvestRate} /><Field label="Profit protejat (%)" id="lock" value={profitLockRate} min={0} max={90} onChange={setProfitLockRate} /></div>
           <Button onClick={() => createPlan.mutate({ title: `Piramidă cotă ${target.toFixed(2)}`, baseStake, targetOddsMin: ticketInput.targetOddsMin, targetOddsMax: ticketInput.targetOddsMax, reinvestRate: reinvestRate / 100, profitLockRate: profitLockRate / 100, maxSteps })} disabled={createPlan.isPending} className="mt-5 min-h-12 w-full rounded-xl">Creează planul <ChevronRight className="ml-2 h-4 w-4" /></Button>
         </div>
-        <div className="rounded-3xl border border-border/70 bg-card/70 p-5 sm:p-6"><SectionTitle icon={Layers3} title="Piramidele tale" subtitle="Capital și pas următor, fără detalii inutile." trailing={deletablePlan ? <Button size="sm" variant="ghost" onClick={() => setDeletingPlanId(deletablePlan.id)} className="min-h-11 rounded-xl text-muted-foreground hover:text-rose-300"><Trash2 className="mr-2 h-4 w-4" /> Șterge</Button> : undefined} />
+        <div className="rounded-3xl border border-border/70 bg-card/70 p-5 sm:p-6"><SectionTitle icon={Layers3} title="Piramidele tale" subtitle="Capital și pas următor, fără detalii inutile." trailing={<div className="flex items-center gap-1">{resettablePlan && <Button size="sm" variant="ghost" onClick={() => setResettingPlanId(resettablePlan.id)} className="min-h-11 rounded-xl text-muted-foreground hover:text-primary"><RotateCcw className="mr-2 h-4 w-4" /> Resetează pasul</Button>}{deletablePlan && <Button size="sm" variant="ghost" onClick={() => setDeletingPlanId(deletablePlan.id)} className="min-h-11 rounded-xl text-muted-foreground hover:text-rose-300"><Trash2 className="mr-2 h-4 w-4" /> Șterge</Button>}</div>} />
           {deletablePlan && <AlertDialog open={deletingPlanId === deletablePlan.id} onOpenChange={open => !open && setDeletingPlanId(null)}><AlertDialogContent><AlertDialogHeader><AlertDialogTitle>Ștergi această piramidă?</AlertDialogTitle><AlertDialogDescription>Planul poate fi șters deoarece nu are încă un bilet real asociat. Pașii nefolosiți vor fi eliminați.</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Anulează</AlertDialogCancel><AlertDialogAction onClick={() => deletePlan.mutate({ pyramidPlanId: deletablePlan.id })}>Șterge planul</AlertDialogAction></AlertDialogFooter></AlertDialogContent></AlertDialog>}
+          {resettablePlan && <AlertDialog open={resettingPlanId === resettablePlan.id} onOpenChange={open => !open && setResettingPlanId(null)}><AlertDialogContent><AlertDialogHeader><AlertDialogTitle>Resetezi pasul activ?</AlertDialogTitle><AlertDialogDescription>Poți reseta doar un pas fără bilet asociat. Nu sunt modificate rezultatele sau biletele reale.</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Anulează</AlertDialogCancel><AlertDialogAction onClick={() => resetActiveStep.mutate({ pyramidPlanId: resettablePlan.id })}>Resetează pasul</AlertDialogAction></AlertDialogFooter></AlertDialogContent></AlertDialog>}
           <div className="mt-4 space-y-2.5">{plans.data?.length ? plans.data.map(item => <div key={item.id} className="flex items-center justify-between gap-3 rounded-2xl border border-border/60 bg-background/25 p-3.5"><div className="min-w-0"><p className="truncate font-medium text-foreground">{item.title}</p><p className="mt-1 text-xs text-muted-foreground">Pasul {item.currentStep}/{item.maxSteps} · reinvestire {(Number(item.reinvestRate) * 100).toFixed(0)}%</p></div><div className="shrink-0 text-right"><p className="text-[10px] uppercase tracking-wide text-muted-foreground">Miza</p><p className="font-mono text-lg font-semibold text-primary">{item.projection.stake.toFixed(2)}</p></div></div>) : <EmptyHint>Nu ai încă un plan activ. Începe cu o miză pe care îți permiți să o pierzi.</EmptyHint>}</div>
         </div>
       </section>

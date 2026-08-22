@@ -49,8 +49,8 @@
 - [x] Transformarea filtrelor mobile în benzi cu derulare orizontală și ridicarea tuturor țintelor tactile relevante la minimum 44 px.
 - [ ] Verificarea interactivă explicită la 390 px și 430 px pentru filtre, favorite, extinderea analizei și acțiunile de strategie.
 - [x] Implementarea unei reguli explicite de volatilitate din cote și aplicarea server-side a limitelor de risc la salvarea tuturor biletelor.
-- [ ] Eliminarea simulării ca element central și reorganizarea Strategiilor în jurul acumulatoarelor și pașilor de piramidă bazați exclusiv pe evenimente reale eligibile.
-- [ ] Adăugarea ștergerii sigure a unei piramide și a pasului activ, cu confirmare și protecție pentru bilete deja asociate.
+- [x] Eliminarea simulării ca element central și reorganizarea Strategiilor în jurul acumulatoarelor și pașilor de piramidă bazați exclusiv pe evenimente reale eligibile.
+- [x] Adăugarea ștergerii sigure a unei piramide și a pasului activ, cu confirmare și protecție pentru bilete deja asociate.
 - [x] Tratarea erorilor 429 ale furnizorului fără expunerea răspunsului tehnic brut și cu stare clară de reîncercare pentru utilizator.
 - [ ] Diagnosticarea și remedierea fluxului de explicații AI, inclusiv feedback util în card atunci când generarea eșuează.
 - [ ] Validarea end-to-end pe telefon: sincronizare → selecție reală → acumulator/piramidă → asociere → urmărire rezultat.
@@ -58,8 +58,8 @@
 - [x] Reproiectarea filtrelor ca un control simplu de decizie cu priorități, sport, interval de cote și stare de disponibilitate a datelor.
 - [ ] Reorganizarea afișării evenimentelor în liste profesioniste cu oră, echipe, piață, cotă, încredere și acțiune clară, fără carduri decorative redundante.
 - [ ] Stabilirea unei identități vizuale mai puternice, cu ierarhie tipografică, spațiere și componente distinctive pentru a depăși estetica actuală de dashboard generic.
-- [ ] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
-- [ ] Blocarea procedurală a decontării manuale a piramidelor și validarea trecerii active → finalizat numai prin settlement-ul automat al rezultatelor API.
+- [x] Eliminarea acțiunilor manuale de „câștigat/pierdut” pentru pașii de piramidă, astfel încât rezultatele să fie actualizate exclusiv prin verificare reală din API.
+- [x] Blocarea procedurală a decontării manuale a piramidelor și validarea trecerii active → finalizat numai prin settlement-ul automat al rezultatelor API.
 - [ ] Confirmarea funcțională că Acumulatoare și Piramide livrează selecții reale, nu scenarii simulate, imediat ce feedul furnizorului poate furniza cote eligibile.
 - [x] Remedierea rutei mobile Istoric, astfel încât opțiunea din meniu să deschidă pagina de performanță și rezultate în loc de 404.
 - [x] Verificarea mobilă a rutei Istoric după remediere, pentru a confirma deschiderea paginii de performanță din meniul inferior.
@@ -87,3 +87,5 @@
 - [x] Afișarea și testarea limitei tehnice atunci când nu este disponibilă o piață de predicții externă verificabilă.
 - [x] Gestionarea defensivă a payloadului gol sau null primit de la Sports Data API, fără expunerea erorii tehnice în interfață, cu reîncercare controlată și mesaj clar pentru utilizator.
 - [x] Recuperarea feedului de meciuri când endpointul agregat de predicții întoarce null, folosind un fallback compatibil cu bugetul redus și afișând exclusiv date reale.
+- [x] Adăugarea acțiunii UI și a procedurii server-side pentru resetarea separată a pasului activ neasociat, cu confirmare explicită.
+- [x] Testarea resetării pasului activ: succes când este neasociat și blocare când are bilet real asociat.
