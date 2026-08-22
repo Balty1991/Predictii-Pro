@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T06:13:57.051Z",
-  "status": "partial",
-  "message": "60 evenimente și semnale reale sunt disponibile, dar furnizorul a transmis 0 cote pentru cele patru evenimente verificate. Biletele rămân blocate fără prețuri verificabile.",
+  "updatedAt": "2026-08-22T06:38:58.722Z",
+  "status": "ready",
+  "message": "6 selecții reale au trecut validarea pentru intervalul curent.",
   "calls": 5,
   "events": [
     {
@@ -30,7 +30,54 @@
           "recommended": false
         }
       ],
-      "selections": []
+      "providerRecommended": false,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+      "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "selections": [
+        {
+          "id": "1463-1x2-HOME",
+          "eventId": 212208,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 61.1,
+          "odds": 1.75,
+          "openingOdds": null,
+          "impliedProbability": 57.14,
+          "fairOdds": 1.637,
+          "edge": 3.96,
+          "expectedValue": 6.93,
+          "confidence": 61.1,
+          "recommendation": "watch",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        },
+        {
+          "id": "1463-over_under_15-over",
+          "eventId": 212208,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 82.3,
+          "odds": 1.43,
+          "openingOdds": null,
+          "impliedProbability": 69.93,
+          "fairOdds": 1.215,
+          "edge": 12.37,
+          "expectedValue": 17.69,
+          "confidence": 61.1,
+          "recommendation": "model",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        }
+      ]
     },
     {
       "id": 212207,
@@ -57,7 +104,33 @@
           "recommended": false
         }
       ],
-      "selections": []
+      "providerRecommended": false,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+      "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "selections": [
+        {
+          "id": "1462-over_under_15-over",
+          "eventId": 212207,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 79.4,
+          "odds": 1.5,
+          "openingOdds": null,
+          "impliedProbability": 66.67,
+          "fairOdds": 1.259,
+          "edge": 12.73,
+          "expectedValue": 19.1,
+          "confidence": 52.26,
+          "recommendation": "watch",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        }
+      ]
     },
     {
       "id": 212209,
@@ -84,7 +157,75 @@
           "recommended": false
         }
       ],
-      "selections": []
+      "providerRecommended": false,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+      "oddsNextUpdateAt": "2026-08-22T07:08:07Z",
+      "selections": [
+        {
+          "id": "1460-1x2-HOME",
+          "eventId": 212209,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 56.6,
+          "odds": 2.07,
+          "openingOdds": null,
+          "impliedProbability": 48.31,
+          "fairOdds": 1.767,
+          "edge": 8.29,
+          "expectedValue": 17.16,
+          "confidence": 56.61,
+          "recommendation": "watch",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        },
+        {
+          "id": "1460-over_under_15-over",
+          "eventId": 212209,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 87.2,
+          "odds": 1.37,
+          "openingOdds": null,
+          "impliedProbability": 72.99,
+          "fairOdds": 1.147,
+          "edge": 14.21,
+          "expectedValue": 19.46,
+          "confidence": 56.61,
+          "recommendation": "model",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        },
+        {
+          "id": "1460-btts-yes",
+          "eventId": 212209,
+          "market": "btts",
+          "outcome": "yes",
+          "label": "Ambele echipe marchează",
+          "probability": 65,
+          "odds": 1.87,
+          "openingOdds": null,
+          "impliedProbability": 53.48,
+          "fairOdds": 1.538,
+          "edge": 11.52,
+          "expectedValue": 21.55,
+          "confidence": 56.61,
+          "recommendation": "model",
+          "eligible": true,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-08-22T06:38:07Z",
+          "oddsNextUpdateAt": "2026-08-22T07:08:07Z"
+        }
+      ]
     },
     {
       "id": 220842,
@@ -111,6 +252,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": "2026-08-22T06:38:20Z",
       "selections": []
     },
     {
@@ -138,6 +283,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -165,6 +314,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -192,6 +345,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -219,6 +376,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -246,6 +407,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -273,6 +438,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -300,6 +469,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -327,6 +500,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -354,6 +531,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -381,6 +562,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -408,6 +593,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -435,6 +624,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -462,6 +655,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -489,6 +686,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -516,6 +717,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -543,6 +748,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -570,6 +779,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -597,6 +810,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -624,6 +841,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -651,6 +872,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -678,6 +903,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -705,6 +934,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -732,6 +965,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -759,6 +996,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -786,6 +1027,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -813,6 +1058,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -840,6 +1089,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -867,6 +1120,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -894,6 +1151,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -921,6 +1182,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -948,6 +1213,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -975,6 +1244,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1002,6 +1275,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1029,6 +1306,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1056,6 +1337,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1083,6 +1368,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1110,6 +1399,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1137,6 +1430,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1164,6 +1461,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1191,6 +1492,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1218,6 +1523,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1245,6 +1554,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1272,6 +1585,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1299,6 +1616,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1326,6 +1647,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1353,6 +1678,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1380,6 +1709,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1407,6 +1740,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1434,6 +1771,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1461,6 +1802,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1488,6 +1833,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1515,6 +1864,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1542,6 +1895,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1569,6 +1926,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1596,6 +1957,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     },
     {
@@ -1623,6 +1988,10 @@
           "recommended": false
         }
       ],
+      "providerRecommended": false,
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
       "selections": []
     }
   ]
