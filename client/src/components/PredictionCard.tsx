@@ -5,6 +5,7 @@ import { ContextFactorGrid } from "@/components/ContextFactorGrid";
 import { SignalConsensusPanel } from "@/components/SignalConsensusPanel";
 import { trpc } from "@/lib/trpc";
 import { calculateOddsMovement } from "@shared/oddsMovement";
+import { buildSignalConsensus } from "@shared/signalConsensus";
 
 export type PredictionCardData = {
   id: number;
@@ -50,6 +51,7 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
   const ev = asNumber(prediction.expectedValue);
   const reasons = Array.isArray(prediction.reasonCodes) ? prediction.reasonCodes.filter((reason): reason is string => typeof reason === "string") : [];
   const isPositive = prediction.valueStatus === "positive";
+  const consensus = buildSignalConsensus({ modelProbability: Number(prediction.probability), marketProbability: asNumber(prediction.impliedProbability), modelConfidence: asNumber(prediction.confidence), contextScore: asNumber(prediction.contextScore), recommended: prediction.recommendationStatus === "recommended" });
   const oddsHistory = trpc.predictions.oddsHistory.useQuery({ selectionId: prediction.id }, { enabled: odds !== null });
   const movement = calculateOddsMovement(odds, openingOdds);
   const snapshotCount = oddsHistory.data?.length ?? 0;
@@ -86,7 +88,7 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
         <Metric label="Probabilitate" value={`${Number(prediction.probability).toFixed(1)}%`} />
         <Metric label="Cotă corectă" value={prediction.fairOdds ? Number(prediction.fairOdds).toFixed(2) : "—"} />
         <Metric label="Edge" value={prediction.edge ? `${Number(prediction.edge).toFixed(1)} pp` : "—"} accent={isPositive} />
-        <Metric label="Consens" value={prediction.consensusScore ? `${Number(prediction.consensusScore).toFixed(0)}%` : "—"} />
+        <Metric label="Consens" value={consensus ? `${consensus.score.toFixed(0)}%` : "—"} />
       </div>
 
       {ev !== null && (
@@ -97,9 +99,9 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
       )}
       {prediction.valueStatus !== "positive" && <div className="relative mt-3 rounded-xl border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-xs leading-5 text-amber-100">Avantajul estimat nu este pozitiv la prețul actual; selecția rămâne informativă și nu intră în acumulatorul automat.</div>}
 
-      <SignalConsensusPanel modelProbability={Number(prediction.probability)} marketProbability={asNumber(prediction.impliedProbability)} consensusScore={asNumber(prediction.consensusScore ?? null)} recommended={prediction.recommendationStatus === "recommended"} />
+      <SignalConsensusPanel modelProbability={Number(prediction.probability)} marketProbability={asNumber(prediction.impliedProbability)} modelConfidence={asNumber(prediction.confidence)} contextScore={asNumber(prediction.contextScore)} recommended={prediction.recommendationStatus === "recommended"} />
 
-      {prediction.contextScore && <div className="relative mt-3 rounded-xl border border-border/60 bg-background/25 px-3 py-3"><div className="flex items-start justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-primary">Context model</p><p className="mt-1 text-xs text-muted-foreground">Factori calculați exclusiv din semnalele disponibile.</p></div><p className="font-mono text-lg font-semibold text-foreground">{Number(prediction.contextScore).toFixed(0)}<span className="text-xs text-muted-foreground">/100</span></p></div><ContextFactorGrid reasonCodes={reasons} /><p className="mt-3 text-[11px] leading-5 text-muted-foreground">Forma, confruntările directe, lotul, antrenorii, arbitrul, deplasarea și condițiile sunt afișate numai când feedul le furnizează; în acest moment nu sunt incluse în scor.</p></div>}
+      {prediction.contextScore && <div className="relative mt-3 rounded-xl border border-border/60 bg-background/25 px-3 py-3"><div className="flex items-start justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-primary">Context model</p><p className="mt-1 text-xs text-muted-foreground">Factori calculați exclusiv din semnalele disponibile.</p></div><p className="font-mono text-lg font-semibold text-foreground">{Number(prediction.contextScore).toFixed(0)}<span className="text-xs text-muted-foreground">/100</span></p></div><ContextFactorGrid reasonCodes={reasons} /><p className="mt-3 text-[11px] leading-5 text-muted-foreground">Forma, confruntările directe, lotul, antrenorii, arbitrul, deplasarea și condițiile sunt afișate numai când feedul le furnizează; scorul contextual contribuie cu 20% la consensul local.</p></div>}
 
       {movement && <div className={`relative mt-3 flex items-center gap-2 text-xs ${movement.direction === "shortening" ? "text-amber-200" : movement.direction === "drifting" ? "text-emerald-300" : "text-muted-foreground"}`}>{movement.direction === "shortening" ? <TrendingDown className="h-3.5 w-3.5" /> : <TrendingUp className="h-3.5 w-3.5" />}<span>Deschidere {openingOdds?.toFixed(2)} → acum {odds?.toFixed(2)} · {movement.direction === "shortening" ? "scădere" : movement.direction === "drifting" ? "creștere" : "stabilă"} {Math.abs(movement.percentDelta).toFixed(1)}%{movement.direction === "shortening" && movement.percentDelta <= -5 ? " · avantajul s-a redus" : ""}</span></div>}
 

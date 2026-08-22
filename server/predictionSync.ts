@@ -155,7 +155,7 @@ export function normalizePredictionSelections(prediction: ApiPrediction, odds: A
       expectedValue: metrics?.expectedValue ?? null,
       impliedProbability: metrics?.impliedProbability ?? null,
       fairOdds: metrics?.fairOdds ?? calculateFairOdds(definition.probability),
-      consensusScore: calculateConsensusScore(definition.probability, metrics?.impliedProbability),
+      consensusScore: calculateConsensusScore(definition.probability, metrics?.impliedProbability, contextScore, prediction.model?.confidence, definition.recommended),
       edge: metrics?.edge ?? null,
       grade: metrics?.grade ?? null,
       contextScore,

@@ -92,3 +92,4 @@
 - [x] Reorganizarea acțiunilor Resetare pas și Ștergere din cardul Piramide pentru a evita aglomerarea pe 390 px și 430 px.
 - [x] Rafinarea tipografiei și spațierii în rândurile de evenimente din Dashboard și în cardurile Acumulatoare/Piramide, cu ierarhie concretă pentru oră, echipe, piață, probabilitate și cotă.
 - [x] Verificarea vizuală documentată a ierarhiei și spațierii la 390 px, 430 px și desktop pentru Dashboard și Strategie.
+- [x] Extinderea consensului local cu ponderi transparente pentru alinierea cotei, încrederea modelului, context și semnalul furnizorului, fără apel extern suplimentar.

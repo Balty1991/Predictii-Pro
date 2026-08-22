@@ -14,4 +14,6 @@ Conform documentației furnizorului, limita planului gratuit este de 7.500 de ce
 
 Furnizorul oferă probabilități de piață prin endpointul per-eveniment `GET /api/v2/events/{id}/polymarket/`. Acesta poate răspunde cu `404` când nu există piață activă și ar necesita câte o cerere suplimentară pentru fiecare eveniment. Pentru a respecta plafonul aprobat de maximum cinci cereri pe sincronizare, aplicația nu îl interoghează automat.
 
-Consensul activ compară probabilitatea modelului cu probabilitatea implicită din cota reală și marchează explicit piața de predicții externă drept neinterogată din motive de buget. Nu sunt fabricate probabilități de piață terță.
+Consensul local folosește numai semnale disponibile în datele deja sincronizate: alinierea probabilității modelului cu probabilitatea implicită din cotă (45%), încrederea modelului (20%), scorul contextual disponibil (20%) și semnalul explicit de recomandare al furnizorului (15%). Componentele și ponderile sunt afișate direct în card, astfel încât scorul nu funcționează ca o valoare opacă.
+
+Piața de predicții externă rămâne marcată explicit ca neinterogată din motive de buget. Nu sunt fabricate probabilități de piață terță și nici nu se depășește plafonul de cinci cereri pe sincronizare.

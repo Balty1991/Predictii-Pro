@@ -22,8 +22,8 @@ describe("prediction math", () => {
     expect(calculateClv(1.8, null)).toBeNull();
   });
 
-  it("scores alignment between the model probability and the market implied probability", () => {
-    expect(calculateConsensusScore(62, 60)).toBe(96);
+  it("scores agreement using market alignment, model confidence, context and provider signal", () => {
+    expect(calculateConsensusScore(62, 60, 70, 0.8, true)).toBe(88.2);
     expect(calculateConsensusScore(62, null)).toBeNull();
   });
 

@@ -29,9 +29,13 @@ export function calculateClv(entryOdds: number, latestOdds: number | null | unde
   return round(((entryOdds / latestOdds) - 1) * 100);
 }
 
-export function calculateConsensusScore(modelProbability: number, impliedProbability: number | null | undefined) {
+export function calculateConsensusScore(modelProbability: number, impliedProbability: number | null | undefined, contextScore?: number | null, confidence?: number | null, recommended = false) {
   if (!Number.isFinite(modelProbability) || modelProbability <= 0 || modelProbability >= 100 || !impliedProbability || !Number.isFinite(impliedProbability)) return null;
-  return round(Math.max(0, 100 - Math.abs(modelProbability - impliedProbability) * 2));
+  const marketAlignment = Math.max(0, 100 - Math.abs(modelProbability - impliedProbability) * 2);
+  const normalizedConfidence = Math.max(0, Math.min(100, (confidence ?? 0.5) * 100));
+  const normalizedContext = Math.max(0, Math.min(100, contextScore ?? 50));
+  const providerScore = recommended ? 100 : 45;
+  return round(marketAlignment * 0.45 + normalizedConfidence * 0.2 + normalizedContext * 0.2 + providerScore * 0.15);
 }
 
 export function calculateSelectionMetrics(
