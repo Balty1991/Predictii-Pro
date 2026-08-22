@@ -112,7 +112,7 @@
 - [x] Separarea filtrelor de evenimente, semnale furnizor, recomandări, probabilitate și eligibilitate la cotă în GitHub Pages.
 - [x] Reorganizarea cardului de meci în structură compactă: echipe, oră, competiție, semnale, încredere, cotă și acțiune numai dacă este verificabilă.
 - [x] Reconstruirea Acumulatorului și Piramidei ca spații de lucru orientate pe selecții verificate, cu stări explicite pentru lipsa cotelor și acțiuni locale complete.
-- [ ] Validarea vizuală mobilă a noului meniu, filtrelor, cardurilor și strategiilor pe GitHub Pages.
+- [x] Validarea vizuală mobilă a noului meniu, filtrelor, cardurilor și strategiilor pe GitHub Pages.
 - [x] Adăugarea unui filtru distinct pentru evenimente cu semnale API și validarea sa separată de filtrele de cote, eligibilitate, recomandări și rată mare.
 - [x] Documentarea mapării de filtre pentru evenimente, competiții, semnale API, recomandări, probabilitate mare și eligibilitate la cotă.
 - [x] Auditarea comparativă a aplicațiilor mobile relevante de predicții și analiză sportivă, cu surse publice și principii UX transferabile.
@@ -122,13 +122,13 @@
 - [x] Construirea unui ecran de analiză de meci bazat exclusiv pe semnale, cote, probabilități și contexte disponibile în feed.
 - [x] Extinderea Acumulatorului și Piramidei cu indicatori de risc, progres clar și selectare contextuală exclusiv din cote verificate.
 - [x] Implementarea performanței locale cu jurnal de decizie și metrici de risc, fără rezultate fabricate sau promisiuni de profit.
-- [ ] Validarea comparativă mobilă, a performanței de încărcare și a fluxurilor cu feed real, urmată de publicarea GitHub Pages.
+- [x] Validarea comparativă mobilă, a performanței de încărcare și a fluxurilor cu feed real, urmată de publicarea GitHub Pages.
 - [x] Blocarea corelației manuale în Acumulator printr-o singură piață pe eveniment și competiție, inclusiv curățarea selecțiilor locale vechi.
 - [x] Verificarea live a ecranului Explorare la 390 px și 430 px, inclusiv filtrele Semnale API, Cu cotă, Eligibile, Model + valoare, Rată 60%+ și competiție.
 - [x] Măsurarea și documentarea reproductibilă a performanței de încărcare a versiunii GitHub Pages la 390 px și 430 px.
 - [x] Revalidarea live a fluxului complet Azi → Explorare → Analiză → Strategii → Acumulator → Piramidă înainte de închiderea validării mobile finale.
-- [ ] Adăugarea și verificarea deep-link-urilor către zonele Azi, Explorare, Strategii și Jurnal pentru acces mobil direct.
-- [ ] Verificarea GitHub Pages la 390 px și 430 px pentru zonele Strategii și Jurnal, inclusiv Acumulator, Piramidă și jurnalul local.
-- [ ] Testarea live a deep-link-urilor tab=today, tab=explore, tab=strategies și tab=journal, cu confirmarea zonei deschise pentru fiecare URL.
-- [ ] Finalizarea checklistului mobil live: Azi → Explorare cu filtre → Analiză → Strategii/Acumulator → Piramidă → Jurnal.
-- [ ] Adăugarea şi verificarea deep-link-ului strategy=pyramids pentru acces mobil direct la Piramidă.
+- [x] Adăugarea și verificarea deep-link-urilor către zonele Azi, Explorare, Strategii și Jurnal pentru acces mobil direct.
+- [x] Verificarea GitHub Pages la 390 px și 430 px pentru zonele Strategii și Jurnal, inclusiv Acumulator, Piramidă și jurnalul local.
+- [x] Testarea live a deep-link-urilor tab=today, tab=explore, tab=strategies și tab=journal, cu confirmarea zonei deschise pentru fiecare URL.
+- [x] Finalizarea checklistului mobil live: Azi → Explorare cu filtre → Analiză → Strategii/Acumulator → Piramidă → Jurnal.
+- [x] Adăugarea şi verificarea deep-link-ului strategy=pyramids pentru acces mobil direct la Piramidă.

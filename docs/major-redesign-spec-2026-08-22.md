@@ -77,3 +77,21 @@ Măsurarea a fost făcută prin cereri HTTP către GitHub Pages, cu agent mobil 
 | 430 px | 45.867 B; TTFB 0,083 s; total 0,094 s | 62.859 B; TTFB 0,062 s; total 0,074 s | CSS responsive; nu se livrează bundle suplimentar pentru lățime. |
 
 În browser, Navigation Timing a raportat documentul la 12.819 B transferați, `DOMContentLoaded` la 115 ms şi `load` la 173 ms; resursa `feed.json` a avut 5.408 B transferați în cache-ul acelui test. Diferențele față de măsurarea HTTP sunt normale: cache-ul, compresia şi momentul cererii diferă.
+
+## Validare mobilă a strategiilor
+
+Deep-link-ul `?tab=strategies` a fost randat pe live la 390 px şi 430 px pentru **Acumulator**, iar `?tab=strategies&strategy=pyramids` pentru **Piramidă**. În ambele lățimi, titlul, selectorul de mod, formularul, acțiunile de cel puțin 44 px şi bara de navigare rămân vizibile fără tabel orizontal. Piramida a afișat numai candidata verificată la 1,37 din intervalul țintei 1,30; Acumulatorul a păstrat explicit regula de evenimente şi competiții distincte.
+
+Deep-link-ul `?tab=journal` a fost verificat la 390 px şi 430 px. Jurnalul a păstrat grila de patru metrici, starea goală informativă, măsura de risc şi bara inferioară fără suprapuneri. Într-o sesiune cu date locale, jurnalul a afișat cronologic analizarea, propunerea Acumulatorului, asocierea şi ștergerea Piramidei; în sesiunea izolată de randare, starea goală a rămas explicită şi corectă.
+
+## Checklist live al navigării directe
+
+| URL verificat | Zonă deschisă | Rezultat |
+| --- | --- | --- |
+| `?tab=today` | Azi | A afișat statusul feedului, shortlistul de trei analize şi rezumatul de risc. |
+| `?tab=explore` | Explorare | A afișat lista de 60 de evenimente, căutarea şi filtrele. |
+| `?tab=strategies` | Strategii / Acumulator | A afișat combinatorul cu cotă țintă, miză şi regula de diversificare. |
+| `?tab=strategies&strategy=pyramids` | Strategii / Piramidă | A afișat formularul de plan şi candidata reală din interval. |
+| `?tab=journal` | Jurnal | A afișat metricile locale şi jurnalul de decizie. |
+
+Fluxul live **Azi → Explorare → Analiză → Strategii/Acumulator → Piramidă → Jurnal** a fost parcurs cu feedul public. Piața reală a fost analizată, adăugată în strategie, propunerea 1,40 a rămas în intervalul permis, iar Piramida a fost creată, asociată cu o selecție verificată şi apoi ștearsă prin confirmare. Nu a fost executat niciun pariu şi nu sunt declarate rezultate sau venituri.
