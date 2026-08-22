@@ -64,3 +64,16 @@ Redesignul nu adaugă framework, biblioteci sau imagini grele. Lista completă s
 Randările locale la **390 px** şi **430 px** confirmă structura mobilă nouă: antet compact, primul card de decizie lizibil, metrici pe trei coloane, alertă de integritate şi navigare inferioară cu patru ținte tactile.
 
 După publicare, versiunea GitHub Pages a fost verificată la aceleași lățimi cu feedul complet: **60 de evenimente**, **6 piețe eligibile**, **3 analize prioritare** şi **5/5 cereri externe**. La 390 px, conținutul prioritar rămâne vizibil deasupra navigării inferioare; la 430 px, cardurile prioritare şi cele două acțiuni secundare rămân lizibile fără depășire orizontală. Pe versiunea live au fost verificate: deschiderea analizei, afișarea xG/scor model doar când există în feed, adăugarea unei piețe reale în spațiul de strategie, propunerea automată 1,40 în intervalul 1,32–1,52, crearea/atașarea și ștergerea confirmată a unei piramide locale. Testul de risc a blocat a doua piață din același eveniment.
+
+Ecranul **Explorare** a fost validat prin deep-link public la 390 px și 430 px. Ambele randări păstrează câmpul de căutare, benzile derulabile de filtre, cardurile de meci şi bara inferioară fără suprapunere. Pe feedul live, filtrele au returnat: Semnale API **60**, Cu cotă **3**, Eligibile **3**, Model + valoare **2**, Rată 60%+ **54** şi competiția J1 League **7** carduri. Valorile reflectă definițiile UI ale filtrului, nu rate de câștig.
+
+## Măsurare de încărcare live
+
+Măsurarea a fost făcută prin cereri HTTP către GitHub Pages, cu agent mobil Android şi cache-busting, la cele două lățimi de referință. Aceste valori sunt un control de regresie al livrării statice în mediul de test, nu o promisiune pentru o rețea mobilă reală.
+
+| Lățime simulată | Document UI | Feed JSON | Observație |
+| --- | --- | --- | --- |
+| 390 px | 45.867 B; TTFB 0,178 s; total 0,188 s | 62.859 B; TTFB 0,113 s; total 0,125 s | Același payload static, fără imagini grele. |
+| 430 px | 45.867 B; TTFB 0,083 s; total 0,094 s | 62.859 B; TTFB 0,062 s; total 0,074 s | CSS responsive; nu se livrează bundle suplimentar pentru lățime. |
+
+În browser, Navigation Timing a raportat documentul la 12.819 B transferați, `DOMContentLoaded` la 115 ms şi `load` la 173 ms; resursa `feed.json` a avut 5.408 B transferați în cache-ul acelui test. Diferențele față de măsurarea HTTP sunt normale: cache-ul, compresia şi momentul cererii diferă.
