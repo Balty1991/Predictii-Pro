@@ -36,6 +36,8 @@ O validare de acoperire cu cote mici trebuie reluată numai după o fereastră d
 
 Verificarea publică anterioară la 390 px și 430 px a confirmat structura mobilă, selectorul de țintă, jurnalul local și Piramida combinată din date verificate atunci disponibile. Verificarea interactivă a modului prudent pentru 10,00, 20,00, 50,00 și 100,00 rămâne condiționată de un feed `ready`; nu este declarată ca realizată în timpul rate-limitării furnizorului.
 
+După publicarea regulii fără bilet parțial, versiunea live a fost verificată la ținta 10,00. Interfața afișează `0/20` atât în rezumatul Acumulatorului, cât și în controlul de risc; identifică modul „Țintă mare prudentă” și păstrează acțiunile dezactivate cât timp feedul este indisponibil. Aceasta confirmă comportamentul de protecție, nu acoperirea reală a unei combinații.
+
 ## Limitări explicite
 
 Returul potențial, profitul potențial, probabilitatea combinată și valoarea estimată sunt calcule bazate pe miză, cote și model. Nu reprezintă rezultate confirmate, venit sau profit garantat.
