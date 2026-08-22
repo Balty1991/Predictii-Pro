@@ -115,11 +115,20 @@ async function main() {
       await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: "partial", message: "Furnizorul nu a livrat predicții pentru fereastra curentă. Sunt afișate doar evenimente reale, fără cote sau bilete inventate.", calls, events }, null, 2) + "\n");
       return;
     }
-    const oddsResponses = await Promise.all(markets.map(market => request("/odds/best/", { market, date_from: dateFrom, date_to: dateTo, limit: 200 })));
-    const allOdds = oddsResponses.flat();
-    const events = predictions.map(prediction => normalizePrediction(prediction, allOdds)).filter(event => event.selections.length > 0).slice(0, 8);
+    const oddsResponses = await Promise.allSettled(markets.map(market => request("/odds/best/", { market, date_from: dateFrom, date_to: dateTo, limit: 200 })));
+    const allOdds = oddsResponses.flatMap(result => result.status === "fulfilled" ? result.value : []);
+    const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
+    const normalizedEvents = predictions.map(prediction => normalizePrediction(prediction, allOdds));
+    const events = allOdds.length
+      ? normalizedEvents.filter(event => event.selections.length > 0).slice(0, 8)
+      : predictions.slice(0, 8).map(prediction => ({ id: prediction.event.id, startsAt: prediction.event.event_date, sport: "Fotbal", competition: prediction.event.league_name ?? "Competiție neprecizată", homeTeam: prediction.event.home_team, awayTeam: prediction.event.away_team, selections: [] }));
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
-    await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message: selectionCount ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.` : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.", calls, events }, null, 2) + "\n");
+    const message = selectionCount
+      ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
+      : oddsUnavailable
+        ? "Furnizorul a livrat evenimente și predicții, dar a refuzat temporar cotele. Sunt afișate numai evenimentele reale; biletele rămân blocate fără prețuri verificabile."
+        : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.";
+    await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message, calls, events }, null, 2) + "\n");
   } catch (error) {
     const message = error instanceof Error ? error.message : "Eroare necunoscută la sincronizare.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: previous.updatedAt ?? null, status: "unavailable", message: `Feedul nu a putut fi actualizat: ${message}`, calls, events: previous.events ?? [] }, null, 2) + "\n");
