@@ -168,3 +168,4 @@
 - [ ] Validarea live pe mobil a modului prudent pentru ținta 10,00 și a mesajului de acoperire pentru țintele 20/50/100.
 - [ ] Integrarea feedului de cote în lot pentru piețele 1,20–1,70, astfel încât sincronizarea să poată verifica mai multe evenimente reale în plafonul de cinci apeluri.
 - [ ] Folosirea cotelor în lot pe piețe prudente distincte pentru a crește numărul de meciuri verificabile în aceleași cinci apeluri.
+- [x] Blocarea propunerii parțiale în modul prudent când feedul nu are cel puțin două meciuri distincte eligibile.
