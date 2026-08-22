@@ -71,6 +71,19 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("Ștergi această piramidă locală?");
   });
 
+  it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {
+    expect(staticPage).toContain("Cotă totală");
+    expect(staticPage).toContain("Cotă țintă");
+    expect(staticPage).toContain("retur potențial");
+    expect(staticPage).toContain("profit potențial");
+    expect(staticPage).toContain("diferență față de țintă");
+    expect(staticPage).toContain("function ticketStatus(summary,target)");
+    expect(staticPage).toContain("potentialReturn=round(stake*odds)");
+    expect(staticPage).toContain("toate prețurile sunt verificate");
+    expect(staticPage).toContain("$('ticket-target').onchange");
+    expect(staticPage).toContain("$('ticket-stake').onchange");
+  });
+
   it("include numai context deja primit în feed și jurnal local fără rezultate fabricate", () => {
     expect(feedGenerator).toContain("expectedGoals");
     expect(feedGenerator).toContain("mostLikelyScore");
