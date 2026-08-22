@@ -17,6 +17,13 @@ const competitions = countBy(predictions, prediction => prediction.event?.league
 const statuses = countBy(events, event => event.status);
 const modelConfidence = predictions.filter(prediction => Number.isFinite(prediction.model?.confidence)).length;
 const recommendationCount = predictions.filter(prediction => prediction.recommendations && Object.keys(prediction.recommendations).length > 0).length;
+const explicitRecommendations = predictions.filter(prediction => Object.entries(prediction.recommendations ?? {}).some(([key, value]) => ["bet_favorite", "over_15", "over_25", "over_35", "btts", "winner"].includes(key) && value === true)).length;
+const confidenceBuckets = {
+  "sub 50%": predictions.filter(prediction => Number(prediction.model?.confidence) < 0.5).length,
+  "50–59%": predictions.filter(prediction => Number(prediction.model?.confidence) >= 0.5 && Number(prediction.model?.confidence) < 0.6).length,
+  "60–69%": predictions.filter(prediction => Number(prediction.model?.confidence) >= 0.6 && Number(prediction.model?.confidence) < 0.7).length,
+  "70%+": predictions.filter(prediction => Number(prediction.model?.confidence) >= 0.7).length,
+};
 
 console.log(JSON.stringify({
   predictionsReturned: predictions.length,
@@ -24,8 +31,14 @@ console.log(JSON.stringify({
   eventStatuses: statuses,
   modelConfidenceCount: modelConfidence,
   recommendationCount,
+  explicitRecommendations,
+  confidenceBuckets,
   marketCoverage: Object.fromEntries(Object.entries(marketCoverage).slice(0, 8)),
   topCompetitions: Object.fromEntries(Object.entries(competitions).slice(0, 12)),
+  recommendationExamples: predictions.slice(0, 8).map(prediction => ({
+    eventId: prediction.event?.id,
+    recommendations: prediction.recommendations ?? {},
+  })),
   firstUpcomingPredictions: predictions.slice(0, 12).map(prediction => ({
     id: prediction.event?.id,
     startsAt: prediction.event?.event_date,
