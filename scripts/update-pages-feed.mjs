@@ -67,8 +67,11 @@ function selectionDefinitions(prediction) {
   const btts = prediction.markets?.btts ?? {};
   const complement = (value) => {
     const numeric = Number(value);
-    return Number.isFinite(numeric) && numeric > 0 && numeric < 1 ? 1 - numeric : null;
+    if (!Number.isFinite(numeric) || numeric <= 0) return null;
+    const normalized = numeric <= 1 ? numeric : numeric / 100;
+    return normalized < 1 ? 1 - normalized : null;
   };
+  const directOrComplement = (direct, inverse) => asPercent(direct) ? direct : complement(inverse);
   const definitions = [
     { market: "1x2", outcome: "HOME", label: "Victorie gazde", probability: match.prob_home, recommended: favorite === "HOME" && (recommendations.bet_favorite === true || recommendations.winner === true) },
     { market: "1x2", outcome: "DRAW", label: "Egal", probability: match.prob_draw, recommended: favorite === "DRAW" && (recommendations.bet_favorite === true || recommendations.winner === true) },
@@ -76,13 +79,13 @@ function selectionDefinitions(prediction) {
   ];
   definitions.push(
     { market: "over_under_15", outcome: "over", label: "Peste 1.5 goluri", probability: overUnder.prob_over_15, recommended: recommendations.over_15 === true },
-    { market: "over_under_15", outcome: "under", label: "Sub 1.5 goluri", probability: overUnder.prob_under_15 ?? complement(overUnder.prob_over_15), recommended: recommendations.under_15 === true },
+    { market: "over_under_15", outcome: "under", label: "Sub 1.5 goluri", probability: directOrComplement(overUnder.prob_under_15, overUnder.prob_over_15), recommended: recommendations.under_15 === true },
     { market: "over_under_25", outcome: "over", label: "Peste 2.5 goluri", probability: overUnder.prob_over_25, recommended: recommendations.over_25 === true },
-    { market: "over_under_25", outcome: "under", label: "Sub 2.5 goluri", probability: overUnder.prob_under_25 ?? complement(overUnder.prob_over_25), recommended: recommendations.under_25 === true },
+    { market: "over_under_25", outcome: "under", label: "Sub 2.5 goluri", probability: directOrComplement(overUnder.prob_under_25, overUnder.prob_over_25), recommended: recommendations.under_25 === true },
     { market: "over_under_35", outcome: "over", label: "Peste 3.5 goluri", probability: overUnder.prob_over_35, recommended: recommendations.over_35 === true },
-    { market: "over_under_35", outcome: "under", label: "Sub 3.5 goluri", probability: overUnder.prob_under_35 ?? complement(overUnder.prob_over_35), recommended: recommendations.under_35 === true },
+    { market: "over_under_35", outcome: "under", label: "Sub 3.5 goluri", probability: directOrComplement(overUnder.prob_under_35, overUnder.prob_over_35), recommended: recommendations.under_35 === true },
     { market: "btts", outcome: "yes", label: "Ambele echipe marchează", probability: btts.prob_yes, recommended: recommendations.btts === true },
-    { market: "btts", outcome: "no", label: "Nu marchează ambele", probability: btts.prob_no ?? complement(btts.prob_yes), recommended: recommendations.btts_no === true },
+    { market: "btts", outcome: "no", label: "Nu marchează ambele", probability: directOrComplement(btts.prob_no, btts.prob_yes), recommended: recommendations.btts_no === true },
   );
   return definitions.map(item => ({ ...item, probability: asPercent(item.probability) })).filter(item => item.probability && item.probability < 100);
 }
