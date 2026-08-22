@@ -99,3 +99,9 @@ Fluxul live **Azi → Explorare → Analiză → Strategii/Acumulator → Pirami
 ## Extindere piețe de consens fără apeluri suplimentare
 
 Generatorul folosește acum toate cele **11 piețe de consens** ale shortcutului per-eveniment: 1X2, Peste/Sub 1.5, 2.5 și 3.5 goluri, plus Ambele marchează Da/Nu. Sincronizarea live a rămas la **5/5 cereri**, cu 60 de evenimente, 33 de cote reale pe trei evenimente şi şase piețe eligibile pentru strategie. Cotele în afara condițiilor de risc rămân consultabile, dar sunt marcate **„Doar analiză”** şi sunt blocate atât vizual, cât şi prin validarea funcției de selecție. La 390 px şi 430 px, cardul extins păstrează butonul eligibil şi starea dezactivată fără depășire orizontală.
+
+## Acumulator: calculator de cotă şi miză
+
+Acumulatorul afișează acum separat **cota totală**, ținta, intervalul permis, diferența față de țintă şi o bară de progres. Pentru orice selecție verificată, calculează automat miza, returul potențial, profitul potențial, probabilitatea combinată, probabilitatea implicită şi valoarea estimată; etichetele explică faptul că acestea sunt calcule, nu rezultate garantate.
+
+Pe versiunea live, selecția reală Kyoto Sanga FC — Mito Hollyhock / Peste 1.5 goluri a afișat cota totală **1,37** pentru ținta **1,40**, statutul „În interval”, probabilitatea model **87,2%**, returul matematic **13,70 unități** şi profitul matematic **3,70 unități** la miza 10. Schimbarea țintei la 2,00 a actualizat imediat statutul în „Sub țintă”; schimbarea mizei la 25 a actualizat returul la **43,75 unități** şi profitul la **18,75 unități**. La 390 px şi 430 px, starea fără selecție păstrează toate controalele şi mesajele fără depășire orizontală; verificarea mobilă a unei combinații populate rămâne deschisă în tracker.

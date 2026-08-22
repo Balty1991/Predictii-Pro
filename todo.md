@@ -135,10 +135,10 @@
 - [x] Extinderea feedului static cu toate piețele gratuite de consens care pot fi mapate transparent din predicțiile API, fără depășirea plafonului de cinci cereri.
 - [x] Verificarea selecțiilor rezultate din piețele extinse şi menținerea blocării de corelație pentru eveniment şi competiție.
 - [x] Blocarea afișării și adăugării în strategie pentru cotele reale care nu îndeplinesc criteriile de eligibilitate.
-- [ ] Auditarea cardului actual de Acumulator pentru cota totală, cota țintă, miză, randament potențial, probabilitate, valoare şi diferență față de țintă.
-- [ ] Implementarea unui rezumat mobil persistent al Acumulatorului cu cotă cumulată şi progres explicit către țintă.
-- [ ] Implementarea recalculării automate pentru miză, retur potențial, profit potențial, probabilitate combinată şi valoare estimată din selecțiile reale curente.
-- [ ] Adăugarea stărilor de țintă sub/în/peste interval şi a acțiunilor clare pentru ajustarea combinației fără a introduce selecții neeligibile.
+- [x] Auditarea cardului actual de Acumulator pentru cota totală, cota țintă, miză, randament potențial, probabilitate, valoare şi diferență față de țintă.
+- [x] Implementarea unui rezumat mobil persistent al Acumulatorului cu cotă cumulată şi progres explicit către țintă.
+- [x] Implementarea recalculării automate pentru miză, retur potențial, profit potențial, probabilitate combinată şi valoare estimată din selecțiile reale curente.
+- [x] Adăugarea stărilor de țintă sub/în/peste interval şi a acțiunilor clare pentru ajustarea combinației fără a introduce selecții neeligibile.
 - [ ] Verificarea mobilă live a Acumulatorului extins la 390 px şi 430 px, cu o combinație construită exclusiv din cote verificate.
-- [ ] Corectarea şi verificarea recalculării instant a țintei şi mizei în Acumulator la schimbarea controalelor.
-- [ ] Corectarea introducerii mizei astfel încât valorile cu mai multe cifre să nu fie trunchiate în timpul recalculării.
+- [x] Corectarea şi verificarea recalculării instant a țintei şi mizei în Acumulator la schimbarea controalelor.
+- [x] Corectarea introducerii mizei astfel încât valorile cu mai multe cifre să nu fie trunchiate în timpul recalculării.
