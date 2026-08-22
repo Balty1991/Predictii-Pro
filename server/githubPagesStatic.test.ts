@@ -5,47 +5,71 @@ import { describe, expect, it } from "vitest";
 const root = resolve(import.meta.dirname, "..");
 const staticPage = readFileSync(resolve(root, "docs/index.html"), "utf8");
 const feedGenerator = readFileSync(resolve(root, "scripts/update-pages-feed.mjs"), "utf8");
-const filterMapping = readFileSync(resolve(root, "docs/mobile-render-validation-2026-08-22.md"), "utf8");
+const research = readFileSync(resolve(root, "docs/competitive-mobile-research-2026-08-22.md"), "utf8");
+const productSpec = readFileSync(resolve(root, "docs/major-redesign-spec-2026-08-22.md"), "utf8");
+const staticScript = staticPage.match(/<script>([\s\S]*)<\/script>/)?.[1] ?? "";
 
 describe("aplicația statică GitHub Pages", () => {
-  it("păstrează semnalele furnizorului vizibile fără a le transforma în cote eligibile", () => {
-    expect(staticPage).toContain("providerSignals");
-    expect(staticPage).toContain("o piață nu este adăugată în bilet până când feedul nu confirmă o cotă reală");
+  it("are un script static care se poate compila înainte de livrare", () => {
+    expect(staticScript).not.toBe("");
+    try {
+      new Function(staticScript);
+    } catch (error) {
+      throw new Error(error instanceof Error ? error.stack : String(error));
+    }
+  });
+
+  it("folosește cote per-eveniment fără parametrul limit și păstrează plafonul de cinci apeluri", () => {
+    expect(feedGenerator).toContain("if (calls >= 5)");
     expect(feedGenerator).toContain("slice(0, 60)");
-    expect(feedGenerator).toContain("providerSignals: providerSignals(prediction)");
     expect(feedGenerator).toContain("/events/${prediction.event.id}/odds/");
     expect(feedGenerator).toContain("paginated: false");
+    expect(feedGenerator).not.toContain('request(`/events/${prediction.event.id}/odds/`, { limit');
   });
 
-  it("permite ștergerea confirmată a unei piramide păstrate local", () => {
+  it("păstrează semnalele separate de piețele eligibile și nu permite selecții fără cotă", () => {
+    expect(staticPage).toContain("Semnalele sunt disponibile, dar piața nu intră într-o strategie");
+    expect(staticPage).toContain("data-filter=\"signals\"");
+    expect(staticPage).toContain("data-filter=\"priced\"");
+    expect(staticPage).toContain("data-filter=\"eligible\"");
+    expect(staticPage).toContain("data-filter=\"recommended\"");
+    expect(staticPage).toContain("data-filter=\"high\"");
+  });
+
+  it("oferă noua arhitectură mobilă Azi, Explorare, Strategii și Jurnal", () => {
+    expect(staticPage).toContain('data-tab="today"');
+    expect(staticPage).toContain('data-tab="explore"');
+    expect(staticPage).toContain('data-tab="strategies"');
+    expect(staticPage).toContain('data-tab="journal"');
+    expect(staticPage).toContain("Analize prioritare");
+    expect(staticPage).toContain("Analiză verificabilă");
+  });
+
+  it("construiește strategii numai din evenimente și competiții distincte, în interval strict", () => {
+    expect(staticPage).toContain("const target=number($('ticket-target').value)||1.4,lower=round(target-.08),upper=round(target+.12)");
+    expect(staticPage).toContain("usedCompetitions.has(competition)");
+    expect(staticPage).toContain("if(chosen.length>=4||ticketSummary(chosen).odds>=upper)return");
+    expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
+    expect(staticPage).toContain("Acumulatorul păstrează competițiile distincte pentru a limita corelația.");
     expect(staticPage).toContain("data-delete-pyramid");
     expect(staticPage).toContain("Ștergi această piramidă locală?");
-    expect(staticPage).toContain("filter(plan=>plan.id!==button.dataset.deletePyramid)");
   });
 
-  it("propune Acumulatoare doar în intervalul țintă și din competiții distincte", () => {
-    expect(staticPage).toContain("const lower=round(target-.08),upper=round(target+.12)");
-    expect(staticPage).toContain("usedCompetitions.has(competition)");
-    expect(staticPage).toContain("intervalul ${lower.toFixed(2)}–${upper.toFixed(2)} cu evenimente și competiții distincte");
+  it("include numai context deja primit în feed și jurnal local fără rezultate fabricate", () => {
+    expect(feedGenerator).toContain("expectedGoals");
+    expect(feedGenerator).toContain("mostLikelyScore");
+    expect(feedGenerator).toContain("oddsUpdateReason");
+    expect(staticPage).toContain("Context primit în feed");
+    expect(staticPage).toContain("fără decontare automată inventată");
+    expect(staticPage).toContain("Jurnal de decizie");
   });
 
-  it("separă filtrele pentru semnalele API, cote, eligibilitate, recomandări și rată mare", () => {
-    expect(staticPage).toContain('data-filter="signals"');
-    expect(staticPage).toContain("function hasProviderSignals(event)");
-    expect(staticPage).toContain("if(state.filter==='signals')return hasProviderSignals(event)");
-    expect(staticPage).toContain('data-filter="priced"');
-    expect(staticPage).toContain('data-filter="eligible"');
-    expect(staticPage).toContain('data-filter="recommended"');
-    expect(staticPage).toContain('data-filter="high"');
-  });
-
-  it("păstrează documentată maparea fiecărei categorii de filtru", () => {
-    expect(filterMapping).toContain("## Maparea filtrelor de Meciuri");
-    expect(filterMapping).toContain("| Semnale API | `providerSignals` |");
-    expect(filterMapping).toContain("| Cu cotă | `selections` |");
-    expect(filterMapping).toContain("| Eligibile | `selections[].eligible` |");
-    expect(filterMapping).toContain("| Recomandate | recomandare model sau furnizor |");
-    expect(filterMapping).toContain("| Rată 60%+ | încredere sau probabilitate de semnal |");
-    expect(filterMapping).toContain("| Competiție | `competition` |");
+  it("documentează auditul competitiv, limitele API și principiile de produs", () => {
+    expect(research).toContain("## Constatări din aplicații publice");
+    expect(research).toContain("## Audit de capabilități API");
+    expect(research).toContain("Nu sunt preluate afirmații comerciale privind profitul");
+    expect(productSpec).toContain("## Arhitectura mobilă");
+    expect(productSpec).toContain("## Reguli pentru strategii");
+    expect(productSpec).toContain("Nu se afirmă şi nu se garantează venit sau profit");
   });
 });
