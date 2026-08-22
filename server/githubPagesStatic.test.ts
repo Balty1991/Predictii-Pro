@@ -79,9 +79,13 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("diferență față de țintă");
     expect(staticPage).toContain("function ticketStatus(summary,target)");
     expect(staticPage).toContain("potentialReturn=round(stake*odds)");
+    expect(staticPage).toContain("potentialProfit=odds?round(potentialReturn-stake):0");
     expect(staticPage).toContain("toate prețurile sunt verificate");
     expect(staticPage).toContain("$('ticket-target').onchange");
     expect(staticPage).toContain("$('ticket-stake').onchange");
+    expect(staticPage).toContain("retur matematic");
+    expect(staticPage).toContain("profit matematic");
+    expect(staticPage).toContain("calculele nu reprezintă rezultat confirmat");
   });
 
   it("include numai context deja primit în feed și jurnal local fără rezultate fabricate", () => {

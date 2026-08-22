@@ -142,3 +142,5 @@
 - [ ] Verificarea mobilă live a Acumulatorului extins la 390 px şi 430 px, cu o combinație construită exclusiv din cote verificate.
 - [x] Corectarea şi verificarea recalculării instant a țintei şi mizei în Acumulator la schimbarea controalelor.
 - [x] Corectarea introducerii mizei astfel încât valorile cu mai multe cifre să nu fie trunchiate în timpul recalculării.
+- [x] Extinderea afișării Acumulatoarelor salvate cu cota totală, ținta, miză, retur potențial, profit potențial şi probabilitate, fără a declara rezultate fabricate.
+- [x] Corectarea stării goale a Acumulatorului pentru a nu afișa profit sau pierdere înainte de existența unei selecții reale.
