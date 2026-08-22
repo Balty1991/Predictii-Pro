@@ -103,24 +103,8 @@
 - [x] Construirea aplicației operaționale direct în GitHub Pages, înlocuind portalul cu redirecționare către domeniul Manus.
 - [x] Implementarea sincronizării GitHub programate cu cheia furnizorului protejată ca secret, fără expunere în browser.
 - [ ] Verificarea pe telefon a aplicației publicate la balty1991.github.io/Predictii-Pro/ pentru evenimente, filtre, acumulator și piramidă locală.
-- [x] Auditarea acoperirii reale a endpointurilor furnizorului pentru mai multe evenimente viitoare, piețe și cote, cu raportarea exactă a limitărilor de date.
-- [x] Extinderea feedului GitHub Pages pentru a afișa mai multe evenimente reale disponibile, fără diluarea criteriilor de verificare.
-- [x] Afișarea transparentă a predicțiilor furnizorului chiar când o cotă nu este încă disponibilă, fără a le face eligibile pentru bilet.
-- [x] Adăugarea ștergerii unei piramide locale în GitHub Pages, cu confirmare și actualizarea stocării locale.
+- [ ] Auditarea acoperirii reale a endpointurilor furnizorului pentru mai multe evenimente viitoare, piețe și cote, cu raportarea exactă a limitărilor de date.
+- [ ] Extinderea feedului GitHub Pages pentru a afișa mai multe evenimente reale disponibile, fără diluarea criteriilor de verificare.
+- [ ] Afișarea transparentă a predicțiilor furnizorului chiar când o cotă nu este încă disponibilă, fără a le face eligibile pentru bilet.
+- [ ] Adăugarea ștergerii unei piramide locale în GitHub Pages, cu confirmare și actualizarea stocării locale.
 - [ ] Verificarea interactivă pe telefon a ștergerii piramidei, a filtrelor și a stărilor Acumulator/Piramidă din GitHub Pages.
-- [ ] Auditarea endpointurilor de cote pentru toate piețele și ferestrele de timp relevante, inclusiv formatul și permisiunile de acces reale.
-- [x] Separarea filtrelor de evenimente, semnale furnizor, recomandări, probabilitate și eligibilitate la cotă în GitHub Pages.
-- [x] Reorganizarea cardului de meci în structură compactă: echipe, oră, competiție, semnale, încredere, cotă și acțiune numai dacă este verificabilă.
-- [x] Reconstruirea Acumulatorului și Piramidei ca spații de lucru orientate pe selecții verificate, cu stări explicite pentru lipsa cotelor și acțiuni locale complete.
-- [ ] Validarea vizuală mobilă a noului meniu, filtrelor, cardurilor și strategiilor pe GitHub Pages.
-- [x] Adăugarea unui filtru distinct pentru evenimente cu semnale API și validarea sa separată de filtrele de cote, eligibilitate, recomandări și rată mare.
-- [x] Documentarea mapării de filtre pentru evenimente, competiții, semnale API, recomandări, probabilitate mare și eligibilitate la cotă.
-- [x] Auditarea comparativă a aplicațiilor mobile relevante de predicții și analiză sportivă, cu surse publice și principii UX transferabile.
-- [x] Auditarea documentației Sports Data API pentru toate funcțiile reutilizabile în fluxuri de analiză, cotații, rezultate și performanță, în limita bugetului stabilit.
-- [x] Definirea unei arhitecturi mobile de produs cu taburi de decizie rapidă, analiză de meci, strategie și performanță locală verificabilă.
-- [x] Reproiectarea majoră a ecranului Meciuri ca experiență mobilă de decizie, cu prioritizare, densitate controlată și acțiuni contextuale.
-- [x] Construirea unui ecran de analiză de meci bazat exclusiv pe semnale, cote, probabilități și contexte disponibile în feed.
-- [x] Extinderea Acumulatorului și Piramidei cu indicatori de risc, progres clar și selectare contextuală exclusiv din cote verificate.
-- [x] Implementarea performanței locale cu jurnal de decizie și metrici de risc, fără rezultate fabricate sau promisiuni de profit.
-- [ ] Validarea comparativă mobilă, a performanței de încărcare și a fluxurilor cu feed real, urmată de publicarea GitHub Pages.
-- [x] Blocarea corelației manuale în Acumulator printr-o singură piață pe eveniment și competiție, inclusiv curățarea selecțiilor locale vechi.
