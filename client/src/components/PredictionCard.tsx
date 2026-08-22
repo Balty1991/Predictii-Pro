@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Bot, CircleDot, Minus, Star, Target, TrendingDown, TrendingUp } from "lucide-react";
 import { ContextFactorGrid } from "@/components/ContextFactorGrid";
+import { SignalConsensusPanel } from "@/components/SignalConsensusPanel";
 import { trpc } from "@/lib/trpc";
 import { calculateOddsMovement } from "@shared/oddsMovement";
 
@@ -10,6 +11,7 @@ export type PredictionCardData = {
   label: string;
   probability: string;
   confidence: string | null;
+  impliedProbability: string | null;
   fairOdds: string | null;
   currentOdds: string | null;
   openingOdds: string | null;
@@ -94,6 +96,8 @@ export default function PredictionCard({ prediction, onToggleFavorite, onGenerat
         </div>
       )}
       {prediction.valueStatus !== "positive" && <div className="relative mt-3 rounded-xl border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-xs leading-5 text-amber-100">Avantajul estimat nu este pozitiv la prețul actual; selecția rămâne informativă și nu intră în acumulatorul automat.</div>}
+
+      <SignalConsensusPanel modelProbability={Number(prediction.probability)} marketProbability={asNumber(prediction.impliedProbability)} consensusScore={asNumber(prediction.consensusScore ?? null)} recommended={prediction.recommendationStatus === "recommended"} />
 
       {prediction.contextScore && <div className="relative mt-3 rounded-xl border border-border/60 bg-background/25 px-3 py-3"><div className="flex items-start justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-primary">Context model</p><p className="mt-1 text-xs text-muted-foreground">Factori calculați exclusiv din semnalele disponibile.</p></div><p className="font-mono text-lg font-semibold text-foreground">{Number(prediction.contextScore).toFixed(0)}<span className="text-xs text-muted-foreground">/100</span></p></div><ContextFactorGrid reasonCodes={reasons} /><p className="mt-3 text-[11px] leading-5 text-muted-foreground">Forma, confruntările directe, lotul, antrenorii, arbitrul, deplasarea și condițiile sunt afișate numai când feedul le furnizează; în acest moment nu sunt incluse în scor.</p></div>}
 

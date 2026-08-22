@@ -135,6 +135,15 @@ export class SportsApiError extends Error {
   }
 }
 
+function invalidPayloadError(body: unknown) {
+  return new SportsApiError(
+    body === null
+      ? "Furnizorul a trimis temporar un răspuns gol. Aplicația va reîncerca automat în siguranță, fără a salva date incomplete."
+      : "Furnizorul a trimis temporar un răspuns nevalid. Aplicația va reîncerca automat în siguranță, fără a salva date incomplete.",
+    502,
+  );
+}
+
 function getApiKey() {
   const apiKey = process.env.SPORTS_DATA_API_KEY;
   if (!apiKey) throw new SportsApiError("Sports Data API key is not configured.", 500);
@@ -198,10 +207,27 @@ async function request<T>(path: string, schema: z.ZodType<T>, query?: Record<str
       throw requestError;
     }
 
-    const body: unknown = await response.json();
+    let body: unknown;
+    try {
+      body = await response.json();
+    } catch {
+      const requestError = invalidPayloadError(undefined);
+      if (attempt < MAX_TRANSIENT_ATTEMPTS) {
+        lastError = requestError;
+        await waitBeforeRetry(attempt);
+        continue;
+      }
+      throw requestError;
+    }
     const parsed = schema.safeParse(body);
     if (!parsed.success) {
-      throw new SportsApiError(`Sports Data API returned an invalid payload: ${parsed.error.issues[0]?.message ?? "Unknown schema error"}`, 502);
+      const requestError = invalidPayloadError(body);
+      if (attempt < MAX_TRANSIENT_ATTEMPTS) {
+        lastError = requestError;
+        await waitBeforeRetry(attempt);
+        continue;
+      }
+      throw requestError;
     }
     return parsed.data;
   }

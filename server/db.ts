@@ -262,6 +262,7 @@ export async function listDashboardPredictions() {
     label: predictionSelections.label,
     probability: predictionSelections.predictedProbability,
     confidence: predictionSelections.modelConfidence,
+    impliedProbability: predictionSelections.impliedProbability,
     fairOdds: predictionSelections.fairOdds,
     currentOdds: predictionSelections.currentOdds,
     openingOdds: predictionSelections.openingOdds,
