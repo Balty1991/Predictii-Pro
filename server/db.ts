@@ -35,6 +35,20 @@ export async function getDb() {
   return _db;
 }
 
+export async function listMarketSettlementSummaries() {
+  const db = await getDb();
+  if (!db) return [];
+  const rows = await db.select({
+    market: predictionSelections.market,
+    total: sql<number>`count(*)`,
+    won: sql<number>`sum(case when ${predictionSelections.settlementStatus} = 'won' then 1 else 0 end)`,
+    averageProbability: sql<number>`avg(${predictionSelections.predictedProbability})`,
+  }).from(predictionSelections)
+    .where(inArray(predictionSelections.settlementStatus, ["won", "lost"]))
+    .groupBy(predictionSelections.market);
+  return rows.map(row => ({ market: row.market, total: Number(row.total), won: Number(row.won), averageProbability: Number(row.averageProbability) }));
+}
+
 export async function upsertUser(user: InsertUser): Promise<void> {
   if (!user.openId) {
     throw new Error("User openId is required for upsert");

@@ -25,7 +25,7 @@
 - [x] Implementarea heatmap-ului de performanță pentru ROI, rată de reușită, volum, volatilitate și drawdown pe ligă, piață și interval de cote.
 - [x] Implementarea scorului contextual cu factori transparenți din xG, forma echipelor, confruntări directe, lot, antrenori, arbitru, deplasare și condiții de meci atunci când API-ul îi oferă.
 - [ ] Implementarea consensului de semnale între modelul API, probabilitatea calculată din cote și, când există, piața de predicții.
-- [ ] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
+- [x] Implementarea pragurilor adaptive de selecție, recalibrate doar din performanța istorică verificată și cu praguri minime de eșantion.
 - [x] Implementarea limitelor de risc pentru bilete: corelații, selecții din același meci, concentrarea pe ligă, volatilitate și cotă degradată.
 - [x] Verificarea existenței, vizibilității și accesului utilizatorului la repository-ul GitHub Balty1991/Predictii-Pro.
 - [x] Schimbarea repository-ului GitHub Balty1991/Predictii-Pro din privat în public și verificarea accesului fără autentificare.

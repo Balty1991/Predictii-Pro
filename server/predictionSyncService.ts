@@ -1,5 +1,6 @@
 import * as db from "./db";
 import { generatePredictionExplanationsBatch, type ExplanationInput } from "./predictionExplanation";
+import { applyAdaptiveThreshold, buildAdaptiveThresholds } from "./adaptiveThresholds";
 import { normalizePredictionSelections } from "./predictionSync";
 import { fetchBestOddsForWindow, fetchPredictions, ODDS_SYNC_MARKETS, type ApiOdds } from "./sportsApi";
 
@@ -44,6 +45,7 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
   const explanationQueue: Array<ExplanationInput & { selectionId: number }> = [];
 
   try {
+    const adaptiveThresholds = buildAdaptiveThresholds(await db.listMarketSettlementSummaries());
     externalCalls += 1;
     const payload = await fetchPredictions(toDateString(from), toDateString(until));
     const upcomingPredictions = payload.results
@@ -121,7 +123,8 @@ export async function synchronizePredictions(from = new Date(), daysAhead = 2, m
         });
       }
 
-      for (const selection of normalizePredictionSelections(prediction, odds)) {
+      for (const normalizedSelection of normalizePredictionSelections(prediction, odds)) {
+        const selection = applyAdaptiveThreshold(normalizedSelection, adaptiveThresholds.get(normalizedSelection.market));
         const saved = await db.upsertPredictionSelection({
           eventId: storedEvent.id,
           providerPredictionId: storedPrediction.id,
