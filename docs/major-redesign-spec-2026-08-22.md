@@ -61,4 +61,6 @@ Redesignul nu adaugă framework, biblioteci sau imagini grele. Lista completă s
 
 ## Notă de validare mobilă intermediară
 
-Randările locale la **390 px** şi **430 px** confirmă structura mobilă nouă: antet compact, primul card de decizie lizibil, metrici pe trei coloane, alertă de integritate şi navigare inferioară cu patru ținte tactile. Previziualizarea locală folosea feedul parțial disponibil în workspace, deci validarea completă cu cele șase cote eligibile rămâne obligatorie după actualizarea feedului GitHub şi înainte de publicare.
+Randările locale la **390 px** şi **430 px** confirmă structura mobilă nouă: antet compact, primul card de decizie lizibil, metrici pe trei coloane, alertă de integritate şi navigare inferioară cu patru ținte tactile.
+
+După publicare, versiunea GitHub Pages a fost verificată la aceleași lățimi cu feedul complet: **60 de evenimente**, **6 piețe eligibile**, **3 analize prioritare** şi **5/5 cereri externe**. La 390 px, conținutul prioritar rămâne vizibil deasupra navigării inferioare; la 430 px, cardurile prioritare şi cele două acțiuni secundare rămân lizibile fără depășire orizontală. Pe versiunea live au fost verificate: deschiderea analizei, afișarea xG/scor model doar când există în feed, adăugarea unei piețe reale în spațiul de strategie, propunerea automată 1,40 în intervalul 1,32–1,52, crearea/atașarea și ștergerea confirmată a unei piramide locale. Testul de risc a blocat a doua piață din același eveniment.

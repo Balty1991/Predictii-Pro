@@ -124,3 +124,7 @@
 - [x] Implementarea performanței locale cu jurnal de decizie și metrici de risc, fără rezultate fabricate sau promisiuni de profit.
 - [ ] Validarea comparativă mobilă, a performanței de încărcare și a fluxurilor cu feed real, urmată de publicarea GitHub Pages.
 - [x] Blocarea corelației manuale în Acumulator printr-o singură piață pe eveniment și competiție, inclusiv curățarea selecțiilor locale vechi.
+- [ ] Verificarea live a ecranului Explorare la 390 px și 430 px, inclusiv filtrele Semnale API, Cu cotă, Eligibile, Model + valoare, Rată 60%+ și competiție.
+- [ ] Măsurarea și documentarea reproductibilă a performanței de încărcare a versiunii GitHub Pages la 390 px și 430 px.
+- [ ] Revalidarea live a fluxului complet Azi → Explorare → Analiză → Strategii → Acumulator → Piramidă înainte de închiderea validării mobile finale.
+- [ ] Adăugarea și verificarea deep-link-urilor către zonele Azi, Explorare, Strategii și Jurnal pentru acces mobil direct.

@@ -43,6 +43,7 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain('data-tab="journal"');
     expect(staticPage).toContain("Analize prioritare");
     expect(staticPage).toContain("Analiză verificabilă");
+    expect(staticPage).toContain("new URLSearchParams(window.location.search).get('tab')");
   });
 
   it("construiește strategii numai din evenimente și competiții distincte, în interval strict", () => {
