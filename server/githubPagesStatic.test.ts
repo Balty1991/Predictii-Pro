@@ -130,6 +130,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("Feedul nu este valid acum; nu propunem combinații din cote stale.");
     expect(staticPage).toContain("Feedul nu este valid acum; nu salvăm acumulatoare din cote stale.");
     expect(staticPage).toContain("Feed indisponibil</button>");
+    expect(staticPage).toContain("const bindTicketControls=bindTickets;bindTickets=function()");
+    expect(staticPage).toContain("button.disabled=true");
   });
 
   it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {

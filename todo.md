@@ -173,3 +173,4 @@
 - [x] Blocarea adăugării, propunerii și salvării Acumulatorului când feedul are starea indisponibilă sau parțială fără cote verificate.
 - [x] Afișarea unei stări explicite de feed indisponibil, fără reutilizarea ca strategie a cotelor vechi afișate doar pentru analiză.
 - [x] Afișarea numărului estimat de cote mici necesare și a numărului real disponibil pentru fiecare țintă mare prudentă.
+- [x] Dezactivarea vizuală a butoanelor de propunere și salvare Acumulator când feedul este indisponibil.
