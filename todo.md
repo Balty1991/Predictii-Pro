@@ -103,3 +103,8 @@
 - [x] Construirea aplicației operaționale direct în GitHub Pages, înlocuind portalul cu redirecționare către domeniul Manus.
 - [x] Implementarea sincronizării GitHub programate cu cheia furnizorului protejată ca secret, fără expunere în browser.
 - [ ] Verificarea pe telefon a aplicației publicate la balty1991.github.io/Predictii-Pro/ pentru evenimente, filtre, acumulator și piramidă locală.
+- [ ] Auditarea acoperirii reale a endpointurilor furnizorului pentru mai multe evenimente viitoare, piețe și cote, cu raportarea exactă a limitărilor de date.
+- [ ] Extinderea feedului GitHub Pages pentru a afișa mai multe evenimente reale disponibile, fără diluarea criteriilor de verificare.
+- [ ] Afișarea transparentă a predicțiilor furnizorului chiar când o cotă nu este încă disponibilă, fără a le face eligibile pentru bilet.
+- [ ] Adăugarea ștergerii unei piramide locale în GitHub Pages, cu confirmare și actualizarea stocării locale.
+- [ ] Verificarea interactivă pe telefon a ștergerii piramidei, a filtrelor și a stărilor Acumulator/Piramidă din GitHub Pages.

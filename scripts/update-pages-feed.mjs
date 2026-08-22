@@ -64,6 +64,13 @@ function selectionDefinitions(prediction) {
   return definitions.map(item => ({ ...item, probability: asPercent(item.probability) })).filter(item => item.probability && item.probability < 100);
 }
 
+function providerSignals(prediction) {
+  return selectionDefinitions(prediction)
+    .sort((left, right) => Number(right.recommended) - Number(left.recommended) || right.probability - left.probability)
+    .slice(0, 3)
+    .map(signal => ({ label: signal.label, probability: signal.probability, recommended: signal.recommended }));
+}
+
 function normalizePrediction(prediction, odds) {
   const event = prediction.event;
   const confidence = Number(prediction.model?.confidence ?? 0.5);
@@ -96,7 +103,17 @@ function normalizePrediction(prediction, odds) {
       bookmaker: price?.bookmaker_name ?? price?.bookmaker_slug ?? null,
     }];
   });
-  return { id: event.id, startsAt: event.event_date, sport: "Fotbal", competition: event.league_name ?? "Competiție neprecizată", homeTeam: event.home_team, awayTeam: event.away_team, selections };
+  return {
+    id: event.id,
+    startsAt: event.event_date,
+    sport: "Fotbal",
+    competition: event.league_name ?? "Competiție neprecizată",
+    homeTeam: event.home_team,
+    awayTeam: event.away_team,
+    providerConfidence: asPercent(confidence),
+    providerSignals: providerSignals(prediction),
+    selections,
+  };
 }
 
 async function readPrevious() {
@@ -109,26 +126,26 @@ async function main() {
   try {
     const predictions = await request("/predictions/", { date_from: dateFrom, date_to: dateTo, limit: 200 });
     if (!predictions.length) {
-      const fallbackEvents = await request("/events/", { status: "scheduled", date_from: dateFrom, date_to: dateTo, limit: 8 });
-      const events = fallbackEvents.slice(0, 8).map(event => ({ id: event.id, startsAt: event.event_date, sport: "Fotbal", competition: event.league_name ?? "Competiție neprecizată", homeTeam: event.home_team, awayTeam: event.away_team, selections: [] }));
+      const fallbackEvents = await request("/events/", { status: "notstarted", date_from: dateFrom, date_to: dateTo, limit: 60 });
+      const events = fallbackEvents.slice(0, 60).map(event => ({ id: event.id, startsAt: event.event_date, sport: "Fotbal", competition: event.league_name ?? "Competiție neprecizată", homeTeam: event.home_team, awayTeam: event.away_team, providerConfidence: null, providerSignals: [], selections: [] }));
       await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: "partial", message: "Furnizorul nu a livrat predicții pentru fereastra curentă. Sunt afișate doar evenimente reale, fără cote sau bilete inventate.", calls, events }, null, 2) + "\n");
       return;
     }
-    const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 4);
-    const oddsResponses = await Promise.allSettled(upcomingPredictions.map(prediction => request("/odds/", { event_id: prediction.event.id, limit: 200 })));
+    const upcomingPredictions = predictions.filter(prediction => new Date(prediction.event.event_date).getTime() > Date.now()).slice(0, 60);
+    const oddsResponses = await Promise.allSettled(upcomingPredictions.slice(0, 4).map(prediction => request("/odds/", { event_id: prediction.event.id, limit: 200 })));
     const allOdds = oddsResponses.flatMap(result => result.status === "fulfilled" ? result.value : []);
     const oddsUnavailable = oddsResponses.some(result => result.status === "rejected");
     const normalizedEvents = upcomingPredictions.map(prediction => normalizePrediction(prediction, allOdds));
     const events = allOdds.length
-      ? normalizedEvents.filter(event => event.selections.length > 0).slice(0, 8)
-      : upcomingPredictions.slice(0, 8).map(prediction => ({ id: prediction.event.id, startsAt: prediction.event.event_date, sport: "Fotbal", competition: prediction.event.league_name ?? "Competiție neprecizată", homeTeam: prediction.event.home_team, awayTeam: prediction.event.away_team, selections: [] }));
+      ? normalizedEvents
+      : normalizedEvents.map(event => ({ ...event, selections: [] }));
     const selectionCount = events.reduce((total, event) => total + event.selections.length, 0);
     const message = selectionCount
       ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
       : oddsUnavailable
         ? "Furnizorul a livrat evenimente și predicții, dar a refuzat temporar cotele. Sunt afișate numai evenimentele reale; biletele rămân blocate fără prețuri verificabile."
         : allOdds.length === 0
-          ? "Furnizorul a transmis 0 cote pentru evenimentele viitoare verificate. Sunt afișate evenimentele reale, dar biletele rămân blocate fără prețuri verificabile."
+          ? `${events.length} evenimente și semnale reale sunt disponibile, dar furnizorul a transmis 0 cote pentru cele patru evenimente verificate. Biletele rămân blocate fără prețuri verificabile.`
         : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message, calls, events }, null, 2) + "\n");
   } catch (error) {
