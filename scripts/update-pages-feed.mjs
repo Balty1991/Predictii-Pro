@@ -102,14 +102,14 @@ function normalizePrediction(prediction, oddsSnapshot) {
   const selections = selectionDefinitions(prediction).flatMap(definition => {
     const field = oddsFieldFor(definition);
     const currentOdds = field ? Number(oddsSnapshot?.odds?.[field]) : null;
-    if (!currentOdds || currentOdds < 1.2 || currentOdds > 2.1) return [];
+    if (!currentOdds || currentOdds < 1.01 || currentOdds > 25) return [];
     const impliedProbability = round(100 / currentOdds);
     const edge = round(definition.probability - impliedProbability);
     const expectedValue = round(((definition.probability / 100) * currentOdds - 1) * 100);
     const openingOdds = null;
     const providerRecommended = definition.recommended;
     const modelRecommended = definition.probability >= 62 && confidence >= 0.55 && edge >= 2 && expectedValue > 0;
-    const eligible = expectedValue > 0 && confidence >= 0.45 && edge >= 1;
+    const eligible = currentOdds >= 1.2 && currentOdds <= 2.1 && expectedValue > 0 && confidence >= 0.45 && edge >= 1;
     return [{
       id: `${prediction.id}-${definition.market}-${definition.outcome}`,
       eventId: event.id,

@@ -34,6 +34,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).toContain('"over_under_35:under": "under_35_goals"');
     expect(feedGenerator).toContain('"btts:no": "btts_no"');
     expect(feedGenerator).toContain('const complement = (value) =>');
+    expect(feedGenerator).toContain('currentOdds < 1.01 || currentOdds > 25');
+    expect(feedGenerator).toContain('currentOdds >= 1.2 && currentOdds <= 2.1 && expectedValue > 0');
   });
 
   it("păstrează semnalele separate de piețele eligibile și nu permite selecții fără cotă", () => {
