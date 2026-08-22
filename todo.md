@@ -144,3 +144,10 @@
 - [x] Corectarea introducerii mizei astfel încât valorile cu mai multe cifre să nu fie trunchiate în timpul recalculării.
 - [x] Extinderea afișării Acumulatoarelor salvate cu cota totală, ținta, miză, retur potențial, profit potențial şi probabilitate, fără a declara rezultate fabricate.
 - [x] Corectarea stării goale a Acumulatorului pentru a nu afișa profit sau pierdere înainte de existența unei selecții reale.
+- [x] Auditarea capacității reale a feedului pentru Acumulatoare cu ținte 10, 50 şi 100, incluzând numărul maxim de selecții distincte care poate fi justificat de cote verificate.
+- [x] Extinderea Acumulatorului cu ținte 5, 10, 20, 50 şi 100, status de acoperire şi limită transparentă de 20 selecții din evenimente şi competiții distincte.
+- [x] Adăugarea unui mod Piramidă combinată pentru ținte 2–3, alcătuit din maximum trei piețe verificate, cu aceeași protecție contra corelației.
+- [x] Modernizarea Explorării pentru diferențierea mai clară între cotă analizabilă, piață eligibilă, risc şi acțiunea potrivită pe telefon.
+- [ ] Validarea mobilă şi publicarea upgrade-ului cu feed real, fără cote sau rezultate simulate.
+- [x] Recalcularea instantă a candidatei Piramidei combinate când utilizatorul schimbă ținta pe pas.
+- [x] Permiterea combinațiilor de Piramidă din evenimente distincte ale aceleiași competiții, cu avertizare vizibilă de concentrare în loc de blocare artificială.

@@ -7,6 +7,7 @@ const staticPage = readFileSync(resolve(root, "docs/index.html"), "utf8");
 const feedGenerator = readFileSync(resolve(root, "scripts/update-pages-feed.mjs"), "utf8");
 const research = readFileSync(resolve(root, "docs/competitive-mobile-research-2026-08-22.md"), "utf8");
 const productSpec = readFileSync(resolve(root, "docs/major-redesign-spec-2026-08-22.md"), "utf8");
+const highTargetSpec = readFileSync(resolve(root, "docs/high-target-strategy-spec-2026-08-22.md"), "utf8");
 const staticScript = staticPage.match(/<script>([\s\S]*)<\/script>/)?.[1] ?? "";
 
 describe("aplicația statică GitHub Pages", () => {
@@ -60,15 +61,29 @@ describe("aplicația statică GitHub Pages", () => {
   });
 
   it("construiește strategii numai din evenimente și competiții distincte, în interval strict", () => {
-    expect(staticPage).toContain("const target=number($('ticket-target').value)||1.4,lower=round(target-.08),upper=round(target+.12)");
+    expect(staticPage).toContain("const target=number($('ticket-target').value)||1.4,policy=ticketPolicy(target),lower=policy.lower,upper=policy.upper");
     expect(staticPage).toContain("usedCompetitions.has(competition)");
-    expect(staticPage).toContain("if(chosen.length>=4||ticketSummary(chosen).odds>=upper)return");
+    expect(staticPage).toContain("if(chosen.length>=policy.max||ticketSummary(chosen).odds>=upper)return");
     expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
     expect(staticPage).toContain("Acumulatorul păstrează competițiile distincte pentru a limita corelația.");
     expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile curente pentru strategie.");
     expect(staticPage).toContain("Doar analiză");
     expect(staticPage).toContain("data-delete-pyramid");
     expect(staticPage).toContain("Ștergi această piramidă locală?");
+  });
+
+  it("oferă ținte mari şi Piramidă combinată exclusiv din cote verificate distincte", () => {
+    expect(staticPage).toContain("function ticketPolicy(target)");
+    expect(staticPage).toContain("[5,10,20,50,100]");
+    expect(staticPage).toContain("max:20");
+    expect(staticPage).toContain("function pyramidComboCandidate(target)");
+    expect(staticPage).toContain("Combinație 2–3");
+    expect(staticPage).toContain("Nu există acum o combinație verificată de 2–3 evenimente");
+    expect(staticPage).toContain("state.pyramidTarget=Math.min(3,Math.max(1.2,number(event.target.value)||1.3));renderStrategies()");
+    expect(staticPage).toContain("if(events.has(item.eventId))continue");
+    expect(staticPage).toContain("Risc de concentrare:");
+    expect(highTargetSpec).toContain("competițiile distincte sunt preferate");
+    expect(highTargetSpec).toContain("Rezultat de validare cu feedul public curent");
   });
 
   it("calculează vizibil cota totală, ținta, miza și metricile Acumulatorului din selecții reale", () => {
