@@ -93,6 +93,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("function ticketPolicy(target)");
     expect(staticPage).toContain("[5,10,20,50,100]");
     expect(staticPage).toContain("max:20");
+    expect(staticPage).toContain("const baseRenderTicketWorkspace=renderTicketWorkspace");
+    expect(staticPage).toContain("replaceAll('/4 selecții','/'+max+' selecții')");
     expect(staticPage).toContain("allowLeagueReuse:true");
     expect(staticPage).toContain("Mod prudent: este disponibil doar");
     expect(staticPage).toContain("Nu propunem bilet parțial.");
