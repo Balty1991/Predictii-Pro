@@ -175,3 +175,5 @@
 - [x] Afișarea numărului estimat de cote mici necesare și a numărului real disponibil pentru fiecare țintă mare prudentă.
 - [x] Dezactivarea vizuală a butoanelor de propunere și salvare Acumulator când feedul este indisponibil.
 - [x] Afișarea dinamică a limitei de 20 de selecții în toate cardurile Acumulatorului pentru țintele prudente.
+- [x] Reprogramarea actualizării automate a feedului la 07:00 și 17:00, cu maximum cinci apeluri externe la fiecare execuție.
+- [x] Rularea unei sincronizări manuale unice solicitate de utilizator și verificarea rezultatului fără reîncercări automate.

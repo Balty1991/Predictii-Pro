@@ -2,7 +2,8 @@ name: Actualizează feedul static Predicții Pro
 
 on:
   schedule:
-    - cron: "10 0 * * *"
+    # 07:00 și 17:00 în GMT+3 (GitHub Actions cron folosește UTC).
+    - cron: "0 4,14 * * *"
   workflow_dispatch:
 
 permissions:
