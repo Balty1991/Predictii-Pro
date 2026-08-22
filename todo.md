@@ -84,5 +84,5 @@
 - [x] Testarea parsării și mapării factorilor contextuali suplimentari în utilitarul comun, inclusiv formă, H2H, lot, antrenori, arbitru, deplasare și condiții.
 - [x] Testarea redării factorilor contextuali suplimentari în cardul de predicție atunci când reasonCodes îi conține.
 - [ ] Extinderea formulei consensului pentru a pondera toate semnalele disponibile și expunerea explicită a unei piețe de predicții reale când sursa o furnizează.
-- [ ] Afișarea și testarea limitei tehnice atunci când nu este disponibilă o piață de predicții externă verificabilă.
+- [x] Afișarea și testarea limitei tehnice atunci când nu este disponibilă o piață de predicții externă verificabilă.
 - [x] Gestionarea defensivă a payloadului gol sau null primit de la Sports Data API, fără expunerea erorii tehnice în interfață, cu reîncercare controlată și mesaj clar pentru utilizator.

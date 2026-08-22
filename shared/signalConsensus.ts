@@ -5,6 +5,7 @@ export type SignalConsensus = {
   difference: number;
   alignment: "puternic" | "moderat" | "redus";
   providerSignal: "recomandă" | "urmărește";
+  externalMarketStatus: "neinterogată";
 };
 
 export function buildSignalConsensus(input: { modelProbability: number; marketProbability: number | null; consensusScore: number | null; recommended: boolean }): SignalConsensus | null {
@@ -19,5 +20,6 @@ export function buildSignalConsensus(input: { modelProbability: number; marketPr
     difference,
     alignment: absoluteDifference <= 3 ? "puternic" : absoluteDifference <= 8 ? "moderat" : "redus",
     providerSignal: input.recommended ? "recomandă" : "urmărește",
+    externalMarketStatus: "neinterogată",
   };
 }

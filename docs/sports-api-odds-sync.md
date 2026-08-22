@@ -9,3 +9,9 @@ După citirea feedului în lot, aplicația procesează cel mult opt evenimente v
 Cheia gratuită primește prețuri consensuale, nu cotele individuale per bookmaker. Sincronizarea trebuie să solicite doar prețuri reale; în lipsa lor, aplicația nu generează acumulatoare sau recomandări de piramidă artificiale.
 
 Conform documentației furnizorului, limita planului gratuit este de 7.500 de cereri pe zi, cu resetare la 00:00 UTC. Jobul `sports-daily-refresh` rulează la 00:10 UTC pentru a folosi o cotă reînnoită. Pentru sursa și parametrii compleți, consultați [Odds & predictions](https://sports.bzzoiro.com/docs/football/odds-predictions/) și [Conventions & limits](https://sports.bzzoiro.com/docs/conventions/#rate-limits).
+
+## Piața de predicții externă și consensul
+
+Furnizorul oferă probabilități de piață prin endpointul per-eveniment `GET /api/v2/events/{id}/polymarket/`. Acesta poate răspunde cu `404` când nu există piață activă și ar necesita câte o cerere suplimentară pentru fiecare eveniment. Pentru a respecta plafonul aprobat de maximum cinci cereri pe sincronizare, aplicația nu îl interoghează automat.
+
+Consensul activ compară probabilitatea modelului cu probabilitatea implicită din cota reală și marchează explicit piața de predicții externă drept neinterogată din motive de buget. Nu sunt fabricate probabilități de piață terță.

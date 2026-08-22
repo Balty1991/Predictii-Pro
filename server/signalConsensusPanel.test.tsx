@@ -10,5 +10,7 @@ describe("SignalConsensusPanel", () => {
     expect(markup).toContain("62.0%");
     expect(markup).toContain("60.0%");
     expect(markup).toContain("recomandă");
+    expect(markup).toContain("Piață externă");
+    expect(markup).toContain("neinterogată");
   });
 });
