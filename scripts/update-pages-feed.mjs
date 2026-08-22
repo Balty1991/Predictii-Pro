@@ -127,6 +127,8 @@ async function main() {
       ? `${selectionCount} selecții reale au trecut validarea pentru intervalul curent.`
       : oddsUnavailable
         ? "Furnizorul a livrat evenimente și predicții, dar a refuzat temporar cotele. Sunt afișate numai evenimentele reale; biletele rămân blocate fără prețuri verificabile."
+        : allOdds.length === 0
+          ? "Furnizorul a transmis 0 cote pentru evenimentele viitoare verificate. Sunt afișate evenimentele reale, dar biletele rămân blocate fără prețuri verificabile."
         : "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.";
     await writeFile(outputPath, JSON.stringify({ version: 1, updatedAt: now, status: selectionCount ? "ready" : "partial", message, calls, events }, null, 2) + "\n");
   } catch (error) {
