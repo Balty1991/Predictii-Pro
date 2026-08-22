@@ -20,6 +20,54 @@ const asPercent = (value) => {
   if (!Number.isFinite(numeric) || numeric <= 0) return null;
   return numeric <= 1 ? round(numeric * 100) : round(numeric);
 };
+const record = value => value && typeof value === "object" && !Array.isArray(value) ? value : {};
+const clamp = value => Math.max(0, Math.min(100, round(value)));
+
+function contextSignals(prediction) {
+  const event = record(prediction.event);
+  const sources = [record(prediction.context), record(prediction.contextual_factors), record(event.context), record(event.contextual_factors)];
+  const definitions = [
+    { label: "Formă echipe", keys: ["form_score", "team_form_score", "form"] },
+    { label: "Confruntări directe", keys: ["h2h_score", "head_to_head_score"] },
+    { label: "Lot și line-up", keys: ["squad_score", "lineup_score", "availability_score"] },
+    { label: "Antrenori", keys: ["manager_score", "coach_score"] },
+    { label: "Arbitru", keys: ["referee_score"] },
+    { label: "Deplasare", keys: ["travel_score", "away_travel_score"] },
+    { label: "Condiții meci", keys: ["conditions_score", "weather_score", "pitch_score"] },
+  ];
+  return definitions.flatMap(definition => {
+    for (const source of sources) {
+      for (const key of definition.keys) {
+        const score = asPercent(source[key]);
+        if (score !== null) return [{ label: definition.label, score }];
+      }
+    }
+    return [];
+  });
+}
+
+function buildContextScore(prediction, recommended) {
+  const confidence = asPercent(prediction.model?.confidence) ?? 50;
+  const xg = record(prediction.markets?.expected_goals);
+  const home = Number(xg.home), away = Number(xg.away);
+  const xgBalance = Number.isFinite(home) && Number.isFinite(away) ? Math.max(0, 10 - Math.abs(home - away) * 4) : 4;
+  const contribution = contextSignals(prediction).reduce((total, signal) => total + (signal.score - 50) * 0.1, 0);
+  return clamp(36 + confidence * 0.42 + xgBalance + (recommended ? 12 : 0) + Math.max(-10, Math.min(10, contribution)));
+}
+
+function modelMarkets(prediction) {
+  const markets = record(prediction.markets);
+  const match = record(markets.match_result);
+  const overUnder = record(markets.over_under);
+  const btts = record(markets.btts);
+  const corners = record(markets.corners);
+  return {
+    matchResult: { home: asPercent(match.prob_home), draw: asPercent(match.prob_draw), away: asPercent(match.prob_away) },
+    goals: { over15: asPercent(overUnder.prob_over_15), over25: asPercent(overUnder.prob_over_25), over35: asPercent(overUnder.prob_over_35) },
+    btts: { yes: asPercent(btts.prob_yes) },
+    corners: { over85: asPercent(corners.prob_over_85), over95: asPercent(corners.prob_over_95), over105: asPercent(corners.prob_over_105) },
+  };
+}
 
 async function request(path, params = {}, { paginated = true } = {}) {
   if (calls >= 5) throw new Error("Bugetul de 5 cereri externe ar fi depășit.");
@@ -102,6 +150,11 @@ function normalizePrediction(prediction, oddsSnapshot) {
   const confidence = Number(prediction.model?.confidence ?? 0.5);
   const expectedGoals = prediction.markets?.expected_goals ?? {};
   const score = prediction.markets?.score ?? {};
+  const signals = contextSignals(prediction);
+  const contextScore = buildContextScore(prediction, false);
+  const markets = modelMarkets(prediction);
+  const contextLabels = ["Formă echipe", "Confruntări directe", "Lot și line-up", "Antrenori", "Arbitru", "Deplasare", "Condiții meci"];
+  const missingContext = contextLabels.filter(label => !signals.some(signal => signal.label === label));
   const selections = selectionDefinitions(prediction).flatMap(definition => {
     const field = oddsFieldFor(definition);
     const currentOdds = field ? Number(oddsSnapshot?.odds?.[field]) : null;
@@ -111,8 +164,9 @@ function normalizePrediction(prediction, oddsSnapshot) {
     const expectedValue = round(((definition.probability / 100) * currentOdds - 1) * 100);
     const openingOdds = null;
     const providerRecommended = definition.recommended;
-    const modelRecommended = definition.probability >= 62 && confidence >= 0.55 && edge >= 2 && expectedValue > 0;
-    const eligible = currentOdds >= 1.2 && currentOdds <= 2.1 && expectedValue > 0 && confidence >= 0.45 && edge >= 1;
+    const selectionContextScore = buildContextScore(prediction, providerRecommended);
+    const modelRecommended = definition.probability >= 62 && confidence >= 0.55 && selectionContextScore >= 50 && edge >= 2 && expectedValue > 0;
+    const eligible = currentOdds >= 1.2 && currentOdds <= 2.1 && expectedValue > 0 && confidence >= 0.45 && selectionContextScore >= 40 && edge >= 1;
     return [{
       id: `${prediction.id}-${definition.market}-${definition.outcome}`,
       eventId: event.id,
@@ -126,6 +180,7 @@ function normalizePrediction(prediction, oddsSnapshot) {
       fairOdds: round(100 / definition.probability, 3),
       edge,
       expectedValue,
+      contextScore: selectionContextScore,
       confidence: round(confidence * 100),
       recommendation: providerRecommended ? "provider" : modelRecommended ? "model" : "watch",
       eligible,
@@ -145,6 +200,10 @@ function normalizePrediction(prediction, oddsSnapshot) {
     providerConfidence: asPercent(confidence),
     providerSignals: providerSignals(prediction),
     providerRecommended: Object.entries(prediction.recommendations ?? {}).some(([key, value]) => ["bet_favorite", "over_15", "over_25", "over_35", "btts", "winner"].includes(key) && value === true),
+    contextScore,
+    contextSignals: signals,
+    contextMissing: missingContext,
+    modelMarkets: markets,
     oddsStatus: oddsSnapshot?.odds ? "live" : "pending",
     oddsUpdatedAt: oddsSnapshot?.last_update_at ?? null,
     oddsNextUpdateAt: oddsSnapshot?.next_update_at ?? null,

@@ -8,6 +8,8 @@ const feedGenerator = readFileSync(resolve(root, "scripts/update-pages-feed.mjs"
 const research = readFileSync(resolve(root, "docs/competitive-mobile-research-2026-08-22.md"), "utf8");
 const productSpec = readFileSync(resolve(root, "docs/major-redesign-spec-2026-08-22.md"), "utf8");
 const highTargetSpec = readFileSync(resolve(root, "docs/high-target-strategy-spec-2026-08-22.md"), "utf8");
+const statisticsInventory = readFileSync(resolve(root, "docs/api-statistics-inventory-2026-08-22.md"), "utf8");
+const staticFeed = JSON.parse(readFileSync(resolve(root, "docs/data/feed.json"), "utf8"));
 const staticScript = staticPage.match(/<script>([\s\S]*)<\/script>/)?.[1] ?? "";
 
 describe("aplicația statică GitHub Pages", () => {
@@ -40,6 +42,21 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).toContain('currentOdds >= 1.2 && currentOdds <= 2.1 && expectedValue > 0');
   });
 
+  it("păstrează în feed contextul și probabilitățile modelului deja primite fără apeluri suplimentare", () => {
+    const event = staticFeed.events.find((item: { selections?: unknown[] }) => Array.isArray(item.selections) && item.selections.length > 0) as {
+      contextScore?: unknown; contextSignals?: unknown; contextMissing?: unknown; modelMarkets?: { matchResult?: unknown; goals?: unknown; btts?: unknown; corners?: unknown };
+    } | undefined;
+    expect(staticFeed.calls).toBeLessThanOrEqual(5);
+    expect(event).toBeDefined();
+    expect(typeof event?.contextScore).toBe("number");
+    expect(Array.isArray(event?.contextSignals)).toBe(true);
+    expect(Array.isArray(event?.contextMissing)).toBe(true);
+    expect(event?.modelMarkets?.matchResult).toBeDefined();
+    expect(event?.modelMarkets?.goals).toBeDefined();
+    expect(event?.modelMarkets?.btts).toBeDefined();
+    expect(event?.modelMarkets?.corners).toBeDefined();
+  });
+
   it("păstrează semnalele separate de piețele eligibile și nu permite selecții fără cotă", () => {
     expect(staticPage).toContain("Semnalele sunt disponibile, dar piața nu intră într-o strategie");
     expect(staticPage).toContain("data-filter=\"signals\"");
@@ -60,12 +77,12 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("new URLSearchParams(window.location.search).get('strategy')");
   });
 
-  it("construiește strategii numai din evenimente și competiții distincte, în interval strict", () => {
+  it("construiește strategii din meciuri distincte și păstrează competițiile distincte pentru țintele controlate", () => {
     expect(staticPage).toContain("const target=number($('ticket-target').value)||1.4,policy=ticketPolicy(target),lower=policy.lower,upper=policy.upper");
-    expect(staticPage).toContain("usedCompetitions.has(competition)");
+    expect(staticPage).toContain("(!policy.allowLeagueReuse&&usedCompetitions.has(competition))");
     expect(staticPage).toContain("if(chosen.length>=policy.max||ticketSummary(chosen).odds>=upper)return");
     expect(staticPage).toContain("Acumulatorul permite o singură piață pentru același eveniment.");
-    expect(staticPage).toContain("Acumulatorul păstrează competițiile distincte pentru a limita corelația.");
+    expect(staticPage).toContain("Pentru țintele sub 5,00 păstrăm competițiile distincte pentru a limita corelația.");
     expect(staticPage).toContain("Cota este reală, dar nu respectă criteriile curente pentru strategie.");
     expect(staticPage).toContain("Doar analiză");
     expect(staticPage).toContain("data-delete-pyramid");
@@ -76,6 +93,8 @@ describe("aplicația statică GitHub Pages", () => {
     expect(staticPage).toContain("function ticketPolicy(target)");
     expect(staticPage).toContain("[5,10,20,50,100]");
     expect(staticPage).toContain("max:20");
+    expect(staticPage).toContain("allowLeagueReuse:true");
+    expect(staticPage).toContain("acoperirea reală maximă");
     expect(staticPage).toContain("function pyramidComboCandidate(target)");
     expect(staticPage).toContain("Combinație 2–3");
     expect(staticPage).toContain("Nu există acum o combinație verificată de 2–3 evenimente");
@@ -107,9 +126,16 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedGenerator).toContain("expectedGoals");
     expect(feedGenerator).toContain("mostLikelyScore");
     expect(feedGenerator).toContain("oddsUpdateReason");
+    expect(feedGenerator).toContain("function contextSignals(prediction)");
+    expect(feedGenerator).toContain("function buildContextScore(prediction, recommended)");
+    expect(feedGenerator).toContain("contextMissing: missingContext");
     expect(staticPage).toContain("Context primit în feed");
+    expect(staticPage).toContain("Factori API utilizați");
+    expect(staticPage).toContain("Tip de predicție");
     expect(staticPage).toContain("fără decontare automată inventată");
     expect(staticPage).toContain("Jurnal de decizie");
+    expect(statisticsInventory).toContain("## Statistici suplimentare ale API-ului");
+    expect(statisticsInventory).toContain("nu sunt înlocuite cu medii inventate");
   });
 
   it("documentează auditul competitiv, limitele API și principiile de produs", () => {

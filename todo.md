@@ -152,3 +152,10 @@
 - [x] Recalcularea instantă a candidatei Piramidei combinate când utilizatorul schimbă ținta pe pas.
 - [x] Permiterea combinațiilor de Piramidă din evenimente distincte ale aceleiași competiții, cu avertizare vizibilă de concentrare în loc de blocare artificială.
 - [ ] Verificare manuală pe telefon real pentru GitHub Pages: Explorare, filtru Eligibile, Acumulator cu țintă mare, Piramidă combinată și ștergerea unui plan local.
+- [x] Permiterea propunerilor de Acumulator cu ținte mari din meciuri reale distincte ale aceleiași competiții, cu avertizare explicită de concentrare.
+- [ ] Verificarea live a propunerii pentru ținte mari cu feed concentrat într-o singură competiție eligibilă.
+- [x] Adăugarea în Explorare a filtrului mobil după tipul pieței: 1X2, Peste goluri, Sub goluri și BTTS.
+- [ ] Validarea live a filtrului după tipul pieței împreună cu filtrele de eligibilitate și semnale.
+- [x] Inventarierea statisticilor verificabile expuse de Sports Data API și a acoperirii lor în feedul static.
+- [x] Extinderea scorului de predicție cu toate statisticile disponibile din API, ponderate transparent și fără completarea datelor lipsă.
+- [x] Afișarea clară în analiză a factorilor API utilizați și a factorilor indisponibili pentru fiecare predicție.

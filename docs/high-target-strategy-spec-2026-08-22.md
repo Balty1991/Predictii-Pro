@@ -37,6 +37,10 @@ La **390 px** și **430 px**, ecranul **Explorare** a încărcat feedul verifica
 
 Publicarea GitHub Pages a rulat cu succes la **22 august 2026**. Pe versiunea live au fost verificate selectorul pentru țintele 10, 20, 50 și 100, trecerea corectă la limita de 10 sau 20 de selecții și mesajul onest privind acoperirea curentă de o singură competiție eligibilă. Modul Piramidă combinată a fost verificat public la ținta 2,00: afișează două meciuri reale, cota 2,06 și avertizarea de concentrare, fără a pretinde diversificare maximă sau rezultat garantat.
 
+## Ajustare locală în curs pentru acoperirea țintelor mari
+
+În feedul de verificare curent există trei meciuri distincte cu piețe eligibile, toate în J1 League. Pentru țintele de minimum 5,00, propunerea permite acum aceste meciuri distincte chiar dacă provin din aceeași competiție; riscul de concentrare rămâne afișat. La ținta 50,00, baza reală maximă a rezultat în cotă 5,43 din trei meciuri, astfel încât interfața o afișează ca acoperire reală sub țintă, fără a adăuga selecții inventate. La 390 px, noul filtru **Tip de predicție** rămâne lizibil împreună cu filtrele de calitate, competiție, primul card și navigarea inferioară.
+
 Verificarea interactivă live la **390 px** a confirmat selectarea unei piețe reale în Acumulator, schimbarea la ținta 10,00 și afișarea lizibilă a stării `1/10` în calculator. În Piramidă, câmpurile și selectorul de mod se păstrează în flux vertical fără depășire orizontală; cardul combinației urmează controalele în scroll-ul normal al paginii, fără a fi ascuns sau înlocuit cu date simulate.
 
 La **430 px**, cardurile pereche ale Acumulatorului păstrează vizibile cota totală 1,37, ținta 10,00, progresul și metricile matematice. Piramida păstrează în același viewport ținta 2,00, pașii, miza, reinvestirea, comutatorul de mod, acțiunea de creare și începutul cardului de combinație cu cota 2,06. Bara de navigare inferioară rămâne accesibilă, fără acoperirea controalelor esențiale.
