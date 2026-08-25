@@ -16,3 +16,7 @@ Versiunea publică de la `https://balty1991.github.io/Predictii-Pro/` servește 
 Există două probleme distincte. Prima este operațională: feedul live nu primește ultimele comiteri, deși execuțiile de actualizare și de publicare apar ca reușite. A doua este de date: plafonul furnizorului este atins, astfel încât sincronizarea salvează corect o stare de indisponibilitate, însă aplicația nu poate oferi selecții eligibile până la disponibilitatea unor cote verificabile.
 
 Aplicația evită, în mod corect, să afișeze cote vechi drept recomandări. Rezolvarea nu trebuie să relaxeze această regulă; trebuie să îmbunătățească publicarea feedului și recuperarea de la limita furnizorului.
+
+## Confirmare după remediere
+
+Publicarea manuală a commitului `97851c8` s-a încheiat cu succes la 25 august 2026. Verificarea cu parametru anti-cache a confirmat că GitHub Pages servește acum feedul din 25 august 2026, nu versiunea din 22 august. Interfața afișează 60 de evenimente reale și menține strategiile blocate deoarece nu există cote verificabile; această stare este consecventă cu răspunsul 429 al furnizorului și previne folosirea unor prețuri vechi.
