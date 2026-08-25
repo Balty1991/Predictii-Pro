@@ -20,3 +20,7 @@ Aplicația evită, în mod corect, să afișeze cote vechi drept recomandări. R
 ## Confirmare după remediere
 
 Publicarea manuală a commitului `97851c8` s-a încheiat cu succes la 25 august 2026. Verificarea cu parametru anti-cache a confirmat că GitHub Pages servește acum feedul din 25 august 2026, nu versiunea din 22 august. Interfața afișează 60 de evenimente reale și menține strategiile blocate deoarece nu există cote verificabile; această stare este consecventă cu răspunsul 429 al furnizorului și previne folosirea unor prețuri vechi.
+
+## Verificare locală a stării mobile fără cote
+
+Corecția locală a fost verificată cu feedul indisponibil curent. Ecranul **Strategii** afișează acum un singur card compact cu explicația stării și doar două acțiuni de navigare: explorarea semnalelor sau revenirea la starea feedului. Formularele de miză și cotă, precum și butoanele de propunere sau salvare, nu mai sunt afișate în această stare. Acțiunea „Explorează semnalele” a fost testată interactiv și deschide ecranul Explorare, unde utilizatorul poate consulta cele 60 de evenimente fără a vedea acțiuni de adăugare în strategie.

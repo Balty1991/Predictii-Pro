@@ -32,6 +32,15 @@ describe("aplicația statică GitHub Pages", () => {
     expect(feedWorkflow).toContain("steps.save_feed.outputs.changed == 'true'");
   });
 
+  it("oferă un flux mobil clar când feedul nu permite strategii", () => {
+    expect(staticPage).toContain("Analiză disponibilă. Strategii în așteptare.");
+    expect(staticPage).toContain("Nu propunem bilete fără cote live.");
+    expect(staticPage).toContain("Nu este necesară nicio acțiune acum.");
+    expect(staticPage).toContain("Explorează semnalele");
+    expect(staticPage).toContain("nu generăm, nu salvăm și nu simulăm selecții");
+    expect(staticPage).toContain(".event .integrity{display:none}");
+  });
+
   it("folosește patru piețe prudente în lot și păstrează plafonul de cinci apeluri", () => {
     expect(feedGenerator).toContain("if (calls >= 5)");
     expect(feedGenerator).toContain("slice(0, 60)");
