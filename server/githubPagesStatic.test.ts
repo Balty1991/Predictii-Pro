@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 const root = resolve(import.meta.dirname, "..");
 const staticPage = readFileSync(resolve(root, "docs/index.html"), "utf8");
 const feedGenerator = readFileSync(resolve(root, "scripts/update-pages-feed.mjs"), "utf8");
+const feedWorkflow = readFileSync(resolve(root, ".github/workflows/update-pages-feed.yml"), "utf8");
 const research = readFileSync(resolve(root, "docs/competitive-mobile-research-2026-08-22.md"), "utf8");
 const productSpec = readFileSync(resolve(root, "docs/major-redesign-spec-2026-08-22.md"), "utf8");
 const highTargetSpec = readFileSync(resolve(root, "docs/high-target-strategy-spec-2026-08-22.md"), "utf8");
@@ -20,6 +21,15 @@ describe("aplicația statică GitHub Pages", () => {
     } catch (error) {
       throw new Error(error instanceof Error ? error.stack : String(error));
     }
+  });
+
+  it("publică feedurile modificate în aceeași rulare automată", () => {
+    expect(feedWorkflow).toContain("id: save_feed");
+    expect(feedWorkflow).toContain("echo \"changed=true\" >> \"$GITHUB_OUTPUT\"");
+    expect(feedWorkflow).toContain("actions/configure-pages@v5");
+    expect(feedWorkflow).toContain("actions/upload-pages-artifact@v3");
+    expect(feedWorkflow).toContain("actions/deploy-pages@v4");
+    expect(feedWorkflow).toContain("steps.save_feed.outputs.changed == 'true'");
   });
 
   it("folosește patru piețe prudente în lot și păstrează plafonul de cinci apeluri", () => {
@@ -43,7 +53,9 @@ describe("aplicația statică GitHub Pages", () => {
   });
 
   it("păstrează în feed contextul și probabilitățile modelului deja primite fără apeluri suplimentare", () => {
-    const event = staticFeed.events.find((item: { selections?: unknown[] }) => Array.isArray(item.selections) && item.selections.length > 0) as {
+    const event = staticFeed.events.find((item: { contextScore?: unknown; modelMarkets?: unknown }) =>
+      typeof item.contextScore === "number" && item.modelMarkets !== undefined,
+    ) as {
       contextScore?: unknown; contextSignals?: unknown; contextMissing?: unknown; modelMarkets?: { matchResult?: unknown; goals?: unknown; btts?: unknown; corners?: unknown };
     } | undefined;
     expect(staticFeed.calls).toBeLessThanOrEqual(5);

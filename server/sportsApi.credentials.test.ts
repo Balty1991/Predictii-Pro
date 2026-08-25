@@ -1,71 +1,67 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { fetchBestOddsForWindow, fetchOdds } from "./sportsApi";
 
-const SPORTS_API_BASE_URL = "https://sports.bzzoiro.com/api/v2";
+const emptyPage = { count: 0, next: null, previous: null, results: [] };
 
-describe("Sports Data API credentials", () => {
+describe("Sports Data API client", () => {
   afterEach(() => {
     vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
     vi.useRealTimers();
   });
 
   it("reîncearcă o cerere de cote după o eroare tranzitorie de rețea", async () => {
     vi.useFakeTimers();
+    vi.stubEnv("SPORTS_DATA_API_KEY", "test-token");
     const fetchMock = vi.fn()
       .mockRejectedValueOnce(new Error("TLS connection reset"))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ count: 0, next: null, previous: null, results: [] }), { status: 200 }));
+      .mockResolvedValueOnce(new Response(JSON.stringify(emptyPage), { status: 200 }));
     vi.stubGlobal("fetch", fetchMock);
 
     const resultPromise = fetchOdds(222618);
     await vi.advanceTimersByTimeAsync(700);
 
-    await expect(resultPromise).resolves.toMatchObject({ count: 0, results: [] });
+    await expect(resultPromise).resolves.toMatchObject(emptyPage);
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
   it("solicită cotele în lot pentru piața și intervalul configurat", async () => {
-    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ count: 0, next: null, previous: null, results: [] }), { status: 200 }));
+    vi.stubEnv("SPORTS_DATA_API_KEY", "test-token");
+    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify(emptyPage), { status: 200 }));
     vi.stubGlobal("fetch", fetchMock);
 
-    await expect(fetchBestOddsForWindow("btts", "2026-08-22", "2026-08-24")).resolves.toMatchObject({ count: 0, results: [] });
+    await expect(fetchBestOddsForWindow("btts", "2026-08-22", "2026-08-24")).resolves.toMatchObject(emptyPage);
 
     expect(String(fetchMock.mock.calls[0]?.[0])).toContain("/odds/best/?market=btts&date_from=2026-08-22&date_to=2026-08-24&limit=200");
   });
 
-  it("authorizes a lightweight upcoming-events request", async () => {
-    const apiKey = process.env.SPORTS_DATA_API_KEY;
+  it("trimite tokenul configurat în fiecare cerere către furnizor", async () => {
+    vi.stubEnv("SPORTS_DATA_API_KEY", "configured-test-token");
+    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify(emptyPage), { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
 
-    expect(apiKey, "SPORTS_DATA_API_KEY must be configured").toBeTruthy();
+    await expect(fetchOdds(222618)).resolves.toMatchObject(emptyPage);
 
-    let response: Response;
-    try {
-      response = await fetch(
-        `${SPORTS_API_BASE_URL}/events/?status=upcoming&limit=1`,
-        {
-          headers: {
-            Authorization: `Token ${apiKey}`,
-            Accept: "application/json",
-          },
-        },
-      );
-    } catch (error) {
-      // Conectivitatea furnizorului nu validează și nici nu invalidează cheia;
-      // configurația cheii a fost verificată explicit mai sus.
-      expect(error).toBeTruthy();
-      return;
-    }
+    expect(fetchMock).toHaveBeenCalledWith(
+      expect.any(URL),
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          Authorization: "Token configured-test-token",
+          Accept: "application/json",
+        }),
+      }),
+    );
+  });
 
-    expect(response.status).not.toBe(401);
-    expect(response.status).not.toBe(403);
-    // Un răspuns 429 confirmă că cererea a ajuns la furnizor, însă limita
-    // temporară nu permite folosirea lui ca verdict asupra cheii configurate.
-    if (response.status === 429) {
-      expect(response.status).toBe(429);
-      return;
-    }
-    expect(response.status).toBe(200);
-    const body = await response.json();
-    expect(body).toHaveProperty("results");
-    expect(Array.isArray(body.results)).toBe(true);
-  }, 15_000);
+  it("semnalează imediat lipsa cheii, fără a încerca o cerere externă", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    await expect(fetchOdds(222618)).rejects.toMatchObject({
+      name: "SportsApiError",
+      status: 500,
+      message: "Sports Data API key is not configured.",
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
 });

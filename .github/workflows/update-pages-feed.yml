@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: predictii-pro-static-feed
@@ -26,8 +28,10 @@ jobs:
           SPORTS_DATA_API_KEY: ${{ secrets.SPORTS_DATA_API_KEY }}
         run: node scripts/update-pages-feed.mjs
       - name: Salvează numai modificarea feedului static
+        id: save_feed
         run: |
           if git diff --quiet -- docs/data/feed.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Feedul nu s-a modificat."
             exit 0
           fi
@@ -36,3 +40,20 @@ jobs:
           git add docs/data/feed.json
           git commit -m "chore: actualizează feedul static"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      # Un commit realizat cu tokenul workflow-ului nu declanșează alte workflow-uri.
+      # Publicăm artefactul în aceeași rulare, astfel încât feedul live nu rămâne în urmă.
+      - name: Configurează GitHub Pages
+        if: steps.save_feed.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Încarcă aplicația actualizată
+        if: steps.save_feed.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Publică aplicația actualizată
+        if: steps.save_feed.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -159,6 +159,9 @@ function waitBeforeRetry(attempt: number) {
 }
 
 async function request<T>(path: string, schema: z.ZodType<T>, query?: Record<string, string | number | boolean | undefined>) {
+  // Missing credentials are a configuration error, not a temporary provider failure.
+  // Resolve the token once before retries so the UI can expose the correct recovery action.
+  const apiKey = getApiKey();
   const url = new URL(`${SPORTS_API_BASE_URL}${path}`);
   for (const [key, value] of Object.entries(query ?? {})) {
     if (value !== undefined) url.searchParams.set(key, String(value));
@@ -172,7 +175,7 @@ async function request<T>(path: string, schema: z.ZodType<T>, query?: Record<str
     try {
       response = await fetch(url, {
         headers: {
-          Authorization: `Token ${getApiKey()}`,
+          Authorization: `Token ${apiKey}`,
           Accept: "application/json",
         },
         signal: controller.signal,
