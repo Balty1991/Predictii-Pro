@@ -1,493 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T19:33:37.532Z",
-  "status": "partial",
-  "message": "Predicțiile au fost primite, dar nu există cote reale eligibile pentru strategii.",
+  "updatedAt": "2026-10-20T08:59:59.307Z",
+  "status": "ready",
+  "message": "12 selecții reale au trecut validarea pentru intervalul curent.",
   "calls": 5,
   "events": [
-    {
-      "id": 223824,
-      "startsAt": "2026-10-19T22:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Liga Profesional de Fútbol",
-      "homeTeam": "Newell's Old Boys",
-      "awayTeam": "Central Córdoba",
-      "providerConfidence": 48.36,
-      "providerSignals": [
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 79.7,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 79,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 69.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.07,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 48.4,
-          "draw": 30.6,
-          "away": 21.1
-        },
-        "goals": {
-          "over15": 64.7,
-          "over25": 39,
-          "over35": 20.3
-        },
-        "btts": {
-          "yes": 44.3
-        },
-        "corners": {
-          "over85": 58.5,
-          "over95": 46.7,
-          "over105": 35
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.28,
-        "away": 0.97
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 223826,
-      "startsAt": "2026-10-19T22:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Liga Profesional de Fútbol",
-      "homeTeam": "Sarmiento",
-      "awayTeam": "Barracas Central",
-      "providerConfidence": 41.66,
-      "providerSignals": [
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 82.5,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 73.9,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 67.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.46,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 41.7,
-          "draw": 32.2,
-          "away": 26.2
-        },
-        "goals": {
-          "over15": 61.3,
-          "over25": 35,
-          "over35": 17.5
-        },
-        "btts": {
-          "yes": 42.9
-        },
-        "corners": {
-          "over85": 55.5,
-          "over95": 43.7,
-          "over105": 31.8
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.24,
-        "away": 0.98
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 10188,
-      "startsAt": "2026-10-19T22:30:00Z",
-      "sport": "Fotbal",
-      "competition": "Brasileirão Serie B",
-      "homeTeam": "Goiás",
-      "awayTeam": "Náutico",
-      "providerConfidence": 53.22,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 79.3,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 73.9,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 73.6,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 66.39,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 53.2,
-          "draw": 26.1,
-          "away": 20.7
-        },
-        "goals": {
-          "over15": 72.2,
-          "over25": 47.7,
-          "over35": 26.4
-        },
-        "btts": {
-          "yes": 50.6
-        },
-        "corners": {
-          "over85": 67.1,
-          "over95": 55.6,
-          "over105": 44.8
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.53,
-        "away": 1.04
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 7298,
-      "startsAt": "2026-10-19T23:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Brasileirão Serie A",
-      "homeTeam": "Corinthians",
-      "awayTeam": "Vitória",
-      "providerConfidence": 57.02,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 82.5,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 75.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 74.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 67.07,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 57,
-          "draw": 25.5,
-          "away": 17.5
-        },
-        "goals": {
-          "over15": 70.1,
-          "over25": 45.3,
-          "over35": 24.6
-        },
-        "btts": {
-          "yes": 43.7
-        },
-        "corners": {
-          "over85": 63.7,
-          "over95": 52,
-          "over105": 40.7
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.56,
-        "away": 0.84
-      },
-      "mostLikelyScore": "1-0"
-    },
-    {
-      "id": 606232,
-      "startsAt": "2026-10-19T23:30:00Z",
-      "sport": "Fotbal",
-      "competition": "Categoría Primera A",
-      "homeTeam": "Millonarios",
-      "awayTeam": "Jaguares de Córdoba",
-      "providerConfidence": 74.47,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 92.1,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 82.4,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 71.4,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 74.5,
-          "draw": 17.6,
-          "away": 7.9
-        },
-        "goals": {
-          "over15": 75.9,
-          "over25": 52.4,
-          "over35": 29.8
-        },
-        "btts": {
-          "yes": 44.7
-        },
-        "corners": {
-          "over85": 66,
-          "over95": 54.4,
-          "over105": 43.4
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.13,
-        "away": 0.66
-      },
-      "mostLikelyScore": "2-0"
-    },
-    {
-      "id": 223819,
-      "startsAt": "2026-10-20T00:15:00Z",
-      "sport": "Fotbal",
-      "competition": "Liga Profesional de Fútbol",
-      "homeTeam": "Deportivo Riestra",
-      "awayTeam": "Club Atlético Unión de Santa Fe",
-      "providerConfidence": 41.82,
-      "providerSignals": [
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 84.4,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 74.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 67.4,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 63.32,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 41.8,
-          "draw": 32.6,
-          "away": 25.6
-        },
-        "goals": {
-          "over15": 59.2,
-          "over25": 32.8,
-          "over35": 15.6
-        },
-        "btts": {
-          "yes": 42.4
-        },
-        "corners": {
-          "over85": 52.8,
-          "over95": 41,
-          "over105": 29.1
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.05,
-        "away": 0.99
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 220249,
-      "startsAt": "2026-10-20T01:05:00Z",
-      "sport": "Fotbal",
-      "competition": "Categoría Primera A",
-      "homeTeam": "Deportivo Pasto",
-      "awayTeam": "Alianza Valledupar FC",
-      "providerConfidence": 52.83,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 79.8,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 76,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 72.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.79,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 52.8,
-          "draw": 27,
-          "away": 20.1
-        },
-        "goals": {
-          "over15": 69.8,
-          "over25": 44.8,
-          "over35": 24
-        },
-        "btts": {
-          "yes": 47
-        },
-        "corners": {
-          "over85": 54.1,
-          "over95": 42.3,
-          "over105": 30.4
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.51,
-        "away": 0.91
-      },
-      "mostLikelyScore": "1-0"
-    },
     {
       "id": 222849,
       "startsAt": "2026-10-20T15:00:00Z",
@@ -540,9 +57,9 @@
           "yes": 52.1
         },
         "corners": {
-          "over85": 65.9,
+          "over85": 66,
           "over95": 54.4,
-          "over105": 43.3
+          "over105": 43.4
         }
       },
       "oddsStatus": "pending",
@@ -564,26 +81,26 @@
       "competition": "Saudi Pro League",
       "homeTeam": "Al-Taawoun",
       "awayTeam": "Al-Qadsiah",
-      "providerConfidence": 62.7,
+      "providerConfidence": 63.2,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 83.7,
+          "probability": 84.5,
           "recommended": false
         },
         {
           "label": "X2",
-          "probability": 82.6,
+          "probability": 82.9,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 80.1,
+          "probability": 80.3,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 68.53,
+      "contextScore": 68.74,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -596,22 +113,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 17.4,
-          "draw": 19.9,
-          "away": 62.7
+          "home": 17.1,
+          "draw": 19.7,
+          "away": 63.2
         },
         "goals": {
-          "over15": 83.7,
-          "over25": 65.8,
+          "over15": 84.5,
+          "over25": 66,
           "over35": 42.9
         },
         "btts": {
-          "yes": 59.5
+          "yes": 59.4
         },
         "corners": {
-          "over85": 60.2,
-          "over95": 48.4,
-          "over105": 36.8
+          "over85": 60.1,
+          "over95": 48.3,
+          "over105": 36.7
         }
       },
       "oddsStatus": "pending",
@@ -623,6 +140,75 @@
       "expectedGoals": {
         "home": 1.05,
         "away": 2
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 601120,
+      "startsAt": "2026-10-20T16:45:00Z",
+      "sport": "Fotbal",
+      "competition": "Champions League",
+      "homeTeam": "Sabah FK",
+      "awayTeam": "Borussia Dortmund",
+      "providerConfidence": 73.88,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 89.6,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 85,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 84.3,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 75.95,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 10.4,
+          "draw": 15.7,
+          "away": 73.9
+        },
+        "goals": {
+          "over15": 85,
+          "over25": 67.6,
+          "over35": 44.3
+        },
+        "btts": {
+          "yes": 55.2
+        },
+        "corners": {
+          "over85": 60.8,
+          "over95": 49,
+          "over105": 37.4
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.73,
+        "away": 1.46
       },
       "mostLikelyScore": "1-1"
     },
@@ -675,7 +261,7 @@
           "over35": 39.1
         },
         "btts": {
-          "yes": 58.6
+          "yes": 58.8
         },
         "corners": {
           "over85": 67.1,
@@ -694,75 +280,6 @@
         "away": 1.2
       },
       "mostLikelyScore": "2-1"
-    },
-    {
-      "id": 601120,
-      "startsAt": "2026-10-20T16:45:00Z",
-      "sport": "Fotbal",
-      "competition": "Champions League",
-      "homeTeam": "Sabah FK",
-      "awayTeam": "Borussia Dortmund",
-      "providerConfidence": 73.88,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 89.6,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 85,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 84.3,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 75.95,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 10.4,
-          "draw": 15.7,
-          "away": 73.9
-        },
-        "goals": {
-          "over15": 85,
-          "over25": 67.6,
-          "over35": 44.3
-        },
-        "btts": {
-          "yes": 54.7
-        },
-        "corners": {
-          "over85": 60.8,
-          "over95": 49.1,
-          "over105": 37.5
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.73,
-        "away": 1.46
-      },
-      "mostLikelyScore": "1-1"
     },
     {
       "id": 638361,
@@ -813,12 +330,12 @@
           "over35": 37.9
         },
         "btts": {
-          "yes": 59.1
+          "yes": 59
         },
         "corners": {
-          "over85": 68.5,
-          "over95": 57.1,
-          "over105": 46.4
+          "over85": 68.6,
+          "over95": 57.2,
+          "over105": 46.5
         }
       },
       "oddsStatus": "pending",
@@ -831,7 +348,76 @@
         "home": 2.08,
         "away": 1.15
       },
-      "mostLikelyScore": "2-1"
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 606185,
+      "startsAt": "2026-10-20T18:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Saudi Pro League",
+      "homeTeam": "Al-Nassr",
+      "awayTeam": "Neom SC",
+      "providerConfidence": 67.35,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 86.1,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 82.4,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 81.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 69.77,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 67.3,
+          "draw": 18.8,
+          "away": 13.9
+        },
+        "goals": {
+          "over15": 82.4,
+          "over25": 63.4,
+          "over35": 39.7
+        },
+        "btts": {
+          "yes": 54.4
+        },
+        "corners": {
+          "over85": 60.4,
+          "over95": 48.6,
+          "over105": 37
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.03,
+        "away": 0.9
+      },
+      "mostLikelyScore": "2-0"
     },
     {
       "id": 606186,
@@ -882,7 +468,7 @@
           "over35": 42.2
         },
         "btts": {
-          "yes": 65.7
+          "yes": 64.9
         },
         "corners": {
           "over85": 62.6,
@@ -903,32 +489,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 606185,
-      "startsAt": "2026-10-20T18:00:00Z",
+      "id": 642819,
+      "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "Saudi Pro League",
-      "homeTeam": "Al-Nassr",
-      "awayTeam": "Neom SC",
-      "providerConfidence": 66.09,
+      "competition": "FA Cup",
+      "homeTeam": "Stafford Rangers FC",
+      "awayTeam": "Gateshead",
+      "providerConfidence": 42.26,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 85,
+          "label": "Peste 1.5 goluri",
+          "probability": 84.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 81.1,
+          "probability": 74.5,
           "recommended": false
         },
         {
-          "label": "Peste 1.5 goluri",
-          "probability": 78,
+          "label": "1X",
+          "probability": 67.8,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 69.24,
+      "contextScore": 57.71,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -941,22 +527,183 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 66.1,
-          "draw": 18.9,
-          "away": 15
+          "home": 42.3,
+          "draw": 25.5,
+          "away": 32.2
         },
         "goals": {
-          "over15": 78,
-          "over25": 55.4,
-          "over35": 32.8
+          "over15": 84.5,
+          "over25": 60.2,
+          "over35": 43.7
         },
         "btts": {
-          "yes": 51.5
+          "yes": 52.9
         },
         "corners": {
-          "over85": 60.3,
-          "over95": 48.6,
-          "over105": 36.9
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.48,
+        "away": 0.97
+      },
+      "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 224187,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League One",
+      "homeTeam": "Oxford United",
+      "awayTeam": "Wigan Athletic",
+      "providerConfidence": 48.76,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 75.3,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 74.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73.6,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 65.48,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 48.8,
+          "draw": 26.5,
+          "away": 24.8
+        },
+        "goals": {
+          "over15": 74.7,
+          "over25": 52.1,
+          "over35": 28.9
+        },
+        "btts": {
+          "yes": 54.3
+        },
+        "corners": {
+          "over85": 70,
+          "over95": 58.7,
+          "over105": 48.2
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5366-over_under_15-over",
+          "eventId": 224187,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 74.7,
+          "odds": 1.26,
+          "openingOdds": null,
+          "impliedProbability": 79.37,
+          "fairOdds": 1.339,
+          "edge": -4.67,
+          "expectedValue": -5.88,
+          "contextScore": 65.48,
+          "confidence": 48.76,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.09
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 642818,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "FA Cup",
+      "homeTeam": "Anstey Nomads",
+      "awayTeam": "Macclesfield FC",
+      "providerConfidence": 50.96,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 78.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 75.9,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 75.1,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 64.72,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 24.9,
+          "draw": 24.1,
+          "away": 51
+        },
+        "goals": {
+          "over15": 78.7,
+          "over25": 56.9,
+          "over35": 37
+        },
+        "btts": {
+          "yes": 58.4
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
         }
       },
       "oddsStatus": "pending",
@@ -967,9 +714,9 @@
       "selections": [],
       "expectedGoals": {
         "home": 2.03,
-        "away": 0.9
+        "away": 1.36
       },
-      "mostLikelyScore": "2-0"
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 642817,
@@ -997,7 +744,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 58.64,
+      "contextScore": 58.68,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1020,7 +767,7 @@
           "over35": 37
         },
         "btts": {
-          "yes": 58.6
+          "yes": 57.8
         },
         "corners": {
           "over85": null,
@@ -1035,7 +782,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.46,
+        "home": 2.45,
         "away": 0.97
       },
       "mostLikelyScore": "2-0"
@@ -1066,7 +813,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.58,
+      "contextScore": 62.5,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1089,7 +836,7 @@
           "over35": 34.9
         },
         "btts": {
-          "yes": 58.1
+          "yes": 56.6
         },
         "corners": {
           "over85": null,
@@ -1104,10 +851,539 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.08,
-        "away": 0.92
+        "home": 2.09,
+        "away": 0.91
       },
       "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 642824,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "FA Cup",
+      "homeTeam": "Cray Wanderers",
+      "awayTeam": "Bedford Town",
+      "providerConfidence": 42.78,
+      "providerSignals": [
+        {
+          "label": "12",
+          "probability": 76.1,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 74,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 73,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.05,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 33.3,
+          "draw": 23.9,
+          "away": 42.8
+        },
+        "goals": {
+          "over15": 73,
+          "over25": 48.3,
+          "over35": 26
+        },
+        "btts": {
+          "yes": 57.8
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.54,
+        "away": 1.06
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 642823,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "FA Cup",
+      "homeTeam": "Alvechurch FC",
+      "awayTeam": "Spalding United",
+      "providerConfidence": 40.87,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 75.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73.7,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 67.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.41,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 32.8,
+          "draw": 26.3,
+          "away": 40.9
+        },
+        "goals": {
+          "over15": 75.7,
+          "over25": 53.4,
+          "over35": 33.3
+        },
+        "btts": {
+          "yes": 57
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.64,
+        "away": 1.45
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 642821,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "FA Cup",
+      "homeTeam": "Tadley Calleva FC",
+      "awayTeam": "Aldershot Town",
+      "providerConfidence": 60.1,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 84,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 81.4,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 78.7,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 67.84,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 21.3,
+          "draw": 18.6,
+          "away": 60.1
+        },
+        "goals": {
+          "over15": 84,
+          "over25": 61,
+          "over35": 42.7
+        },
+        "btts": {
+          "yes": 56.6
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.13,
+        "away": 1.28
+      },
+      "mostLikelyScore": "2-1"
+    },
+    {
+      "id": 224684,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Northampton Town",
+      "awayTeam": "Tranmere Rovers",
+      "providerConfidence": 41.11,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 74.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 71.5,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 70.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.83,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 41.1,
+          "draw": 28.5,
+          "away": 30.4
+        },
+        "goals": {
+          "over15": 70.5,
+          "over25": 46.7,
+          "over35": 25.9
+        },
+        "btts": {
+          "yes": 51.9
+        },
+        "corners": {
+          "over85": 62,
+          "over95": 50.3,
+          "over105": 38.8
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5385-over_under_15-over",
+          "eventId": 224684,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 70.5,
+          "odds": 1.33,
+          "openingOdds": null,
+          "impliedProbability": 75.19,
+          "fairOdds": 1.418,
+          "edge": -4.69,
+          "expectedValue": -6.24,
+          "contextScore": 62.83,
+          "confidence": 41.11,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.31,
+        "away": 1.2
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224680,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Cheltenham Town",
+      "awayTeam": "Fleetwood Town",
+      "providerConfidence": 40.01,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 76.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 72.6,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 69.4,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.52,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 32.6,
+          "draw": 27.3,
+          "away": 40
+        },
+        "goals": {
+          "over15": 76.1,
+          "over25": 52.6,
+          "over35": 30.6
+        },
+        "btts": {
+          "yes": 56.3
+        },
+        "corners": {
+          "over85": 63.6,
+          "over95": 51.9,
+          "over105": 40.6
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.31,
+        "away": 1.38
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224185,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League One",
+      "homeTeam": "Luton Town",
+      "awayTeam": "Barnsley",
+      "providerConfidence": 61.83,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 84.5,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 82.2,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 79.6,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 69.33,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 61.8,
+          "draw": 20.4,
+          "away": 17.8
+        },
+        "goals": {
+          "over15": 84.5,
+          "over25": 65.8,
+          "over35": 44.1
+        },
+        "btts": {
+          "yes": 61.7
+        },
+        "corners": {
+          "over85": 77,
+          "over95": 66.5,
+          "over105": 57.4
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.91,
+        "away": 1.25
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224686,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Rotherham United",
+      "awayTeam": "Newport County",
+      "providerConfidence": 44.69,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 73.2,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 72.6,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 72.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 64.53,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 44.7,
+          "draw": 27.5,
+          "away": 27.9
+        },
+        "goals": {
+          "over15": 73.2,
+          "over25": 49.1,
+          "over35": 27.8
+        },
+        "btts": {
+          "yes": 53.8
+        },
+        "corners": {
+          "over85": 57.1,
+          "over95": 45.3,
+          "over105": 33.4
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5380-over_under_15-over",
+          "eventId": 224686,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 73.2,
+          "odds": 1.29,
+          "openingOdds": null,
+          "impliedProbability": 77.52,
+          "fairOdds": 1.366,
+          "edge": -4.32,
+          "expectedValue": -5.57,
+          "contextScore": 64.53,
+          "confidence": 44.69,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.27
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 224687,
@@ -1158,7 +1434,7 @@
           "over35": 29.9
         },
         "btts": {
-          "yes": 57.1
+          "yes": 56.5
         },
         "corners": {
           "over85": 67.1,
@@ -1166,12 +1442,35 @@
           "over105": 44.7
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "5378-over_under_15-over",
+          "eventId": 224687,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 75.9,
+          "odds": 1.22,
+          "openingOdds": null,
+          "impliedProbability": 81.97,
+          "fairOdds": 1.318,
+          "edge": -6.07,
+          "expectedValue": -7.4,
+          "contextScore": 61.76,
+          "confidence": 39.63,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
         "home": 1.32,
         "away": 1.1
@@ -1179,308 +1478,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224182,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "Cambridge United",
-      "awayTeam": "Wycombe Wanderers",
-      "providerConfidence": 41.33,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 77.1,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 73.7,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 67.6,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.08,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 41.3,
-          "draw": 26.3,
-          "away": 32.4
-        },
-        "goals": {
-          "over15": 77.1,
-          "over25": 55.5,
-          "over35": 32.5
-        },
-        "btts": {
-          "yes": 58.9
-        },
-        "corners": {
-          "over85": 69.8,
-          "over95": 58.5,
-          "over105": 47.9
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.46,
-        "away": 1.14
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 642823,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Alvechurch FC",
-      "awayTeam": "Spalding United",
-      "providerConfidence": 40.87,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.7,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 73.7,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 67.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.33,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 32.8,
-          "draw": 26.3,
-          "away": 40.9
-        },
-        "goals": {
-          "over15": 75.7,
-          "over25": 53.4,
-          "over35": 33.3
-        },
-        "btts": {
-          "yes": 56.6
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.65,
-        "away": 1.44
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 642822,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Worcester City",
-      "awayTeam": "Chorley FC",
-      "providerConfidence": 38.38,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.9,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 74.1,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 66.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.12,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 35.7,
-          "draw": 25.9,
-          "away": 38.4
-        },
-        "goals": {
-          "over15": 75.9,
-          "over25": 53.7,
-          "over35": 33.5
-        },
-        "btts": {
-          "yes": 58.3
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 0,
-        "away": 0
-      },
-      "mostLikelyScore": null
-    },
-    {
-      "id": 642821,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Tadley Calleva FC",
-      "awayTeam": "Aldershot Town",
-      "providerConfidence": 60.1,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 84,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 81.4,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 78.7,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 67.8,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 21.3,
-          "draw": 18.6,
-          "away": 60.1
-        },
-        "goals": {
-          "over15": 84,
-          "over25": 61,
-          "over35": 42.8
-        },
-        "btts": {
-          "yes": 60.5
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.14,
-        "away": 1.28
-      },
-      "mostLikelyScore": "2-1"
-    },
-    {
-      "id": 224681,
+      "id": 224683,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
       "competition": "League Two",
-      "homeTeam": "Chesterfield",
-      "awayTeam": "Colchester United",
-      "providerConfidence": 58.82,
+      "homeTeam": "Exeter City",
+      "awayTeam": "Crewe Alexandra",
+      "providerConfidence": 37.26,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 81.3,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 79.5,
+          "label": "Sub 3.5 goluri",
+          "probability": 76.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 77.5,
+          "probability": 70.4,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 69.1,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 68.94,
+      "contextScore": 61.53,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1493,33 +1516,309 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 58.8,
-          "draw": 22.5,
-          "away": 18.7
+          "home": 37.3,
+          "draw": 29.6,
+          "away": 33.1
         },
         "goals": {
-          "over15": 79.5,
-          "over25": 58.7,
-          "over35": 33.8
+          "over15": 69.1,
+          "over25": 44.7,
+          "over35": 23.5
+        },
+        "btts": {
+          "yes": 51.2
+        },
+        "corners": {
+          "over85": 61.9,
+          "over95": 50.2,
+          "over105": 38.7
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5372-over_under_15-over",
+          "eventId": 224683,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 69.1,
+          "odds": 1.37,
+          "openingOdds": null,
+          "impliedProbability": 72.99,
+          "fairOdds": 1.447,
+          "edge": -3.89,
+          "expectedValue": -5.33,
+          "contextScore": 61.53,
+          "confidence": 37.26,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.15,
+        "away": 1.18
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224678,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Barnet",
+      "awayTeam": "Swindon Town",
+      "providerConfidence": 61.95,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 83.2,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 82.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 78.9,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 68.58,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 62,
+          "draw": 21.2,
+          "away": 16.9
+        },
+        "goals": {
+          "over15": 82.1,
+          "over25": 62.5,
+          "over35": 39.8
+        },
+        "btts": {
+          "yes": 57.7
+        },
+        "corners": {
+          "over85": 72.5,
+          "over95": 61.5,
+          "over105": 51.4
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.93,
+        "away": 1.07
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224688,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "York City",
+      "awayTeam": "Accrington Stanley",
+      "providerConfidence": 55.12,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 79.3,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 78.6,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 76.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 64.15,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 55.1,
+          "draw": 23.5,
+          "away": 21.4
+        },
+        "goals": {
+          "over15": 79.3,
+          "over25": 58.2,
+          "over35": 35.5
         },
         "btts": {
           "yes": 56.1
         },
         "corners": {
-          "over85": 60.6,
-          "over95": 48.8,
-          "over105": 37.2
+          "over85": 63,
+          "over95": 51.4,
+          "over105": 40
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "5379-over_under_15-over",
+          "eventId": 224688,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 79.3,
+          "odds": 1.2,
+          "openingOdds": null,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.261,
+          "edge": -4.03,
+          "expectedValue": -4.84,
+          "contextScore": 64.15,
+          "confidence": 55.12,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
-        "home": 1.47,
-        "away": 1.03
+        "home": 2.07,
+        "away": 0.82
+      },
+      "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 224685,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Rochdale",
+      "awayTeam": "Grimsby Town",
+      "providerConfidence": 44,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 77.3,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73.9,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 70.1,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.52,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 29.9,
+          "draw": 26.1,
+          "away": 44
+        },
+        "goals": {
+          "over15": 77.3,
+          "over25": 54.5,
+          "over35": 32
+        },
+        "btts": {
+          "yes": 57.8
+        },
+        "corners": {
+          "over85": 63.6,
+          "over95": 51.9,
+          "over105": 40.6
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5377-over_under_15-over",
+          "eventId": 224685,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 77.3,
+          "odds": 1.2,
+          "openingOdds": null,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.294,
+          "edge": -6.03,
+          "expectedValue": -7.24,
+          "contextScore": 62.52,
+          "confidence": 44,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.59,
+        "away": 1.1
       },
       "mostLikelyScore": "1-1"
     },
@@ -1572,7 +1871,7 @@
           "over35": 37.6
         },
         "btts": {
-          "yes": 62.9
+          "yes": 62.5
         },
         "corners": {
           "over85": 70.9,
@@ -1641,12 +1940,12 @@
           "over35": 32.2
         },
         "btts": {
-          "yes": 56.9
+          "yes": 56.7
         },
         "corners": {
-          "over85": 64.9,
-          "over95": 53.3,
-          "over105": 42.1
+          "over85": 64.8,
+          "over95": 53.2,
+          "over105": 42
         }
       },
       "oddsStatus": "pending",
@@ -1662,32 +1961,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 642819,
+      "id": 224182,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Stafford Rangers FC",
-      "awayTeam": "Gateshead",
-      "providerConfidence": 42.26,
+      "competition": "League One",
+      "homeTeam": "Cambridge United",
+      "awayTeam": "Wycombe Wanderers",
+      "providerConfidence": 41.33,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 84.5,
+          "probability": 77.1,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 74.5,
+          "probability": 73.7,
           "recommended": false
         },
         {
           "label": "1X",
-          "probability": 67.8,
+          "probability": 67.6,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 57.67,
+      "contextScore": 62.08,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1700,22 +1999,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 42.3,
-          "draw": 25.5,
-          "away": 32.2
+          "home": 41.3,
+          "draw": 26.3,
+          "away": 32.4
         },
         "goals": {
-          "over15": 84.5,
-          "over25": 60.3,
-          "over35": 43.9
+          "over15": 77.1,
+          "over25": 55.5,
+          "over35": 32.5
         },
         "btts": {
-          "yes": 55.4
+          "yes": 58.5
         },
         "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
+          "over85": 69.7,
+          "over95": 58.4,
+          "over105": 47.9
         }
       },
       "oddsStatus": "pending",
@@ -1725,314 +2024,38 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.49,
-        "away": 0.97
-      },
-      "mostLikelyScore": "2-0"
-    },
-    {
-      "id": 224183,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "Doncaster Rovers",
-      "awayTeam": "Stockport County",
-      "providerConfidence": 48.94,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 77.7,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 75,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 73.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.99,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 26.1,
-          "draw": 25,
-          "away": 48.9
-        },
-        "goals": {
-          "over15": 77.7,
-          "over25": 57,
-          "over35": 34.2
-        },
-        "btts": {
-          "yes": 58.7
-        },
-        "corners": {
-          "over85": 69,
-          "over95": 57.6,
-          "over105": 47
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.3,
-        "away": 1.44
+        "home": 1.46,
+        "away": 1.14
       },
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224187,
+      "id": 224178,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
       "competition": "League One",
-      "homeTeam": "Oxford United",
-      "awayTeam": "Wigan Athletic",
-      "providerConfidence": 48.76,
+      "homeTeam": "AFC Wimbledon",
+      "awayTeam": "Mansfield Town",
+      "providerConfidence": 41.34,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 75.3,
-          "recommended": false
-        },
-        {
           "label": "Peste 1.5 goluri",
-          "probability": 74.7,
+          "probability": 75.2,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 73.6,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.48,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 48.8,
-          "draw": 26.5,
-          "away": 24.8
-        },
-        "goals": {
-          "over15": 74.7,
-          "over25": 52.1,
-          "over35": 28.9
-        },
-        "btts": {
-          "yes": 54.6
-        },
-        "corners": {
-          "over85": 70.1,
-          "over95": 58.8,
-          "over105": 48.3
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.34,
-        "away": 1.09
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 642814,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Forest Green Rovers",
-      "awayTeam": "Chesham United",
-      "providerConfidence": 68.96,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 86.9,
+          "probability": 72.8,
           "recommended": false
         },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 83.8,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 82.1,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 74.84,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 69,
-          "draw": 17.9,
-          "away": 13.1
-        },
-        "goals": {
-          "over15": 83.8,
-          "over25": 63.8,
-          "over35": 44.7
-        },
-        "btts": {
-          "yes": 55.3
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.89,
-        "away": 1.92
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224185,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "Luton Town",
-      "awayTeam": "Barnsley",
-      "providerConfidence": 61.83,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 84.5,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 82.2,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 79.6,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 69.33,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 61.8,
-          "draw": 20.4,
-          "away": 17.8
-        },
-        "goals": {
-          "over15": 84.5,
-          "over25": 65.8,
-          "over35": 44.1
-        },
-        "btts": {
-          "yes": 61.9
-        },
-        "corners": {
-          "over85": 77,
-          "over95": 66.6,
-          "over105": 57.4
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.91,
-        "away": 1.25
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224181,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "Burton Albion",
-      "awayTeam": "Bradford City",
-      "providerConfidence": 45.57,
-      "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
-          "probability": 74.8,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 73.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 72.3,
+          "probability": 69.9,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 64.06,
+      "contextScore": 62.88,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2045,22 +2068,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 26.7,
-          "draw": 27.8,
-          "away": 45.6
+          "home": 31.5,
+          "draw": 27.2,
+          "away": 41.3
         },
         "goals": {
-          "over15": 70.5,
-          "over25": 46.3,
-          "over35": 25.2
+          "over15": 75.2,
+          "over25": 51.8,
+          "over35": 30.1
         },
         "btts": {
-          "yes": 51.4
+          "yes": 56.4
         },
         "corners": {
-          "over85": 71.5,
-          "over95": 60.4,
-          "over105": 50.1
+          "over85": 65.4,
+          "over95": 53.8,
+          "over105": 42.7
         }
       },
       "oddsStatus": "pending",
@@ -2070,38 +2093,38 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.03,
-        "away": 1.3
+        "home": 1.25,
+        "away": 1.37
       },
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224685,
+      "id": 224188,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Rochdale",
-      "awayTeam": "Grimsby Town",
-      "providerConfidence": 44,
+      "competition": "League One",
+      "homeTeam": "Stevenage",
+      "awayTeam": "Plymouth Argyle",
+      "providerConfidence": 36.29,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 77.3,
+          "probability": 73.6,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 73.9,
+          "probability": 72.2,
           "recommended": false
         },
         {
-          "label": "X2",
-          "probability": 70.1,
+          "label": "Sub 3.5 goluri",
+          "probability": 70.9,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.52,
+      "contextScore": 60.68,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2114,33 +2137,56 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 29.9,
-          "draw": 26.1,
-          "away": 44
+          "home": 35.9,
+          "draw": 27.9,
+          "away": 36.3
         },
         "goals": {
-          "over15": 77.3,
-          "over25": 54.5,
-          "over35": 32
+          "over15": 73.6,
+          "over25": 50.1,
+          "over35": 29.1
         },
         "btts": {
-          "yes": 57.7
+          "yes": 55.5
         },
         "corners": {
-          "over85": 63.7,
-          "over95": 52,
-          "over105": 40.7
+          "over85": 65.1,
+          "over95": 53.5,
+          "over105": 42.4
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "5369-over_under_15-over",
+          "eventId": 224188,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 73.6,
+          "odds": 1.29,
+          "openingOdds": null,
+          "impliedProbability": 77.52,
+          "fairOdds": 1.359,
+          "edge": -3.92,
+          "expectedValue": -5.06,
+          "contextScore": 60.68,
+          "confidence": 36.29,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
-        "home": 1.59,
-        "away": 1.1
+        "home": 1.36,
+        "away": 1.22
       },
       "mostLikelyScore": "1-1"
     },
@@ -2193,12 +2239,12 @@
           "over35": 38.5
         },
         "btts": {
-          "yes": 61.3
+          "yes": 60.8
         },
         "corners": {
-          "over85": 72.3,
-          "over95": 61.2,
-          "over105": 51.1
+          "over85": 72.1,
+          "over95": 61,
+          "over105": 50.9
         }
       },
       "oddsStatus": "pending",
@@ -2214,32 +2260,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224684,
+      "id": 224183,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Northampton Town",
-      "awayTeam": "Tranmere Rovers",
-      "providerConfidence": 41.11,
+      "competition": "League One",
+      "homeTeam": "Doncaster Rovers",
+      "awayTeam": "Stockport County",
+      "providerConfidence": 48.94,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 74.1,
+          "label": "Peste 1.5 goluri",
+          "probability": 77.7,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.5,
+          "probability": 75,
           "recommended": false
         },
         {
-          "label": "Peste 1.5 goluri",
-          "probability": 70.5,
+          "label": "X2",
+          "probability": 73.9,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.83,
+      "contextScore": 65.99,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2252,22 +2298,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 41.1,
-          "draw": 28.5,
-          "away": 30.4
+          "home": 26.1,
+          "draw": 25,
+          "away": 48.9
         },
         "goals": {
-          "over15": 70.5,
-          "over25": 46.7,
-          "over35": 25.9
+          "over15": 77.7,
+          "over25": 57,
+          "over35": 34.2
         },
         "btts": {
-          "yes": 52.4
+          "yes": 57.8
         },
         "corners": {
-          "over85": 62.1,
-          "over95": 50.4,
-          "over105": 38.9
+          "over85": 69,
+          "over95": 57.6,
+          "over105": 47
         }
       },
       "oddsStatus": "pending",
@@ -2277,38 +2323,38 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.31,
-        "away": 1.2
+        "home": 1.3,
+        "away": 1.44
       },
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224686,
+      "id": 642814,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Rotherham United",
-      "awayTeam": "Newport County",
-      "providerConfidence": 44.69,
+      "competition": "FA Cup",
+      "homeTeam": "Forest Green Rovers",
+      "awayTeam": "Chesham United",
+      "providerConfidence": 68.96,
       "providerSignals": [
         {
+          "label": "1X",
+          "probability": 86.9,
+          "recommended": false
+        },
+        {
           "label": "Peste 1.5 goluri",
-          "probability": 73.2,
+          "probability": 83.8,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 72.6,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 72.2,
+          "probability": 82.1,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 64.53,
+      "contextScore": 74.92,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2321,22 +2367,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 44.7,
-          "draw": 27.5,
-          "away": 27.9
+          "home": 69,
+          "draw": 17.9,
+          "away": 13.1
         },
         "goals": {
-          "over15": 73.2,
-          "over25": 49.1,
-          "over35": 27.8
+          "over15": 83.8,
+          "over25": 63.8,
+          "over35": 44.7
         },
         "btts": {
-          "yes": 54
+          "yes": 51
         },
         "corners": {
-          "over85": 57.1,
-          "over95": 45.4,
-          "over105": 33.5
+          "over85": null,
+          "over95": null,
+          "over105": null
         }
       },
       "oddsStatus": "pending",
@@ -2346,146 +2392,8 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.33,
-        "away": 1.27
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224682,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Crawley Town",
-      "awayTeam": "Shrewsbury Town",
-      "providerConfidence": 38.49,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 74.7,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 71.9,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 71.4,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 60.53,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 33.4,
-          "draw": 28.2,
-          "away": 38.5
-        },
-        "goals": {
-          "over15": 74.7,
-          "over25": 51.1,
-          "over35": 28.6
-        },
-        "btts": {
-          "yes": 56.7
-        },
-        "corners": {
-          "over85": 62.2,
-          "over95": 50.4,
-          "over105": 39
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.47,
-        "away": 1.06
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224680,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Cheltenham Town",
-      "awayTeam": "Fleetwood Town",
-      "providerConfidence": 40.01,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 76.1,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 72.6,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 69.3,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.52,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 32.6,
-          "draw": 27.3,
-          "away": 40
-        },
-        "goals": {
-          "over15": 76.1,
-          "over25": 52.6,
-          "over35": 30.7
-        },
-        "btts": {
-          "yes": 57.3
-        },
-        "corners": {
-          "over85": 63.6,
-          "over95": 51.9,
-          "over105": 40.6
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.31,
-        "away": 1.38
+        "home": 1.9,
+        "away": 1.91
       },
       "mostLikelyScore": "1-1"
     },
@@ -2538,12 +2446,12 @@
           "over35": 32.3
         },
         "btts": {
-          "yes": 59.5
+          "yes": 59.1
         },
         "corners": {
-          "over85": 59.5,
-          "over95": 47.7,
-          "over105": 36
+          "over85": 59.4,
+          "over95": 47.6,
+          "over105": 35.9
         }
       },
       "oddsStatus": "pending",
@@ -2555,6 +2463,144 @@
       "expectedGoals": {
         "home": 1.24,
         "away": 1.4
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224181,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League One",
+      "homeTeam": "Burton Albion",
+      "awayTeam": "Bradford City",
+      "providerConfidence": 45.57,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 74.8,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 73.4,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 72.3,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 64.06,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 26.7,
+          "draw": 27.8,
+          "away": 45.6
+        },
+        "goals": {
+          "over15": 70.5,
+          "over25": 46.3,
+          "over35": 25.2
+        },
+        "btts": {
+          "yes": 51.1
+        },
+        "corners": {
+          "over85": 71.4,
+          "over95": 60.2,
+          "over105": 50
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.03,
+        "away": 1.3
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 224681,
+      "startsAt": "2026-10-20T18:45:00Z",
+      "sport": "Fotbal",
+      "competition": "League Two",
+      "homeTeam": "Chesterfield",
+      "awayTeam": "Colchester United",
+      "providerConfidence": 58.82,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 81.3,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 79.5,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 77.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 68.94,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 58.8,
+          "draw": 22.5,
+          "away": 18.7
+        },
+        "goals": {
+          "over15": 79.5,
+          "over25": 58.7,
+          "over35": 33.8
+        },
+        "btts": {
+          "yes": 55.6
+        },
+        "corners": {
+          "over85": 60.7,
+          "over95": 48.9,
+          "over105": 37.4
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.47,
+        "away": 1.03
       },
       "mostLikelyScore": "1-1"
     },
@@ -2607,20 +2653,43 @@
           "over35": 30.6
         },
         "btts": {
-          "yes": 52.3
+          "yes": 52
         },
         "corners": {
           "over85": 65.7,
-          "over95": 54.2,
-          "over105": 43.1
+          "over95": 54.1,
+          "over105": 43
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "5373-over_under_15-over",
+          "eventId": 601933,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 75.6,
+          "odds": 1.24,
+          "openingOdds": null,
+          "impliedProbability": 80.65,
+          "fairOdds": 1.323,
+          "edge": -5.05,
+          "expectedValue": -6.26,
+          "contextScore": 69.78,
+          "confidence": 58.72,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
         "home": 1.37,
         "away": 1.15
@@ -2676,12 +2745,12 @@
           "over35": 41.8
         },
         "btts": {
-          "yes": 60.5
+          "yes": 60.3
         },
         "corners": {
-          "over85": 69.5,
-          "over95": 58.1,
-          "over105": 47.6
+          "over85": 69.4,
+          "over95": 58,
+          "over105": 47.4
         }
       },
       "oddsStatus": "pending",
@@ -2693,420 +2762,6 @@
       "expectedGoals": {
         "home": 1.88,
         "away": 1.22
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224188,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "Stevenage",
-      "awayTeam": "Plymouth Argyle",
-      "providerConfidence": 36.29,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 73.6,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 72.2,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 70.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 60.68,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 35.9,
-          "draw": 27.9,
-          "away": 36.3
-        },
-        "goals": {
-          "over15": 73.6,
-          "over25": 50.1,
-          "over35": 29.1
-        },
-        "btts": {
-          "yes": 55.6
-        },
-        "corners": {
-          "over85": 65.1,
-          "over95": 53.5,
-          "over105": 42.3
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.36,
-        "away": 1.22
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224688,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "York City",
-      "awayTeam": "Accrington Stanley",
-      "providerConfidence": 55.12,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 79.3,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 78.6,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 76.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 64.15,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 55.1,
-          "draw": 23.5,
-          "away": 21.4
-        },
-        "goals": {
-          "over15": 79.3,
-          "over25": 58.2,
-          "over35": 35.5
-        },
-        "btts": {
-          "yes": 56.7
-        },
-        "corners": {
-          "over85": 63.1,
-          "over95": 51.4,
-          "over105": 40
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.07,
-        "away": 0.82
-      },
-      "mostLikelyScore": "2-0"
-    },
-    {
-      "id": 642824,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Cray Wanderers",
-      "awayTeam": "Bedford Town",
-      "providerConfidence": 42.78,
-      "providerSignals": [
-        {
-          "label": "12",
-          "probability": 76.1,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 74.2,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 72.8,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.13,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 33.3,
-          "draw": 23.9,
-          "away": 42.8
-        },
-        "goals": {
-          "over15": 72.8,
-          "over25": 48,
-          "over35": 25.8
-        },
-        "btts": {
-          "yes": 51.4
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.53,
-        "away": 1.07
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224683,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League Two",
-      "homeTeam": "Exeter City",
-      "awayTeam": "Crewe Alexandra",
-      "providerConfidence": 37.26,
-      "providerSignals": [
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 76.5,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 70.4,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 69.1,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 61.53,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 37.3,
-          "draw": 29.6,
-          "away": 33.1
-        },
-        "goals": {
-          "over15": 69.1,
-          "over25": 44.7,
-          "over35": 23.5
-        },
-        "btts": {
-          "yes": 52
-        },
-        "corners": {
-          "over85": 61.9,
-          "over95": 50.2,
-          "over105": 38.7
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.15,
-        "away": 1.18
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 224178,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "League One",
-      "homeTeam": "AFC Wimbledon",
-      "awayTeam": "Mansfield Town",
-      "providerConfidence": 41.34,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.2,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 72.8,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 69.9,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.88,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 31.5,
-          "draw": 27.2,
-          "away": 41.3
-        },
-        "goals": {
-          "over15": 75.2,
-          "over25": 51.8,
-          "over35": 30.1
-        },
-        "btts": {
-          "yes": 56.5
-        },
-        "corners": {
-          "over85": 65.6,
-          "over95": 54,
-          "over105": 42.9
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.25,
-        "away": 1.37
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 642818,
-      "startsAt": "2026-10-20T18:45:00Z",
-      "sport": "Fotbal",
-      "competition": "FA Cup",
-      "homeTeam": "Anstey Nomads",
-      "awayTeam": "Macclesfield FC",
-      "providerConfidence": 50.96,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 78.7,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 75.9,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 75.1,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 64.68,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 24.9,
-          "draw": 24.1,
-          "away": 51
-        },
-        "goals": {
-          "over15": 78.7,
-          "over25": 56.9,
-          "over35": 36.9
-        },
-        "btts": {
-          "yes": 58.5
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.03,
-        "away": 1.35
       },
       "mostLikelyScore": "1-1"
     },
@@ -3136,7 +2791,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 74.26,
+      "contextScore": 74.34,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3159,7 +2814,7 @@
           "over35": 40.2
         },
         "btts": {
-          "yes": 57.4
+          "yes": 56.4
         },
         "corners": {
           "over85": null,
@@ -3174,38 +2829,38 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.47,
-        "away": 1.67
+        "home": 1.48,
+        "away": 1.66
       },
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 224678,
+      "id": 224682,
       "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
       "competition": "League Two",
-      "homeTeam": "Barnet",
-      "awayTeam": "Swindon Town",
-      "providerConfidence": 61.95,
+      "homeTeam": "Crawley Town",
+      "awayTeam": "Shrewsbury Town",
+      "providerConfidence": 38.49,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 83.2,
-          "recommended": false
-        },
-        {
           "label": "Peste 1.5 goluri",
-          "probability": 82.1,
+          "probability": 74.7,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 78.9,
+          "probability": 71.9,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 71.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 68.58,
+      "contextScore": 60.53,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3218,33 +2873,56 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 62,
-          "draw": 21.2,
-          "away": 16.9
+          "home": 33.4,
+          "draw": 28.2,
+          "away": 38.5
         },
         "goals": {
-          "over15": 82.1,
-          "over25": 62.5,
-          "over35": 39.8
+          "over15": 74.7,
+          "over25": 51.1,
+          "over35": 28.6
         },
         "btts": {
-          "yes": 58.5
+          "yes": 56
         },
         "corners": {
-          "over85": 72.5,
-          "over95": 61.5,
-          "over105": 51.4
+          "over85": 62,
+          "over95": 50.3,
+          "over105": 38.8
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "5384-over_under_15-over",
+          "eventId": 224682,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 74.7,
+          "odds": 1.25,
+          "openingOdds": null,
+          "impliedProbability": 80,
+          "fairOdds": 1.339,
+          "edge": -5.3,
+          "expectedValue": -6.63,
+          "contextScore": 60.53,
+          "confidence": 38.49,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
-        "home": 1.93,
-        "away": 1.07
+        "home": 1.47,
+        "away": 1.06
       },
       "mostLikelyScore": "1-1"
     },
@@ -3297,7 +2975,7 @@
           "over35": 37.1
         },
         "btts": {
-          "yes": 56.9
+          "yes": 56.1
         },
         "corners": {
           "over85": null,
@@ -3318,32 +2996,32 @@
       "mostLikelyScore": "1-2"
     },
     {
-      "id": 601037,
-      "startsAt": "2026-10-20T19:00:00Z",
+      "id": 642822,
+      "startsAt": "2026-10-20T18:45:00Z",
       "sport": "Fotbal",
-      "competition": "Champions League",
-      "homeTeam": "Manchester City",
-      "awayTeam": "AEK Athens",
-      "providerConfidence": 87.01,
+      "competition": "FA Cup",
+      "homeTeam": "Worcester City",
+      "awayTeam": "Chorley FC",
+      "providerConfidence": 38.38,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 95.8,
+          "label": "Peste 1.5 goluri",
+          "probability": 75.9,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 91.2,
+          "probability": 74.1,
           "recommended": false
         },
         {
-          "label": "Peste 1.5 goluri",
-          "probability": 87.7,
+          "label": "Sub 3.5 goluri",
+          "probability": 66.5,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 80.86,
+      "contextScore": 62.12,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3356,22 +3034,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 87,
-          "draw": 8.8,
-          "away": 4.2
+          "home": 35.7,
+          "draw": 25.9,
+          "away": 38.4
         },
         "goals": {
-          "over15": 87.7,
-          "over25": 73.7,
-          "over35": 50.1
+          "over15": 75.9,
+          "over25": 53.7,
+          "over35": 33.5
         },
         "btts": {
-          "yes": 44.7
+          "yes": 57.6
         },
         "corners": {
-          "over85": 59.3,
-          "over95": 47.5,
-          "over105": 35.8
+          "over85": null,
+          "over95": null,
+          "over105": null
         }
       },
       "oddsStatus": "pending",
@@ -3381,79 +3059,10 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.77,
-        "away": 1.35
+        "home": 0,
+        "away": 0
       },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 601113,
-      "startsAt": "2026-10-20T19:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Champions League",
-      "homeTeam": "VfB Stuttgart",
-      "awayTeam": "Atlético Madrid",
-      "providerConfidence": 44.9,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 83.2,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 74.9,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 70,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 62.74,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 30,
-          "draw": 25.1,
-          "away": 44.9
-        },
-        "goals": {
-          "over15": 83.2,
-          "over25": 63.8,
-          "over35": 43.1
-        },
-        "btts": {
-          "yes": 65.3
-        },
-        "corners": {
-          "over85": 66.6,
-          "over95": 55,
-          "over105": 44.1
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.01,
-        "away": 1.48
-      },
-      "mostLikelyScore": "1-1"
+      "mostLikelyScore": null
     },
     {
       "id": 224689,
@@ -3504,12 +3113,12 @@
           "over35": 24.6
         },
         "btts": {
-          "yes": 51.9
+          "yes": 51.3
         },
         "corners": {
           "over85": 61.3,
           "over95": 49.6,
-          "over105": 38.1
+          "over105": 38
         }
       },
       "oddsStatus": "pending",
@@ -3525,32 +3134,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 601044,
+      "id": 601078,
       "startsAt": "2026-10-20T19:00:00Z",
       "sport": "Fotbal",
       "competition": "Champions League",
-      "homeTeam": "Paris Saint-Germain",
-      "awayTeam": "FC Barcelona",
-      "providerConfidence": 39.42,
+      "homeTeam": "FC Porto",
+      "awayTeam": "PSV Eindhoven",
+      "providerConfidence": 59.55,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 90.9,
+          "probability": 82.6,
           "recommended": false
         },
         {
-          "label": "Peste 2.5 goluri",
-          "probability": 79.2,
+          "label": "1X",
+          "probability": 80.9,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 78.7,
+          "probability": 78.8,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.68,
+      "contextScore": 67.65,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3563,22 +3172,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 39.4,
+          "home": 59.6,
           "draw": 21.3,
-          "away": 39.3
+          "away": 19.2
         },
         "goals": {
-          "over15": 90.9,
-          "over25": 79.2,
-          "over35": 60.1
+          "over15": 82.6,
+          "over25": 63.7,
+          "over35": 42.1
         },
         "btts": {
-          "yes": 77.9
+          "yes": 59.5
         },
         "corners": {
-          "over85": 58,
-          "over95": 46.2,
-          "over105": 34.4
+          "over85": 62,
+          "over95": 50.2,
+          "over105": 38.7
         }
       },
       "oddsStatus": "pending",
@@ -3588,8 +3197,8 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.18,
-        "away": 1.71
+        "home": 2.12,
+        "away": 1.28
       },
       "mostLikelyScore": "2-1"
     },
@@ -3642,7 +3251,7 @@
           "over35": 44.7
         },
         "btts": {
-          "yes": 61.1
+          "yes": 60.5
         },
         "corners": {
           "over85": 67.9,
@@ -3663,32 +3272,32 @@
       "mostLikelyScore": "2-1"
     },
     {
-      "id": 601078,
+      "id": 601044,
       "startsAt": "2026-10-20T19:00:00Z",
       "sport": "Fotbal",
       "competition": "Champions League",
-      "homeTeam": "FC Porto",
-      "awayTeam": "PSV Eindhoven",
-      "providerConfidence": 59.55,
+      "homeTeam": "Paris Saint-Germain",
+      "awayTeam": "FC Barcelona",
+      "providerConfidence": 39.42,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 82.6,
+          "probability": 90.9,
           "recommended": false
         },
         {
-          "label": "1X",
-          "probability": 80.9,
+          "label": "Peste 2.5 goluri",
+          "probability": 79.2,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 78.8,
+          "probability": 78.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.65,
+      "contextScore": 60.68,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3701,22 +3310,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 59.6,
+          "home": 39.4,
           "draw": 21.3,
-          "away": 19.2
+          "away": 39.3
         },
         "goals": {
-          "over15": 82.6,
-          "over25": 63.7,
-          "over35": 42.1
+          "over15": 90.9,
+          "over25": 79.2,
+          "over35": 60.1
         },
         "btts": {
-          "yes": 60.2
+          "yes": 77.3
         },
         "corners": {
-          "over85": 61.9,
-          "over95": 50.2,
-          "over105": 38.7
+          "over85": 58.1,
+          "over95": 46.3,
+          "over105": 34.5
         }
       },
       "oddsStatus": "pending",
@@ -3726,38 +3335,38 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.12,
-        "away": 1.28
+        "home": 2.18,
+        "away": 1.71
       },
       "mostLikelyScore": "2-1"
     },
     {
-      "id": 601115,
+      "id": 601113,
       "startsAt": "2026-10-20T19:00:00Z",
       "sport": "Fotbal",
       "competition": "Champions League",
-      "homeTeam": "SSC Napoli",
-      "awayTeam": "Bodø/Glimt",
-      "providerConfidence": 58.91,
+      "homeTeam": "VfB Stuttgart",
+      "awayTeam": "Atlético Madrid",
+      "providerConfidence": 44.9,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 82.9,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 80.5,
+          "probability": 83.2,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 78.4,
+          "probability": 74.9,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 70,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 70.54,
+      "contextScore": 62.74,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3770,22 +3379,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 58.9,
-          "draw": 21.6,
-          "away": 19.5
+          "home": 30,
+          "draw": 25.1,
+          "away": 44.9
         },
         "goals": {
-          "over15": 82.9,
-          "over25": 64.3,
-          "over35": 42.4
+          "over15": 83.2,
+          "over25": 63.8,
+          "over35": 43.1
         },
         "btts": {
-          "yes": 61.6
+          "yes": 65.2
         },
         "corners": {
-          "over85": 60.2,
-          "over95": 48.5,
-          "over105": 36.8
+          "over85": 66.5,
+          "over95": 55,
+          "over105": 44
         }
       },
       "oddsStatus": "pending",
@@ -3795,8 +3404,8 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.65,
-        "away": 1.7
+        "home": 2.01,
+        "away": 1.48
       },
       "mostLikelyScore": "1-1"
     },
@@ -3849,12 +3458,12 @@
           "over35": 50.4
         },
         "btts": {
-          "yes": 50.6
+          "yes": 50.2
         },
         "corners": {
-          "over85": 60.6,
-          "over95": 48.8,
-          "over105": 37.2
+          "over85": 60.5,
+          "over95": 48.7,
+          "over105": 37.1
         }
       },
       "oddsStatus": "pending",
@@ -3870,32 +3479,32 @@
       "mostLikelyScore": "2-0"
     },
     {
-      "id": 220248,
-      "startsAt": "2026-10-20T21:30:00Z",
+      "id": 601115,
+      "startsAt": "2026-10-20T19:00:00Z",
       "sport": "Fotbal",
-      "competition": "Categoría Primera A",
-      "homeTeam": "Deportivo Pereira",
-      "awayTeam": "Boyacá Chicó FC",
-      "providerConfidence": 42.67,
+      "competition": "Champions League",
+      "homeTeam": "SSC Napoli",
+      "awayTeam": "Bodø/Glimt",
+      "providerConfidence": 58.91,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 77,
+          "label": "Peste 1.5 goluri",
+          "probability": 82.9,
           "recommended": false
         },
         {
           "label": "1X",
-          "probability": 71.5,
+          "probability": 80.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.2,
+          "probability": 78.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.2,
+      "contextScore": 70.54,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3908,22 +3517,160 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 42.7,
-          "draw": 28.8,
+          "home": 58.9,
+          "draw": 21.6,
+          "away": 19.5
+        },
+        "goals": {
+          "over15": 82.9,
+          "over25": 64.3,
+          "over35": 42.4
+        },
+        "btts": {
+          "yes": 61.7
+        },
+        "corners": {
+          "over85": 60.1,
+          "over95": 48.4,
+          "over105": 36.7
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.65,
+        "away": 1.7
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 601037,
+      "startsAt": "2026-10-20T19:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Champions League",
+      "homeTeam": "Manchester City",
+      "awayTeam": "AEK Athens",
+      "providerConfidence": 87.01,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 95.8,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 91.2,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 87.7,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 80.82,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 87,
+          "draw": 8.8,
+          "away": 4.2
+        },
+        "goals": {
+          "over15": 87.7,
+          "over25": 73.7,
+          "over35": 50.1
+        },
+        "btts": {
+          "yes": 45.9
+        },
+        "corners": {
+          "over85": 59.3,
+          "over95": 47.5,
+          "over105": 35.8
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.78,
+        "away": 1.35
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 220248,
+      "startsAt": "2026-10-20T21:30:00Z",
+      "sport": "Fotbal",
+      "competition": "Categoría Primera A",
+      "homeTeam": "Deportivo Pereira",
+      "awayTeam": "Boyacá Chicó FC",
+      "providerConfidence": 42.59,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 77.2,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 71.5,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 71.1,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.17,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 42.6,
+          "draw": 28.9,
           "away": 28.5
         },
         "goals": {
-          "over15": 69.1,
-          "over25": 44.3,
-          "over35": 23
+          "over15": 69.2,
+          "over25": 44.2,
+          "over35": 22.8
         },
         "btts": {
-          "yes": 49.5
+          "yes": 50.6
         },
         "corners": {
-          "over85": 52.2,
-          "over95": 40.5,
-          "over105": 28.5
+          "over85": 52,
+          "over95": 40.3,
+          "over105": 28.3
         }
       },
       "oddsStatus": "pending",
@@ -3945,7 +3692,7 @@
       "competition": "Brasileirão Serie B",
       "homeTeam": "Londrina",
       "awayTeam": "Cuiabá",
-      "providerConfidence": 35.72,
+      "providerConfidence": 35.71,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
@@ -3954,17 +3701,17 @@
         },
         {
           "label": "12",
-          "probability": 70.2,
+          "probability": 70.3,
           "recommended": false
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 66.8,
+          "probability": 67.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.68,
+      "contextScore": 60.72,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3977,22 +3724,22 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 34.5,
-          "draw": 29.8,
+          "home": 34.6,
+          "draw": 29.7,
           "away": 35.7
         },
         "goals": {
-          "over15": 66.8,
-          "over25": 41.9,
+          "over15": 67.4,
+          "over25": 42.1,
           "over35": 21.5
         },
         "btts": {
-          "yes": 49.3
+          "yes": 49.1
         },
         "corners": {
-          "over85": 67,
-          "over95": 55.5,
-          "over105": 44.5
+          "over85": 67.2,
+          "over95": 55.7,
+          "over105": 44.8
         }
       },
       "oddsStatus": "pending",
@@ -4002,7 +3749,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.18,
+        "home": 1.17,
         "away": 1.1
       },
       "mostLikelyScore": "1-1"
@@ -4014,7 +3761,7 @@
       "competition": "Categoría Primera A",
       "homeTeam": "Internacional de Bogotá",
       "awayTeam": "Fortaleza FC",
-      "providerConfidence": 44.24,
+      "providerConfidence": 43.97,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
@@ -4033,7 +3780,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.06,
+      "contextScore": 61.99,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -4046,9 +3793,9 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 44.2,
-          "draw": 27.9,
-          "away": 27.8
+          "home": 44,
+          "draw": 28.1,
+          "away": 28
         },
         "goals": {
           "over15": 71,
@@ -4056,12 +3803,12 @@
           "over35": 26.2
         },
         "btts": {
-          "yes": 53.3
+          "yes": 52.1
         },
         "corners": {
-          "over85": 57.5,
-          "over95": 45.7,
-          "over105": 33.8
+          "over85": 57.3,
+          "over95": 45.5,
+          "over105": 33.7
         }
       },
       "oddsStatus": "pending",
@@ -4071,8 +3818,77 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.58,
+        "home": 1.57,
         "away": 0.95
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 604921,
+      "startsAt": "2026-10-20T23:30:00Z",
+      "sport": "Fotbal",
+      "competition": "Categoría Primera A",
+      "homeTeam": "Millonarios",
+      "awayTeam": "Once Caldas",
+      "providerConfidence": 51.21,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 79,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 77.5,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 72.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 65.23,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 51.2,
+          "draw": 27.8,
+          "away": 21
+        },
+        "goals": {
+          "over15": 69.9,
+          "over25": 44.3,
+          "over35": 22.5
+        },
+        "btts": {
+          "yes": 48.1
+        },
+        "corners": {
+          "over85": 58.1,
+          "over95": 46.3,
+          "over105": 34.6
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 0.93
       },
       "mostLikelyScore": "1-1"
     },
@@ -4125,12 +3941,12 @@
           "over35": 32.4
         },
         "btts": {
-          "yes": 53.2
+          "yes": 52
         },
         "corners": {
-          "over85": 61,
-          "over95": 49.3,
-          "over105": 37.7
+          "over85": 60.9,
+          "over95": 49.1,
+          "over105": 37.5
         }
       },
       "oddsStatus": "pending",
@@ -4144,6 +3960,465 @@
         "away": 1.65
       },
       "mostLikelyScore": "0-1"
+    },
+    {
+      "id": 211608,
+      "startsAt": "2026-10-21T00:07:00Z",
+      "sport": "Fotbal",
+      "competition": "Liga MX Apertura",
+      "homeTeam": "CD Guadalajara",
+      "awayTeam": "Club Necaxa",
+      "providerConfidence": 66.36,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 85.6,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 83.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 80.8,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 69.79,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 66.4,
+          "draw": 19.2,
+          "away": 14.4
+        },
+        "goals": {
+          "over15": 83.1,
+          "over25": 63.9,
+          "over35": 41.5
+        },
+        "btts": {
+          "yes": 56.3
+        },
+        "corners": {
+          "over85": 72.6,
+          "over95": 61.5,
+          "over105": 51.5
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.04,
+        "away": 1.02
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 604423,
+      "startsAt": "2026-10-21T00:30:00Z",
+      "sport": "Fotbal",
+      "competition": "Copa Sudamericana",
+      "homeTeam": "Vasco da Gama",
+      "awayTeam": "Boca Juniors",
+      "providerConfidence": 38.56,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 78.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 71.4,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 67.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 61.92,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 38.6,
+          "draw": 28.6,
+          "away": 32.8
+        },
+        "goals": {
+          "over15": 66.6,
+          "over25": 41.2,
+          "over35": 21.9
+        },
+        "btts": {
+          "yes": 48.4
+        },
+        "corners": {
+          "over85": 54.5,
+          "over95": 42.7,
+          "over105": 30.8
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.18,
+        "away": 1.25
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 211606,
+      "startsAt": "2026-10-21T01:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Liga MX Apertura",
+      "homeTeam": "Atlético San Luis",
+      "awayTeam": "Querétaro FC",
+      "providerConfidence": 41.83,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 76.6,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73.2,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 68.6,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.05,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 41.8,
+          "draw": 26.8,
+          "away": 31.4
+        },
+        "goals": {
+          "over15": 76.6,
+          "over25": 53.9,
+          "over35": 32.9
+        },
+        "btts": {
+          "yes": 56.6
+        },
+        "corners": {
+          "over85": 67.7,
+          "over95": 56.2,
+          "over105": 45.4
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.65,
+        "away": 1.27
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 211607,
+      "startsAt": "2026-10-21T01:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Liga MX Apertura",
+      "homeTeam": "FC Juárez",
+      "awayTeam": "Atlante FC",
+      "providerConfidence": 40.06,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 76.8,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 67.6,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 62.71,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 32.9,
+          "draw": 27.1,
+          "away": 40.1
+        },
+        "goals": {
+          "over15": 76.8,
+          "over25": 53.9,
+          "over35": 32.4
+        },
+        "btts": {
+          "yes": 57.8
+        },
+        "corners": {
+          "over85": 68.8,
+          "over95": 57.4,
+          "over105": 46.7
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.42,
+        "away": 1.39
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 606258,
+      "startsAt": "2026-10-21T01:30:00Z",
+      "sport": "Fotbal",
+      "competition": "Categoría Primera A",
+      "homeTeam": "Millonarios",
+      "awayTeam": "Once Caldas",
+      "providerConfidence": 54.36,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 80,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 74.5,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 73.8,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 66.55,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 54.4,
+          "draw": 25.6,
+          "away": 20.1
+        },
+        "goals": {
+          "over15": 73.8,
+          "over25": 50.4,
+          "over35": 27.4
+        },
+        "btts": {
+          "yes": 51
+        },
+        "corners": {
+          "over85": 58.1,
+          "over95": 46.3,
+          "over105": 34.6
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "5495-1x2-HOME",
+          "eventId": 606258,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 54.4,
+          "odds": 1.65,
+          "openingOdds": null,
+          "impliedProbability": 60.61,
+          "fairOdds": 1.838,
+          "edge": -6.21,
+          "expectedValue": -10.24,
+          "contextScore": 66.55,
+          "confidence": 54.36,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "5495-over_under_15-over",
+          "eventId": 606258,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 73.8,
+          "odds": 1.25,
+          "openingOdds": null,
+          "impliedProbability": 80,
+          "fairOdds": 1.355,
+          "edge": -6.2,
+          "expectedValue": -7.75,
+          "contextScore": 66.55,
+          "confidence": 54.36,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-10-20T08:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 0.93
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 211609,
+      "startsAt": "2026-10-21T03:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Liga MX Apertura",
+      "homeTeam": "Tigres UANL",
+      "awayTeam": "Club León",
+      "providerConfidence": 49.88,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 76.8,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 75.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 74.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 63.59,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 49.9,
+          "draw": 25.8,
+          "away": 24.3
+        },
+        "goals": {
+          "over15": 76.8,
+          "over25": 53.8,
+          "over35": 32.4
+        },
+        "btts": {
+          "yes": 55.4
+        },
+        "corners": {
+          "over85": 69,
+          "over95": 57.6,
+          "over105": 47
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.84,
+        "away": 1
+      },
+      "mostLikelyScore": "1-1"
     }
   ]
 }
