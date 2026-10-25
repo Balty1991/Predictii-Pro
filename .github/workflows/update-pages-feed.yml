@@ -53,6 +53,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
+          retention-days: 1
       - name: Publică aplicația actualizată
         if: steps.save_feed.outputs.changed == 'true'
         id: deployment
