@@ -1,216 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-11T20:59:55.436Z",
+  "updatedAt": "2026-11-12T11:59:01.187Z",
   "status": "ready",
-  "message": "80 selecții reale au trecut validarea pentru intervalul curent.",
+  "message": "79 selecții reale au trecut validarea pentru intervalul curent.",
   "calls": 5,
   "events": [
-    {
-      "id": 10230,
-      "startsAt": "2026-11-11T22:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Brasileirão Serie B",
-      "homeTeam": "Londrina",
-      "awayTeam": "Náutico",
-      "providerConfidence": 53.66,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 78.9,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.1,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 74.8,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 67.14,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 53.7,
-          "draw": 25.2,
-          "away": 21.1
-        },
-        "goals": {
-          "over15": 75.1,
-          "over25": 51.2,
-          "over35": 30.2
-        },
-        "btts": {
-          "yes": 52.8
-        },
-        "corners": {
-          "over85": 69,
-          "over95": 57.7,
-          "over105": 47
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7523-over_under_15-over",
-          "eventId": 10230,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 75.1,
-          "odds": 1.25,
-          "openingOdds": null,
-          "impliedProbability": 80,
-          "fairOdds": 1.332,
-          "edge": -4.9,
-          "expectedValue": -6.13,
-          "contextScore": 67.14,
-          "confidence": 53.66,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7523-btts-yes",
-          "eventId": 10230,
-          "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 52.8,
-          "odds": 1.7,
-          "openingOdds": null,
-          "impliedProbability": 58.82,
-          "fairOdds": 1.894,
-          "edge": -6.02,
-          "expectedValue": -10.24,
-          "contextScore": 67.14,
-          "confidence": 53.66,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.51,
-        "away": 1.16
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 649919,
-      "startsAt": "2026-11-12T06:00:00Z",
-      "sport": "Fotbal",
-      "competition": "International Friendly Games",
-      "homeTeam": "New Zealand",
-      "awayTeam": "India",
-      "providerConfidence": 73.48,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 90.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 83.2,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 80.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 70.5,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 73.5,
-          "draw": 16.9,
-          "away": 9.7
-        },
-        "goals": {
-          "over15": 80.5,
-          "over25": 58.9,
-          "over35": 38.5
-        },
-        "btts": {
-          "yes": 47.2
-        },
-        "corners": {
-          "over85": 58.4,
-          "over95": 46.6,
-          "over105": 34.8
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7464-1x2-HOME",
-          "eventId": 649919,
-          "market": "1x2",
-          "outcome": "HOME",
-          "label": "Victorie gazde",
-          "probability": 73.5,
-          "odds": 1.27,
-          "openingOdds": null,
-          "impliedProbability": 78.74,
-          "fairOdds": 1.361,
-          "edge": -5.24,
-          "expectedValue": -6.65,
-          "contextScore": 70.5,
-          "confidence": 73.48,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 2.49,
-        "away": 0.9
-      },
-      "mostLikelyScore": "2-0"
-    },
     {
       "id": 654192,
       "startsAt": "2026-11-12T12:00:00Z",
@@ -218,26 +12,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Myanmar",
       "awayTeam": "Bhutan",
-      "providerConfidence": 69.45,
+      "providerConfidence": 69.77,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 86.6,
+          "probability": 86.8,
           "recommended": false
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 85.4,
+          "probability": 85.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 82.9,
+          "probability": 83,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 69.85,
+      "contextScore": 69.94,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -250,17 +44,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 69.5,
-          "draw": 17.1,
-          "away": 13.4
+          "home": 69.8,
+          "draw": 17,
+          "away": 13.2
         },
         "goals": {
-          "over15": 85.4,
-          "over25": 67,
-          "over35": 45.6
+          "over15": 85.5,
+          "over25": 67.1,
+          "over35": 45.7
         },
         "btts": {
-          "yes": 58.7
+          "yes": 58.6
         },
         "corners": {
           "over85": null,
@@ -275,7 +69,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.44,
+        "home": 2.45,
         "away": 1.11
       },
       "mostLikelyScore": "2-1"
@@ -287,16 +81,16 @@
       "competition": "International Friendly Games",
       "homeTeam": "Uzbekistan",
       "awayTeam": "Russia",
-      "providerConfidence": 46.07,
+      "providerConfidence": 46.56,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 74.8,
+          "label": "X2",
+          "probability": 75,
           "recommended": false
         },
         {
-          "label": "X2",
-          "probability": 74.5,
+          "label": "Sub 3.5 goluri",
+          "probability": 74.7,
           "recommended": false
         },
         {
@@ -306,7 +100,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 63.55,
+      "contextScore": 63.8,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -319,17 +113,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 25.5,
+          "home": 25,
           "draw": 28.4,
-          "away": 46.1
+          "away": 46.6
         },
         "goals": {
-          "over15": 69,
-          "over25": 43.7,
-          "over35": 25.2
+          "over15": 69.5,
+          "over25": 43.9,
+          "over35": 25.3
         },
         "btts": {
-          "yes": 49.3
+          "yes": 49.1
         },
         "corners": {
           "over85": 55.3,
@@ -338,7 +132,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -349,20 +143,20 @@
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 69,
+          "probability": 69.5,
           "odds": 1.36,
           "openingOdds": null,
           "impliedProbability": 73.53,
-          "fairOdds": 1.449,
-          "edge": -4.53,
-          "expectedValue": -6.16,
-          "contextScore": 63.55,
-          "confidence": 46.07,
+          "fairOdds": 1.439,
+          "edge": -4.03,
+          "expectedValue": -5.48,
+          "contextScore": 63.8,
+          "confidence": 46.56,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -371,20 +165,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 53.9,
+          "probability": 53.4,
           "odds": 1.67,
           "openingOdds": null,
           "impliedProbability": 59.88,
-          "fairOdds": 1.855,
-          "edge": -5.98,
-          "expectedValue": -9.99,
-          "contextScore": 63.55,
-          "confidence": 46.07,
+          "fairOdds": 1.873,
+          "edge": -6.48,
+          "expectedValue": -10.82,
+          "contextScore": 63.8,
+          "confidence": 46.56,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -400,13 +194,13 @@
           "fairOdds": 1.397,
           "edge": -10.37,
           "expectedValue": -12.65,
-          "contextScore": 63.55,
-          "confidence": 46.07,
+          "contextScore": 63.8,
+          "confidence": 46.56,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -415,25 +209,25 @@
           "market": "double_chance",
           "outcome": "X2",
           "label": "X2",
-          "probability": 74.5,
+          "probability": 75,
           "odds": 1.25,
           "openingOdds": null,
           "impliedProbability": 80,
-          "fairOdds": 1.342,
-          "edge": -5.5,
-          "expectedValue": -6.87,
-          "contextScore": 63.55,
-          "confidence": 46.07,
+          "fairOdds": 1.333,
+          "edge": -5,
+          "expectedValue": -6.25,
+          "contextScore": 63.8,
+          "confidence": 46.56,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.21,
+        "home": 1.22,
         "away": 1.66
       },
       "mostLikelyScore": "1-1"
@@ -445,26 +239,26 @@
       "competition": "UEFA Nations League",
       "homeTeam": "Armenia",
       "awayTeam": "Cyprus",
-      "providerConfidence": 40.14,
+      "providerConfidence": 39.88,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
-          "probability": 74,
+          "probability": 74.6,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.4,
+          "probability": 71,
           "recommended": false
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 71,
+          "probability": 70.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 61.14,
+      "contextScore": 61.03,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -477,26 +271,26 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 40.1,
-          "draw": 28.5,
-          "away": 31.3
+          "home": 39.9,
+          "draw": 29,
+          "away": 31.1
         },
         "goals": {
-          "over15": 71,
-          "over25": 46.5,
-          "over35": 26
+          "over15": 70.4,
+          "over25": 45.9,
+          "over35": 25.4
         },
         "btts": {
-          "yes": 52.1
+          "yes": 52.3
         },
         "corners": {
-          "over85": 62.1,
-          "over95": 50.3,
-          "over105": 38.9
+          "over85": 61.9,
+          "over95": 50.1,
+          "over105": 38.6
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -507,42 +301,20 @@
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 71,
-          "odds": 1.34,
+          "probability": 70.4,
+          "odds": 1.35,
           "openingOdds": null,
-          "impliedProbability": 74.63,
-          "fairOdds": 1.408,
-          "edge": -3.63,
-          "expectedValue": -4.86,
-          "contextScore": 61.14,
-          "confidence": 40.14,
+          "impliedProbability": 74.07,
+          "fairOdds": 1.42,
+          "edge": -3.67,
+          "expectedValue": -4.96,
+          "contextScore": 61.03,
+          "confidence": 39.88,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7461-btts-yes",
-          "eventId": 212688,
-          "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 52.1,
-          "odds": 1.67,
-          "openingOdds": null,
-          "impliedProbability": 59.88,
-          "fairOdds": 1.919,
-          "edge": -7.78,
-          "expectedValue": -12.99,
-          "contextScore": 61.14,
-          "confidence": 40.14,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -551,20 +323,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 68.6,
+          "probability": 68.9,
           "odds": 1.27,
           "openingOdds": null,
           "impliedProbability": 78.74,
-          "fairOdds": 1.458,
-          "edge": -10.14,
-          "expectedValue": -12.88,
-          "contextScore": 61.14,
-          "confidence": 40.14,
+          "fairOdds": 1.451,
+          "edge": -9.84,
+          "expectedValue": -12.5,
+          "contextScore": 61.03,
+          "confidence": 39.88,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -573,20 +345,20 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 71.4,
+          "probability": 71,
           "odds": 1.25,
           "openingOdds": null,
           "impliedProbability": 80,
-          "fairOdds": 1.401,
-          "edge": -8.6,
-          "expectedValue": -10.75,
-          "contextScore": 61.14,
-          "confidence": 40.14,
+          "fairOdds": 1.408,
+          "edge": -9,
+          "expectedValue": -11.25,
+          "contextScore": 61.03,
+          "confidence": 39.88,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -595,20 +367,20 @@
           "market": "double_chance",
           "outcome": "X2",
           "label": "X2",
-          "probability": 59.8,
+          "probability": 60.1,
           "odds": 1.52,
           "openingOdds": null,
           "impliedProbability": 65.79,
-          "fairOdds": 1.672,
-          "edge": -5.99,
-          "expectedValue": -9.1,
-          "contextScore": 61.14,
-          "confidence": 40.14,
+          "fairOdds": 1.664,
+          "edge": -5.69,
+          "expectedValue": -8.65,
+          "contextScore": 61.03,
+          "confidence": 39.88,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -619,13 +391,149 @@
       "mostLikelyScore": "1-1"
     },
     {
+      "id": 212687,
+      "startsAt": "2026-11-12T17:00:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Türkiye",
+      "awayTeam": "Belgium",
+      "providerConfidence": 51.51,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 82.5,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 76.4,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 75.1,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 65.39,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 24.9,
+          "draw": 23.6,
+          "away": 51.5
+        },
+        "goals": {
+          "over15": 82.5,
+          "over25": 62.5,
+          "over35": 40.4
+        },
+        "btts": {
+          "yes": 62.5
+        },
+        "corners": {
+          "over85": 61.8,
+          "over95": 50.1,
+          "over105": 38.6
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7460-btts-yes",
+          "eventId": 212687,
+          "market": "btts",
+          "outcome": "yes",
+          "label": "Ambele echipe marchează",
+          "probability": 62.5,
+          "odds": 1.44,
+          "openingOdds": null,
+          "impliedProbability": 69.44,
+          "fairOdds": 1.6,
+          "edge": -6.94,
+          "expectedValue": -10,
+          "contextScore": 65.39,
+          "confidence": 51.51,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7460-double_chance-12",
+          "eventId": 212687,
+          "market": "double_chance",
+          "outcome": "12",
+          "label": "12",
+          "probability": 76.4,
+          "odds": 1.2,
+          "openingOdds": null,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.309,
+          "edge": -6.93,
+          "expectedValue": -8.32,
+          "contextScore": 65.39,
+          "confidence": 51.51,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7460-double_chance-X2",
+          "eventId": 212687,
+          "market": "double_chance",
+          "outcome": "X2",
+          "label": "X2",
+          "probability": 75.1,
+          "odds": 1.25,
+          "openingOdds": null,
+          "impliedProbability": 80,
+          "fairOdds": 1.332,
+          "edge": -4.9,
+          "expectedValue": -6.13,
+          "contextScore": 65.39,
+          "confidence": 51.51,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.27,
+        "away": 1.83
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
       "id": 649920,
       "startsAt": "2026-11-12T17:00:00Z",
       "sport": "Fotbal",
       "competition": "International Friendly Games",
       "homeTeam": "Lithuania",
       "awayTeam": "Suriname",
-      "providerConfidence": 35.95,
+      "providerConfidence": 35.71,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
@@ -639,12 +547,12 @@
         },
         {
           "label": "X2",
-          "probability": 65.9,
+          "probability": 65.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.14,
+      "contextScore": 60.04,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -657,26 +565,26 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 34.1,
+          "home": 34.3,
           "draw": 30,
-          "away": 35.9
+          "away": 35.7
         },
         "goals": {
           "over15": 65.1,
-          "over25": 40.1,
+          "over25": 39.8,
           "over35": 20.3
         },
         "btts": {
-          "yes": 47
+          "yes": 46.9
         },
         "corners": {
-          "over85": 54.7,
-          "over95": 42.9,
-          "over105": 31
+          "over85": 54.3,
+          "over95": 42.5,
+          "over105": 30.6
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -694,13 +602,13 @@
           "fairOdds": 1.536,
           "edge": -4.34,
           "expectedValue": -6.26,
-          "contextScore": 60.14,
-          "confidence": 35.95,
+          "contextScore": 60.04,
+          "confidence": 35.71,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -709,20 +617,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 64.1,
+          "probability": 64.3,
           "odds": 1.38,
           "openingOdds": null,
           "impliedProbability": 72.46,
-          "fairOdds": 1.56,
-          "edge": -8.36,
-          "expectedValue": -11.54,
-          "contextScore": 60.14,
-          "confidence": 35.95,
+          "fairOdds": 1.555,
+          "edge": -8.16,
+          "expectedValue": -11.27,
+          "contextScore": 60.04,
+          "confidence": 35.71,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -738,13 +646,13 @@
           "fairOdds": 1.429,
           "edge": -8.13,
           "expectedValue": -10.4,
-          "contextScore": 60.14,
-          "confidence": 35.95,
+          "contextScore": 60.04,
+          "confidence": 35.71,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -753,20 +661,20 @@
           "market": "double_chance",
           "outcome": "X2",
           "label": "X2",
-          "probability": 65.9,
+          "probability": 65.7,
           "odds": 1.36,
           "openingOdds": null,
           "impliedProbability": 73.53,
-          "fairOdds": 1.517,
-          "edge": -7.63,
-          "expectedValue": -10.38,
-          "contextScore": 60.14,
-          "confidence": 35.95,
+          "fairOdds": 1.522,
+          "edge": -7.83,
+          "expectedValue": -10.65,
+          "contextScore": 60.04,
+          "confidence": 35.71,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -777,153 +685,17 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 212687,
-      "startsAt": "2026-11-12T17:00:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Türkiye",
-      "awayTeam": "Belgium",
-      "providerConfidence": 51.52,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 82.8,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 76.2,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 75.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.44,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 24.7,
-          "draw": 23.7,
-          "away": 51.5
-        },
-        "goals": {
-          "over15": 82.8,
-          "over25": 62.8,
-          "over35": 40.8
-        },
-        "btts": {
-          "yes": 62.8
-        },
-        "corners": {
-          "over85": 61.6,
-          "over95": 49.8,
-          "over105": 38.3
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7460-btts-yes",
-          "eventId": 212687,
-          "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 62.8,
-          "odds": 1.44,
-          "openingOdds": null,
-          "impliedProbability": 69.44,
-          "fairOdds": 1.592,
-          "edge": -6.64,
-          "expectedValue": -9.57,
-          "contextScore": 65.44,
-          "confidence": 51.52,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7460-double_chance-12",
-          "eventId": 212687,
-          "market": "double_chance",
-          "outcome": "12",
-          "label": "12",
-          "probability": 76.2,
-          "odds": 1.2,
-          "openingOdds": null,
-          "impliedProbability": 83.33,
-          "fairOdds": 1.312,
-          "edge": -7.13,
-          "expectedValue": -8.56,
-          "contextScore": 65.44,
-          "confidence": 51.52,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7460-double_chance-X2",
-          "eventId": 212687,
-          "market": "double_chance",
-          "outcome": "X2",
-          "label": "X2",
-          "probability": 75.2,
-          "odds": 1.25,
-          "openingOdds": null,
-          "impliedProbability": 80,
-          "fairOdds": 1.33,
-          "edge": -4.8,
-          "expectedValue": -6,
-          "contextScore": 65.44,
-          "confidence": 51.52,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.27,
-        "away": 1.82
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
       "id": 654039,
       "startsAt": "2026-11-12T17:30:00Z",
       "sport": "Fotbal",
       "competition": "Copa del Rey",
       "homeTeam": "Calvo Sotelo Puertollano",
       "awayTeam": "Albacete Balompié",
-      "providerConfidence": 60.26,
+      "providerConfidence": 60.23,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 82.5,
+          "probability": 82.4,
           "recommended": false
         },
         {
@@ -933,12 +705,12 @@
         },
         {
           "label": "12",
-          "probability": 77.9,
+          "probability": 77.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 71.31,
+      "contextScore": 71.3,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -951,17 +723,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 17.6,
+          "home": 17.5,
           "draw": 22.2,
-          "away": 60.3
+          "away": 60.2
         },
         "goals": {
           "over15": 78.1,
-          "over25": 56.8,
-          "over35": 36.3
+          "over25": 56.5,
+          "over35": 35.7
         },
         "btts": {
-          "yes": 54.4
+          "yes": 52.7
         },
         "corners": {
           "over85": null,
@@ -970,7 +742,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -981,20 +753,20 @@
           "market": "1x2",
           "outcome": "AWAY",
           "label": "Victorie oaspeți",
-          "probability": 60.3,
+          "probability": 60.2,
           "odds": 1.5,
           "openingOdds": null,
           "impliedProbability": 66.67,
-          "fairOdds": 1.658,
-          "edge": -6.37,
-          "expectedValue": -9.55,
-          "contextScore": 71.31,
-          "confidence": 60.26,
+          "fairOdds": 1.661,
+          "edge": -6.47,
+          "expectedValue": -9.7,
+          "contextScore": 71.3,
+          "confidence": 60.23,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1010,13 +782,13 @@
           "fairOdds": 1.28,
           "edge": -3.2,
           "expectedValue": -3.94,
-          "contextScore": 71.31,
-          "confidence": 60.26,
+          "contextScore": 71.3,
+          "confidence": 60.23,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1025,20 +797,20 @@
           "market": "btts",
           "outcome": "yes",
           "label": "Ambele echipe marchează",
-          "probability": 54.4,
-          "odds": 1.7,
+          "probability": 52.7,
+          "odds": 1.67,
           "openingOdds": null,
-          "impliedProbability": 58.82,
-          "fairOdds": 1.838,
-          "edge": -4.42,
-          "expectedValue": -7.52,
-          "contextScore": 71.31,
-          "confidence": 60.26,
+          "impliedProbability": 59.88,
+          "fairOdds": 1.898,
+          "edge": -7.18,
+          "expectedValue": -11.99,
+          "contextScore": 71.3,
+          "confidence": 60.23,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1047,20 +819,20 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 77.9,
+          "probability": 77.7,
           "odds": 1.25,
           "openingOdds": null,
           "impliedProbability": 80,
-          "fairOdds": 1.284,
-          "edge": -2.1,
-          "expectedValue": -2.62,
-          "contextScore": 71.31,
-          "confidence": 60.26,
+          "fairOdds": 1.287,
+          "edge": -2.3,
+          "expectedValue": -2.87,
+          "contextScore": 71.3,
+          "confidence": 60.23,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -1077,26 +849,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Malta",
       "awayTeam": "Eswatini",
-      "providerConfidence": 60.03,
+      "providerConfidence": 59.42,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 83.9,
+          "probability": 83.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 76.1,
+          "probability": 75.9,
           "recommended": false
         },
         {
           "label": "Sub 3.5 goluri",
-          "probability": 75,
+          "probability": 75.2,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.13,
+      "contextScore": 66.84,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1109,17 +881,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 60,
-          "draw": 23.9,
-          "away": 16.1
+          "home": 59.4,
+          "draw": 24.1,
+          "away": 16.5
         },
         "goals": {
-          "over15": 69.6,
-          "over25": 44.5,
-          "over35": 25
+          "over15": 69,
+          "over25": 43.9,
+          "over35": 24.8
         },
         "btts": {
-          "yes": 43.4
+          "yes": 43.1
         },
         "corners": {
           "over85": null,
@@ -1128,7 +900,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -1139,20 +911,20 @@
           "market": "1x2",
           "outcome": "HOME",
           "label": "Victorie gazde",
-          "probability": 60,
+          "probability": 59.4,
           "odds": 1.46,
           "openingOdds": null,
           "impliedProbability": 68.49,
-          "fairOdds": 1.667,
-          "edge": -8.49,
-          "expectedValue": -12.4,
-          "contextScore": 67.13,
-          "confidence": 60.03,
+          "fairOdds": 1.684,
+          "edge": -9.09,
+          "expectedValue": -13.28,
+          "contextScore": 66.84,
+          "confidence": 59.42,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1161,20 +933,20 @@
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 69.6,
-          "odds": 1.33,
+          "probability": 69,
+          "odds": 1.36,
           "openingOdds": null,
-          "impliedProbability": 75.19,
-          "fairOdds": 1.437,
-          "edge": -5.59,
-          "expectedValue": -7.43,
-          "contextScore": 67.13,
-          "confidence": 60.03,
+          "impliedProbability": 73.53,
+          "fairOdds": 1.449,
+          "edge": -4.53,
+          "expectedValue": -6.16,
+          "contextScore": 66.84,
+          "confidence": 59.42,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1183,20 +955,20 @@
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 56.6,
-          "odds": 1.62,
+          "probability": 56.9,
+          "odds": 1.6,
           "openingOdds": null,
-          "impliedProbability": 61.73,
-          "fairOdds": 1.767,
-          "edge": -5.13,
-          "expectedValue": -8.31,
-          "contextScore": 67.13,
-          "confidence": 60.03,
+          "impliedProbability": 62.5,
+          "fairOdds": 1.757,
+          "edge": -5.6,
+          "expectedValue": -8.96,
+          "contextScore": 66.84,
+          "confidence": 59.42,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1205,97 +977,28 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 76.1,
-          "odds": 1.25,
+          "probability": 75.9,
+          "odds": 1.2,
           "openingOdds": null,
-          "impliedProbability": 80,
-          "fairOdds": 1.314,
-          "edge": -3.9,
-          "expectedValue": -4.88,
-          "contextScore": 67.13,
-          "confidence": 60.03,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.318,
+          "edge": -7.43,
+          "expectedValue": -8.92,
+          "contextScore": 66.84,
+          "confidence": 59.42,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.9,
+        "home": 1.91,
         "away": 0.88
       },
       "mostLikelyScore": "1-0"
-    },
-    {
-      "id": 643209,
-      "startsAt": "2026-11-12T18:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Copa del Rey",
-      "homeTeam": "CDA Navalcarnero",
-      "awayTeam": "Real Betis",
-      "providerConfidence": 81.98,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 93.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 88.6,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 87.7,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 80.43,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 6.6,
-          "draw": 11.4,
-          "away": 82
-        },
-        "goals": {
-          "over15": 87.7,
-          "over25": 71.3,
-          "over35": 53.6
-        },
-        "btts": {
-          "yes": 47.3
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 0,
-        "away": 0
-      },
-      "mostLikelyScore": null
     },
     {
       "id": 654040,
@@ -1304,16 +1007,16 @@
       "competition": "Copa del Rey",
       "homeTeam": "CD Tarancón",
       "awayTeam": "Levante UD",
-      "providerConfidence": 84.6,
+      "providerConfidence": 84.96,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 94.5,
+          "probability": 94.8,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 90.1,
+          "probability": 90.2,
           "recommended": false
         },
         {
@@ -1323,7 +1026,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 81.53,
+      "contextScore": 81.68,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1336,17 +1039,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 5.5,
-          "draw": 9.9,
-          "away": 84.6
+          "home": 5.2,
+          "draw": 9.8,
+          "away": 85
         },
         "goals": {
           "over15": 87.6,
           "over25": 70.6,
-          "over35": 53.3
+          "over35": 52.9
         },
         "btts": {
-          "yes": 42.8
+          "yes": 42.1
         },
         "corners": {
           "over85": null,
@@ -1355,7 +1058,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -1366,20 +1069,112 @@
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 57.2,
+          "probability": 57.9,
           "odds": 1.44,
           "openingOdds": null,
           "impliedProbability": 69.44,
-          "fairOdds": 1.748,
-          "edge": -12.24,
-          "expectedValue": -17.63,
-          "contextScore": 81.53,
-          "confidence": 84.6,
+          "fairOdds": 1.727,
+          "edge": -11.54,
+          "expectedValue": -16.62,
+          "contextScore": 81.68,
+          "confidence": 84.96,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 0,
+        "away": 0
+      },
+      "mostLikelyScore": null
+    },
+    {
+      "id": 643209,
+      "startsAt": "2026-11-12T18:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Copa del Rey",
+      "homeTeam": "CDA Navalcarnero",
+      "awayTeam": "Real Betis",
+      "providerConfidence": 82.87,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 93.9,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 89,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 87.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 80.81,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 6.1,
+          "draw": 11,
+          "away": 82.9
+        },
+        "goals": {
+          "over15": 87.5,
+          "over25": 70.2,
+          "over35": 52.7
+        },
+        "btts": {
+          "yes": 44.3
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7458-btts-no",
+          "eventId": 643209,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 55.7,
+          "odds": 1.67,
+          "openingOdds": null,
+          "impliedProbability": 59.88,
+          "fairOdds": 1.795,
+          "edge": -4.18,
+          "expectedValue": -6.98,
+          "contextScore": 80.81,
+          "confidence": 82.87,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -1438,7 +1233,7 @@
           "over35": 46.5
         },
         "btts": {
-          "yes": 36.2
+          "yes": 46.9
         },
         "corners": {
           "over85": null,
@@ -1459,105 +1254,13 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 606206,
-      "startsAt": "2026-11-12T19:00:00Z",
-      "sport": "Fotbal",
-      "competition": "CONCACAF Nations League",
-      "homeTeam": "Cayman Islands",
-      "awayTeam": "Guyana",
-      "providerConfidence": 90.24,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 96.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 93.7,
-          "recommended": false
-        },
-        {
-          "label": "Victorie oaspeți",
-          "probability": 90.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 76.98,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 3.5,
-          "draw": 6.2,
-          "away": 90.2
-        },
-        "goals": {
-          "over15": 90,
-          "over25": 78.6,
-          "over35": 58.1
-        },
-        "btts": {
-          "yes": 35.9
-        },
-        "corners": {
-          "over85": 59.1,
-          "over95": 47.3,
-          "over105": 35.6
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7457-btts-no",
-          "eventId": 606206,
-          "market": "btts",
-          "outcome": "no",
-          "label": "Nu marchează ambele",
-          "probability": 64.1,
-          "odds": 1.36,
-          "openingOdds": null,
-          "impliedProbability": 73.53,
-          "fairOdds": 1.56,
-          "edge": -9.43,
-          "expectedValue": -12.82,
-          "contextScore": 76.98,
-          "confidence": 90.24,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 0.85,
-        "away": 2.58
-      },
-      "mostLikelyScore": "0-2"
-    },
-    {
       "id": 606190,
       "startsAt": "2026-11-12T19:00:00Z",
       "sport": "Fotbal",
       "competition": "CONCACAF Nations League",
       "homeTeam": "Barbados",
       "awayTeam": "Guadeloupe",
-      "providerConfidence": 42.89,
+      "providerConfidence": 41.91,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
@@ -1566,17 +1269,17 @@
         },
         {
           "label": "12",
-          "probability": 73.5,
+          "probability": 73.7,
           "recommended": false
         },
         {
           "label": "X2",
-          "probability": 69.4,
+          "probability": 68.2,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 62.05,
+      "contextScore": 61.72,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -1589,9 +1292,9 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 30.6,
-          "draw": 26.5,
-          "away": 42.9
+          "home": 31.8,
+          "draw": 26.3,
+          "away": 41.9
         },
         "goals": {
           "over15": 79.4,
@@ -1599,7 +1302,7 @@
           "over35": 38.4
         },
         "btts": {
-          "yes": 60.5
+          "yes": 60.1
         },
         "corners": {
           "over85": 55.9,
@@ -1608,7 +1311,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -1626,13 +1329,13 @@
           "fairOdds": 1.259,
           "edge": -3.93,
           "expectedValue": -4.72,
-          "contextScore": 62.05,
-          "confidence": 42.89,
+          "contextScore": 61.72,
+          "confidence": 41.91,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1641,20 +1344,20 @@
           "market": "btts",
           "outcome": "yes",
           "label": "Ambele echipe marchează",
-          "probability": 60.5,
+          "probability": 60.1,
           "odds": 1.53,
           "openingOdds": null,
           "impliedProbability": 65.36,
-          "fairOdds": 1.653,
-          "edge": -4.86,
-          "expectedValue": -7.44,
-          "contextScore": 62.05,
-          "confidence": 42.89,
+          "fairOdds": 1.664,
+          "edge": -5.26,
+          "expectedValue": -8.05,
+          "contextScore": 61.72,
+          "confidence": 41.91,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1663,20 +1366,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 57.1,
+          "probability": 58.1,
           "odds": 1.45,
           "openingOdds": null,
           "impliedProbability": 68.97,
-          "fairOdds": 1.751,
-          "edge": -11.87,
-          "expectedValue": -17.2,
-          "contextScore": 62.05,
-          "confidence": 42.89,
+          "fairOdds": 1.721,
+          "edge": -10.87,
+          "expectedValue": -15.76,
+          "contextScore": 61.72,
+          "confidence": 41.91,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1685,20 +1388,20 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 73.5,
+          "probability": 73.7,
           "odds": 1.23,
           "openingOdds": null,
           "impliedProbability": 81.3,
-          "fairOdds": 1.361,
-          "edge": -7.8,
-          "expectedValue": -9.59,
-          "contextScore": 62.05,
-          "confidence": 42.89,
+          "fairOdds": 1.357,
+          "edge": -7.6,
+          "expectedValue": -9.35,
+          "contextScore": 61.72,
+          "confidence": 41.91,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1707,28 +1410,370 @@
           "market": "double_chance",
           "outcome": "X2",
           "label": "X2",
-          "probability": 69.4,
+          "probability": 68.2,
           "odds": 1.35,
           "openingOdds": null,
           "impliedProbability": 74.07,
-          "fairOdds": 1.441,
-          "edge": -4.67,
-          "expectedValue": -6.31,
-          "contextScore": 62.05,
-          "confidence": 42.89,
+          "fairOdds": 1.466,
+          "edge": -5.87,
+          "expectedValue": -7.93,
+          "contextScore": 61.72,
+          "confidence": 41.91,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 2.04,
-        "away": 1.55
+        "home": 2.03,
+        "away": 1.56
       },
       "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 606206,
+      "startsAt": "2026-11-12T19:00:00Z",
+      "sport": "Fotbal",
+      "competition": "CONCACAF Nations League",
+      "homeTeam": "Cayman Islands",
+      "awayTeam": "Guyana",
+      "providerConfidence": 90.72,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 96.6,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 94.1,
+          "recommended": false
+        },
+        {
+          "label": "Victorie oaspeți",
+          "probability": 90.7,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 77.22,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 3.4,
+          "draw": 5.9,
+          "away": 90.7
+        },
+        "goals": {
+          "over15": 89.6,
+          "over25": 78.6,
+          "over35": 57.7
+        },
+        "btts": {
+          "yes": 34.4
+        },
+        "corners": {
+          "over85": 59.1,
+          "over95": 47.3,
+          "over105": 35.6
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7457-btts-no",
+          "eventId": 606206,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 65.6,
+          "odds": 1.33,
+          "openingOdds": null,
+          "impliedProbability": 75.19,
+          "fairOdds": 1.524,
+          "edge": -9.59,
+          "expectedValue": -12.75,
+          "contextScore": 77.22,
+          "confidence": 90.72,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 0.85,
+        "away": 2.57
+      },
+      "mostLikelyScore": "0-2"
+    },
+    {
+      "id": 212689,
+      "startsAt": "2026-11-12T19:45:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Italy",
+      "awayTeam": "France",
+      "providerConfidence": 50.25,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 79.1,
+          "recommended": false
+        },
+        {
+          "label": "X2",
+          "probability": 75.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 74.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 67.06,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 24.3,
+          "draw": 25.5,
+          "away": 50.2
+        },
+        "goals": {
+          "over15": 79.1,
+          "over25": 57.1,
+          "over35": 35.3
+        },
+        "btts": {
+          "yes": 58.7
+        },
+        "corners": {
+          "over85": 59.3,
+          "over95": 47.5,
+          "over105": 35.8
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7450-over_under_15-over",
+          "eventId": 212689,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 79.1,
+          "odds": 1.2,
+          "openingOdds": null,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.264,
+          "edge": -4.23,
+          "expectedValue": -5.08,
+          "contextScore": 67.06,
+          "confidence": 50.25,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7450-btts-yes",
+          "eventId": 212689,
+          "market": "btts",
+          "outcome": "yes",
+          "label": "Ambele echipe marchează",
+          "probability": 58.7,
+          "odds": 1.57,
+          "openingOdds": null,
+          "impliedProbability": 63.69,
+          "fairOdds": 1.704,
+          "edge": -4.99,
+          "expectedValue": -7.84,
+          "contextScore": 67.06,
+          "confidence": 50.25,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.46
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 212694,
+      "startsAt": "2026-11-12T19:45:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Montenegro",
+      "awayTeam": "Latvia",
+      "providerConfidence": 73.79,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 91.2,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 82.6,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 75.3,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 74.35,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 73.8,
+          "draw": 17.4,
+          "away": 8.8
+        },
+        "goals": {
+          "over15": 75.3,
+          "over25": 52.3,
+          "over35": 28.6
+        },
+        "btts": {
+          "yes": 40.8
+        },
+        "corners": {
+          "over85": 57.7,
+          "over95": 45.9,
+          "over105": 34.1
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7451-1x2-HOME",
+          "eventId": 212694,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 73.8,
+          "odds": 1.24,
+          "openingOdds": null,
+          "impliedProbability": 80.65,
+          "fairOdds": 1.355,
+          "edge": -6.85,
+          "expectedValue": -8.49,
+          "contextScore": 74.35,
+          "confidence": 73.79,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7451-over_under_15-over",
+          "eventId": 212694,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 75.3,
+          "odds": 1.22,
+          "openingOdds": null,
+          "impliedProbability": 81.97,
+          "fairOdds": 1.328,
+          "edge": -6.67,
+          "expectedValue": -8.13,
+          "contextScore": 74.35,
+          "confidence": 73.79,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7451-btts-no",
+          "eventId": 212694,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 59.2,
+          "odds": 1.55,
+          "openingOdds": null,
+          "impliedProbability": 64.52,
+          "fairOdds": 1.689,
+          "edge": -5.32,
+          "expectedValue": -8.24,
+          "contextScore": 74.35,
+          "confidence": 73.79,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.51,
+        "away": 0.85
+      },
+      "mostLikelyScore": "1-0"
     },
     {
       "id": 212693,
@@ -1741,12 +1786,12 @@
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 94.9,
+          "probability": 95,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 88.2,
+          "probability": 88.1,
           "recommended": false
         },
         {
@@ -1769,26 +1814,26 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 5.1,
-          "draw": 11.8,
+          "home": 5,
+          "draw": 11.9,
           "away": 83.1
         },
         "goals": {
           "over15": 79.7,
-          "over25": 57.9,
+          "over25": 57.6,
           "over35": 35.9
         },
         "btts": {
-          "yes": 32.7
+          "yes": 33.5
         },
         "corners": {
           "over85": 56,
           "over95": 44.2,
-          "over105": 32.3
+          "over105": 32.4
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -1812,7 +1857,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -1821,20 +1866,20 @@
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 67.3,
+          "probability": 66.5,
           "odds": 1.36,
           "openingOdds": null,
           "impliedProbability": 73.53,
-          "fairOdds": 1.486,
-          "edge": -6.23,
-          "expectedValue": -8.47,
+          "fairOdds": 1.504,
+          "edge": -7.03,
+          "expectedValue": -9.56,
           "contextScore": 75.64,
           "confidence": 83.14,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -1845,245 +1890,17 @@
       "mostLikelyScore": "0-2"
     },
     {
-      "id": 212689,
-      "startsAt": "2026-11-12T19:45:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Italy",
-      "awayTeam": "France",
-      "providerConfidence": 49.45,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 78.6,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 75.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 74.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 66.69,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 24.7,
-          "draw": 25.9,
-          "away": 49.5
-        },
-        "goals": {
-          "over15": 78.6,
-          "over25": 56.9,
-          "over35": 35.2
-        },
-        "btts": {
-          "yes": 59
-        },
-        "corners": {
-          "over85": 59,
-          "over95": 47.2,
-          "over105": 35.5
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7450-1x2-AWAY",
-          "eventId": 212689,
-          "market": "1x2",
-          "outcome": "AWAY",
-          "label": "Victorie oaspeți",
-          "probability": 49.5,
-          "odds": 1.7,
-          "openingOdds": null,
-          "impliedProbability": 58.82,
-          "fairOdds": 2.02,
-          "edge": -9.32,
-          "expectedValue": -15.85,
-          "contextScore": 66.69,
-          "confidence": 49.45,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7450-over_under_15-over",
-          "eventId": 212689,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 78.6,
-          "odds": 1.2,
-          "openingOdds": null,
-          "impliedProbability": 83.33,
-          "fairOdds": 1.272,
-          "edge": -4.73,
-          "expectedValue": -5.68,
-          "contextScore": 66.69,
-          "confidence": 49.45,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7450-btts-yes",
-          "eventId": 212689,
-          "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 59,
-          "odds": 1.55,
-          "openingOdds": null,
-          "impliedProbability": 64.52,
-          "fairOdds": 1.695,
-          "edge": -5.52,
-          "expectedValue": -8.55,
-          "contextScore": 66.69,
-          "confidence": 49.45,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.44,
-        "away": 1.46
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 212691,
-      "startsAt": "2026-11-12T19:45:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "England",
-      "awayTeam": "Croatia",
-      "providerConfidence": 76.56,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 91.4,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 85.2,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 83.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 73.08,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 76.6,
-          "draw": 14.8,
-          "away": 8.6
-        },
-        "goals": {
-          "over15": 83.2,
-          "over25": 64.1,
-          "over35": 41.6
-        },
-        "btts": {
-          "yes": 49.9
-        },
-        "corners": {
-          "over85": 57.3,
-          "over95": 45.5,
-          "over105": 33.6
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7449-1x2-HOME",
-          "eventId": 212691,
-          "market": "1x2",
-          "outcome": "HOME",
-          "label": "Victorie gazde",
-          "probability": 76.6,
-          "odds": 1.2,
-          "openingOdds": null,
-          "impliedProbability": 83.33,
-          "fairOdds": 1.305,
-          "edge": -6.73,
-          "expectedValue": -8.08,
-          "contextScore": 73.08,
-          "confidence": 76.56,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 2.22,
-        "away": 0.95
-      },
-      "mostLikelyScore": "2-0"
-    },
-    {
       "id": 212690,
       "startsAt": "2026-11-12T19:45:00Z",
       "sport": "Fotbal",
       "competition": "UEFA Nations League",
       "homeTeam": "Czechia",
       "awayTeam": "Spain",
-      "providerConfidence": 78.78,
+      "providerConfidence": 78.85,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 92.1,
+          "probability": 92,
           "recommended": false
         },
         {
@@ -2098,7 +1915,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 74.25,
+      "contextScore": 74.28,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2112,25 +1929,25 @@
       "modelMarkets": {
         "matchResult": {
           "home": 7.9,
-          "draw": 13.3,
+          "draw": 13.2,
           "away": 78.8
         },
         "goals": {
           "over15": 83.6,
-          "over25": 65.3,
-          "over35": 39.9
+          "over25": 64.7,
+          "over35": 39.8
         },
         "btts": {
-          "yes": 47.3
+          "yes": 47.6
         },
         "corners": {
-          "over85": 51.3,
-          "over95": 39.6,
+          "over85": 51.4,
+          "over95": 39.7,
           "over105": 27.7
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -2142,19 +1959,19 @@
           "outcome": "AWAY",
           "label": "Victorie oaspeți",
           "probability": 78.8,
-          "odds": 1.22,
+          "odds": 1.21,
           "openingOdds": null,
-          "impliedProbability": 81.97,
+          "impliedProbability": 82.64,
           "fairOdds": 1.269,
-          "edge": -3.17,
-          "expectedValue": -3.86,
-          "contextScore": 74.25,
-          "confidence": 78.78,
+          "edge": -3.84,
+          "expectedValue": -4.65,
+          "contextScore": 74.28,
+          "confidence": 78.85,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -2165,32 +1982,32 @@
       "mostLikelyScore": "0-2"
     },
     {
-      "id": 212692,
+      "id": 212691,
       "startsAt": "2026-11-12T19:45:00Z",
       "sport": "Fotbal",
       "competition": "UEFA Nations League",
-      "homeTeam": "Albania",
-      "awayTeam": "Finland",
-      "providerConfidence": 48.8,
+      "homeTeam": "England",
+      "awayTeam": "Croatia",
+      "providerConfidence": 76.68,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 78.9,
-          "recommended": false
-        },
-        {
           "label": "1X",
-          "probability": 77.3,
+          "probability": 91.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.5,
+          "probability": 85.2,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 83.8,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 65.14,
+      "contextScore": 73.13,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2203,26 +2020,118 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 48.8,
-          "draw": 28.5,
-          "away": 22.7
+          "home": 76.7,
+          "draw": 14.8,
+          "away": 8.5
         },
         "goals": {
-          "over15": 66.9,
-          "over25": 40.9,
-          "over35": 21.1
+          "over15": 83.8,
+          "over25": 65,
+          "over35": 42
         },
         "btts": {
-          "yes": 46.5
+          "yes": 50
         },
         "corners": {
-          "over85": 57.6,
-          "over95": 45.8,
-          "over105": 34
+          "over85": 57.2,
+          "over95": 45.4,
+          "over105": 33.6
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7449-1x2-HOME",
+          "eventId": 212691,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 76.7,
+          "odds": 1.23,
+          "openingOdds": null,
+          "impliedProbability": 81.3,
+          "fairOdds": 1.304,
+          "edge": -4.6,
+          "expectedValue": -5.66,
+          "contextScore": 73.13,
+          "confidence": 76.68,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.22,
+        "away": 0.95
+      },
+      "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 212692,
+      "startsAt": "2026-11-12T19:45:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Albania",
+      "awayTeam": "Finland",
+      "providerConfidence": 47.14,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 80.1,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 76.7,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 70.4,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 64.44,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 47.1,
+          "draw": 29.6,
+          "away": 23.3
+        },
+        "goals": {
+          "over15": 65,
+          "over25": 38.7,
+          "over35": 19.9
+        },
+        "btts": {
+          "yes": 44.7
+        },
+        "corners": {
+          "over85": 57.7,
+          "over95": 45.9,
+          "over105": 34.1
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -2233,20 +2142,20 @@
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 66.9,
-          "odds": 1.41,
+          "probability": 65,
+          "odds": 1.47,
           "openingOdds": null,
-          "impliedProbability": 70.92,
-          "fairOdds": 1.495,
-          "edge": -4.02,
-          "expectedValue": -5.67,
-          "contextScore": 65.14,
-          "confidence": 48.8,
+          "impliedProbability": 68.03,
+          "fairOdds": 1.538,
+          "edge": -3.03,
+          "expectedValue": -4.45,
+          "contextScore": 64.44,
+          "confidence": 47.14,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -2255,20 +2164,20 @@
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 53.5,
-          "odds": 1.7,
+          "probability": 55.3,
+          "odds": 1.65,
           "openingOdds": null,
-          "impliedProbability": 58.82,
-          "fairOdds": 1.869,
-          "edge": -5.32,
-          "expectedValue": -9.05,
-          "contextScore": 65.14,
-          "confidence": 48.8,
+          "impliedProbability": 60.61,
+          "fairOdds": 1.808,
+          "edge": -5.31,
+          "expectedValue": -8.76,
+          "contextScore": 64.44,
+          "confidence": 47.14,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -2277,20 +2186,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 77.3,
+          "probability": 76.7,
           "odds": 1.22,
           "openingOdds": null,
           "impliedProbability": 81.97,
-          "fairOdds": 1.294,
-          "edge": -4.67,
-          "expectedValue": -5.69,
-          "contextScore": 65.14,
-          "confidence": 48.8,
+          "fairOdds": 1.304,
+          "edge": -5.27,
+          "expectedValue": -6.43,
+          "contextScore": 64.44,
+          "confidence": 47.14,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -2299,20 +2208,20 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 71.5,
-          "odds": 1.29,
+          "probability": 70.4,
+          "odds": 1.3,
           "openingOdds": null,
-          "impliedProbability": 77.52,
-          "fairOdds": 1.399,
-          "edge": -6.02,
-          "expectedValue": -7.76,
-          "contextScore": 65.14,
-          "confidence": 48.8,
+          "impliedProbability": 76.92,
+          "fairOdds": 1.42,
+          "edge": -6.52,
+          "expectedValue": -8.48,
+          "contextScore": 64.44,
+          "confidence": 47.14,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -2323,158 +2232,22 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 212694,
-      "startsAt": "2026-11-12T19:45:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Montenegro",
-      "awayTeam": "Latvia",
-      "providerConfidence": 73.37,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 90.9,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 82.5,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 75.4,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 74.22,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 73.4,
-          "draw": 17.5,
-          "away": 9.1
-        },
-        "goals": {
-          "over15": 75.4,
-          "over25": 53.1,
-          "over35": 28.8
-        },
-        "btts": {
-          "yes": 41.4
-        },
-        "corners": {
-          "over85": 58,
-          "over95": 46.2,
-          "over105": 34.4
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7451-1x2-HOME",
-          "eventId": 212694,
-          "market": "1x2",
-          "outcome": "HOME",
-          "label": "Victorie gazde",
-          "probability": 73.4,
-          "odds": 1.25,
-          "openingOdds": null,
-          "impliedProbability": 80,
-          "fairOdds": 1.362,
-          "edge": -6.6,
-          "expectedValue": -8.25,
-          "contextScore": 74.22,
-          "confidence": 73.37,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7451-over_under_15-over",
-          "eventId": 212694,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 75.4,
-          "odds": 1.22,
-          "openingOdds": null,
-          "impliedProbability": 81.97,
-          "fairOdds": 1.326,
-          "edge": -6.57,
-          "expectedValue": -8.01,
-          "contextScore": 74.22,
-          "confidence": 73.37,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7451-btts-no",
-          "eventId": 212694,
-          "market": "btts",
-          "outcome": "no",
-          "label": "Nu marchează ambele",
-          "probability": 58.6,
-          "odds": 1.57,
-          "openingOdds": null,
-          "impliedProbability": 63.69,
-          "fairOdds": 1.706,
-          "edge": -5.09,
-          "expectedValue": -8,
-          "contextScore": 74.22,
-          "confidence": 73.37,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.51,
-        "away": 0.86
-      },
-      "mostLikelyScore": "1-0"
-    },
-    {
       "id": 606207,
       "startsAt": "2026-11-12T20:00:00Z",
       "sport": "Fotbal",
       "competition": "CONCACAF Nations League",
       "homeTeam": "Bonaire",
       "awayTeam": "Cuba",
-      "providerConfidence": 85.22,
+      "providerConfidence": 84.77,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 95.1,
+          "probability": 94.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 90.1,
+          "probability": 90.3,
           "recommended": false
         },
         {
@@ -2484,7 +2257,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 79.67,
+      "contextScore": 79.48,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2497,9 +2270,9 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 4.9,
-          "draw": 9.9,
-          "away": 85.2
+          "home": 5.5,
+          "draw": 9.7,
+          "away": 84.8
         },
         "goals": {
           "over15": 87.4,
@@ -2507,7 +2280,7 @@
           "over35": 50.4
         },
         "btts": {
-          "yes": 43
+          "yes": 42.7
         },
         "corners": {
           "over85": 64.5,
@@ -2516,7 +2289,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -2527,20 +2300,20 @@
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 57,
+          "probability": 57.3,
           "odds": 1.5,
           "openingOdds": null,
           "impliedProbability": 66.67,
-          "fairOdds": 1.754,
-          "edge": -9.67,
-          "expectedValue": -14.5,
-          "contextScore": 79.67,
-          "confidence": 85.22,
+          "fairOdds": 1.745,
+          "edge": -9.37,
+          "expectedValue": -14.05,
+          "contextScore": 79.48,
+          "confidence": 84.77,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -2551,101 +2324,32 @@
       "mostLikelyScore": "1-2"
     },
     {
-      "id": 643026,
-      "startsAt": "2026-11-14T20:30:00Z",
-      "sport": "Fotbal",
-      "competition": "Categoría Primera A",
-      "homeTeam": "Rionegro Águilas Doradas",
-      "awayTeam": "Independiente Medellín",
-      "providerConfidence": 39.38,
-      "providerSignals": [
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 77.2,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 71.5,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 70.2,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 61.62,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 39.4,
-          "draw": 28.5,
-          "away": 32.1
-        },
-        "goals": {
-          "over15": 70.2,
-          "over25": 44.6,
-          "over35": 22.8
-        },
-        "btts": {
-          "yes": 49.9
-        },
-        "corners": {
-          "over85": 61.3,
-          "over95": 49.5,
-          "over105": 38
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.34,
-        "away": 1.11
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
       "id": 654335,
       "startsAt": "2026-11-12T22:00:00Z",
       "sport": "Fotbal",
       "competition": "Categoría Primera A",
       "homeTeam": "Deportivo Pasto",
       "awayTeam": "Junior Barranquilla",
-      "providerConfidence": 68.21,
+      "providerConfidence": 38.03,
       "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 88.6,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 79.6,
-          "recommended": false
-        },
         {
           "label": "Sub 3.5 goluri",
           "probability": 76.5,
           "recommended": false
+        },
+        {
+          "label": "Peste 2.5 goluri",
+          "probability": 74.8,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 70.9,
+          "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 74.21,
+      "contextScore": 61.53,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2658,17 +2362,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 11.4,
-          "draw": 20.4,
-          "away": 68.2
+          "home": 38,
+          "draw": 29.2,
+          "away": 32.8
         },
         "goals": {
           "over15": 70.9,
-          "over25": 71.6,
+          "over25": 74.8,
           "over35": 23.5
         },
         "btts": {
-          "yes": 50.7
+          "yes": 49.7
         },
         "corners": {
           "over85": 56.7,
@@ -2695,26 +2399,26 @@
       "competition": "CONCACAF Nations League",
       "homeTeam": "Aruba",
       "awayTeam": "Martinique",
-      "providerConfidence": 57.51,
+      "providerConfidence": 62.84,
       "providerSignals": [
         {
-          "label": "Peste 1.5 goluri",
-          "probability": 81.7,
+          "label": "X2",
+          "probability": 83.2,
           "recommended": false
         },
         {
-          "label": "X2",
-          "probability": 81.1,
+          "label": "Peste 1.5 goluri",
+          "probability": 80.4,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 76.4,
+          "probability": 79.6,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.63,
+      "contextScore": 69.87,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2727,17 +2431,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 18.9,
-          "draw": 23.6,
-          "away": 57.5
+          "home": 16.8,
+          "draw": 20.4,
+          "away": 62.8
         },
         "goals": {
-          "over15": 81.7,
-          "over25": 60.9,
-          "over35": 38.6
+          "over15": 80.4,
+          "over25": 60.2,
+          "over35": 38.5
         },
         "btts": {
-          "yes": 59.1
+          "yes": 56
         },
         "corners": {
           "over85": 60.9,
@@ -2764,26 +2468,26 @@
       "competition": "Brasileirão Serie B",
       "homeTeam": "Ponte Preta",
       "awayTeam": "Operário-PR",
-      "providerConfidence": 57.19,
+      "providerConfidence": 58.93,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 81,
+          "probability": 81.4,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 76.3,
+          "probability": 77.4,
           "recommended": false
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 74.8,
+          "probability": 76.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.78,
+      "contextScore": 68.55,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -2796,26 +2500,26 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 19.1,
-          "draw": 23.8,
-          "away": 57.2
+          "home": 18.5,
+          "draw": 22.5,
+          "away": 58.9
         },
         "goals": {
-          "over15": 74.8,
-          "over25": 52.1,
-          "over35": 29.5
+          "over15": 76.4,
+          "over25": 54.6,
+          "over35": 31.1
         },
         "btts": {
-          "yes": 51.6
+          "yes": 52.2
         },
         "corners": {
-          "over85": 67.2,
-          "over95": 55.7,
-          "over105": 44.8
+          "over85": 67.1,
+          "over95": 55.6,
+          "over105": 44.7
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -2826,97 +2530,28 @@
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 74.8,
-          "odds": 1.26,
+          "probability": 76.4,
+          "odds": 1.22,
           "openingOdds": null,
-          "impliedProbability": 79.37,
-          "fairOdds": 1.337,
-          "edge": -4.57,
-          "expectedValue": -5.75,
-          "contextScore": 67.78,
-          "confidence": 57.19,
+          "impliedProbability": 81.97,
+          "fairOdds": 1.309,
+          "edge": -5.57,
+          "expectedValue": -6.79,
+          "contextScore": 68.55,
+          "confidence": 58.93,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
         "home": 0.96,
-        "away": 1.52
+        "away": 1.51
       },
       "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 606219,
-      "startsAt": "2026-11-12T23:00:00Z",
-      "sport": "Fotbal",
-      "competition": "CONCACAF Nations League",
-      "homeTeam": "Antigua and Barbuda",
-      "awayTeam": "Trinidad and Tobago",
-      "providerConfidence": 71.7,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 89.2,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 82.5,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 77.4,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 72.27,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 10.8,
-          "draw": 17.5,
-          "away": 71.7
-        },
-        "goals": {
-          "over15": 77.4,
-          "over25": 55.8,
-          "over35": 37.3
-        },
-        "btts": {
-          "yes": 44
-        },
-        "corners": {
-          "over85": 64,
-          "over95": 52.4,
-          "over105": 41.1
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 2.17,
-        "away": 1.21
-      },
-      "mostLikelyScore": "2-1"
     },
     {
       "id": 10233,
@@ -2967,12 +2602,12 @@
           "over35": 26.9
         },
         "btts": {
-          "yes": 50.1
+          "yes": 52.9
         },
         "corners": {
-          "over85": 68.1,
+          "over85": 68,
           "over95": 56.6,
-          "over105": 45.9
+          "over105": 45.8
         }
       },
       "oddsStatus": "pending",
@@ -2988,32 +2623,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 654336,
-      "startsAt": "2026-11-13T00:00:00Z",
+      "id": 606219,
+      "startsAt": "2026-11-12T23:00:00Z",
       "sport": "Fotbal",
-      "competition": "Categoría Primera A",
-      "homeTeam": "Llaneros FC",
-      "awayTeam": "Boyacá Chicó FC",
-      "providerConfidence": 51.82,
+      "competition": "CONCACAF Nations League",
+      "homeTeam": "Antigua and Barbuda",
+      "awayTeam": "Trinidad and Tobago",
+      "providerConfidence": 70.38,
       "providerSignals": [
         {
-          "label": "1X",
-          "probability": 80.6,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 80.5,
+          "label": "X2",
+          "probability": 88.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.2,
+          "probability": 82,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 80.6,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 65.36,
+      "contextScore": 71.72,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3026,17 +2661,86 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 51.8,
-          "draw": 28.8,
-          "away": 19.4
+          "home": 11.6,
+          "draw": 18.1,
+          "away": 70.4
         },
         "goals": {
-          "over15": 66.9,
-          "over25": 40.6,
-          "over35": 19.5
+          "over15": 80.6,
+          "over25": 59.7,
+          "over35": 39.8
         },
         "btts": {
-          "yes": 45.4
+          "yes": 51.4
+        },
+        "corners": {
+          "over85": 64,
+          "over95": 52.4,
+          "over105": 41.1
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.17,
+        "away": 1.21
+      },
+      "mostLikelyScore": "2-1"
+    },
+    {
+      "id": 654336,
+      "startsAt": "2026-11-13T00:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Categoría Primera A",
+      "homeTeam": "Llaneros FC",
+      "awayTeam": "Boyacá Chicó FC",
+      "providerConfidence": 54.85,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 80.8,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 75.2,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 74.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 66.64,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 54.9,
+          "draw": 25.9,
+          "away": 19.3
+        },
+        "goals": {
+          "over15": 70.7,
+          "over25": 47,
+          "over35": 24.8
+        },
+        "btts": {
+          "yes": 48.3
         },
         "corners": {
           "over85": 63,
@@ -3063,7 +2767,7 @@
       "competition": "CONCACAF Nations League",
       "homeTeam": "Curaçao",
       "awayTeam": "Panama",
-      "providerConfidence": 40.23,
+      "providerConfidence": 39.32,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
@@ -3072,17 +2776,17 @@
         },
         {
           "label": "12",
-          "probability": 70.4,
+          "probability": 70.1,
           "recommended": false
         },
         {
-          "label": "X2",
-          "probability": 69.8,
+          "label": "Peste 1.5 goluri",
+          "probability": 69.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.22,
+      "contextScore": 59.83,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3095,9 +2799,9 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 30.2,
-          "draw": 29.6,
-          "away": 40.2
+          "home": 30.8,
+          "draw": 29.8,
+          "away": 39.3
         },
         "goals": {
           "over15": 69.4,
@@ -3108,13 +2812,13 @@
           "yes": 51.2
         },
         "corners": {
-          "over85": 52.2,
+          "over85": 52.3,
           "over95": 40.5,
           "over105": 28.5
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -3132,13 +2836,13 @@
           "fairOdds": 1.441,
           "edge": -4.13,
           "expectedValue": -5.62,
-          "contextScore": 60.22,
-          "confidence": 40.23,
+          "contextScore": 59.83,
+          "confidence": 39.32,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -3147,20 +2851,20 @@
           "market": "double_chance",
           "outcome": "1X",
           "label": "1X",
-          "probability": 59.8,
+          "probability": 60.6,
           "odds": 1.4,
           "openingOdds": null,
           "impliedProbability": 71.43,
-          "fairOdds": 1.672,
-          "edge": -11.63,
-          "expectedValue": -16.28,
-          "contextScore": 60.22,
-          "confidence": 40.23,
+          "fairOdds": 1.65,
+          "edge": -10.83,
+          "expectedValue": -15.16,
+          "contextScore": 59.83,
+          "confidence": 39.32,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -3169,20 +2873,20 @@
           "market": "double_chance",
           "outcome": "12",
           "label": "12",
-          "probability": 70.4,
+          "probability": 70.1,
           "odds": 1.27,
           "openingOdds": null,
           "impliedProbability": 78.74,
-          "fairOdds": 1.42,
-          "edge": -8.34,
-          "expectedValue": -10.59,
-          "contextScore": 60.22,
-          "confidence": 40.23,
+          "fairOdds": 1.427,
+          "edge": -8.64,
+          "expectedValue": -10.97,
+          "contextScore": 59.83,
+          "confidence": 39.32,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -3191,20 +2895,20 @@
           "market": "double_chance",
           "outcome": "X2",
           "label": "X2",
-          "probability": 69.8,
+          "probability": 69.1,
           "odds": 1.35,
           "openingOdds": null,
           "impliedProbability": 74.07,
-          "fairOdds": 1.433,
-          "edge": -4.27,
-          "expectedValue": -5.77,
-          "contextScore": 60.22,
-          "confidence": 40.23,
+          "fairOdds": 1.447,
+          "edge": -4.97,
+          "expectedValue": -6.72,
+          "contextScore": 59.83,
+          "confidence": 39.32,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -3290,26 +2994,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Singapore",
       "awayTeam": "Paraguay",
-      "providerConfidence": 83.83,
+      "providerConfidence": 86.95,
       "providerSignals": [
         {
           "label": "X2",
-          "probability": 94.4,
+          "probability": 96.1,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 89.3,
+          "probability": 91,
           "recommended": false
         },
         {
           "label": "Victorie oaspeți",
-          "probability": 83.8,
+          "probability": 87,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 80.53,
+      "contextScore": 81.8,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3322,17 +3026,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 5.5,
-          "draw": 10.6,
-          "away": 83.8
+          "home": 4,
+          "draw": 9.1,
+          "away": 87
         },
         "goals": {
-          "over15": 74.2,
-          "over25": 49.9,
-          "over35": 27.5
+          "over15": 84.3,
+          "over25": 66.6,
+          "over35": 42
         },
         "btts": {
-          "yes": 53.5
+          "yes": 36.4
         },
         "corners": {
           "over85": null,
@@ -3340,45 +3044,68 @@
           "over105": null
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "7497-btts-no",
+          "eventId": 649922,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 63.6,
+          "odds": 1.45,
+          "openingOdds": null,
+          "impliedProbability": 68.97,
+          "fairOdds": 1.572,
+          "edge": -5.37,
+          "expectedValue": -7.78,
+          "contextScore": 81.8,
+          "confidence": 86.95,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
-        "home": 1.42,
+        "home": 1.43,
         "away": 1.25
       },
       "mostLikelyScore": "1-1"
     },
     {
       "id": 649924,
-      "startsAt": "2026-11-13T13:00:00Z",
+      "startsAt": "2026-11-13T14:10:00Z",
       "sport": "Fotbal",
       "competition": "International Friendly Games",
       "homeTeam": "United Arab Emirates",
       "awayTeam": "Honduras",
-      "providerConfidence": 40.92,
+      "providerConfidence": 43.01,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
-          "probability": 77.8,
+          "probability": 77.4,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 71.8,
+          "probability": 71.5,
           "recommended": false
         },
         {
-          "label": "Peste 1.5 goluri",
-          "probability": 69.6,
+          "label": "1X",
+          "probability": 71.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.19,
+      "contextScore": 61.02,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3391,21 +3118,21 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 40.9,
-          "draw": 28.1,
-          "away": 30.9
+          "home": 43,
+          "draw": 28.4,
+          "away": 28.5
         },
         "goals": {
-          "over15": 69.6,
-          "over25": 43.9,
-          "over35": 22.2
+          "over15": 68.8,
+          "over25": 43.4,
+          "over35": 22.6
         },
         "btts": {
-          "yes": 46.6
+          "yes": 48.9
         },
         "corners": {
-          "over85": 57,
-          "over95": 45.2,
+          "over85": 57.1,
+          "over95": 45.3,
           "over105": 33.4
         }
       },
@@ -3416,7 +3143,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.58,
+        "home": 1.59,
         "away": 0.83
       },
       "mostLikelyScore": "1-0"
@@ -3428,26 +3155,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Kuwait",
       "awayTeam": "Syria",
-      "providerConfidence": 42.61,
+      "providerConfidence": 42.73,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 75.7,
+          "probability": 74.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 75.1,
+          "probability": 72,
           "recommended": false
         },
         {
           "label": "X2",
-          "probability": 67.5,
+          "probability": 70.6,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.06,
+      "contextScore": 60.07,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3460,17 +3187,17 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 32.5,
-          "draw": 24.9,
-          "away": 42.6
+          "home": 29.3,
+          "draw": 27.9,
+          "away": 42.7
         },
         "goals": {
-          "over15": 75.7,
-          "over25": 54.4,
-          "over35": 33.3
+          "over15": 74.5,
+          "over25": 49.9,
+          "over35": 32.1
         },
         "btts": {
-          "yes": 57.7
+          "yes": 55.1
         },
         "corners": {
           "over85": null,
@@ -3485,7 +3212,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 2.1,
+        "home": 2.11,
         "away": 1.14
       },
       "mostLikelyScore": "2-1"
@@ -3497,26 +3224,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Saudi Arabia",
       "awayTeam": "South Korea",
-      "providerConfidence": 53.16,
+      "providerConfidence": 48.5,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
-          "probability": 79.5,
+          "probability": 77.4,
           "recommended": false
         },
         {
           "label": "X2",
-          "probability": 79.2,
+          "probability": 75.8,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 74,
+          "probability": 72.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.81,
+      "contextScore": 65.85,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3529,14 +3256,14 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 20.8,
-          "draw": 26,
-          "away": 53.2
+          "home": 24.2,
+          "draw": 27.3,
+          "away": 48.5
         },
         "goals": {
-          "over15": 68,
-          "over25": 41.8,
-          "over35": 20.5
+          "over15": 68.9,
+          "over25": 43.6,
+          "over35": 22.6
         },
         "btts": {
           "yes": 48.3
@@ -3547,12 +3274,35 @@
           "over105": 26.1
         }
       },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [],
+      "selections": [
+        {
+          "id": "7494-over_under_15-over",
+          "eventId": 649925,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 68.9,
+          "odds": 1.33,
+          "openingOdds": null,
+          "impliedProbability": 75.19,
+          "fairOdds": 1.451,
+          "edge": -6.29,
+          "expectedValue": -8.36,
+          "contextScore": 65.85,
+          "confidence": 48.5,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
       "expectedGoals": {
         "home": 1.23,
         "away": 1.1
@@ -3585,7 +3335,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 61.54,
+      "contextScore": 61.46,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3611,43 +3361,20 @@
           "yes": 51.6
         },
         "corners": {
-          "over85": 62.3,
+          "over85": 62.4,
           "over95": 50.6,
-          "over105": 39.1
+          "over105": 39.2
         }
       },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-10T06:50:55Z",
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7493-over_under_15-over",
-          "eventId": 606205,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 72.4,
-          "odds": 1.3,
-          "openingOdds": null,
-          "impliedProbability": 76.92,
-          "fairOdds": 1.381,
-          "edge": -4.52,
-          "expectedValue": -5.88,
-          "contextScore": 61.54,
-          "confidence": 38.24,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-10T06:50:55Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
+      "selections": [],
       "expectedGoals": {
-        "home": 1.36,
-        "away": 1.23
+        "home": 1.37,
+        "away": 1.22
       },
       "mostLikelyScore": "1-1"
     },
@@ -3658,11 +3385,11 @@
       "competition": "International Friendly Games",
       "homeTeam": "Iraq",
       "awayTeam": "Lebanon",
-      "providerConfidence": 43.64,
+      "providerConfidence": 43.38,
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 73.5,
+          "probability": 73.6,
           "recommended": false
         },
         {
@@ -3677,7 +3404,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 63.25,
+      "contextScore": 63.18,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3690,13 +3417,13 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 28.8,
+          "home": 29,
           "draw": 27.6,
-          "away": 43.6
+          "away": 43.4
         },
         "goals": {
-          "over15": 73.5,
-          "over25": 48.9,
+          "over15": 73.6,
+          "over25": 49,
           "over35": 26.6
         },
         "btts": {
@@ -3715,7 +3442,7 @@
       "oddsUpdateReason": null,
       "selections": [],
       "expectedGoals": {
-        "home": 1.18,
+        "home": 1.19,
         "away": 1.45
       },
       "mostLikelyScore": "1-1"
@@ -3727,16 +3454,16 @@
       "competition": "Nigeria Premier Football League",
       "homeTeam": "Shooting Stars",
       "awayTeam": "Bendel Insurance FC",
-      "providerConfidence": 61.29,
+      "providerConfidence": 61.26,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 85.5,
+          "probability": 85.6,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 75.7,
+          "probability": 75.8,
           "recommended": false
         },
         {
@@ -3746,7 +3473,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 68.02,
+      "contextScore": 68.01,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3760,20 +3487,20 @@
       "modelMarkets": {
         "matchResult": {
           "home": 61.3,
-          "draw": 24.2,
-          "away": 14.4
+          "draw": 24.3,
+          "away": 14.5
         },
         "goals": {
-          "over15": 71.7,
-          "over25": 46.6,
+          "over15": 71.6,
+          "over25": 46.5,
           "over35": 24.4
         },
         "btts": {
           "yes": 46.8
         },
         "corners": {
-          "over85": 65.1,
-          "over95": 53.5,
+          "over85": 65,
+          "over95": 53.4,
           "over105": 42.3
         }
       },
@@ -3815,7 +3542,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 60.59,
+      "contextScore": 60.55,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -3841,13 +3568,13 @@
           "yes": 46.2
         },
         "corners": {
-          "over85": 64.3,
+          "over85": 64.2,
           "over95": 52.6,
-          "over105": 41.4
+          "over105": 41.3
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -3865,13 +3592,13 @@
           "fairOdds": 1.55,
           "edge": -3.07,
           "expectedValue": -4.54,
-          "contextScore": 60.59,
+          "contextScore": 60.55,
           "confidence": 35.79,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -3887,19 +3614,19 @@
           "fairOdds": 1.859,
           "edge": -5.02,
           "expectedValue": -8.54,
-          "contextScore": 60.59,
+          "contextScore": 60.55,
           "confidence": 35.79,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
         "home": 1.27,
-        "away": 1.38
+        "away": 1.39
       },
       "mostLikelyScore": "1-1"
     },
@@ -3973,75 +3700,6 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 649809,
-      "startsAt": "2026-11-13T19:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Coupe de France",
-      "homeTeam": "US St. Philbert de Grandlieu",
-      "awayTeam": "VFC La Roche-sur-Yon",
-      "providerConfidence": 62.43,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 83,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 81.6,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 79.4,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 68.3,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 17,
-          "draw": 20.6,
-          "away": 62.4
-        },
-        "goals": {
-          "over15": 81.6,
-          "over25": 60.7,
-          "over35": 38.4
-        },
-        "btts": {
-          "yes": 56.8
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.11,
-        "away": 2.09
-      },
-      "mostLikelyScore": "1-2"
-    },
-    {
       "id": 606208,
       "startsAt": "2026-11-13T19:00:00Z",
       "sport": "Fotbal",
@@ -4062,7 +3720,7 @@
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 81.7,
+          "probability": 81.6,
           "recommended": false
         }
       ],
@@ -4085,17 +3743,17 @@
           "away": 10.5
         },
         "goals": {
-          "over15": 81.7,
-          "over25": 61,
-          "over35": 38.7
+          "over15": 81.6,
+          "over25": 60.9,
+          "over35": 38.5
         },
         "btts": {
           "yes": 52.6
         },
         "corners": {
-          "over85": 58.1,
-          "over95": 46.3,
-          "over105": 34.5
+          "over85": 58.2,
+          "over95": 46.4,
+          "over105": 34.6
         }
       },
       "oddsStatus": "pending",
@@ -4109,75 +3767,6 @@
         "away": 0.89
       },
       "mostLikelyScore": "2-0"
-    },
-    {
-      "id": 649799,
-      "startsAt": "2026-11-13T19:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Coupe de France",
-      "homeTeam": "Dijon",
-      "awayTeam": "US Orléans",
-      "providerConfidence": 49.59,
-      "providerSignals": [
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 87.1,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 78.9,
-          "recommended": false
-        },
-        {
-          "label": "X2",
-          "probability": 70.7,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 65.11,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 29.3,
-          "draw": 21.1,
-          "away": 49.6
-        },
-        "goals": {
-          "over15": 87.1,
-          "over25": 69.9,
-          "over35": 49.1
-        },
-        "btts": {
-          "yes": 66
-        },
-        "corners": {
-          "over85": 54.7,
-          "over95": 42.9,
-          "over105": 31
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.65,
-        "away": 2.08
-      },
-      "mostLikelyScore": "1-2"
     },
     {
       "id": 606192,
@@ -4205,7 +3794,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.45,
+      "contextScore": 67.49,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -4237,7 +3826,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -4249,19 +3838,19 @@
           "outcome": "AWAY",
           "label": "Victorie oaspeți",
           "probability": 60.7,
-          "odds": 1.53,
+          "odds": 1.29,
           "openingOdds": null,
-          "impliedProbability": 65.36,
+          "impliedProbability": 77.52,
           "fairOdds": 1.647,
-          "edge": -4.66,
-          "expectedValue": -7.13,
-          "contextScore": 67.45,
+          "edge": -16.82,
+          "expectedValue": -21.7,
+          "contextScore": 67.49,
           "confidence": 60.68,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -4271,27 +3860,234 @@
           "outcome": "yes",
           "label": "Ambele echipe marchează",
           "probability": 64.8,
-          "odds": 1.4,
+          "odds": 1.5,
           "openingOdds": null,
-          "impliedProbability": 71.43,
+          "impliedProbability": 66.67,
           "fairOdds": 1.543,
-          "edge": -6.63,
-          "expectedValue": -9.28,
-          "contextScore": 67.45,
+          "edge": -1.87,
+          "expectedValue": -2.8,
+          "contextScore": 67.49,
           "confidence": 60.68,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.42,
+        "home": 1.43,
         "away": 2.43
       },
       "mostLikelyScore": "1-2"
+    },
+    {
+      "id": 649799,
+      "startsAt": "2026-11-13T19:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Coupe de France",
+      "homeTeam": "Dijon",
+      "awayTeam": "US Orléans",
+      "providerConfidence": 68.68,
+      "providerSignals": [
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 87.1,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 87,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 81.8,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 73.13,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 68.7,
+          "draw": 18.3,
+          "away": 13.1
+        },
+        "goals": {
+          "over15": 87.1,
+          "over25": 69.9,
+          "over35": 49.1
+        },
+        "btts": {
+          "yes": 66
+        },
+        "corners": {
+          "over85": 54.7,
+          "over95": 42.9,
+          "over105": 31
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.65,
+        "away": 2.08
+      },
+      "mostLikelyScore": "1-2"
+    },
+    {
+      "id": 649809,
+      "startsAt": "2026-11-13T19:00:00Z",
+      "sport": "Fotbal",
+      "competition": "Coupe de France",
+      "homeTeam": "US St. Philbert de Grandlieu",
+      "awayTeam": "VFC La Roche-sur-Yon",
+      "providerConfidence": 80.8,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 93,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 87.8,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 81.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 76.22,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 7,
+          "draw": 12.2,
+          "away": 80.8
+        },
+        "goals": {
+          "over15": 81.2,
+          "over25": 60.1,
+          "over35": 37.7
+        },
+        "btts": {
+          "yes": 56.7
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.12,
+        "away": 2.05
+      },
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 607156,
+      "startsAt": "2026-11-13T19:30:00Z",
+      "sport": "Fotbal",
+      "competition": "Serie C, Girone B",
+      "homeTeam": "Latina",
+      "awayTeam": "Campobasso FC",
+      "providerConfidence": 40.97,
+      "providerSignals": [
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 72.2,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 71.7,
+          "recommended": false
+        },
+        {
+          "label": "1X",
+          "probability": 70.5,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 63.21,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 41,
+          "draw": 29.5,
+          "away": 29.5
+        },
+        "goals": {
+          "over15": 71.7,
+          "over25": 47.4,
+          "over35": 27.8
+        },
+        "btts": {
+          "yes": 52.5
+        },
+        "corners": {
+          "over85": 64.5,
+          "over95": 52.9,
+          "over105": 41.7
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 1.25,
+        "away": 1.25
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 214915,
@@ -4351,7 +4147,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -4375,7 +4171,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -4455,101 +4251,32 @@
       "mostLikelyScore": "1-0"
     },
     {
-      "id": 607156,
-      "startsAt": "2026-11-13T19:30:00Z",
+      "id": 212695,
+      "startsAt": "2026-11-13T19:45:00Z",
       "sport": "Fotbal",
-      "competition": "Serie C, Girone B",
-      "homeTeam": "Latina",
-      "awayTeam": "Campobasso FC",
-      "providerConfidence": 40.97,
+      "competition": "UEFA Nations League",
+      "homeTeam": "Netherlands",
+      "awayTeam": "Greece",
+      "providerConfidence": 62.48,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 72.2,
+          "label": "1X",
+          "probability": 83.8,
           "recommended": false
         },
         {
           "label": "Peste 1.5 goluri",
-          "probability": 71.7,
-          "recommended": false
-        },
-        {
-          "label": "1X",
-          "probability": 70.5,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 63.21,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 41,
-          "draw": 29.5,
-          "away": 29.5
-        },
-        "goals": {
-          "over15": 71.7,
-          "over25": 47.4,
-          "over35": 27.8
-        },
-        "btts": {
-          "yes": 52.5
-        },
-        "corners": {
-          "over85": 64.5,
-          "over95": 52.9,
-          "over105": 41.7
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 1.25,
-        "away": 1.25
-      },
-      "mostLikelyScore": "1-1"
-    },
-    {
-      "id": 212699,
-      "startsAt": "2026-11-13T19:45:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Bulgaria",
-      "awayTeam": "Iceland",
-      "providerConfidence": 50.42,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 77.5,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 75.1,
+          "probability": 80,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 72.9,
+          "probability": 78.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 65.26,
+      "contextScore": 70.28,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -4562,56 +4289,78 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 22.5,
-          "draw": 27.1,
-          "away": 50.4
+          "home": 62.5,
+          "draw": 21.3,
+          "away": 16.2
         },
         "goals": {
-          "over15": 69.7,
-          "over25": 45.1,
-          "over35": 24.9
+          "over15": 80,
+          "over25": 58.4,
+          "over35": 35
         },
         "btts": {
-          "yes": 48.5
+          "yes": 55.1
         },
         "corners": {
-          "over85": 53.9,
-          "over95": 42.1,
-          "over105": 30.1
+          "over85": 60.4,
+          "over95": 48.7,
+          "over105": 37
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
       "selections": [
         {
-          "id": "7478-over_under_15-over",
-          "eventId": 212699,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 69.7,
-          "odds": 1.36,
+          "id": "7479-1x2-HOME",
+          "eventId": 212695,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 62.5,
+          "odds": 1.53,
           "openingOdds": null,
-          "impliedProbability": 73.53,
-          "fairOdds": 1.435,
-          "edge": -3.83,
-          "expectedValue": -5.21,
-          "contextScore": 65.26,
-          "confidence": 50.42,
+          "impliedProbability": 65.36,
+          "fairOdds": 1.6,
+          "edge": -2.86,
+          "expectedValue": -4.37,
+          "contextScore": 70.28,
+          "confidence": 62.48,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7479-btts-yes",
+          "eventId": 212695,
+          "market": "btts",
+          "outcome": "yes",
+          "label": "Ambele echipe marchează",
+          "probability": 55.1,
+          "odds": 1.67,
+          "openingOdds": null,
+          "impliedProbability": 59.88,
+          "fairOdds": 1.815,
+          "edge": -4.78,
+          "expectedValue": -7.98,
+          "contextScore": 70.28,
+          "confidence": 62.48,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.06,
-        "away": 1.54
+        "home": 1.6,
+        "away": 1.11
       },
       "mostLikelyScore": "1-1"
     },
@@ -4667,13 +4416,13 @@
           "yes": 53.6
         },
         "corners": {
-          "over85": 59.7,
-          "over95": 47.9,
-          "over105": 36.2
+          "over85": 59.5,
+          "over95": 47.7,
+          "over105": 36
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -4697,7 +4446,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -4719,7 +4468,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -4730,32 +4479,32 @@
       "mostLikelyScore": "0-2"
     },
     {
-      "id": 212685,
+      "id": 212701,
       "startsAt": "2026-11-13T19:45:00Z",
       "sport": "Fotbal",
       "competition": "UEFA Nations League",
-      "homeTeam": "Scotland",
-      "awayTeam": "North Macedonia",
-      "providerConfidence": 79.69,
+      "homeTeam": "Andorra",
+      "awayTeam": "Gibraltar",
+      "providerConfidence": 50.35,
       "providerSignals": [
         {
+          "label": "Sub 3.5 goluri",
+          "probability": 84.2,
+          "recommended": false
+        },
+        {
           "label": "1X",
-          "probability": 93.9,
+          "probability": 80.3,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 85.8,
-          "recommended": false
-        },
-        {
-          "label": "Victorie gazde",
-          "probability": 79.7,
+          "probability": 69.9,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 75.51,
+      "contextScore": 65.63,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -4768,80 +4517,241 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 79.7,
-          "draw": 14.2,
-          "away": 6.1
+          "home": 50.3,
+          "draw": 30,
+          "away": 19.6
         },
         "goals": {
-          "over15": 77.2,
-          "over25": 55.7,
-          "over35": 32.2
+          "over15": 57.9,
+          "over25": 33.6,
+          "over35": 15.8
         },
         "btts": {
-          "yes": 36
+          "yes": 35.9
         },
         "corners": {
-          "over85": 59,
-          "over95": 47.2,
-          "over105": 35.5
+          "over85": 53.7,
+          "over95": 41.9,
+          "over105": 29.9
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 0.77,
+        "away": 1.15
+      },
+      "mostLikelyScore": "0-1"
+    },
+    {
+      "id": 212699,
+      "startsAt": "2026-11-13T19:45:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Bulgaria",
+      "awayTeam": "Iceland",
+      "providerConfidence": 50.42,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 77.5,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 75.1,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 72.9,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 65.26,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 22.5,
+          "draw": 27.1,
+          "away": 50.4
+        },
+        "goals": {
+          "over15": 69.7,
+          "over25": 45.1,
+          "over35": 24.9
+        },
+        "btts": {
+          "yes": 48.5
+        },
+        "corners": {
+          "over85": 53.9,
+          "over95": 42.2,
+          "over105": 30.2
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
       "selections": [
         {
-          "id": "7483-over_under_15-over",
-          "eventId": 212685,
+          "id": "7478-over_under_15-over",
+          "eventId": 212699,
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 77.2,
-          "odds": 1.2,
+          "probability": 69.7,
+          "odds": 1.36,
           "openingOdds": null,
-          "impliedProbability": 83.33,
-          "fairOdds": 1.295,
-          "edge": -6.13,
-          "expectedValue": -7.36,
-          "contextScore": 75.51,
-          "confidence": 79.69,
+          "impliedProbability": 73.53,
+          "fairOdds": 1.435,
+          "edge": -3.83,
+          "expectedValue": -5.21,
+          "contextScore": 65.26,
+          "confidence": 50.42,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7483-btts-no",
-          "eventId": 212685,
-          "market": "btts",
-          "outcome": "no",
-          "label": "Nu marchează ambele",
-          "probability": 64,
-          "odds": 1.44,
-          "openingOdds": null,
-          "impliedProbability": 69.44,
-          "fairOdds": 1.563,
-          "edge": -5.44,
-          "expectedValue": -7.84,
-          "contextScore": 75.51,
-          "confidence": 79.69,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.8,
-        "away": 0.81
+        "home": 1.06,
+        "away": 1.54
       },
-      "mostLikelyScore": "1-0"
+      "mostLikelyScore": "1-1"
+    },
+    {
+      "id": 212686,
+      "startsAt": "2026-11-13T19:45:00Z",
+      "sport": "Fotbal",
+      "competition": "UEFA Nations League",
+      "homeTeam": "Slovenia",
+      "awayTeam": "Switzerland",
+      "providerConfidence": 55.84,
+      "providerSignals": [
+        {
+          "label": "X2",
+          "probability": 82,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 76.9,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 73.8,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 67.29,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 18,
+          "draw": 26.2,
+          "away": 55.8
+        },
+        "goals": {
+          "over15": 68.7,
+          "over25": 44,
+          "over35": 23.1
+        },
+        "btts": {
+          "yes": 45.7
+        },
+        "corners": {
+          "over85": 53.9,
+          "over95": 42.1,
+          "over105": 30.1
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7481-over_under_15-over",
+          "eventId": 212686,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 68.7,
+          "odds": 1.38,
+          "openingOdds": null,
+          "impliedProbability": 72.46,
+          "fairOdds": 1.456,
+          "edge": -3.76,
+          "expectedValue": -5.19,
+          "contextScore": 67.29,
+          "confidence": 55.84,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7481-btts-no",
+          "eventId": 212686,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 54.3,
+          "odds": 1.67,
+          "openingOdds": null,
+          "impliedProbability": 59.88,
+          "fairOdds": 1.842,
+          "edge": -5.58,
+          "expectedValue": -9.32,
+          "contextScore": 67.29,
+          "confidence": 55.84,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 0.94,
+        "away": 1.48
+      },
+      "mostLikelyScore": "1-1"
     },
     {
       "id": 212698,
@@ -4901,7 +4811,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -4925,7 +4835,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -4947,7 +4857,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -4958,32 +4868,32 @@
       "mostLikelyScore": "1-1"
     },
     {
-      "id": 212686,
+      "id": 212685,
       "startsAt": "2026-11-13T19:45:00Z",
       "sport": "Fotbal",
       "competition": "UEFA Nations League",
-      "homeTeam": "Slovenia",
-      "awayTeam": "Switzerland",
-      "providerConfidence": 55.84,
+      "homeTeam": "Scotland",
+      "awayTeam": "North Macedonia",
+      "providerConfidence": 79.69,
       "providerSignals": [
         {
-          "label": "X2",
-          "probability": 82,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 76.9,
+          "label": "1X",
+          "probability": 93.9,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 73.8,
+          "probability": 85.8,
+          "recommended": false
+        },
+        {
+          "label": "Victorie gazde",
+          "probability": 79.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 67.29,
+      "contextScore": 75.47,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -4996,130 +4906,108 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 18,
-          "draw": 26.2,
-          "away": 55.8
+          "home": 79.7,
+          "draw": 14.2,
+          "away": 6.1
         },
         "goals": {
-          "over15": 68.7,
-          "over25": 44,
-          "over35": 23.1
+          "over15": 77.2,
+          "over25": 55.7,
+          "over35": 32.2
         },
         "btts": {
-          "yes": 45.7
+          "yes": 36
         },
         "corners": {
-          "over85": 53.9,
-          "over95": 42.2,
-          "over105": 30.2
+          "over85": 58.9,
+          "over95": 47.1,
+          "over105": 35.4
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
       "selections": [
         {
-          "id": "7481-1x2-AWAY",
-          "eventId": 212686,
-          "market": "1x2",
-          "outcome": "AWAY",
-          "label": "Victorie oaspeți",
-          "probability": 55.8,
-          "odds": 1.67,
-          "openingOdds": null,
-          "impliedProbability": 59.88,
-          "fairOdds": 1.792,
-          "edge": -4.08,
-          "expectedValue": -6.81,
-          "contextScore": 67.29,
-          "confidence": 55.84,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7481-over_under_15-over",
-          "eventId": 212686,
+          "id": "7483-over_under_15-over",
+          "eventId": 212685,
           "market": "over_under_15",
           "outcome": "over",
           "label": "Peste 1.5 goluri",
-          "probability": 68.7,
-          "odds": 1.38,
+          "probability": 77.2,
+          "odds": 1.2,
           "openingOdds": null,
-          "impliedProbability": 72.46,
-          "fairOdds": 1.456,
-          "edge": -3.76,
-          "expectedValue": -5.19,
-          "contextScore": 67.29,
-          "confidence": 55.84,
+          "impliedProbability": 83.33,
+          "fairOdds": 1.295,
+          "edge": -6.13,
+          "expectedValue": -7.36,
+          "contextScore": 75.47,
+          "confidence": 79.69,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
-          "id": "7481-btts-no",
-          "eventId": 212686,
+          "id": "7483-btts-no",
+          "eventId": 212685,
           "market": "btts",
           "outcome": "no",
           "label": "Nu marchează ambele",
-          "probability": 54.3,
-          "odds": 1.67,
+          "probability": 64,
+          "odds": 1.44,
           "openingOdds": null,
-          "impliedProbability": 59.88,
-          "fairOdds": 1.842,
-          "edge": -5.58,
-          "expectedValue": -9.32,
-          "contextScore": 67.29,
-          "confidence": 55.84,
+          "impliedProbability": 69.44,
+          "fairOdds": 1.563,
+          "edge": -5.44,
+          "expectedValue": -7.84,
+          "contextScore": 75.47,
+          "confidence": 79.69,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 0.94,
-        "away": 1.48
+        "home": 1.81,
+        "away": 0.81
       },
-      "mostLikelyScore": "1-1"
+      "mostLikelyScore": "1-0"
     },
     {
-      "id": 212701,
+      "id": 212700,
       "startsAt": "2026-11-13T19:45:00Z",
       "sport": "Fotbal",
       "competition": "UEFA Nations League",
-      "homeTeam": "Andorra",
-      "awayTeam": "Gibraltar",
-      "providerConfidence": 50.35,
+      "homeTeam": "Luxembourg",
+      "awayTeam": "Estonia",
+      "providerConfidence": 43.94,
       "providerSignals": [
         {
           "label": "Sub 3.5 goluri",
-          "probability": 84.2,
+          "probability": 81,
           "recommended": false
         },
         {
           "label": "1X",
-          "probability": 80.3,
+          "probability": 73.6,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 69.9,
+          "probability": 70.2,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 65.63,
+      "contextScore": 64.25,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5132,147 +5020,78 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 50.3,
-          "draw": 30,
-          "away": 19.6
+          "home": 43.9,
+          "draw": 29.7,
+          "away": 26.3
         },
         "goals": {
-          "over15": 57.8,
-          "over25": 33.6,
-          "over35": 15.8
+          "over15": 63.9,
+          "over25": 38.4,
+          "over35": 19
         },
         "btts": {
-          "yes": 35.9
+          "yes": 44.8
         },
         "corners": {
-          "over85": 53.6,
-          "over95": 41.8,
-          "over105": 29.9
-        }
-      },
-      "oddsStatus": "pending",
-      "oddsUpdatedAt": null,
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [],
-      "expectedGoals": {
-        "home": 0.77,
-        "away": 1.15
-      },
-      "mostLikelyScore": "0-1"
-    },
-    {
-      "id": 212695,
-      "startsAt": "2026-11-13T19:45:00Z",
-      "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Netherlands",
-      "awayTeam": "Greece",
-      "providerConfidence": 62.48,
-      "providerSignals": [
-        {
-          "label": "1X",
-          "probability": 83.8,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 80,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 78.7,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 70.32,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 62.5,
-          "draw": 21.3,
-          "away": 16.2
-        },
-        "goals": {
-          "over15": 80,
-          "over25": 58.4,
-          "over35": 35
-        },
-        "btts": {
-          "yes": 55.1
-        },
-        "corners": {
-          "over85": 60.6,
-          "over95": 48.8,
-          "over105": 37.2
+          "over85": 56.8,
+          "over95": 45,
+          "over105": 33.1
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
       "selections": [
         {
-          "id": "7479-1x2-HOME",
-          "eventId": 212695,
-          "market": "1x2",
-          "outcome": "HOME",
-          "label": "Victorie gazde",
-          "probability": 62.5,
-          "odds": 1.43,
+          "id": "7485-over_under_15-over",
+          "eventId": 212700,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 63.9,
+          "odds": 1.47,
           "openingOdds": null,
-          "impliedProbability": 69.93,
-          "fairOdds": 1.6,
-          "edge": -7.43,
-          "expectedValue": -10.63,
-          "contextScore": 70.32,
-          "confidence": 62.48,
+          "impliedProbability": 68.03,
+          "fairOdds": 1.565,
+          "edge": -4.13,
+          "expectedValue": -6.07,
+          "contextScore": 64.25,
+          "confidence": 43.94,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
-          "id": "7479-btts-yes",
-          "eventId": 212695,
+          "id": "7485-btts-no",
+          "eventId": 212700,
           "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 55.1,
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 55.2,
           "odds": 1.67,
           "openingOdds": null,
           "impliedProbability": 59.88,
-          "fairOdds": 1.815,
-          "edge": -4.78,
-          "expectedValue": -7.98,
-          "contextScore": 70.32,
-          "confidence": 62.48,
+          "fairOdds": 1.812,
+          "edge": -4.68,
+          "expectedValue": -7.82,
+          "contextScore": 64.25,
+          "confidence": 43.94,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.6,
-        "away": 1.12
+        "home": 1.04,
+        "away": 1.09
       },
       "mostLikelyScore": "1-1"
     },
@@ -5328,13 +5147,13 @@
           "yes": 32.6
         },
         "corners": {
-          "over85": 49.2,
-          "over95": 37.6,
-          "over105": 25.6
+          "over85": 48.9,
+          "over95": 37.3,
+          "over105": 25.3
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -5358,7 +5177,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
@@ -5380,7 +5199,7 @@
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
@@ -5391,32 +5210,32 @@
       "mostLikelyScore": "0-1"
     },
     {
-      "id": 212700,
-      "startsAt": "2026-11-13T19:45:00Z",
+      "id": 643210,
+      "startsAt": "2026-11-13T20:00:00Z",
       "sport": "Fotbal",
-      "competition": "UEFA Nations League",
-      "homeTeam": "Luxembourg",
-      "awayTeam": "Estonia",
-      "providerConfidence": 43.94,
+      "competition": "Copa del Rey",
+      "homeTeam": "Salamanca UDS",
+      "awayTeam": "Celta Vigo",
+      "providerConfidence": 69.46,
       "providerSignals": [
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 81,
+          "label": "X2",
+          "probability": 87.9,
           "recommended": false
         },
         {
-          "label": "1X",
-          "probability": 73.6,
+          "label": "Peste 1.5 goluri",
+          "probability": 82.5,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 70.2,
+          "probability": 81.7,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 64.25,
+      "contextScore": 75.17,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5429,80 +5248,80 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 43.9,
-          "draw": 29.7,
-          "away": 26.3
+          "home": 12.2,
+          "draw": 18.4,
+          "away": 69.5
         },
         "goals": {
-          "over15": 63.9,
-          "over25": 38.4,
-          "over35": 19
+          "over15": 82.5,
+          "over25": 63.2,
+          "over35": 42.1
         },
         "btts": {
-          "yes": 44.8
+          "yes": 53.9
         },
         "corners": {
-          "over85": 56.7,
-          "over95": 44.9,
-          "over105": 33.1
+          "over85": null,
+          "over95": null,
+          "over105": null
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
       "selections": [
         {
-          "id": "7485-over_under_15-over",
-          "eventId": 212700,
-          "market": "over_under_15",
-          "outcome": "over",
-          "label": "Peste 1.5 goluri",
-          "probability": 63.9,
-          "odds": 1.47,
+          "id": "7475-1x2-AWAY",
+          "eventId": 643210,
+          "market": "1x2",
+          "outcome": "AWAY",
+          "label": "Victorie oaspeți",
+          "probability": 69.5,
+          "odds": 1.31,
           "openingOdds": null,
-          "impliedProbability": 68.03,
-          "fairOdds": 1.565,
-          "edge": -4.13,
-          "expectedValue": -6.07,
-          "contextScore": 64.25,
-          "confidence": 43.94,
+          "impliedProbability": 76.34,
+          "fairOdds": 1.439,
+          "edge": -6.84,
+          "expectedValue": -8.96,
+          "contextScore": 75.17,
+          "confidence": 69.46,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         },
         {
-          "id": "7485-btts-no",
-          "eventId": 212700,
+          "id": "7475-btts-yes",
+          "eventId": 643210,
           "market": "btts",
-          "outcome": "no",
-          "label": "Nu marchează ambele",
-          "probability": 55.2,
-          "odds": 1.67,
+          "outcome": "yes",
+          "label": "Ambele echipe marchează",
+          "probability": 53.9,
+          "odds": 1.7,
           "openingOdds": null,
-          "impliedProbability": 59.88,
-          "fairOdds": 1.812,
-          "edge": -4.68,
-          "expectedValue": -7.82,
-          "contextScore": 64.25,
-          "confidence": 43.94,
+          "impliedProbability": 58.82,
+          "fairOdds": 1.855,
+          "edge": -4.92,
+          "expectedValue": -8.37,
+          "contextScore": 75.17,
+          "confidence": 69.46,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.04,
-        "away": 1.09
+        "home": 0,
+        "away": 0
       },
-      "mostLikelyScore": "1-1"
+      "mostLikelyScore": null
     },
     {
       "id": 606209,
@@ -5515,12 +5334,12 @@
       "providerSignals": [
         {
           "label": "Peste 1.5 goluri",
-          "probability": 89.8,
+          "probability": 89.9,
           "recommended": false
         },
         {
           "label": "Peste 2.5 goluri",
-          "probability": 75,
+          "probability": 75.2,
           "recommended": false
         },
         {
@@ -5530,7 +5349,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 61.5,
+      "contextScore": 61.42,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5548,15 +5367,15 @@
           "away": 42.3
         },
         "goals": {
-          "over15": 89.8,
-          "over25": 75,
-          "over35": 55.8
+          "over15": 89.9,
+          "over25": 75.2,
+          "over35": 56
         },
         "btts": {
           "yes": 69.2
         },
         "corners": {
-          "over85": 60.6,
+          "over85": 60.7,
           "over95": 48.9,
           "over105": 37.3
         }
@@ -5569,123 +5388,9 @@
       "selections": [],
       "expectedGoals": {
         "home": 1.75,
-        "away": 2.32
+        "away": 2.34
       },
       "mostLikelyScore": "1-2"
-    },
-    {
-      "id": 643210,
-      "startsAt": "2026-11-13T20:00:00Z",
-      "sport": "Fotbal",
-      "competition": "Copa del Rey",
-      "homeTeam": "Salamanca UDS",
-      "awayTeam": "Celta Vigo",
-      "providerConfidence": 67.99,
-      "providerSignals": [
-        {
-          "label": "X2",
-          "probability": 87,
-          "recommended": false
-        },
-        {
-          "label": "Peste 1.5 goluri",
-          "probability": 81.9,
-          "recommended": false
-        },
-        {
-          "label": "12",
-          "probability": 81,
-          "recommended": false
-        }
-      ],
-      "providerRecommended": false,
-      "contextScore": 74.56,
-      "contextSignals": [],
-      "contextMissing": [
-        "Formă echipe",
-        "Confruntări directe",
-        "Lot și line-up",
-        "Antrenori",
-        "Arbitru",
-        "Deplasare",
-        "Condiții meci"
-      ],
-      "modelMarkets": {
-        "matchResult": {
-          "home": 13,
-          "draw": 19,
-          "away": 68
-        },
-        "goals": {
-          "over15": 81.9,
-          "over25": 62.4,
-          "over35": 41
-        },
-        "btts": {
-          "yes": 53.9
-        },
-        "corners": {
-          "over85": null,
-          "over95": null,
-          "over105": null
-        }
-      },
-      "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-      "oddsNextUpdateAt": null,
-      "oddsRefreshSeconds": null,
-      "oddsUpdateReason": null,
-      "selections": [
-        {
-          "id": "7475-1x2-AWAY",
-          "eventId": 643210,
-          "market": "1x2",
-          "outcome": "AWAY",
-          "label": "Victorie oaspeți",
-          "probability": 68,
-          "odds": 1.31,
-          "openingOdds": null,
-          "impliedProbability": 76.34,
-          "fairOdds": 1.471,
-          "edge": -8.34,
-          "expectedValue": -10.92,
-          "contextScore": 74.56,
-          "confidence": 67.99,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        },
-        {
-          "id": "7475-btts-yes",
-          "eventId": 643210,
-          "market": "btts",
-          "outcome": "yes",
-          "label": "Ambele echipe marchează",
-          "probability": 53.9,
-          "odds": 1.7,
-          "openingOdds": null,
-          "impliedProbability": 58.82,
-          "fairOdds": 1.855,
-          "edge": -4.92,
-          "expectedValue": -8.37,
-          "contextScore": 74.56,
-          "confidence": 67.99,
-          "recommendation": "watch",
-          "eligible": false,
-          "movement": null,
-          "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
-          "oddsNextUpdateAt": null
-        }
-      ],
-      "expectedGoals": {
-        "home": 0,
-        "away": 0
-      },
-      "mostLikelyScore": null
     },
     {
       "id": 606228,
@@ -5694,11 +5399,11 @@
       "competition": "CONCACAF Nations League",
       "homeTeam": "Saint Martin",
       "awayTeam": "El Salvador",
-      "providerConfidence": 84.14,
+      "providerConfidence": 84.11,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 94.6,
+          "probability": 94.7,
           "recommended": false
         },
         {
@@ -5713,7 +5418,7 @@
         }
       ],
       "providerRecommended": false,
-      "contextScore": 72.82,
+      "contextScore": 72.81,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5727,7 +5432,7 @@
       "modelMarkets": {
         "matchResult": {
           "home": 84.1,
-          "draw": 10.5,
+          "draw": 10.6,
           "away": 5.3
         },
         "goals": {
@@ -5763,26 +5468,26 @@
       "competition": "International Friendly Games",
       "homeTeam": "Argentina",
       "awayTeam": "Uruguay",
-      "providerConfidence": 58.25,
+      "providerConfidence": 58.87,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 82.7,
-          "recommended": false
-        },
-        {
-          "label": "Sub 3.5 goluri",
-          "probability": 75.5,
+          "probability": 83.2,
           "recommended": false
         },
         {
           "label": "12",
+          "probability": 75.8,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
           "probability": 75.4,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 64.59,
+      "contextScore": 64.81,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5795,14 +5500,14 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 58.2,
-          "draw": 24.5,
-          "away": 17.2
+          "home": 58.9,
+          "draw": 24.3,
+          "away": 16.9
         },
         "goals": {
           "over15": 67.5,
           "over25": 46.6,
-          "over35": 24.5
+          "over35": 24.6
         },
         "btts": {
           "yes": 46.4
@@ -5814,7 +5519,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -5825,56 +5530,56 @@
           "market": "1x2",
           "outcome": "HOME",
           "label": "Victorie gazde",
-          "probability": 58.2,
+          "probability": 58.9,
           "odds": 1.52,
           "openingOdds": null,
           "impliedProbability": 65.79,
-          "fairOdds": 1.718,
-          "edge": -7.59,
-          "expectedValue": -11.54,
-          "contextScore": 64.59,
-          "confidence": 58.25,
+          "fairOdds": 1.698,
+          "edge": -6.89,
+          "expectedValue": -10.47,
+          "contextScore": 64.81,
+          "confidence": 58.87,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 2.21,
+        "home": 2.22,
         "away": 0.74
       },
       "mostLikelyScore": "2-0"
     },
     {
-      "id": 649929,
+      "id": 649928,
       "startsAt": "2026-11-14T00:00:00Z",
       "sport": "Fotbal",
       "competition": "International Friendly Games",
-      "homeTeam": "Ecuador",
-      "awayTeam": "Costa Rica",
-      "providerConfidence": 69.78,
+      "homeTeam": "Colombia",
+      "awayTeam": "Chile",
+      "providerConfidence": 64.8,
       "providerSignals": [
         {
           "label": "1X",
-          "probability": 89.3,
+          "probability": 86.2,
           "recommended": false
         },
         {
           "label": "12",
-          "probability": 80.6,
+          "probability": 78.6,
           "recommended": false
         },
         {
-          "label": "Sub 3.5 goluri",
-          "probability": 78.8,
+          "label": "Peste 1.5 goluri",
+          "probability": 75.5,
           "recommended": false
         }
       ],
       "providerRecommended": false,
-      "contextScore": 72.71,
+      "contextScore": 68.58,
       "contextSignals": [],
       "contextMissing": [
         "Formă echipe",
@@ -5887,14 +5592,197 @@
       ],
       "modelMarkets": {
         "matchResult": {
-          "home": 69.8,
-          "draw": 19.5,
-          "away": 10.8
+          "home": 64.8,
+          "draw": 21.4,
+          "away": 13.8
         },
         "goals": {
-          "over15": 68.7,
-          "over25": 42.8,
-          "over35": 21.2
+          "over15": 75.5,
+          "over25": 51.3,
+          "over35": 29.2
+        },
+        "btts": {
+          "yes": 44.5
+        },
+        "corners": {
+          "over85": 60.4,
+          "over95": 48.6,
+          "over105": 37
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7470-1x2-HOME",
+          "eventId": 649928,
+          "market": "1x2",
+          "outcome": "HOME",
+          "label": "Victorie gazde",
+          "probability": 64.8,
+          "odds": 1.4,
+          "openingOdds": null,
+          "impliedProbability": 71.43,
+          "fairOdds": 1.543,
+          "edge": -6.63,
+          "expectedValue": -9.28,
+          "contextScore": 68.58,
+          "confidence": 64.8,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        },
+        {
+          "id": "7470-btts-no",
+          "eventId": 649928,
+          "market": "btts",
+          "outcome": "no",
+          "label": "Nu marchează ambele",
+          "probability": 55.5,
+          "odds": 1.66,
+          "openingOdds": null,
+          "impliedProbability": 60.24,
+          "fairOdds": 1.802,
+          "edge": -4.74,
+          "expectedValue": -7.87,
+          "contextScore": 68.58,
+          "confidence": 64.8,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.96,
+        "away": 0.8
+      },
+      "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 606229,
+      "startsAt": "2026-11-14T00:00:00Z",
+      "sport": "Fotbal",
+      "competition": "CONCACAF Nations League",
+      "homeTeam": "Montserrat",
+      "awayTeam": "Nicaragua",
+      "providerConfidence": 82.03,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 93.9,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 88,
+          "recommended": false
+        },
+        {
+          "label": "Peste 1.5 goluri",
+          "probability": 85.2,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 72.61,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 82,
+          "draw": 11.9,
+          "away": 6
+        },
+        "goals": {
+          "over15": 85.2,
+          "over25": 66.8,
+          "over35": 45.4
+        },
+        "btts": {
+          "yes": 50.9
+        },
+        "corners": {
+          "over85": 48.4,
+          "over95": 36.9,
+          "over105": 24.9
+        }
+      },
+      "oddsStatus": "pending",
+      "oddsUpdatedAt": null,
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [],
+      "expectedGoals": {
+        "home": 2.75,
+        "away": 0.79
+      },
+      "mostLikelyScore": "2-0"
+    },
+    {
+      "id": 649929,
+      "startsAt": "2026-11-14T00:00:00Z",
+      "sport": "Fotbal",
+      "competition": "International Friendly Games",
+      "homeTeam": "Ecuador",
+      "awayTeam": "Costa Rica",
+      "providerConfidence": 68.73,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 88.9,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 79.8,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 78.7,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 72.19,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 68.7,
+          "draw": 20.2,
+          "away": 11.1
+        },
+        "goals": {
+          "over15": 68.8,
+          "over25": 42.9,
+          "over35": 21.3
         },
         "btts": {
           "yes": 46.5
@@ -5906,7 +5794,7 @@
         }
       },
       "oddsStatus": "live",
-      "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+      "oddsUpdatedAt": "2026-11-12T11:50:07Z",
       "oddsNextUpdateAt": null,
       "oddsRefreshSeconds": null,
       "oddsUpdateReason": null,
@@ -5917,28 +5805,120 @@
           "market": "1x2",
           "outcome": "HOME",
           "label": "Victorie gazde",
-          "probability": 69.8,
+          "probability": 68.7,
           "odds": 1.27,
           "openingOdds": null,
           "impliedProbability": 78.74,
-          "fairOdds": 1.433,
-          "edge": -8.94,
-          "expectedValue": -11.35,
-          "contextScore": 72.71,
-          "confidence": 69.78,
+          "fairOdds": 1.456,
+          "edge": -10.04,
+          "expectedValue": -12.75,
+          "contextScore": 72.19,
+          "confidence": 68.73,
           "recommendation": "watch",
           "eligible": false,
           "movement": null,
           "bookmaker": "Consens BSD",
-          "oddsUpdatedAt": "2026-11-11T20:50:07Z",
+          "oddsUpdatedAt": "2026-11-12T11:50:07Z",
           "oddsNextUpdateAt": null
         }
       ],
       "expectedGoals": {
-        "home": 1.51,
-        "away": 0.86
+        "home": 1.52,
+        "away": 0.85
       },
       "mostLikelyScore": "1-0"
+    },
+    {
+      "id": 649930,
+      "startsAt": "2026-11-14T01:00:00Z",
+      "sport": "Fotbal",
+      "competition": "International Friendly Games",
+      "homeTeam": "Peru",
+      "awayTeam": "Bolivia",
+      "providerConfidence": 59.78,
+      "providerSignals": [
+        {
+          "label": "1X",
+          "probability": 83.6,
+          "recommended": false
+        },
+        {
+          "label": "12",
+          "probability": 76.3,
+          "recommended": false
+        },
+        {
+          "label": "Sub 3.5 goluri",
+          "probability": 72.9,
+          "recommended": false
+        }
+      ],
+      "providerRecommended": false,
+      "contextScore": 65.99,
+      "contextSignals": [],
+      "contextMissing": [
+        "Formă echipe",
+        "Confruntări directe",
+        "Lot și line-up",
+        "Antrenori",
+        "Arbitru",
+        "Deplasare",
+        "Condiții meci"
+      ],
+      "modelMarkets": {
+        "matchResult": {
+          "home": 59.8,
+          "draw": 23.8,
+          "away": 16.5
+        },
+        "goals": {
+          "over15": 72.5,
+          "over25": 46.3,
+          "over35": 27.1
+        },
+        "btts": {
+          "yes": 42.6
+        },
+        "corners": {
+          "over85": null,
+          "over95": null,
+          "over105": null
+        }
+      },
+      "oddsStatus": "live",
+      "oddsUpdatedAt": "2026-11-10T18:51:13Z",
+      "oddsNextUpdateAt": null,
+      "oddsRefreshSeconds": null,
+      "oddsUpdateReason": null,
+      "selections": [
+        {
+          "id": "7468-over_under_15-over",
+          "eventId": 649930,
+          "market": "over_under_15",
+          "outcome": "over",
+          "label": "Peste 1.5 goluri",
+          "probability": 72.5,
+          "odds": 1.3,
+          "openingOdds": null,
+          "impliedProbability": 76.92,
+          "fairOdds": 1.379,
+          "edge": -4.42,
+          "expectedValue": -5.75,
+          "contextScore": 65.99,
+          "confidence": 59.78,
+          "recommendation": "watch",
+          "eligible": false,
+          "movement": null,
+          "bookmaker": "Consens BSD",
+          "oddsUpdatedAt": "2026-11-10T18:51:13Z",
+          "oddsNextUpdateAt": null
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.98,
+        "away": 0.7
+      },
+      "mostLikelyScore": "2-0"
     }
   ]
 }
